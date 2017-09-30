@@ -1,0 +1,48 @@
+package org.koalakode.reeve.CustomEnchants.Listeners;
+// made by reeve
+// on 8:59 PM
+
+import org.bukkit.ChatColor;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
+import org.koalakode.reeve.CustomEnchants.Main;
+import org.koalakode.reeve.CustomEnchants.Menu.*;
+
+public class MenuClick implements Listener {
+
+	@EventHandler
+	public void MenuCliked(InventoryClickEvent e) {
+
+		ItemStack clicked = e.getCurrentItem();
+
+		if (e.getInventory().getName().equalsIgnoreCase(ChatColor.RED + "" + ChatColor.BOLD + "Custom Enchants")) {
+			if (clicked != null) {
+				if (clicked.hasItemMeta()) {
+					if (clicked.getItemMeta().hasDisplayName()) {
+						if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Helmet Enchantments"))
+							e.getWhoClicked().openInventory(HelmMenu.get());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Chestplate Enchantments"))
+							e.getWhoClicked().openInventory(ChestMenu.get());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Leggings Enchantments"))
+							e.getWhoClicked().openInventory(LeggingsMenu.get());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Boots Enchantments"))
+							e.getWhoClicked().openInventory(BootsMenu.get());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Sword Enchantments"))
+							e.getWhoClicked().openInventory(SwordMenu.get());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Bow Enchantments"))
+							e.getWhoClicked().openInventory(BowMenu.get());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Pickaxe Enchantments"))
+							e.getWhoClicked().openInventory(PickMenu.get());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Axe Enchantments"))
+							e.getWhoClicked().openInventory(AxeMenu.get());
+						else if (e.getSlot() == 44)
+							e.getWhoClicked().openInventory(MainMenu.get());
+					}
+				}
+			}
+			e.setCancelled(true);
+		}
+	}
+}
