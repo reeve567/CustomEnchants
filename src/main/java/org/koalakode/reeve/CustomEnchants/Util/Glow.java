@@ -10,6 +10,7 @@ public class Glow extends Enchantment {
 
 
 	public Glow(int id) {
+
 		super(id);
 	}
 
@@ -48,8 +49,6 @@ public class Glow extends Enchantment {
 
 		return false;
 	}
-
-
 
 
 }

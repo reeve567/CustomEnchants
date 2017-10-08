@@ -28,10 +28,10 @@ public class HydroSC {
 			}
 		}
 		prizes.add(new Prize(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "25000",new ItemStack(Material.DOUBLE_PLANT,25)));
-		prizes.add(new Prize(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "30000",new ItemStack(Material.DOUBLE_PLANT,30)));
+		prizes.add(new Prize(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "50000",new ItemStack(Material.DOUBLE_PLANT,30)));
 		prizes.add(new Prize(Souls.MYSTICAL.getItem().getItemMeta().getDisplayName(),Souls.MYSTICAL.getItem()));
 		prizes.add(new Prize(Rarities.COMMON.name() + ChatColor.GRAY + ", " + Rarities.UNCOMMON.name() + ChatColor.GRAY + " and " + Rarities.RARE.name() + ChatColor.GRAY + " Souls",new ItemStack(Souls.MYSTICAL.getItem())));
-		prizes.add(new Prize(ChatColor.BLUE + "Poseidon",new ItemStack(Material.INK_SACK,1, (short) 4)));
+		prizes.add(new Prize(ChatColor.BLUE + "Orca",new ItemStack(Material.INK_SACK,1, (short) 4)));
 		prizes.add(new Prize(ChatColor.DARK_PURPLE + "Blaze Spawner",new ItemStack(Material.MOB_SPAWNER)));
 
 		for (int i = 0; i < 27; i++) {

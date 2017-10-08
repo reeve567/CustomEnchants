@@ -451,7 +451,7 @@ public class HitListener implements Listener {
 		if (e.getEntity() instanceof Player) {
 			Player player = (Player) e.getEntity();
 			ItemStack boots = player.getInventory().getBoots();
-			if (boots != null && boots.getItemMeta().getLore().contains(CustomEnchants.XWY.getName())) {
+			if (boots != null && boots.hasItemMeta() && boots.getItemMeta().hasLore() && boots.getItemMeta().getLore().contains(CustomEnchants.XWY.getName())) {
 				e.setCancelled(true);
 			}
 		}

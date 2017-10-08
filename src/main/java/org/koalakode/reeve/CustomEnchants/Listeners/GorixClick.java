@@ -398,8 +398,8 @@ public class GorixClick implements Listener {
 
 							if (prize.getDisplayItem().getType().equals(Material.DOUBLE_PLANT)) {
 								if (prize.getDisplayItem()
-										    .getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "30000")) {
-									econ.depositPlayer(e.getClicker(),30000);
+										    .getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "50000")) {
+									econ.depositPlayer(e.getClicker(),50000);
 									e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 								}
 								else if (prize.getDisplayItem()
@@ -424,7 +424,7 @@ public class GorixClick implements Listener {
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 							}
 							else if (prize.getDisplayItem().getType().equals(Material.INK_SACK)) {
-								Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"kit poseidon " + e.getClicker().getName());
+								Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"kit orca " + e.getClicker().getName());
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 							}
 							else if (prize.getDisplayItem().getType().equals(Material.MOB_SPAWNER)) {
