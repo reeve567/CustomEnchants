@@ -1,7 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2a76ea9-f55e-41cb-ae5e-22d629ae7ec5" name="Default" comment="" />
+    <list default="true" id="a2a76ea9-f55e-41cb-ae5e-22d629ae7ec5" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Commands/AdminCommands/CeGive.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Commands/CommandHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Commands/PlayerCommands/CeMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Enums/CustomEnchants.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Enums/Gorix.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Enums/ItemSets.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Enums/Messages.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Enums/Rarities.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Enums/Souls.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/ArmorListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/BlockListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/BowListener$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/BowListener$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/BowListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/DeathListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/EnchantDrop.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/ExplosionListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/FeedListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/GorixClick.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/HitListener$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/HitListener$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/HitListener$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/HitListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/JoinListener$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/JoinListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/ListenerHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/MenuClick.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/RespawnListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Listeners/SprintListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/AxeMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/BootsMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/BowMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/ChestMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/HelmMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/LeggingsMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/MainMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/PickMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/SwordMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Menu/Utils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/CommonCrate.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/FlashCheck$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/FlashCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/HeartCheck$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/HeartCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/JumpBoost$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/JumpBoost.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/NightVision$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/NightVision.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/RewardPlayer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/Speed$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/Speed.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/ValorCheck$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/ValorCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/WaterBreathing$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Schedules/WaterBreathing.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/SoulCrates/CommonSC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/SoulCrates/CrateOpen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/SoulCrates/HydroSC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/SoulCrates/MysticalSC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/SoulCrates/Prize.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/SoulCrates/RareSC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/SoulCrates/UncommonSC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Util/ConfigCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Util/CratesUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Util/FortuneCalc.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Util/Glow.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Util/MainUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Util/MessagesFunctions.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/koalakode/reeve/CustomEnchants/Util/SpecialBlockResolver.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/AdminCommands/CeGive.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/AdminCommands/CeGive.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/CommandHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/CommandHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/PlayerCommands/CeMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/PlayerCommands/CeMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/CustomEnchants.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/CustomEnchants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Gorix.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Gorix.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/ItemSets.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/ItemSets.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Messages.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Messages.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Rarities.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Rarities.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Souls.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Souls.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/ArmorListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ArmorListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/BlockListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BlockListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/BowListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BowListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/DeathListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/DeathListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/EnchantDrop.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/EnchantDrop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/ExplosionListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ExplosionListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/FeedListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/FeedListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/GorixClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/GorixClick.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/HitListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/HitListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/JoinListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/JoinListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/ListenerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ListenerHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/MenuClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/MenuClick.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/RespawnListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/RespawnListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/SprintListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/SprintListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/AxeMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/AxeMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/BootsMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/BootsMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/BowMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/BowMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/ChestMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/ChestMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/HelmMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/HelmMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/LeggingsMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/LeggingsMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/MainMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/MainMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/PickMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/PickMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/SwordMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/SwordMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/Utils.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/Utils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/CommonCrate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/CommonCrate.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/FlashCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/FlashCheck.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/HeartCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/HeartCheck.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/JumpBoost.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/JumpBoost.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/NightVision.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/NightVision.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/RewardPlayer.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/RewardPlayer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/Speed.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/Speed.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/ValorCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/ValorCheck.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/WaterBreathing.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/WaterBreathing.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/CommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/CommonSC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/CrateOpen.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/CrateOpen.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/HydroSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/HydroSC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/MysticalSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/MysticalSC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/Prize.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/Prize.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/RareSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/RareSC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/UncommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/UncommonSC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/ConfigCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/ConfigCheck.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/CratesUtil.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/CratesUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/FortuneCalc.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/FortuneCalc.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/Glow.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/Glow.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/MainUtil.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/MainUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/MessagesFunctions.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/MessagesFunctions.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/SpecialBlockResolver.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/SpecialBlockResolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/CustomEnchants-0.1.jar" afterPath="$PROJECT_DIR$/target/CustomEnchants-0.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sk89q_worldguard_6_1_1_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sk89q_worldguard_6_1_1_SNAPSHOT.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/plugin.yml" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/C:/Users/reeve/Desktop/Test Server/plugins/" />
@@ -13,7 +150,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Glow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/Glow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BlockListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="33" column="52" lean-forward="false" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListenerHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ListenerHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2754">
+              <caret line="162" column="33" lean-forward="true" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,6 +256,9 @@
       <replace>ChatColor.GREEN + &quot;Common&quot;, Material.COAL</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -84,13 +267,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/CEList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/PlayerCommands/CeMenu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/adsad.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/Uncommon.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/Common.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Gorix.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/MessagesFunctions.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Rarities.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Crates.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/CratesUtil.java" />
@@ -125,16 +301,23 @@
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/ConfigCheck.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/BlockListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/AdminCommands/CeGive.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/BowListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/CommandHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/CustomEnchants.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/GorixClick.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/HydroSC.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/HitListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/Glow.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/ConfigCheck.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/GorixClick.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/MenuClick.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BlockListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/Glow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ListenerHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Main.java" />
       </list>
     </option>
   </component>
@@ -168,10 +351,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="985" />
-    <option name="y" value="59" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="64" />
+    <option name="y" value="24" />
+    <option name="width" value="1856" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -179,7 +362,7 @@
       <showMembers />
       <showModules />
       <showLibraryContents />
-      <hideEmptyPackages />
+      <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames />
       <autoscrollToSource />
       <autoscrollFromSource />
@@ -189,6 +372,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -225,14 +410,21 @@
             <path>
               <item name="CustomEnchants" type="b2602c69:ProjectViewProjectNode" />
               <item name="CustomEnchants" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CustomEnchants" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomEnchants" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomEnchants" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -244,7 +436,7 @@
     <property name="project.structure.proportion" value="0.15917969" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last.edited.regexp" value="Pie I like to eat" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SupplyCrates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -395,32 +587,39 @@
       <workItem from="1506992797359" duration="2281000" />
       <workItem from="1507072360683" duration="602000" />
       <workItem from="1507059010936" duration="163000" />
+      <workItem from="1508634569677" duration="447000" />
+      <workItem from="1508635116316" duration="22000" />
+      <workItem from="1508704784237" duration="956000" />
+      <workItem from="1509033563503" duration="1126000" />
+      <workItem from="1509371245594" duration="1143000" />
+      <workItem from="1509378396602" duration="1315000" />
+      <workItem from="1509402550816" duration="14000" />
+      <workItem from="1509403457992" duration="1681000" />
+      <workItem from="1509409279542" duration="334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345910000" />
+    <option name="totallyTimeSpent" value="352948000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Azure Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.067708336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31707317" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Azure Activity Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14630578" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17677419" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1671875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2099488" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15612903" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -429,11 +628,14 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Azure Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Azure Activity Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -473,6 +675,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -485,21 +713,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/adsad.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/Common.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Gorix.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Gorix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/MessagesFunctions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/MessagesFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Rarities.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Rarities.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
@@ -507,7 +735,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Crates.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/CratesUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/CratesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
@@ -515,63 +743,56 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/InventoryCloseListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/ListenerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/JoinListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/JoinListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/CommonCrate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/CommonCrate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/Prize.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/Prize.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/CrateOpen.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/CrateOpen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/HelmMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/HelmMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="101" column="77" lean-forward="false" selection-start-line="101" selection-start-column="77" selection-end-line="101" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/LeggingsMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/LeggingsMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="107" column="81" lean-forward="false" selection-start-line="107" selection-start-column="81" selection-end-line="107" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/PickMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/PickMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
           <caret line="82" column="77" lean-forward="false" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/BowMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/BowMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="88" column="26" lean-forward="false" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="26" />
@@ -579,224 +800,233 @@
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/de/dustplanet/SilkSpawners/4.0.1-SNAPSHOT/SilkSpawners-4.0.1-20170717.205911-433.jar!/de/dustplanet/util/SilkUtil.class" />
-    <entry file="file://$PROJECT_DIR$/../apComp/src/main/java/org/koalakode/reeve/apComp/HelloWorld2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="44" column="4" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/UncommonSC.java">
+    <entry file="file://$PROJECT_DIR$/../apComp/src/main/java/org/koalakode/reeve/apComp/HelloWorld2.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/UncommonSC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="70" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Schedules/RewardPlayer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/RewardPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="34" column="119" lean-forward="false" selection-start-line="34" selection-start-column="119" selection-end-line="34" selection-end-column="119" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/RareSC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/RareSC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Souls.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Souls.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/MysticalSC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/MysticalSC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/BootsMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/BootsMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="69" column="60" lean-forward="true" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/AxeMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/AxeMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="61" column="74" lean-forward="false" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/MainMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/SwordMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/SwordMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
           <caret line="133" column="67" lean-forward="false" selection-start-line="133" selection-start-column="67" selection-end-line="133" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/MenuClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="37" column="132" lean-forward="false" selection-start-line="37" selection-start-column="132" selection-end-line="37" selection-end-column="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/ConfigCheck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/bukkit/bukkit/1.8.8-R0.1-SNAPSHOT/bukkit-1.8.8-R0.1-SNAPSHOT.jar!/org/bukkit/inventory/ItemStack.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Messages.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Messages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/BowListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BowListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
           <caret line="174" column="48" lean-forward="false" selection-start-line="174" selection-start-column="48" selection-end-line="174" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/BaseCommand.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/PlayerCommands/CeMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/PlayerCommands/CeMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/AdminCommands/CeGive.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/AdminCommands/CeGive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="51" column="41" lean-forward="false" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/BlockListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
-          <caret line="169" column="48" lean-forward="false" selection-start-line="169" selection-start-column="48" selection-end-line="169" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/MainUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/EnchantDrop.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/EnchantDrop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="60" column="69" lean-forward="true" selection-start-line="60" selection-start-column="69" selection-end-line="60" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/CustomEnchants.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/CustomEnchants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="64" column="79" lean-forward="false" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/CommonSC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/CommonSC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Commands/CommandHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/CommandHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/ChestMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/ChestMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/HitListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/HitListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="509" column="21" lean-forward="true" selection-start-line="509" selection-start-column="21" selection-end-line="509" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Listeners/GorixClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="401" column="75" lean-forward="false" selection-start-line="401" selection-start-column="75" selection-end-line="401" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/HydroSC.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/HydroSC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Util/Glow.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/Glow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="0">
           <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/GorixClick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BlockListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="33" column="52" lean-forward="false" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ListenerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/MenuClick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="77" lean-forward="false" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/MainUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/ConfigCheck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="35" column="35" lean-forward="false" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2754">
+          <caret line="162" column="33" lean-forward="true" selection-start-line="162" selection-start-column="33" selection-end-line="162" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

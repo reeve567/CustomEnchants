@@ -1,7 +1,7 @@
-main: org.koalakode.reeve.CustomEnchants.Main
+main: pw.xwy.CustomEnchants.Main
 name: CustomEnchants
 author: Xwy
-version: 0.4.6.2
-depend: [WorldGuard,Factions]
+version: 0.4.6.3
+depend: [WorldGuard,Factions,Vault]
 commands:
   ce:
