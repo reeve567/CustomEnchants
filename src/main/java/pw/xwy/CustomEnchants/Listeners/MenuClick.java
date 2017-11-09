@@ -13,16 +13,17 @@ import pw.xwy.CustomEnchants.Menu.*;
 public class MenuClick implements Listener {
 	
 	@EventHandler
-	public void MenuCliked(InventoryClickEvent e) {
+	public void MenuClicked(InventoryClickEvent e) {
 		
 		ItemStack clicked = e.getCurrentItem();
 		
 		if (e.getInventory().getName().equalsIgnoreCase(ChatColor.RED + "" + ChatColor.BOLD + "Custom Enchants") ||
-				e.getInventory().getName().equals(Rarities.HYDRO.getLabel()) ||
-				e.getInventory().getName().equals(Rarities.MYSTICAL.getLabel()) ||
-				e.getInventory().getName().equals(Rarities.RARE.getLabel()) ||
-				e.getInventory().getName().equals(Rarities.UNCOMMON.getLabel()) ||
-				e.getInventory().getName().equals(Rarities.COMMON.getLabel())) {
+				e.getInventory().getName().equalsIgnoreCase(Rarities.HYDRO.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarities.MYSTICAL.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarities.RARE.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarities.UNCOMMON.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarities.COMMON.getLabel())) {
+			e.setCancelled(true);
 			if (clicked != null) {
 				if (clicked.hasItemMeta()) {
 					if (clicked.getItemMeta().hasDisplayName()) {
@@ -47,7 +48,6 @@ public class MenuClick implements Listener {
 					}
 				}
 			}
-			e.setCancelled(true);
 		}
 	}
 }
