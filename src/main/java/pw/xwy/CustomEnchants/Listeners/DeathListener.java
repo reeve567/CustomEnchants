@@ -12,15 +12,18 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 public class DeathListener implements Listener {
-
+	
 	static HashMap<Player, List<ItemStack>> keptItems = new HashMap<Player, List<ItemStack>>();
-
+	
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
-
+		
 		Player p = e.getEntity();
 		Player k = p.getKiller();
 		if (k != null) {
@@ -56,14 +59,14 @@ public class DeathListener implements Listener {
 		}
 		keptItems.put(p, keeps);
 	}
-
+	
 	@EventHandler
 	public void entityKill(EntityDeathEvent e) {
-
+		
 		if (e.getEntity() != null && !(e.getEntity() instanceof Player) && e.getEntity().getKiller() != null) {
 			Player p = e.getEntity().getKiller();
 			ItemStack i = p.getItemInHand();
-
+			
 			if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore()) {
 				if (i.getItemMeta().getLore().contains(CustomEnchants.MOBSLAYERI.getName())) {
 					e.setDroppedExp(e.getDroppedExp() * 2);
@@ -80,9 +83,9 @@ public class DeathListener implements Listener {
 			}
 		}
 	}
-
+	
 	private void changeDrops(EntityDeathEvent e) {
-
+		
 		for (ItemStack it : e.getDrops()) {
 			if (it.getType().equals(Material.MUTTON)) {
 				it.setType(Material.COOKED_MUTTON);

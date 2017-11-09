@@ -13,11 +13,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import pw.xwy.CustomEnchants.Commands.CommandHandler;
 import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 import pw.xwy.CustomEnchants.Enums.Messages;
+import pw.xwy.CustomEnchants.Listeners.ListenerHandler;
 import pw.xwy.CustomEnchants.Menu.SwordMenu;
 import pw.xwy.CustomEnchants.Schedules.*;
-import pw.xwy.CustomEnchants.Util.Glow;
-import pw.xwy.CustomEnchants.Listeners.ListenerHandler;
 import pw.xwy.CustomEnchants.Util.ConfigCheck;
+import pw.xwy.CustomEnchants.Util.Glow;
 import pw.xwy.CustomEnchants.Util.MessagesFunctions;
 
 import java.lang.reflect.Field;
@@ -25,10 +25,13 @@ import java.util.logging.Logger;
 
 public class Main extends JavaPlugin {
 	
-	private CommandHandler commandHandler;
-	
 	private static final Logger log = Logger.getLogger("Minecraft");
 	private static Economy econ = null;
+	private CommandHandler commandHandler;
+	
+	public static Economy getEcononomy() {
+		return econ;
+	}
 	
 	@Override
 	public void onEnable() {
@@ -39,20 +42,20 @@ public class Main extends JavaPlugin {
 			return;
 		}
 		
-		MessagesFunctions msg = new MessagesFunctions(this);
-		SwordMenu swordMenu = new SwordMenu();
+		new MessagesFunctions(this);
+		new SwordMenu();
 		ListenerHandler listnerHandler = new ListenerHandler(this);
 		commandHandler = new CommandHandler();
 		commandHandler.Init();
 		listnerHandler.Init();
 		registerGlow();
-		WaterBreathing waterBreathing = new WaterBreathing(this);
-		NightVision nightVision = new NightVision(this);
-		HeartCheck heartCheck = new HeartCheck(this);
-		ValorCheck valorCheck = new ValorCheck(this);
-		FlashCheck flashCheck = new FlashCheck(this);
-		JumpBoost jumpBoost = new JumpBoost(this);
-		Speed speed = new Speed(this);
+		new WaterBreathing(this);
+		new NightVision(this);
+		new HeartCheck(this);
+		new ValorCheck(this);
+		new FlashCheck(this);
+		new JumpBoost(this);
+		new Speed(this);
 		ConfigCheck configCheck = new ConfigCheck(this);
 		if (configCheck.Init()) {
 			System.out.println("setup completed");
@@ -190,10 +193,6 @@ public class Main extends JavaPlugin {
 		econ = rsp.getProvider();
 		System.out.println(3);
 		return econ != null;
-	}
-	
-	public static Economy getEcononomy() {
-		return econ;
 	}
 	
 	@Override

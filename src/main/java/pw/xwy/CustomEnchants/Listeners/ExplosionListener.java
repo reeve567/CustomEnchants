@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockExplodeEvent;
 
 public class ExplosionListener implements Listener {
-
+	
 	@EventHandler
 	public void onExplode(BlockExplodeEvent e) {
 		if (HitListener.playerMadeExplosion) {
@@ -15,5 +15,5 @@ public class ExplosionListener implements Listener {
 			HitListener.playerMadeExplosion = false;
 		}
 	}
-
+	
 }

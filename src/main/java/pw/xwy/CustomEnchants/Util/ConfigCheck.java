@@ -2,25 +2,18 @@ package pw.xwy.CustomEnchants.Util;
 // made by reeve
 // on 11:26 PM
 
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
-
 public class ConfigCheck {
-
+	
 	JavaPlugin main;
 	String license;
-
+	
 	public ConfigCheck(JavaPlugin main) {
 		this.main = main;
 		license = main.getConfig().getString("key");
 	}
-
+	
 	public boolean Init() {
 /*		if (license != null) {
 
@@ -48,5 +41,5 @@ public class ConfigCheck {
 		return false;*/
 		return true;
 	}
-
+	
 }

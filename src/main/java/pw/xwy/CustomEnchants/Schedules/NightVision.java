@@ -12,24 +12,24 @@ import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 
 public class NightVision implements Runnable {
 	private JavaPlugin main;
-
+	
 	public NightVision(JavaPlugin main) {
 		this.main = main;
 		run();
 	}
-
+	
 	boolean ItemCheck(ItemStack i) {
-
+		
 		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CustomEnchants.GLOWING.getName())) {
 			return true;
 		}
 		return false;
 	}
-
-
+	
+	
 	@Override
 	public void run() {
-
+		
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
 			@Override
 			public void run() {
@@ -41,7 +41,7 @@ public class NightVision implements Runnable {
 					}
 				}
 			}
-		},20L,0);
+		}, 20L, 0);
 	}
-
+	
 }

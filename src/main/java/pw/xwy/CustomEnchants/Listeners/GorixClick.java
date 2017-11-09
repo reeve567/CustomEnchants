@@ -12,6 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 import pw.xwy.CustomEnchants.Enums.Messages;
 import pw.xwy.CustomEnchants.Enums.Rarities;
@@ -27,9 +28,13 @@ public class GorixClick implements Listener {
 	
 	static int r;
 	static int j;
+	private JavaPlugin main;
 	private Economy econ = Main.getEcononomy();
+	GorixClick(JavaPlugin main) {
+		this.main = main;
+	}
 	
-	static Inventory openCommon(Player player) {
+	static Inventory openCommon() {
 		Inventory inv = CommonSC.getBaseInventory();
 		r = EnchantDrop.getRandomNumberFrom(0, CommonSC.getPrizes().size() - 1);
 		j = 0;
@@ -51,6 +56,94 @@ public class GorixClick implements Listener {
 		return inv;
 	}
 	
+	static Inventory openUncommon() {
+		Inventory inv = UncommonSC.getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, UncommonSC.getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < UncommonSC.getPrizes().size() + 1) {
+				CratesUtil.putPrize(inv, i, r + j, UncommonSC.getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtil.putPrize(inv, i, 1, UncommonSC.getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
+	static Inventory openRare() {
+		Inventory inv = RareSC.getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, RareSC.getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < RareSC.getPrizes().size() + 1) {
+				CratesUtil.putPrize(inv, i, r + j, RareSC.getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtil.putPrize(inv, i, 1, RareSC.getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
+	static Inventory openMystical() {
+		Inventory inv = MysticalSC.getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, MysticalSC.getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < MysticalSC.getPrizes().size() + 1) {
+				CratesUtil.putPrize(inv, i, r + j, MysticalSC.getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtil.putPrize(inv, i, 1, MysticalSC.getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
+	static Inventory openHydro() {
+		Inventory inv = HydroSC.getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, HydroSC.getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < HydroSC.getPrizes().size() + 1) {
+				CratesUtil.putPrize(inv, i, r + j, HydroSC.getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtil.putPrize(inv, i, 1, HydroSC.getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
 	@EventHandler
 	public void onClick(NPCRightClickEvent e) {
 		
@@ -58,6 +151,8 @@ public class GorixClick implements Listener {
 			if (e.getClicker().getItemInHand().hasItemMeta() && e.getClicker().getItemInHand().getItemMeta().hasDisplayName()) {
 				for (Souls s : Souls.values()) {
 					if (e.getClicker().getItemInHand().getItemMeta().getDisplayName().equals(s.getItem().getItemMeta().getDisplayName())) {
+						
+						CrateOpen crateOpen = new CrateOpen(main);
 						
 						if (s.getName().equals(Souls.COMMON.getName())) {
 							
@@ -68,15 +163,13 @@ public class GorixClick implements Listener {
 							
 							int r = EnchantDrop.getRandomNumberFrom(0, CommonSC.getPrizes().size() - 1);
 							
-							Prize prize = CommonSC.getPrizes().get(r);
-							
 							if (e.getClicker().getItemInHand().getAmount() > 1) {
 								e.getClicker().getItemInHand().setAmount(e.getClicker().getItemInHand().getAmount() - 1);
 							} else {
 								e.getClicker().setItemInHand(null);
 							}
 							
-							
+							/*
 							if (prize.getDisplayItem().getType().equals(Material.DOUBLE_PLANT)) {
 								if (prize.getDisplayItem()
 										.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "2500")) {
@@ -119,10 +212,10 @@ public class GorixClick implements Listener {
 								Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "kit shark " + e.getClicker().getName());
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 							}
-							
-							//	Inventory inv = openCommon(e.getClicker());
-							//	e.getClicker().openInventory(inv);
-							//	crateOpen.openCrate(e.getClicker(),inv, Rarities.COMMON,r+j);
+							*/
+							Inventory inv = openCommon();
+							e.getClicker().openInventory(inv);
+							crateOpen.openCrate(e.getClicker(), inv, Rarities.COMMON, r + j);
 							
 						} else if (s.getName().equals(Souls.UNCOMMON.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
@@ -132,15 +225,13 @@ public class GorixClick implements Listener {
 							
 							int r = EnchantDrop.getRandomNumberFrom(0, UncommonSC.getPrizes().size() - 1);
 							
-							Prize prize = UncommonSC.getPrizes().get(r);
-							
 							if (e.getClicker().getItemInHand().getAmount() > 1) {
 								e.getClicker().getItemInHand().setAmount(e.getClicker().getItemInHand().getAmount() - 1);
 							} else {
 								e.getClicker().setItemInHand(null);
 							}
 							
-							
+							/*
 							if (prize.getDisplayItem().getType().equals(Material.MOB_SPAWNER)) {
 								if (prize.getDisplayItem().getItemMeta().getDisplayName().equals(ChatColor.GOLD + "Ocelot Spawner")) {
 									Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "ss give " + e.getClicker().getName() + " ocelot 1");
@@ -191,6 +282,11 @@ public class GorixClick implements Listener {
 								e.getClicker().getInventory().addItem(new ItemStack(Material.COAL_ORE, 32));
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 							}
+							*/
+							Inventory inv = openUncommon();
+							e.getClicker().openInventory(inv);
+							crateOpen.openCrate(e.getClicker(), inv, Rarities.UNCOMMON, r + j);
+							
 						} else if (s.getName().equals(Souls.RARE.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "Your inventory is full!");
@@ -199,15 +295,13 @@ public class GorixClick implements Listener {
 							
 							int r = EnchantDrop.getRandomNumberFrom(0, RareSC.getPrizes().size() - 1);
 							
-							Prize prize = RareSC.getPrizes().get(r);
-							
 							if (e.getClicker().getItemInHand().getAmount() > 1) {
 								e.getClicker().getItemInHand().setAmount(e.getClicker().getItemInHand().getAmount() - 1);
 							} else {
 								e.getClicker().setItemInHand(null);
 							}
 							
-							
+							/*
 							if (prize.getDisplayItem().getType().equals(Material.DOUBLE_PLANT)) {
 								if (prize.getDisplayItem()
 										.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "15000")) {
@@ -253,6 +347,11 @@ public class GorixClick implements Listener {
 								e.getClicker().getInventory().addItem(new ItemStack(Material.COAL, 32));
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 							}
+							*/
+							Inventory inv = openRare();
+							e.getClicker().openInventory(inv);
+							crateOpen.openCrate(e.getClicker(), inv, Rarities.RARE, r + j);
+							
 						} else if (s.getName().equals(Souls.MYSTICAL.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "Your inventory is full!");
@@ -269,7 +368,7 @@ public class GorixClick implements Listener {
 								e.getClicker().setItemInHand(null);
 							}
 							
-							
+							/*
 							if (prize.getDisplayItem().getType().equals(Material.DOUBLE_PLANT)) {
 								if (prize.getDisplayItem()
 										.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "17500")) {
@@ -321,6 +420,12 @@ public class GorixClick implements Listener {
 								e.getClicker().getInventory().addItem(MainUtil.bookGive(u.getName(), false));
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 							}
+							*/
+							Inventory inv = openMystical();
+							e.getClicker().openInventory(inv);
+							crateOpen.openCrate(e.getClicker(), inv, Rarities.MYSTICAL, r + j);
+							
+							
 						} else if (s.getName().equals(Souls.HYDRO.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "Your inventory is full!");
@@ -329,15 +434,13 @@ public class GorixClick implements Listener {
 							
 							int r = EnchantDrop.getRandomNumberFrom(0, HydroSC.getPrizes().size() - 1);
 							
-							Prize prize = HydroSC.getPrizes().get(r);
-							
 							if (e.getClicker().getItemInHand().getAmount() > 1) {
 								e.getClicker().getItemInHand().setAmount(e.getClicker().getItemInHand().getAmount() - 1);
 							} else {
 								e.getClicker().setItemInHand(null);
 							}
 							
-							
+							/*
 							if (prize.getDisplayItem().getType().equals(Material.DOUBLE_PLANT)) {
 								if (prize.getDisplayItem()
 										.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "50000")) {
@@ -367,6 +470,11 @@ public class GorixClick implements Listener {
 								Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "ss give " + e.getClicker().getName() + " blaze 1");
 								e.getClicker().sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + prize.getDisplayItem().getItemMeta().getDisplayName());
 							}
+							*/
+							Inventory inv = openHydro();
+							e.getClicker().openInventory(inv);
+							crateOpen.openCrate(e.getClicker(), inv, Rarities.HYDRO, r + j);
+							
 						}
 						return;
 						

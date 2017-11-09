@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
+import pw.xwy.CustomEnchants.Enums.Rarities;
 import pw.xwy.CustomEnchants.Menu.*;
 
 public class MenuClick implements Listener {
@@ -16,7 +17,12 @@ public class MenuClick implements Listener {
 		
 		ItemStack clicked = e.getCurrentItem();
 		
-		if (e.getInventory().getName().equalsIgnoreCase(ChatColor.RED + "" + ChatColor.BOLD + "Custom Enchants")) {
+		if (e.getInventory().getName().equalsIgnoreCase(ChatColor.RED + "" + ChatColor.BOLD + "Custom Enchants") ||
+				e.getInventory().getName().equals(Rarities.HYDRO.getLabel()) ||
+				e.getInventory().getName().equals(Rarities.MYSTICAL.getLabel()) ||
+				e.getInventory().getName().equals(Rarities.RARE.getLabel()) ||
+				e.getInventory().getName().equals(Rarities.UNCOMMON.getLabel()) ||
+				e.getInventory().getName().equals(Rarities.COMMON.getLabel())) {
 			if (clicked != null) {
 				if (clicked.hasItemMeta()) {
 					if (clicked.getItemMeta().hasDisplayName()) {

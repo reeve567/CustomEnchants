@@ -11,22 +11,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SprintListener implements Listener {
-
+	
 	static List<Player> sprinting = new ArrayList<Player>();
-
-
+	
+	
 	@EventHandler
 	public void onToggle(PlayerToggleSprintEvent e) {
 		if (e.isSprinting()) {
 			if (!sprinting.contains(e.getPlayer())) {
 				sprinting.add(e.getPlayer());
 			}
-		}
-		else {
+		} else {
 			if (sprinting.contains(e.getPlayer())) {
 				sprinting.remove(e.getPlayer());
 			}
 		}
 	}
-
+	
 }

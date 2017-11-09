@@ -17,38 +17,38 @@ import java.util.List;
  * Usage: Resolves the other part of the "bed" item in minecraft as well as other multiblock structures such as doors
  */
 public class SpecialBlockResolver {
-
+	
 	public static Location getBed(Location l) {
 		return checkForMaterial(l, Material.BED_BLOCK);
 	}
-
+	
 	public static Location getDoor(Location l) {
 		Location returnV = checkForMaterial(l, Material.IRON_DOOR_BLOCK);
-		if(returnV == null)
+		if (returnV == null)
 			returnV = checkForMaterial(l, Material.WOODEN_DOOR);
 		return returnV;
 	}
-
+	
 	public static Location getPiston(Location l) {
 		Location returnV = checkForMaterial(l, Material.PISTON_BASE);
-		if(returnV == null) {
+		if (returnV == null) {
 			returnV = checkForMaterial(l, Material.PISTON_EXTENSION);
-			if(returnV == null) {
+			if (returnV == null) {
 				returnV = checkForMaterial(l, Material.PISTON_MOVING_PIECE);
-				if(returnV == null) {
+				if (returnV == null) {
 					returnV = checkForMaterial(l, Material.PISTON_STICKY_BASE);
 					return returnV;
-				}else {
+				} else {
 					return returnV;
 				}
-			}else {
+			} else {
 				return returnV;
 			}
-		}else {
+		} else {
 			return returnV;
 		}
 	}
-
+	
 	private static Location checkForMaterial(Location l, Material mat) {
 		Location returnV = null;
 		List<Location> locs = new ArrayList<Location>();
@@ -57,7 +57,7 @@ public class SpecialBlockResolver {
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY(), l.getZ() + 1));
 		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY(), l.getZ()));
 		locs.add(new Location(l.getWorld(), l.getX(), l.getY(), l.getZ() - 1));
-		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY(), l.getZ() -1));
+		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY(), l.getZ() - 1));
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY(), l.getZ() - 1));
 		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY(), l.getZ() + 1));
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY() + 1, l.getZ()));
@@ -65,7 +65,7 @@ public class SpecialBlockResolver {
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY() + 1, l.getZ() + 1));
 		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() + 1, l.getZ()));
 		locs.add(new Location(l.getWorld(), l.getX(), l.getY() + 1, l.getZ() - 1));
-		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() + 1, l.getZ() -1));
+		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() + 1, l.getZ() - 1));
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY() + 1, l.getZ() - 1));
 		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() + 1, l.getZ() + 1));
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY() - 1, l.getZ()));
@@ -73,12 +73,12 @@ public class SpecialBlockResolver {
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY() - 1, l.getZ() + 1));
 		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() - 1, l.getZ()));
 		locs.add(new Location(l.getWorld(), l.getX(), l.getY() - 1, l.getZ() - 1));
-		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() - 1, l.getZ() -1));
+		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() - 1, l.getZ() - 1));
 		locs.add(new Location(l.getWorld(), l.getX() + 1, l.getY() - 1, l.getZ() - 1));
 		locs.add(new Location(l.getWorld(), l.getX() - 1, l.getY() - 1, l.getZ() + 1));
-		for(Location ll : locs) {
+		for (Location ll : locs) {
 			Block b = ll.getBlock();
-			if(b.getType() == mat) {
+			if (b.getType() == mat) {
 				returnV = ll;
 				break;
 			}

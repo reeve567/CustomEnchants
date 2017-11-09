@@ -11,25 +11,25 @@ import org.bukkit.potion.PotionEffectType;
 import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 
 public class WaterBreathing implements Runnable {
-
+	
 	private JavaPlugin main;
-
+	
 	public WaterBreathing(JavaPlugin main) {
 		this.main = main;
 		run();
 	}
-
+	
 	boolean ItemCheck(ItemStack i) {
 		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CustomEnchants.SCUBADIVER.getName())) {
 			return true;
 		}
 		return false;
 	}
-
-
+	
+	
 	@Override
 	public void run() {
-
+		
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
 			@Override
 			public void run() {
@@ -41,6 +41,6 @@ public class WaterBreathing implements Runnable {
 					}
 				}
 			}
-		},20L,0);
+		}, 20L, 0);
 	}
 }

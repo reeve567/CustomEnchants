@@ -11,17 +11,17 @@ import org.bukkit.potion.PotionEffectType;
 import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 
 public class Speed implements Runnable {
-
+	
 	private JavaPlugin main;
-
+	
 	public Speed(JavaPlugin main) {
-
+		
 		this.main = main;
 		run();
 	}
-
+	
 	int ItemCheck(ItemStack i) {
-
+		
 		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CustomEnchants.WINDSSPEEDI.getName())) {
 			return 1;
 		} else if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CustomEnchants.WINDSSPEEDII.getName())) {
@@ -29,15 +29,15 @@ public class Speed implements Runnable {
 		}
 		return 0;
 	}
-
-
+	
+	
 	@Override
 	public void run() {
-
+		
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
 			@Override
 			public void run() {
-
+				
 				if (Bukkit.getOnlinePlayers().size() > 0) {
 					for (Player p : Bukkit.getOnlinePlayers()) {
 						if (ItemCheck(p.getInventory().getBoots()) == 1) {
@@ -50,5 +50,5 @@ public class Speed implements Runnable {
 			}
 		}, 20L, 0);
 	}
-
+	
 }

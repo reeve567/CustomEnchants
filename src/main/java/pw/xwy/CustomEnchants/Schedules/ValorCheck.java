@@ -11,35 +11,35 @@ import org.bukkit.potion.PotionEffectType;
 import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 
 public class ValorCheck implements Runnable {
-
+	
 	private JavaPlugin main;
-
+	
 	public ValorCheck(JavaPlugin main) {
-
+		
 		this.main = main;
 	}
-
+	
 	boolean ItemCheck(ItemStack i) {
-
+		
 		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CustomEnchants.VALOR.getName())) {
 			return true;
 		}
 		return false;
 	}
-
+	
 	@Override
 	public void run() {
-
+		
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
 			@Override
 			public void run() {
-
+				
 				if (Bukkit.getOnlinePlayers().size() > 0) {
 					for (Player p : Bukkit.getOnlinePlayers()) {
 						if (ItemCheck(p.getInventory().getHelmet()) &&
-								    ItemCheck(p.getInventory().getChestplate()) &&
-								    ItemCheck(p.getInventory().getLeggings()) &&
-								    ItemCheck(p.getInventory().getBoots())) {
+								ItemCheck(p.getInventory().getChestplate()) &&
+								ItemCheck(p.getInventory().getLeggings()) &&
+								ItemCheck(p.getInventory().getBoots())) {
 							p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 40, 0));
 						}
 					}

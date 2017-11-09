@@ -8,20 +8,19 @@ import org.bukkit.event.player.PlayerItemDamageEvent;
 import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 
 public class ArmorListener implements Listener {
-
+	
 	@EventHandler
 	public void onDamage(PlayerItemDamageEvent e) {
-
+		
 		if (e.getItem().hasItemMeta() && e.getItem().getItemMeta().hasLore()) {
-			for (String s:e.getItem().getItemMeta().getLore()) {
+			for (String s : e.getItem().getItemMeta().getLore()) {
 				if (s.equalsIgnoreCase(CustomEnchants.UNSTABLEI.getName())) {
-					int n = EnchantDrop.getRandomNumberFrom(1,100);
+					int n = EnchantDrop.getRandomNumberFrom(1, 100);
 					if (n <= 20) {
 						e.setCancelled(true);
 					}
-				}
-				else if (s.equalsIgnoreCase(CustomEnchants.UNSTABLEII.getName())) {
-					int n = EnchantDrop.getRandomNumberFrom(1,100);
+				} else if (s.equalsIgnoreCase(CustomEnchants.UNSTABLEII.getName())) {
+					int n = EnchantDrop.getRandomNumberFrom(1, 100);
 					if (n <= 40) {
 						e.setCancelled(true);
 					}
@@ -29,5 +28,5 @@ public class ArmorListener implements Listener {
 			}
 		}
 	}
-
+	
 }

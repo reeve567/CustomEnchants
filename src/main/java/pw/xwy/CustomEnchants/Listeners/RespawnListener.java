@@ -8,18 +8,18 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class RespawnListener implements Listener {
-
-
+	
+	
 	@EventHandler
 	public void respawn(PlayerRespawnEvent e) {
 		if (DeathListener.keptItems.get(e.getPlayer()) != null) {
-
-			for (ItemStack i:DeathListener.keptItems.get(e.getPlayer())) {
+			
+			for (ItemStack i : DeathListener.keptItems.get(e.getPlayer())) {
 				e.getPlayer().getInventory().addItem(i);
 			}
 			DeathListener.keptItems.remove(e.getPlayer());
 		}
 	}
-
-
+	
+	
 }

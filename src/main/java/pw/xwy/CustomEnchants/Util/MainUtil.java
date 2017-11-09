@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainUtil {
-
+	
 	public static ItemStack bookGive(String n, boolean perfect) {
-
+		
 		List<String> desc = new ArrayList<String>();
 		if (perfect) {
 			desc.add("");
@@ -28,7 +28,7 @@ public class MainUtil {
 			desc.add(ChatColor.RED + "Destroy: " + EnchantDrop.getRandomNumberFrom(0, 100) + "%");
 			desc.add("");
 		}
-
+		
 		for (CustomEnchants e : CustomEnchants.values()) {
 			if (cmdCheck(e.getLabel(), n) || cmdCheck(e.getName(), n)) {
 				if (n.equalsIgnoreCase("Xwy")) {
@@ -50,33 +50,33 @@ public class MainUtil {
 		}
 		return new ItemStack(Material.BOOK, 1);
 	}
-
+	
 	public static boolean cmdCheck(String c, String s) {
-
+		
 		return s.equalsIgnoreCase(c);
 	}
-
+	
 	public static ItemStack getItem(String name, List<String> desc) {
-
+		
 		ItemStack item = new ItemStack(Material.BOOK, 1);
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setDisplayName(name);
 		itemMeta.setLore(desc);
 		item.setItemMeta(itemMeta);
-
+		
 		return item;
 	}
-
+	
 	public static ItemStack getItem(String name, Material mat, List<String> desc, boolean glow) {
-
+		
 		ItemStack item = new ItemStack(mat, 1);
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setDisplayName(name);
 		itemMeta.addEnchant(new Glow(999), 1, true);
 		itemMeta.setLore(desc);
 		item.setItemMeta(itemMeta);
-
+		
 		return item;
 	}
-
+	
 }

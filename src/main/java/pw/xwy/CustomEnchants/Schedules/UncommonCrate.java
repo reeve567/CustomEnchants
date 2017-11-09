@@ -1,18 +1,16 @@
 package pw.xwy.CustomEnchants.Schedules;
-// made by reeve
-// on 10:18 PM
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
-import pw.xwy.CustomEnchants.SoulCrates.CommonSC;
 import pw.xwy.CustomEnchants.SoulCrates.Prize;
+import pw.xwy.CustomEnchants.SoulCrates.UncommonSC;
 import pw.xwy.CustomEnchants.Util.CratesUtil;
 
 import java.util.ArrayList;
 
-public class CommonCrate extends BukkitRunnable {
+public class UncommonCrate extends BukkitRunnable {
 	
 	private Player p;
 	private ArrayList<Prize> prizes;
@@ -22,7 +20,7 @@ public class CommonCrate extends BukkitRunnable {
 	private int rot;
 	private boolean log;
 	
-	public CommonCrate(ArrayList<Prize> prizes, Inventory inv, Player p, int runs, int rot, boolean log) {
+	public UncommonCrate(ArrayList<Prize> prizes, Inventory inv, Player p, int runs, int rot, boolean log) {
 		this.p = p;
 		this.prizes = prizes;
 		this.inv = inv;
@@ -39,18 +37,18 @@ public class CommonCrate extends BukkitRunnable {
 		
 		if (!p.isOnline()) {
 			if (log) {
-				System.out.println(p.getName() + " has left the game during a common roll.");
+				System.out.println(p.getName() + " has left the game during a uncommon roll.");
 			}
 			cancel();
 		}
 		if (moves >= rot) {
 			if (rot == 3) {
-				CommonSC.remRunningInventory(p);
+				UncommonSC.remRunningInventory(p);
 			}
 			cancel();
 		}
 		
-		ArrayList<ItemStack> items = new ArrayList<ItemStack>();
+		ArrayList<ItemStack> items = new ArrayList<>();
 		
 		for (int i = 9; i < 18; i++) {
 			items.add(inv.getItem(i));
@@ -69,5 +67,6 @@ public class CommonCrate extends BukkitRunnable {
 		p.openInventory(inv);
 		runs++;
 	}
+	
 	
 }
