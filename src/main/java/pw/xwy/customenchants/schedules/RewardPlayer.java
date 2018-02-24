@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
-import pw.xwy.customenchants.enums.CEnchant;
+import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
@@ -213,21 +213,21 @@ public class RewardPlayer extends BukkitRunnable {
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "kit kraken " + p.getName());
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.NETHER_STAR)) {
-					ArrayList<CEnchant> common = new ArrayList<>();
-					for (CEnchant ce : CEnchant.values()) {
+					ArrayList<Enchants> common = new ArrayList<>();
+					for (Enchants ce : Enchants.values()) {
 						if (ce.getRarity().equals(Rarities.COMMON)) {
 							common.add(ce);
 						}
 					}
-					CEnchant c = common.get(EnchantDrop.getRandomNumberFrom(0, common.size() - 1));
+					Enchants c = common.get(EnchantDrop.getRandomNumberFrom(0, common.size() - 1));
 					p.getInventory().addItem(MainUtil.bookGive(c.getName(), false));
-					ArrayList<CEnchant> uncommon = new ArrayList<>();
-					for (CEnchant ce : CEnchant.values()) {
+					ArrayList<Enchants> uncommon = new ArrayList<>();
+					for (Enchants ce : Enchants.values()) {
 						if (ce.getRarity().equals(Rarities.UNCOMMON)) {
 							uncommon.add(ce);
 						}
 					}
-					CEnchant u = uncommon.get(EnchantDrop.getRandomNumberFrom(0, uncommon.size() - 1));
+					Enchants u = uncommon.get(EnchantDrop.getRandomNumberFrom(0, uncommon.size() - 1));
 					p.getInventory().addItem(MainUtil.bookGive(u.getName(), false));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				}

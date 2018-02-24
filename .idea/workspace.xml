@@ -2,71 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2a76ea9-f55e-41cb-ae5e-22d629ae7ec5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/commands/admin/CeGive.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/CommandHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/Commands/CommandHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Commands/PlayerCommands/CeMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/commands/player/CeMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/CEnchant.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/CEnchant.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/ChangeLog.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/ChangeLog.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Gorix.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Gorix.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/ItemSets.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/ItemSets.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/MenuItems.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/MenuItems.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Messages.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Messages.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Rarities.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Rarities.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Enums/Souls.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Souls.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ArmorListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ArmorListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BlockListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/BowListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BowListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/DeathListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/DeathListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/EnchantDrop.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/EnchantDrop.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ExplosionListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ExplosionListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/FeedListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/FeedListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/GorixClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/GorixClick.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/HitListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/JoinListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/JoinListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/ListenerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ListenerHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/MenuClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/RespawnListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/RespawnListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Listeners/SprintListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/SprintListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/AxeMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/AxeMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/BootsMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/BootsMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/BowMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/BowMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/ChestMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/ChestMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/HelmMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/HelmMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/LeggingsMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/LeggingsMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/MainMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/MainMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/PickMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/PickMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/SwordMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/SwordMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Menu/Utils.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/Utils.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/CommonCrate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/CommonCrate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/FlashCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/FlashCheck.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/HeartCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HeartCheck.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/HydroCrate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HydroCrate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/JumpBoost.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/JumpBoost.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/MysticalCrate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/MysticalCrate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/NightVision.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/NightVision.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/RareCrate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/RareCrate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/RewardPlayer.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/RewardPlayer.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/Speed.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/Speed.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/UncommonCrate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/UncommonCrate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/ValorCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/ValorCheck.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Schedules/WaterBreathing.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/WaterBreathing.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/CommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/CommonSC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/CrateOpen.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/CrateOpen.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/HydroSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/HydroSC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/MysticalSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/MysticalSC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/Prize.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/Prize.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/RareSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/RareSC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/SoulCrates/UncommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/UncommonSC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/ConfigCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/ConfigCheck.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/CratesUtil.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/CratesUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/FortuneCalc.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/FortuneCalc.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/Glow.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/Glow.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/MainUtil.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MainUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/MessagesFunctions.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MessagesFunctions.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/CustomEnchants/Util/SpecialBlockResolver.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/SpecialBlockResolver.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/Commands/AdminCommands/CeGive.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/Main.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/commands/admin/CeGive.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/commands/admin/CeGive.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/CEnchant.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Enchants.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/MenuItems.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/MenuItems.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ArmorListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ArmorListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BowListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BowListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/DeathListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/DeathListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/EnchantDrop.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/EnchantDrop.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/FeedListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/FeedListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/FlashCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/FlashCheck.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HeartCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HeartCheck.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/JumpBoost.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/JumpBoost.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/NightVision.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/NightVision.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/RewardPlayer.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/RewardPlayer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/Speed.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/Speed.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/ValorCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/ValorCheck.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/WaterBreathing.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/WaterBreathing.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/CommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/CommonSC.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/HydroSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/HydroSC.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/MysticalSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/MysticalSC.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/RareSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/RareSC.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/UncommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/UncommonSC.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MainUtil.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MainUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -90,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CEnchant.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/CEnchant.java">
+      <file leaf-file-name="Enchants.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Enchants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="18" column="95" lean-forward="false" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="95" />
+            <state relative-caret-position="759">
+              <caret line="27" column="110" lean-forward="false" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -176,7 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/SoulCrates/MysticalSC.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Enums/Souls.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/BootsMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/koalakode/reeve/CustomEnchants/Menu/AxeMenu.java" />
@@ -227,6 +187,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/CEnchant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Enchants.java" />
       </list>
     </option>
   </component>
@@ -605,15 +566,16 @@
       <workItem from="1514844879422" duration="1333000" />
       <workItem from="1514876538390" duration="386000" />
       <workItem from="1517760364653" duration="635000" />
-      <workItem from="1519515093003" duration="399000" />
+      <workItem from="1519515093003" duration="525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="377383000" />
+    <option name="totallyTimeSpent" value="377509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="-5" width="2746" height="1834" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -627,7 +589,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20979533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20979533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2614295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296636" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1073,10 +1035,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/CEnchant.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/Enchants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="18" column="95" lean-forward="false" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="95" />
+        <state relative-caret-position="759">
+          <caret line="27" column="110" lean-forward="false" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
           <folding />
         </state>
       </provider>

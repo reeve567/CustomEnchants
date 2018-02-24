@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
-import pw.xwy.customenchants.enums.CEnchant;
+import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.enums.ItemSets;
 import pw.xwy.customenchants.utilities.FortuneCalc;
 
@@ -154,7 +154,7 @@ public class BlockListener implements Listener {
 			if (player.getItemInHand() != null && player.getItemInHand().hasItemMeta() && player.getItemInHand().getItemMeta().hasLore()) {
 				ItemStack i = player.getItemInHand();
 				
-				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(CEnchant.LUMBERJACK.getName()) && e.getBlock().getType().equals(Material.LOG)) {
+				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(Enchants.LUMBERJACK.getName()) && e.getBlock().getType().equals(Material.LOG)) {
 					List<ItemStack> drops = new ArrayList<ItemStack>();
 					
 					int y = 0;
@@ -189,13 +189,13 @@ public class BlockListener implements Listener {
 				boolean hasFor = false;
 				boolean hasSilk = false;
 				int forLvl = 0;
-				if (i.getItemMeta().getLore().contains(CEnchant.MAGNET.getName())) {
+				if (i.getItemMeta().getLore().contains(Enchants.MAGNET.getName())) {
 					hasMag = true;
 				}
-				if (i.getItemMeta().getLore().contains(CEnchant.SMELTING.getName())) {
+				if (i.getItemMeta().getLore().contains(Enchants.SMELTING.getName())) {
 					hasSm = true;
 				}
-				if (i.getItemMeta().getLore().contains(CEnchant.EXPLOSIVEPICK.getName())) {
+				if (i.getItemMeta().getLore().contains(Enchants.EXPLOSIVEPICK.getName())) {
 					hasExp = true;
 				}
 				if (i.getEnchantments().containsKey(Enchantment.LOOT_BONUS_BLOCKS)) {
@@ -248,7 +248,7 @@ public class BlockListener implements Listener {
 					
 					e.getBlock().setType(Material.AIR);
 					
-					if (i.getItemMeta().getLore().contains(CEnchant.HARDENED.getName())) {
+					if (i.getItemMeta().getLore().contains(Enchants.HARDENED.getName())) {
 						int n = EnchantDrop.getRandomNumberFrom(1, 100);
 						if (!(n <= 25)) {
 							i.setDurability((short) (i.getDurability() + 1));

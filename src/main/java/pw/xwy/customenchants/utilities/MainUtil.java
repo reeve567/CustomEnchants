@@ -6,7 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import pw.xwy.customenchants.enums.CEnchant;
+import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.listeners.EnchantDrop;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class MainUtil {
 			desc.add("");
 		}
 		
-		for (CEnchant e : CEnchant.values()) {
+		for (Enchants e : Enchants.values()) {
 			if (cmdCheck(e.getLabel(), n) || cmdCheck(e.getName(), n)) {
 				if (n.equalsIgnoreCase("Xwy")) {
 					desc.clear();
@@ -37,10 +37,10 @@ public class MainUtil {
 					desc.add(ChatColor.GREEN + "Success: " + 100 + "%");
 					desc.add(ChatColor.RED + "Destroy: " + 1 + "%");
 					desc.add("");
-					desc.add(CEnchant.XWY.getRarity().getLabel());
+					desc.add(Enchants.XWY.getRarity().getLabel());
 					desc.add("");
-					desc.add(CEnchant.XWY.getLoreLbl());
-					return getItem(CEnchant.XWY.getName(), desc);
+					desc.add(Enchants.XWY.getLoreLbl());
+					return getItem(Enchants.XWY.getName(), desc);
 				}
 				desc.add(e.getRarity().getLabel());
 				desc.add("");

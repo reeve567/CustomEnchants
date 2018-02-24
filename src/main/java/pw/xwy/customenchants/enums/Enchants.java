@@ -6,7 +6,7 @@ import org.bukkit.Material;
 import java.util.ArrayList;
 import java.util.List;
 
-public enum CEnchant {
+public enum Enchants {
 	THOR(ChatColor.RED + "Thor", "Axe", Rarities.COMMON, ItemSets.AXE),
 	STORMCALLER(ChatColor.RED + "StormCaller", "Sword", Rarities.COMMON, ItemSets.SWORD),
 	REKT(ChatColor.RED + "Rekt", "Axe", Rarities.RARE, ItemSets.AXE),
@@ -87,7 +87,7 @@ public enum CEnchant {
 	private final int amount;
 	private final List<ItemSets> sets = new ArrayList<ItemSets>();
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a) {
+	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -97,7 +97,7 @@ public enum CEnchant {
 		sets.add(a);
 	}
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, int am) {
+	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, int am) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -107,7 +107,7 @@ public enum CEnchant {
 		sets.add(a);
 	}
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b) {
+	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -118,7 +118,7 @@ public enum CEnchant {
 		sets.add(b);
 	}
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, int am) {
+	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, int am) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -129,7 +129,7 @@ public enum CEnchant {
 		sets.add(b);
 	}
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d) {
+	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -142,7 +142,7 @@ public enum CEnchant {
 		sets.add(d);
 	}
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d, int am) {
+	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d, int am) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -155,7 +155,7 @@ public enum CEnchant {
 		sets.add(d);
 	}
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b,
+	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b,
 	         ItemSets c, ItemSets d, ItemSets e, ItemSets f, ItemSets g, ItemSets h) {
 		
 		this.name = inGameName;
@@ -174,7 +174,7 @@ public enum CEnchant {
 	}
 	
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets a) {
+	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a) {
 		
 		this.name = inGameName;
 		this.label = ChatColor.stripColor(inGameName);
@@ -184,7 +184,7 @@ public enum CEnchant {
 		sets.add(a);
 	}
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets a, int am) {
+	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a, int am) {
 		
 		this.name = inGameName;
 		this.label = ChatColor.stripColor(inGameName);
@@ -194,7 +194,7 @@ public enum CEnchant {
 		sets.add(a);
 	}
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b) {
+	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b) {
 		
 		this.name = inGameName;
 		this.label = ChatColor.stripColor(inGameName);
@@ -205,7 +205,7 @@ public enum CEnchant {
 		sets.add(b);
 	}
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, int am) {
+	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, int am) {
 		
 		this.name = inGameName;
 		this.label = ChatColor.stripColor(inGameName);
@@ -216,7 +216,7 @@ public enum CEnchant {
 		sets.add(b);
 	}
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d) {
+	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d) {
 		
 		this.name = inGameName;
 		this.label = ChatColor.stripColor(inGameName);
@@ -229,7 +229,7 @@ public enum CEnchant {
 		sets.add(d);
 	}
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d, int am) {
+	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a, ItemSets b, ItemSets c, ItemSets d, int am) {
 		
 		this.name = inGameName;
 		this.label = ChatColor.stripColor(inGameName);
@@ -242,7 +242,7 @@ public enum CEnchant {
 		sets.add(d);
 	}
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b,
+	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets a, ItemSets b,
 	         ItemSets c, ItemSets d, ItemSets e, ItemSets f, ItemSets g, ItemSets h) {
 		
 		this.name = inGameName;

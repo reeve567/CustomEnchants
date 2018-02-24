@@ -14,7 +14,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import pw.xwy.customenchants.enums.CEnchant;
+import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.enums.Messages;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class EnchantDrop implements Listener {
 			if (checkCan(enchantmentBook.getItemMeta().getDisplayName(), itemToEnchant.getType(), player)) {
 				
 				
-				if (enchantmentBook.getItemMeta().getDisplayName().equalsIgnoreCase(CEnchant.FORTUNEV.getName())) {
+				if (enchantmentBook.getItemMeta().getDisplayName().equalsIgnoreCase(Enchants.FORTUNEV.getName())) {
 					
 					if (itemToEnchant.getEnchantments().containsKey(Enchantment.LOOT_BONUS_BLOCKS)) {
 						if (!(itemToEnchant.getEnchantmentLevel(Enchantment.LOOT_BONUS_BLOCKS) == 5)) {
@@ -129,7 +129,7 @@ public class EnchantDrop implements Listener {
 					if (ret == 1) {
 						successFail(e, itemInteractedWith, itemOnCursor, player, false, "");
 						if (itemInteractedWith.hasItemMeta() && itemInteractedWith.getItemMeta().hasLore()) {
-							if (itemInteractedWith.getItemMeta().getLore().contains(CEnchant.XWY.getName())) {
+							if (itemInteractedWith.getItemMeta().getLore().contains(Enchants.XWY.getName())) {
 								ItemMeta meta = itemInteractedWith.getItemMeta();
 								meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&3&l«&9&l&kk&3&l» &6&lXwy's Boots &3&l«&9&l&kf&3&l»"));
 								itemInteractedWith.setItemMeta(meta);
@@ -187,7 +187,7 @@ public class EnchantDrop implements Listener {
 		
 		if (name != null) {
 			
-			for (CEnchant e : CEnchant.values()) {
+			for (Enchants e : Enchants.values()) {
 				if (e.getName().equalsIgnoreCase(name)) {
 					if (e.checkSets(type)) {
 						return true;
@@ -274,7 +274,7 @@ public class EnchantDrop implements Listener {
 						}
 						itemInteractedWith.setItemMeta(meta);
 						
-						if (itemOnCursor.getItemMeta().getDisplayName().equalsIgnoreCase(CEnchant.FORTUNEV.getName())) {
+						if (itemOnCursor.getItemMeta().getDisplayName().equalsIgnoreCase(Enchants.FORTUNEV.getName())) {
 							itemInteractedWith.removeEnchantment(Enchantment.LOOT_BONUS_BLOCKS);
 							itemInteractedWith.addUnsafeEnchantment(Enchantment.LOOT_BONUS_BLOCKS, 5);
 							player.setItemOnCursor(null);

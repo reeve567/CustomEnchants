@@ -8,7 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.enums.CEnchant;
+import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 
@@ -22,7 +22,7 @@ public class CommonSC {
 	private static Inventory baseInventory = Bukkit.createInventory(null, 27, Rarities.COMMON.getLabel());
 	
 	static {
-		for (CEnchant ces : CEnchant.values()) {
+		for (Enchants ces : Enchants.values()) {
 			if (ces.getRarity().equals(Rarities.COMMON)) {
 				prizes.add(new Prize(ces.getName(), new ItemStack(Material.BOOK)));
 			}

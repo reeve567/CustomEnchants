@@ -78,7 +78,7 @@ public enum MenuItems {
 	PARALYZE("Hitting a mob has a chance to slow++it's movement speed.", Material.ROTTEN_FLESH, ItemSets.SWORD),
 	ANIMALCOOKER("Killing mobs will cook their meat automatically.", Material.COOKED_BEEF, ItemSets.SWORD);
 	
-	private CEnchant customEnchant;
+	private Enchants customEnchant;
 	private ArrayList<String> desc = new ArrayList<>();
 	private Material type;
 	private byte durability = 0;
@@ -96,14 +96,14 @@ public enum MenuItems {
 	}
 	
 	MenuItems(String desc, Material type, ItemSets a) {
-		customEnchant = CEnchant.valueOf(toString());
+		customEnchant = Enchants.valueOf(toString());
 		this.desc = conv(desc);
 		this.type = type;
 		sets.add(a);
 	}
 	
 	MenuItems(String desc, Material type, ItemSets a, ItemSets b) {
-		customEnchant = CEnchant.valueOf(toString());
+		customEnchant = Enchants.valueOf(toString());
 		this.desc = conv(desc);
 		this.type = type;
 		sets.add(a);
@@ -111,7 +111,7 @@ public enum MenuItems {
 	}
 	
 	MenuItems(String desc, Material type, int dur, ItemSets a) {
-		customEnchant = CEnchant.valueOf(toString());
+		customEnchant = Enchants.valueOf(toString());
 		durability = (byte) dur;
 		this.desc = conv(desc);
 		this.type = type;
@@ -119,7 +119,7 @@ public enum MenuItems {
 	}
 	
 	MenuItems(String desc, Material type, int dur, ItemSets a, ItemSets b) {
-		customEnchant = CEnchant.valueOf(toString());
+		customEnchant = Enchants.valueOf(toString());
 		durability = (byte) dur;
 		this.desc = conv(desc);
 		this.type = type;
@@ -128,7 +128,7 @@ public enum MenuItems {
 	}
 	
 	MenuItems(String desc, Material type, ItemSets a, ItemSets b, ItemSets c, ItemSets d) {
-		customEnchant = CEnchant.valueOf(toString());
+		customEnchant = Enchants.valueOf(toString());
 		this.desc = conv(desc);
 		this.type = type;
 		sets.add(a);
@@ -138,7 +138,7 @@ public enum MenuItems {
 	}
 	
 	MenuItems(String desc, Material type, int dur, ItemSets a, ItemSets b, ItemSets c, ItemSets d, ItemSets e, ItemSets f, ItemSets g, ItemSets h) {
-		customEnchant = CEnchant.valueOf(toString());
+		customEnchant = Enchants.valueOf(toString());
 		durability = (byte) dur;
 		this.desc = conv(desc);
 		this.type = type;
@@ -153,7 +153,7 @@ public enum MenuItems {
 		
 	}
 	
-	public CEnchant getCustomEnchant() {
+	public Enchants getCustomEnchant() {
 		return customEnchant;
 	}
 	

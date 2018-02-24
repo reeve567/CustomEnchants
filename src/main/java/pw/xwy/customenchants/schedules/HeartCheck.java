@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.customenchants.enums.CEnchant;
+import pw.xwy.customenchants.enums.Enchants;
 
 public class HeartCheck implements Runnable {
 	
@@ -20,7 +20,7 @@ public class HeartCheck implements Runnable {
 	
 	boolean ItemCheck(ItemStack i) {
 		
-		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.HEARTBOOST.getName())) {
+		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(Enchants.HEARTBOOST.getName())) {
 			return true;
 		}
 		return false;
