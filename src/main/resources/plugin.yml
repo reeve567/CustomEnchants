@@ -1,4 +1,4 @@
-main: pw.xwy.CustomEnchants.Main
+main: pw.xwy.customenchants.Main
 name: CustomEnchants
 author: Xwy
 version: 0.4.6.6
