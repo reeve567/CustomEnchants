@@ -2,7 +2,6 @@ package pw.xwy.CustomEnchants.Listeners;
 // made by reeve
 // on 7:36 PM
 
-import com.massivecraft.factions.entity.MPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -13,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
-import pw.xwy.CustomEnchants.Enums.CustomEnchants;
+import pw.xwy.CustomEnchants.Enums.CEnchant;
 import pw.xwy.CustomEnchants.Enums.ItemSets;
 import pw.xwy.CustomEnchants.Util.FortuneCalc;
 
@@ -140,11 +139,11 @@ public class BlockListener implements Listener {
 			
 			Player player = e.getPlayer();
 			
-			MPlayer fp = MPlayer.get(player);
+			//MPlayer fp = MPlayer.get(player);
 			
 			if (!(wgBreak(e.getBlock().getLocation(), e.getPlayer()))) return;
 			
-			if (fp.isInEnemyTerritory()) return;
+			//if (fp.isInEnemyTerritory()) return;
 			
 			if (player.getGameMode() == GameMode.CREATIVE) return;
 			
@@ -155,7 +154,7 @@ public class BlockListener implements Listener {
 			if (player.getItemInHand() != null && player.getItemInHand().hasItemMeta() && player.getItemInHand().getItemMeta().hasLore()) {
 				ItemStack i = player.getItemInHand();
 				
-				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(CustomEnchants.LUMBERJACK.getName()) && e.getBlock().getType().equals(Material.LOG)) {
+				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(CEnchant.LUMBERJACK.getName()) && e.getBlock().getType().equals(Material.LOG)) {
 					List<ItemStack> drops = new ArrayList<ItemStack>();
 					
 					int y = 0;
@@ -165,12 +164,12 @@ public class BlockListener implements Listener {
 							for (int z = -2; z <= 2; z++) {
 								if (loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getType().equals(Material.LOG)) {
 									Block b = loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z);
-									if (wgBreak(b.getLocation(), player) && !fp.isInEnemyTerritory()) {
-										for (ItemStack it : loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getDrops()) {
-											drops.add(it);
-										}
-										loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).setType(Material.AIR);
+									//if (wgBreak(b.getLocation(), player) && !fp.isInEnemyTerritory()) {
+									for (ItemStack it : loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getDrops()) {
+										drops.add(it);
 									}
+									loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).setType(Material.AIR);
+									//}
 								}
 							}
 						}
@@ -190,13 +189,13 @@ public class BlockListener implements Listener {
 				boolean hasFor = false;
 				boolean hasSilk = false;
 				int forLvl = 0;
-				if (i.getItemMeta().getLore().contains(CustomEnchants.MAGNET.getName())) {
+				if (i.getItemMeta().getLore().contains(CEnchant.MAGNET.getName())) {
 					hasMag = true;
 				}
-				if (i.getItemMeta().getLore().contains(CustomEnchants.SMELTING.getName())) {
+				if (i.getItemMeta().getLore().contains(CEnchant.SMELTING.getName())) {
 					hasSm = true;
 				}
-				if (i.getItemMeta().getLore().contains(CustomEnchants.EXPLOSIVEPICK.getName())) {
+				if (i.getItemMeta().getLore().contains(CEnchant.EXPLOSIVEPICK.getName())) {
 					hasExp = true;
 				}
 				if (i.getEnchantments().containsKey(Enchantment.LOOT_BONUS_BLOCKS)) {
@@ -249,7 +248,7 @@ public class BlockListener implements Listener {
 					
 					e.getBlock().setType(Material.AIR);
 					
-					if (i.getItemMeta().getLore().contains(CustomEnchants.HARDENED.getName())) {
+					if (i.getItemMeta().getLore().contains(CEnchant.HARDENED.getName())) {
 						int n = EnchantDrop.getRandomNumberFrom(1, 100);
 						if (!(n <= 25)) {
 							i.setDurability((short) (i.getDurability() + 1));

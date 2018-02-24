@@ -30,26 +30,26 @@ public class BootsMenu {
 		desc.clear();
 		Utils.setItem(ChatColor.DARK_BLUE + "Hydro", Material.EMERALD, desc, 0, BootsMenu);
 		
-		desc.clear();
+		/*desc.clear();
 		desc.add(ChatColor.AQUA + "When faction members are near you, your damage is increased.");
-		Utils.setItem("Leadership", Material.GOLD_HELMET, desc, 1, BootsMenu);
+		Utils.setItem("Leadership", Material.GOLD_HELMET, desc, 1, BootsMenu);*/
 		
 		desc.clear();
 		desc.add(ChatColor.AQUA + "When you hit to one and a half hearts or below, you get a speed boost for 3 seconds.");
-		Utils.setItem("SuperSpeed", Material.GOLD_BOOTS, desc, 2, BootsMenu);
+		Utils.setItem("SuperSpeed", Material.GOLD_BOOTS, desc, 1, BootsMenu);
 		
 		desc.clear();
 		desc.add(ChatColor.AQUA + "Dying with this enchant on an item");
 		desc.add(ChatColor.AQUA + "has a chance of keeping it on respawn");
-		Utils.setItem("Soulbound", Material.GOLDEN_APPLE, 1, desc, 3, BootsMenu);
+		Utils.setItem("Soulbound", Material.GOLDEN_APPLE, 1, desc, 2, BootsMenu);
 		
 		desc.clear();
 		desc.add(ChatColor.AQUA + "This enchant gives you haste if you have the enchant on all pieces of armor.");
-		Utils.setItem("Flash", Material.GOLD_PICKAXE, desc, 4, BootsMenu);
+		Utils.setItem("Flash", Material.GOLD_PICKAXE, desc, 3, BootsMenu);
 		
 		desc.clear();
 		desc.add(ChatColor.AQUA + "This enchant gives you resistance if you have the enchant on all pieces of armor.");
-		Utils.setItem("Valor", Material.BEACON, desc, 5, BootsMenu);
+		Utils.setItem("Valor", Material.BEACON, desc, 4, BootsMenu);
 		
 		desc.clear();
 		Utils.setItem(ChatColor.DARK_PURPLE + "Mystical", Material.DIAMOND, desc, 9, BootsMenu);

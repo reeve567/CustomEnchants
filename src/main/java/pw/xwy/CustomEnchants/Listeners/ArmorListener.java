@@ -5,7 +5,7 @@ package pw.xwy.CustomEnchants.Listeners;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemDamageEvent;
-import pw.xwy.CustomEnchants.Enums.CustomEnchants;
+import pw.xwy.CustomEnchants.Enums.CEnchant;
 
 public class ArmorListener implements Listener {
 	
@@ -14,12 +14,12 @@ public class ArmorListener implements Listener {
 		
 		if (e.getItem().hasItemMeta() && e.getItem().getItemMeta().hasLore()) {
 			for (String s : e.getItem().getItemMeta().getLore()) {
-				if (s.equalsIgnoreCase(CustomEnchants.UNSTABLEI.getName())) {
+				if (s.equalsIgnoreCase(CEnchant.UNSTABLEI.getName())) {
 					int n = EnchantDrop.getRandomNumberFrom(1, 100);
 					if (n <= 20) {
 						e.setCancelled(true);
 					}
-				} else if (s.equalsIgnoreCase(CustomEnchants.UNSTABLEII.getName())) {
+				} else if (s.equalsIgnoreCase(CEnchant.UNSTABLEII.getName())) {
 					int n = EnchantDrop.getRandomNumberFrom(1, 100);
 					if (n <= 40) {
 						e.setCancelled(true);

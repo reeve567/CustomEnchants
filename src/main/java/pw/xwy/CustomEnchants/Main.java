@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import pw.xwy.CustomEnchants.Commands.CommandHandler;
-import pw.xwy.CustomEnchants.Enums.CustomEnchants;
+import pw.xwy.CustomEnchants.Enums.CEnchant;
 import pw.xwy.CustomEnchants.Enums.Messages;
 import pw.xwy.CustomEnchants.Listeners.ListenerHandler;
 import pw.xwy.CustomEnchants.Menu.SwordMenu;
@@ -72,7 +72,7 @@ public class Main extends JavaPlugin {
 		int leggings = 0;
 		int boots = 0;
 		
-		for (CustomEnchants c : CustomEnchants.values()) {
+		for (CEnchant c : CEnchant.values()) {
 			if (c.getAmount() > 0) {
 				ce += c.getAmount();
 				if (c.checkSets(Material.DIAMOND_SWORD)) {

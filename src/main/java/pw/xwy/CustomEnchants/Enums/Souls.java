@@ -12,41 +12,39 @@ import pw.xwy.CustomEnchants.Util.Glow;
 import java.util.ArrayList;
 
 public enum Souls {
-	COMMON(Rarities.COMMON,"CommonSoul"),
-	UNCOMMON(Rarities.UNCOMMON,"UncommonSoul"),
-	RARE(Rarities.RARE,"RareSoul"),
-	MYSTICAL(Rarities.MYSTICAL,"MysticalSoul"),
-	HYDRO(Rarities.HYDRO,"HydroSoul")
-
-	;
-
+	COMMON(Rarities.COMMON, "CommonKey"),
+	UNCOMMON(Rarities.UNCOMMON, "UncommonKey"),
+	RARE(Rarities.RARE, "RareKey"),
+	MYSTICAL(Rarities.MYSTICAL, "MysticalKey"),
+	HYDRO(Rarities.HYDRO, "HydroKey");
+	
 	private final String name;
 	private final String commandLabel;
 	private final ItemStack item;
-
+	
 	Souls(Rarities name, String commandLabel) {
-		this.name = name.getLabel() + " Soul";
+		this.name = name.getLabel() + " Key";
 		this.commandLabel = commandLabel;
-
-		ItemStack it = new ItemStack(Material.FIREBALL);
+		
+		ItemStack it = new ItemStack(Material.NETHER_STAR);
 		ItemMeta im = it.getItemMeta();
 		im.setDisplayName(this.name);
-		ArrayList<String> lores = new ArrayList<String>();
-		lores.add(ChatColor.GRAY + "Redeem this from Gorix for a prize.");
+		ArrayList<String> lores = new ArrayList<>();
+		lores.add(ChatColor.GRAY + "Redeem this from Rubix for a prize.");
 		im.setLore(lores);
-		im.addEnchant(new Glow(999),1,true);
+		im.addEnchant(new Glow(999), 1, true);
 		it.setItemMeta(im);
 		this.item = it;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
-
+	
 	public String getCommandLabel() {
 		return commandLabel;
 	}
-
+	
 	public ItemStack getItem() {
 		return item;
 	}

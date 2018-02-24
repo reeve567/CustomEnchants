@@ -8,16 +8,14 @@ public enum Rarities {
 	RARE(ChatColor.BLUE + "Rare"),
 	MYSTICAL(ChatColor.DARK_PURPLE + "Mystical"),
 	HYDRO(ChatColor.DARK_BLUE + "Hydro"),
-	ADMIN(ChatColor.AQUA + "Admin")
-
-	;
-
+	ADMIN(ChatColor.AQUA + "Admin");
+	
 	private final String label;
-
+	
 	Rarities(String label) {
 		this.label = label;
 	}
-
+	
 	public String getLabel() {
 		return label;
 	}

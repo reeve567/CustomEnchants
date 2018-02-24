@@ -4,25 +4,17 @@ package pw.xwy.CustomEnchants.Listeners;
 
 import net.citizensnpcs.api.event.NPCRightClickEvent;
 import net.milkbowl.vault.economy.Economy;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.CustomEnchants.Enums.CustomEnchants;
 import pw.xwy.CustomEnchants.Enums.Messages;
 import pw.xwy.CustomEnchants.Enums.Rarities;
 import pw.xwy.CustomEnchants.Enums.Souls;
 import pw.xwy.CustomEnchants.Main;
 import pw.xwy.CustomEnchants.SoulCrates.*;
 import pw.xwy.CustomEnchants.Util.CratesUtil;
-import pw.xwy.CustomEnchants.Util.MainUtil;
-
-import java.util.ArrayList;
 
 public class GorixClick implements Listener {
 	
@@ -30,6 +22,7 @@ public class GorixClick implements Listener {
 	static int j;
 	private JavaPlugin main;
 	private Economy econ = Main.getEcononomy();
+	
 	GorixClick(JavaPlugin main) {
 		this.main = main;
 	}
@@ -147,7 +140,7 @@ public class GorixClick implements Listener {
 	@EventHandler
 	public void onClick(NPCRightClickEvent e) {
 		
-		if (e.getNPC().getName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', "&4&lGorix"))) {
+		if (e.getNPC().getName().equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', "&4&lRubix"))) {
 			if (e.getClicker().getItemInHand().hasItemMeta() && e.getClicker().getItemInHand().getItemMeta().hasDisplayName()) {
 				for (Souls s : Souls.values()) {
 					if (e.getClicker().getItemInHand().getItemMeta().getDisplayName().equals(s.getItem().getItemMeta().getDisplayName())) {
@@ -226,7 +219,7 @@ public class GorixClick implements Listener {
 							}
 							
 							/*
-							*/
+							 */
 							Inventory inv = openMystical();
 							e.getClicker().openInventory(inv);
 							crateOpen.openCrate(e.getClicker(), inv, Rarities.MYSTICAL, r + j);

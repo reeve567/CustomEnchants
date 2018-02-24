@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.CustomEnchants.Enums.CustomEnchants;
+import pw.xwy.CustomEnchants.Enums.CEnchant;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class FeedListener implements Listener {
 				if (legs.hasItemMeta()) {
 					if (legs.getItemMeta().hasLore()) {
 						List<String> lore = legs.getItemMeta().getLore();
-						if (lore.contains(CustomEnchants.AUTOFEEDER.getName())) {
+						if (lore.contains(CEnchant.AUTOFEEDER.getName())) {
 							e.setFoodLevel(20);
 						}
 					}

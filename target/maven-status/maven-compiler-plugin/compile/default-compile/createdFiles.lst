@@ -65,7 +65,6 @@ pw\xwy\CustomEnchants\Listeners\BowListener$1.class
 pw\xwy\CustomEnchants\Schedules\CommonCrate.class
 pw\xwy\CustomEnchants\Listeners\HitListener$1.class
 pw\xwy\CustomEnchants\SoulCrates\RareSC.class
-pw\xwy\CustomEnchants\Enums\Gorix.class
 pw\xwy\CustomEnchants\Enums\Rarities.class
 pw\xwy\CustomEnchants\SoulCrates\HydroSC.class
 pw\xwy\CustomEnchants\Util\ConfigCheck.class

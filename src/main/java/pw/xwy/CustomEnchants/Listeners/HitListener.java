@@ -17,7 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
-import pw.xwy.CustomEnchants.Enums.CustomEnchants;
+import pw.xwy.CustomEnchants.Enums.CEnchant;
 import pw.xwy.CustomEnchants.Enums.Messages;
 
 public class HitListener implements Listener {
@@ -30,7 +30,6 @@ public class HitListener implements Listener {
 	HitListener(JavaPlugin main) {
 		this.main = main;
 	}
-	
 	
 	private boolean armorCheck(ItemStack a, String ench) {
 		
@@ -64,6 +63,89 @@ public class HitListener implements Listener {
 	}
 	
 	@EventHandler
+	public void EnvHit(EntityDamageEvent e) {
+		
+		if (e.getEntity() instanceof Player) {
+			Player player = (Player) e.getEntity();
+			ItemStack boots = player.getInventory().getBoots();
+			if (boots != null && boots.hasItemMeta() && boots.getItemMeta().hasLore() && boots.getItemMeta().getLore().contains(CEnchant.XWY.getName())) {
+				e.setCancelled(true);
+			}
+		}
+		
+		//Lightning
+		if (e.getCause().equals(EntityDamageEvent.DamageCause.LIGHTNING)) {
+			if (e.getEntity() instanceof Player) {
+				Player player = (Player) e.getEntity();
+				if (player.equals(summoner)) {
+					e.setCancelled(true);
+				} else {
+					e.getEntity().setFireTicks(0);
+				}
+			} else if (e.getEntity() instanceof Item) {
+				e.setCancelled(true);
+			} else {
+				e.getEntity().setFireTicks(0);
+			}
+		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.BLOCK_EXPLOSION)) {
+			if (e.getEntity() instanceof Player) {
+				Player player = (Player) e.getEntity();
+				if (player.equals(explodee)) {
+					e.setCancelled(true);
+					explodee = null;
+				}
+			}
+		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.FALL)) {
+			if (e.getEntity() instanceof Player) {
+				Player player = (Player) e.getEntity();
+				if (BowListener.shootChk(player.getName()))
+					e.setCancelled(true);
+			}
+		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.POISON)) {
+			if (e.getEntity() instanceof Player) {
+				Player player = (Player) e.getEntity();
+				ItemStack helm = player.getInventory().getHelmet();
+				if (helm != null && helm.hasItemMeta() && helm.getItemMeta().hasLore()) {
+					for (String s : helm.getItemMeta().getLore()) {
+						if (s.equalsIgnoreCase(CEnchant.MEDICINE.getName())) {
+							e.setCancelled(true);
+						}
+					}
+				}
+				
+			}
+		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.WITHER)) {
+			if (e.getEntity() instanceof Player) {
+				Player player = (Player) e.getEntity();
+				ItemStack helm = player.getInventory().getHelmet();
+				if (helm != null && helm.hasItemMeta() && helm.getItemMeta().hasLore()) {
+					for (String s : helm.getItemMeta().getLore()) {
+						if (s.equalsIgnoreCase(CEnchant.GUARDIAN.getName())) {
+							e.setCancelled(true);
+						}
+					}
+				}
+				
+			}
+		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.FIRE) ||
+				e.getCause().equals(EntityDamageEvent.DamageCause.LAVA) ||
+				e.getCause().equals(EntityDamageEvent.DamageCause.FIRE_TICK)) {
+			if (e.getEntity() instanceof Player) {
+				Player player = (Player) e.getEntity();
+				ItemStack legs = player.getInventory().getLeggings();
+				ItemStack chest = player.getInventory().getChestplate();
+				ItemStack boots = player.getInventory().getBoots();
+				ItemStack helm = player.getInventory().getHelmet();
+				if (armorCheck(helm, CEnchant.BURNSHEILD.getName()) ||
+						armorCheck(chest, CEnchant.BURNSHEILD.getName()) ||
+						armorCheck(legs, CEnchant.BURNSHEILD.getName()) ||
+						armorCheck(boots, CEnchant.BURNSHEILD.getName()))
+					e.setCancelled(true);
+			}
+		}
+	}
+	
+	@EventHandler
 	public void Hit(final EntityDamageByEntityEvent e) {
 		
 		if (!e.isCancelled()) {
@@ -75,7 +157,7 @@ public class HitListener implements Listener {
 				ItemStack boots = player.getInventory().getBoots();
 				ItemStack helm = player.getInventory().getHelmet();
 				
-				if (armorCheck(chest, CustomEnchants.DETONATE.getName())) {
+				if (armorCheck(chest, CEnchant.DETONATE.getName())) {
 					int r = EnchantDrop.getRandomNumberFrom(1, 100);
 					if (r > 75) {
 						explodee = (Player) e.getEntity();
@@ -85,43 +167,42 @@ public class HitListener implements Listener {
 				}
 				
 				if (player.isBlocking() && player.getItemInHand() != null && player.getItemInHand().hasItemMeta() &&
-						player.getItemInHand().getItemMeta().hasLore() && player.getItemInHand().getItemMeta().getLore().contains(CustomEnchants
+						player.getItemInHand().getItemMeta().hasLore() && player.getItemInHand().getItemMeta().getLore().contains(CEnchant
 						.GUARDIANSBLOCK
 						.getName())) {
 					e.setDamage(e.getDamage() / 2);
 				}
 				
-				
-				if (armorCheck(boots, CustomEnchants.SELFHEALER.getName())) {
+				if (armorCheck(boots, CEnchant.SELFHEALER.getName())) {
 					if (((Player) e.getEntity()).getHealth() <= 5) {
 						((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 80, 0));
 					}
 				}
-				if (armorCheck(chest, CustomEnchants.REINFORCED.getName())) {
+				if (armorCheck(chest, CEnchant.REINFORCED.getName())) {
 					if (((Player) e.getEntity()).getHealth() <= 5) {
 						((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 80, 0));
 					}
 				}
-				if (armorCheck(boots, CustomEnchants.SUPERSPEED.getName())) {
+				if (armorCheck(boots, CEnchant.SUPERSPEED.getName())) {
 					if (((Player) e.getEntity()).getHealth() <= 3) {
 						((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 60, 2));
 					}
 				}
-				if (armorCheck(legs, CustomEnchants.STARVEDI.getName())) {
+				if (armorCheck(legs, CEnchant.STARVEDI.getName())) {
 					if (e.getDamager() instanceof Player && ((Player) e.getDamager()).getFoodLevel() > 0) {
 						int num = EnchantDrop.getRandomNumberFrom(1, 100);
 						if (num <= 15) {
 							((Player) e.getDamager()).setFoodLevel(((Player) e.getDamager()).getFoodLevel() - 1);
 						}
 					}
-				} else if (armorCheck(legs, CustomEnchants.STARVEDII.getName())) {
+				} else if (armorCheck(legs, CEnchant.STARVEDII.getName())) {
 					if (e.getDamager() instanceof Player && ((Player) e.getDamager()).getFoodLevel() > 0) {
 						int num = EnchantDrop.getRandomNumberFrom(1, 100);
 						if (num <= 25) {
 							((Player) e.getDamager()).setFoodLevel(((Player) e.getDamager()).getFoodLevel() - 1);
 						}
 					}
-				} else if (armorCheck(legs, CustomEnchants.STARVEDIII.getName())) {
+				} else if (armorCheck(legs, CEnchant.STARVEDIII.getName())) {
 					if (e.getDamager() instanceof Player && ((Player) e.getDamager()).getFoodLevel() > 0) {
 						int num = EnchantDrop.getRandomNumberFrom(1, 100);
 						if (num <= 35) {
@@ -129,7 +210,7 @@ public class HitListener implements Listener {
 						}
 					}
 				}
-				if (armorCheck(legs, CustomEnchants.ANTIKNOCKBACKI.getName())) {
+				if (armorCheck(legs, CEnchant.ANTIKNOCKBACKI.getName())) {
 					Bukkit.getScheduler().runTaskLater(main, new Runnable() {
 						@Override
 						public void run() {
@@ -138,7 +219,7 @@ public class HitListener implements Listener {
 							e.getEntity().setVelocity(kb);
 						}
 					}, 1);
-				} else if (armorCheck(legs, CustomEnchants.ANTIKNOCKBACKII.getName())) {
+				} else if (armorCheck(legs, CEnchant.ANTIKNOCKBACKII.getName())) {
 					Bukkit.getScheduler().runTaskLater(main, new Runnable() {
 						@Override
 						public void run() {
@@ -147,7 +228,7 @@ public class HitListener implements Listener {
 							e.getEntity().setVelocity(kb);
 						}
 					}, 1);
-				} else if (armorCheck(legs, CustomEnchants.ANTIKNOCKBACKIII.getName())) {
+				} else if (armorCheck(legs, CEnchant.ANTIKNOCKBACKIII.getName())) {
 					
 					Bukkit.getScheduler().runTaskLater(main, new Runnable() {
 						@Override
@@ -159,14 +240,13 @@ public class HitListener implements Listener {
 					}, 1);
 				}
 				
-				
-				if (armorCheck(helm, CustomEnchants.MOLTEN.getName())) {
+				if (armorCheck(helm, CEnchant.MOLTEN.getName())) {
 					moltenFunc(e.getDamager(), e.getEntity());
-				} else if (armorCheck(chest, CustomEnchants.MOLTEN.getName())) {
+				} else if (armorCheck(chest, CEnchant.MOLTEN.getName())) {
 					moltenFunc(e.getDamager(), e.getEntity());
-				} else if (armorCheck(legs, CustomEnchants.MOLTEN.getName())) {
+				} else if (armorCheck(legs, CEnchant.MOLTEN.getName())) {
 					moltenFunc(e.getDamager(), e.getEntity());
-				} else if (armorCheck(boots, CustomEnchants.MOLTEN.getName())) {
+				} else if (armorCheck(boots, CEnchant.MOLTEN.getName())) {
 					moltenFunc(e.getDamager(), e.getEntity());
 				}
 			}
@@ -219,11 +299,10 @@ public class HitListener implements Listener {
 				}
 			}
 			
-			
 			if (e.getDamager() instanceof Player) {
 				Player player = (Player) e.getDamager();
 				
-				if (armorCheck(player.getInventory().getBoots(), CustomEnchants.LEADERSHIP.getName())) {
+				if (armorCheck(player.getInventory().getBoots(), CEnchant.LEADERSHIP.getName())) {
 					double bonus = 0;
 					
 					for (Player other : Bukkit.getOnlinePlayers()) {
@@ -244,21 +323,20 @@ public class HitListener implements Listener {
 					e.setDamage(e.getDamage() + bonus);
 				}
 				
-				
 				if (player.getItemInHand().hasItemMeta()) {
 					if (player.getItemInHand().getItemMeta().hasLore()) {
 						for (String s : player.getItemInHand().getItemMeta().getLore()) {
-							if (s.equalsIgnoreCase(CustomEnchants.VAMPIRE.getName())) {
+							if (s.equalsIgnoreCase(CEnchant.VAMPIRE.getName())) {
 								double d = player.getHealth() + (e.getDamage() / 2);
 								if (d > player.getMaxHealth()) d = player.getMaxHealth();
 								player.setHealth(d);
-							} else if (s.equalsIgnoreCase(CustomEnchants.STORMCALLER.getName()) || s.equalsIgnoreCase(CustomEnchants.THOR.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.STORMCALLER.getName()) || s.equalsIgnoreCase(CEnchant.THOR.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 90) {
 									player.getLocation().getWorld().strikeLightning(e.getEntity().getLocation());
 									summoner = player;
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.ARMORDESTRUCTOR.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.ARMORDESTRUCTOR.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r < 75) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
@@ -282,48 +360,48 @@ public class HitListener implements Listener {
 										}
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.REKT.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.REKT.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 90) {
 									e.setDamage(e.getDamage() * 2);
 									e.getDamager().sendMessage(Messages.rektMessage.get());
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.DEMONSWEAKNESSI.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.DEMONSWEAKNESSI.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r < 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 40, 0));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.DEMONSWEAKNESSII.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.DEMONSWEAKNESSII.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r < 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 80, 0));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.SMOKESCREENI.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.SMOKESCREENI.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r < 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 40, 0));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.SMOKESCREENII.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.SMOKESCREENII.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r < 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 80, 0));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.SMOKESCREENIII.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.SMOKESCREENIII.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r < 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 0));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.EXPTHIEF.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.EXPTHIEF.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r < 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
@@ -331,43 +409,43 @@ public class HitListener implements Listener {
 												((Player) e.getEntity()).getInventory().getBoots().hasItemMeta() &&
 												((Player) e.getEntity()).getInventory().getBoots().getItemMeta().hasLore() &&
 												((Player) e.getEntity()).getInventory().getBoots().getItemMeta().getLore()
-														.contains(CustomEnchants.EXPPROTECTOR.getName()))) {
+														.contains(CEnchant.EXPPROTECTOR.getName()))) {
 											((Player) e.getEntity()).setExp(((Player) e.getEntity()).getExp() * 98);
 											((Player) e.getDamager()).setExp(((Player) e.getDamager()).getExp() + ((Player) e.getEntity()).getExp() * 2);
 										}
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.CHARGE.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.CHARGE.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 85) {
 									if (SprintListener.sprinting.contains(e.getEntity())) {
 										e.setDamage(e.getDamage() * 1.2);
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.DEMONSBLADE.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.DEMONSBLADE.getName())) {
 								e.setDamage(e.getDamage() * 1.05);
-							} else if (s.equalsIgnoreCase(CustomEnchants.WITHERI.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.WITHERI.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 40, 0));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.WITHERII.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.WITHERII.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 80, 0));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.FROZENBLADE.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.FROZENBLADE.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 2));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.CURSED.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.CURSED.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 85) {
 									if (e.getEntity() instanceof Player) {
@@ -375,15 +453,15 @@ public class HitListener implements Listener {
 										e.getDamager().sendMessage(Messages.cursed.get());
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.DIZZY.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.DIZZY.getName())) {
 								if (e.getEntity() instanceof Player) {
 									((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 60, 0));
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.HOSTILEDAMAGE.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.HOSTILEDAMAGE.getName())) {
 								if (e.getEntity() instanceof Monster) {
 									e.setDamage(e.getDamage() * 2);
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.PARALYZE.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.PARALYZE.getName())) {
 								if (e.getEntity() instanceof Player) {
 									
 									int r = EnchantDrop.getRandomNumberFrom(1, 100);
@@ -391,7 +469,7 @@ public class HitListener implements Listener {
 										((Player) e.getEntity()).addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 2));
 									}
 								}
-							} else if (s.equalsIgnoreCase(CustomEnchants.BATTLEROAR.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.BATTLEROAR.getName())) {
 								if (e.getEntity() instanceof Player) {
 									int g = EnchantDrop.getRandomNumberFrom(1, 100);
 									if (g <= 20) {
@@ -433,97 +511,12 @@ public class HitListener implements Listener {
 			ItemStack chest = player.getInventory().getChestplate();
 			ItemStack boots = player.getInventory().getBoots();
 			ItemStack helm = player.getInventory().getHelmet();
-			if (armorCheck(helm, CustomEnchants.BURNSHEILD.getName()) ||
-					armorCheck(chest, CustomEnchants.BURNSHEILD.getName()) ||
-					armorCheck(legs, CustomEnchants.BURNSHEILD.getName()) ||
-					armorCheck(boots, CustomEnchants.BURNSHEILD.getName())) {
+			if (armorCheck(helm, CEnchant.BURNSHEILD.getName()) ||
+					armorCheck(chest, CEnchant.BURNSHEILD.getName()) ||
+					armorCheck(legs, CEnchant.BURNSHEILD.getName()) ||
+					armorCheck(boots, CEnchant.BURNSHEILD.getName())) {
 				e.setDuration(0);
 				e.setCancelled(true);
-			}
-		}
-	}
-	
-	
-	@EventHandler
-	public void EnvHit(EntityDamageEvent e) {
-		
-		if (e.getEntity() instanceof Player) {
-			Player player = (Player) e.getEntity();
-			ItemStack boots = player.getInventory().getBoots();
-			if (boots != null && boots.hasItemMeta() && boots.getItemMeta().hasLore() && boots.getItemMeta().getLore().contains(CustomEnchants.XWY.getName())) {
-				e.setCancelled(true);
-			}
-		}
-		
-		
-		//Lightning
-		if (e.getCause().equals(EntityDamageEvent.DamageCause.LIGHTNING)) {
-			if (e.getEntity() instanceof Player) {
-				Player player = (Player) e.getEntity();
-				if (player.equals(summoner)) {
-					e.setCancelled(true);
-				} else {
-					e.getEntity().setFireTicks(0);
-				}
-			} else if (e.getEntity() instanceof Item) {
-				e.setCancelled(true);
-			} else {
-				e.getEntity().setFireTicks(0);
-			}
-		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.BLOCK_EXPLOSION)) {
-			if (e.getEntity() instanceof Player) {
-				Player player = (Player) e.getEntity();
-				if (player.equals(explodee)) {
-					e.setCancelled(true);
-					explodee = null;
-				}
-			}
-		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.FALL)) {
-			if (e.getEntity() instanceof Player) {
-				Player player = (Player) e.getEntity();
-				if (BowListener.shootChk(player.getName()))
-					e.setCancelled(true);
-			}
-		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.POISON)) {
-			if (e.getEntity() instanceof Player) {
-				Player player = (Player) e.getEntity();
-				ItemStack helm = player.getInventory().getHelmet();
-				if (helm != null && helm.hasItemMeta() && helm.getItemMeta().hasLore()) {
-					for (String s : helm.getItemMeta().getLore()) {
-						if (s.equalsIgnoreCase(CustomEnchants.MEDICINE.getName())) {
-							e.setCancelled(true);
-						}
-					}
-				}
-				
-			}
-		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.WITHER)) {
-			if (e.getEntity() instanceof Player) {
-				Player player = (Player) e.getEntity();
-				ItemStack helm = player.getInventory().getHelmet();
-				if (helm != null && helm.hasItemMeta() && helm.getItemMeta().hasLore()) {
-					for (String s : helm.getItemMeta().getLore()) {
-						if (s.equalsIgnoreCase(CustomEnchants.GUARDIAN.getName())) {
-							e.setCancelled(true);
-						}
-					}
-				}
-				
-			}
-		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.FIRE) ||
-				e.getCause().equals(EntityDamageEvent.DamageCause.LAVA) ||
-				e.getCause().equals(EntityDamageEvent.DamageCause.FIRE_TICK)) {
-			if (e.getEntity() instanceof Player) {
-				Player player = (Player) e.getEntity();
-				ItemStack legs = player.getInventory().getLeggings();
-				ItemStack chest = player.getInventory().getChestplate();
-				ItemStack boots = player.getInventory().getBoots();
-				ItemStack helm = player.getInventory().getHelmet();
-				if (armorCheck(helm, CustomEnchants.BURNSHEILD.getName()) ||
-						armorCheck(chest, CustomEnchants.BURNSHEILD.getName()) ||
-						armorCheck(legs, CustomEnchants.BURNSHEILD.getName()) ||
-						armorCheck(boots, CustomEnchants.BURNSHEILD.getName()))
-					e.setCancelled(true);
 			}
 		}
 	}
