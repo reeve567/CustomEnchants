@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
 package pw.xwy.customenchants.commands.admin;
 // made by reeve
 // on 12:32 PM
@@ -10,8 +19,8 @@ import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.enums.Souls;
 
-import static pw.xwy.customenchants.utilities.MainUtil.bookGive;
-import static pw.xwy.customenchants.utilities.MainUtil.cmdCheck;
+import static pw.xwy.customenchants.utilities.MainUtility.bookGive;
+import static pw.xwy.customenchants.utilities.MainUtility.cmdCheck;
 
 public class CeGive {
 	

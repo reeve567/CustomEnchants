@@ -1,4 +1,13 @@
-package pw.xwy.customenchants.schedules;
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
+package pw.xwy.customenchants.schedules.crates;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -6,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import pw.xwy.customenchants.soulcrates.HydroSC;
 import pw.xwy.customenchants.soulcrates.Prize;
-import pw.xwy.customenchants.utilities.CratesUtil;
+import pw.xwy.customenchants.utilities.CratesUtility;
 
 import java.util.ArrayList;
 
@@ -58,7 +67,7 @@ public class HydroCrate extends BukkitRunnable {
 			runs = 1;
 		}
 		
-		ArrayList<ItemStack> movedItems = CratesUtil.movePrizes(items, prizes, runs);
+		ArrayList<ItemStack> movedItems = CratesUtility.movePrizes(items, prizes, runs);
 		
 		for (int i = 9; i < 18; i++) {
 			inv.setItem(i, movedItems.get(i - 9));

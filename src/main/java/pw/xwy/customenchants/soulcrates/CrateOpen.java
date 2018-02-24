@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
 package pw.xwy.customenchants.soulcrates;
 // made by reeve
 // on 9:16 PM
@@ -8,7 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 import pw.xwy.customenchants.listeners.EnchantDrop;
-import pw.xwy.customenchants.schedules.*;
+import pw.xwy.customenchants.schedules.crates.*;
 
 import java.util.ArrayList;
 

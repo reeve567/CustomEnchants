@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
 package pw.xwy.customenchants.utilities;
 // made by reeve
 // on 12:16 AM
@@ -12,7 +21,7 @@ import pw.xwy.customenchants.listeners.EnchantDrop;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainUtil {
+public class MainUtility {
 	
 	public static ItemStack bookGive(String n, boolean perfect) {
 		

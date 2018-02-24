@@ -1,4 +1,13 @@
-package pw.xwy.customenchants.menu;
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
+package pw.xwy.customenchants.utilities;
 // made by reeve
 // on 1:12 PM
 
@@ -10,7 +19,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
-public class Utils {
+public class MenuUtility {
 	
 	
 	public static ItemStack getItem(String name, Material etype, List<String> desc) {

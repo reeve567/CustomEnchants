@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
 package pw.xwy.customenchants.enums;
 
 import org.bukkit.ChatColor;
@@ -65,7 +74,7 @@ public enum Enchants {
 	EXPLOSIVEARROW(ChatColor.RED + "ExplosiveArrow", "Bow", Rarities.MYSTICAL, ItemSets.BOW),
 	RPG(ChatColor.RED + "RPG", "Bow", Rarities.MYSTICAL, ItemSets.BOW),
 	REINFORCED(ChatColor.GREEN + "Reinforced", "Chestplate", Rarities.HYDRO, ItemSets.CHEST),
-	LEADERSHIP(ChatColor.RED + "Leadership","Boots",Rarities.HYDRO,ItemSets.BOOTS),
+	LEADERSHIP(ChatColor.RED + "Leadership", "Boots", Rarities.HYDRO, ItemSets.BOOTS),
 	MOONGRAVITY(ChatColor.GREEN + "MoonGravity", "Boots", Rarities.RARE, ItemSets.BOOTS),
 	WINDSSPEEDI(ChatColor.GREEN + "Wind's Speed I", "WindsSpeedI", "Boots", Rarities.COMMON, ItemSets.BOOTS),
 	WINDSSPEEDII(ChatColor.GREEN + "Wind's Speed II", "WindsSpeedII", "Boots", Rarities.RARE, ItemSets.BOOTS, 0),
@@ -173,7 +182,6 @@ public enum Enchants {
 		sets.add(h);
 	}
 	
-	
 	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets a) {
 		
 		this.name = inGameName;
@@ -260,27 +268,6 @@ public enum Enchants {
 		sets.add(h);
 	}
 	
-	
-	public String getName() {
-		
-		return name;
-	}
-	
-	public String getLabel() {
-		
-		return label;
-	}
-	
-	public Rarities getRarity() {
-		
-		return rarity;
-	}
-	
-	public String getLoreLbl() {
-		
-		return loreLbl;
-	}
-	
 	public boolean checkSets(Material m) {
 		
 		for (ItemSets i : sets) {
@@ -293,6 +280,26 @@ public enum Enchants {
 	
 	public int getAmount() {
 		return amount;
+	}
+	
+	public String getLabel() {
+		
+		return label;
+	}
+	
+	public String getLoreLbl() {
+		
+		return loreLbl;
+	}
+	
+	public String getName() {
+		
+		return name;
+	}
+	
+	public Rarities getRarity() {
+		
+		return rarity;
 	}
 	
 }

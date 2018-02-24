@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
 package pw.xwy.customenchants.listeners;
 // made by reeve
 // on 8:18 PM
@@ -14,7 +23,7 @@ import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 import pw.xwy.customenchants.Main;
 import pw.xwy.customenchants.soulcrates.*;
-import pw.xwy.customenchants.utilities.CratesUtil;
+import pw.xwy.customenchants.utilities.CratesUtility;
 
 public class GorixClick implements Listener {
 	
@@ -36,12 +45,12 @@ public class GorixClick implements Listener {
 		
 		while (i < 18) {
 			if (r + j < CommonSC.getPrizes().size() + 1) {
-				CratesUtil.putPrize(inv, i, r + j, CommonSC.getPrizes());
+				CratesUtility.putPrize(inv, i, r + j, CommonSC.getPrizes());
 				j++;
 			} else {
 				j = 0;
 				r = 1;
-				CratesUtil.putPrize(inv, i, 1, CommonSC.getPrizes());
+				CratesUtility.putPrize(inv, i, 1, CommonSC.getPrizes());
 			}
 			i++;
 		}
@@ -58,12 +67,12 @@ public class GorixClick implements Listener {
 		
 		while (i < 18) {
 			if (r + j < UncommonSC.getPrizes().size() + 1) {
-				CratesUtil.putPrize(inv, i, r + j, UncommonSC.getPrizes());
+				CratesUtility.putPrize(inv, i, r + j, UncommonSC.getPrizes());
 				j++;
 			} else {
 				j = 0;
 				r = 1;
-				CratesUtil.putPrize(inv, i, 1, UncommonSC.getPrizes());
+				CratesUtility.putPrize(inv, i, 1, UncommonSC.getPrizes());
 			}
 			i++;
 		}
@@ -80,12 +89,12 @@ public class GorixClick implements Listener {
 		
 		while (i < 18) {
 			if (r + j < RareSC.getPrizes().size() + 1) {
-				CratesUtil.putPrize(inv, i, r + j, RareSC.getPrizes());
+				CratesUtility.putPrize(inv, i, r + j, RareSC.getPrizes());
 				j++;
 			} else {
 				j = 0;
 				r = 1;
-				CratesUtil.putPrize(inv, i, 1, RareSC.getPrizes());
+				CratesUtility.putPrize(inv, i, 1, RareSC.getPrizes());
 			}
 			i++;
 		}
@@ -102,12 +111,12 @@ public class GorixClick implements Listener {
 		
 		while (i < 18) {
 			if (r + j < MysticalSC.getPrizes().size() + 1) {
-				CratesUtil.putPrize(inv, i, r + j, MysticalSC.getPrizes());
+				CratesUtility.putPrize(inv, i, r + j, MysticalSC.getPrizes());
 				j++;
 			} else {
 				j = 0;
 				r = 1;
-				CratesUtil.putPrize(inv, i, 1, MysticalSC.getPrizes());
+				CratesUtility.putPrize(inv, i, 1, MysticalSC.getPrizes());
 			}
 			i++;
 		}
@@ -124,12 +133,12 @@ public class GorixClick implements Listener {
 		
 		while (i < 18) {
 			if (r + j < HydroSC.getPrizes().size() + 1) {
-				CratesUtil.putPrize(inv, i, r + j, HydroSC.getPrizes());
+				CratesUtility.putPrize(inv, i, r + j, HydroSC.getPrizes());
 				j++;
 			} else {
 				j = 0;
 				r = 1;
-				CratesUtil.putPrize(inv, i, 1, HydroSC.getPrizes());
+				CratesUtility.putPrize(inv, i, 1, HydroSC.getPrizes());
 			}
 			i++;
 		}

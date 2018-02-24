@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
 package pw.xwy.customenchants.menu;
 // made by reeve
 // on 6:36 PM
@@ -32,7 +41,7 @@ public class BootsMenu {
 		
 		/*desc.clear();
 		desc.add(ChatColor.AQUA + "When faction members are near you, your damage is increased.");
-		Utils.setItem("Leadership", Material.GOLD_HELMET, desc, 1, BootsMenu);*/
+		MenuUtility.setItem("Leadership", Material.GOLD_HELMET, desc, 1, BootsMenu);*/
 		
 		desc.clear();
 		desc.add(ChatColor.AQUA + "When you hit to one and a half hearts or below, you get a speed boost for 3 seconds.");

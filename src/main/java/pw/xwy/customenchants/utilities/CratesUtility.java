@@ -1,3 +1,12 @@
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
 package pw.xwy.customenchants.utilities;
 // made by reeve
 // on 6:20 PM
@@ -10,7 +19,7 @@ import pw.xwy.customenchants.soulcrates.Prize;
 
 import java.util.ArrayList;
 
-public class CratesUtil {
+public class CratesUtility {
 	
 	public static void openCrate(Player p, ItemStack key) {
 		for (Souls s : Souls.values()) {

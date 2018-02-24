@@ -1,4 +1,13 @@
-package pw.xwy.customenchants.schedules;
+////////////////////////////////////////////////////////////////////////////////
+// File copyright last updated on: 2/24/18 6:47 PM                             /
+//                                                                             /
+// Copyright (c) 2018.                                                         /
+// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
+//                                                                             /
+//                                                                             /
+////////////////////////////////////////////////////////////////////////////////
+
+package pw.xwy.customenchants.schedules.crates;
 // made by reeve
 // on 12:08 AM
 
@@ -16,7 +25,7 @@ import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 import pw.xwy.customenchants.listeners.EnchantDrop;
 import pw.xwy.customenchants.Main;
-import pw.xwy.customenchants.utilities.MainUtil;
+import pw.xwy.customenchants.utilities.MainUtility;
 
 import java.util.ArrayList;
 
@@ -54,7 +63,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(new ItemStack(i.getType(), i.getAmount(), i.getDurability()));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.BOOK)) {
-					p.getInventory().addItem(MainUtil.bookGive(i.getItemMeta().getDisplayName(), false));
+					p.getInventory().addItem(MainUtility.bookGive(i.getItemMeta().getDisplayName(), false));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.MOB_SPAWNER)) {
 					Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "ss give " + p.getName() + " bat 1");
@@ -109,7 +118,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(Souls.RARE.getItem());
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.BOOK)) {
-					p.getInventory().addItem(MainUtil.bookGive(i.getItemMeta().getDisplayName(), false));
+					p.getInventory().addItem(MainUtility.bookGive(i.getItemMeta().getDisplayName(), false));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.HOPPER)) {
 					p.getInventory().addItem(new ItemStack(Material.HOPPER, 2));
@@ -155,7 +164,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(Souls.UNCOMMON.getItem());
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.BOOK)) {
-					p.getInventory().addItem(MainUtil.bookGive(i.getItemMeta().getDisplayName(), false));
+					p.getInventory().addItem(MainUtility.bookGive(i.getItemMeta().getDisplayName(), false));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.HOPPER)) {
 					p.getInventory().addItem(new ItemStack(Material.HOPPER, 5));
@@ -201,7 +210,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(Souls.UNCOMMON.getItem());
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.BOOK)) {
-					p.getInventory().addItem(MainUtil.bookGive(i.getItemMeta().getDisplayName(), true));
+					p.getInventory().addItem(MainUtility.bookGive(i.getItemMeta().getDisplayName(), true));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.HOPPER)) {
 					p.getInventory().addItem(new ItemStack(Material.HOPPER, 10));
@@ -220,7 +229,7 @@ public class RewardPlayer extends BukkitRunnable {
 						}
 					}
 					Enchants c = common.get(EnchantDrop.getRandomNumberFrom(0, common.size() - 1));
-					p.getInventory().addItem(MainUtil.bookGive(c.getName(), false));
+					p.getInventory().addItem(MainUtility.bookGive(c.getName(), false));
 					ArrayList<Enchants> uncommon = new ArrayList<>();
 					for (Enchants ce : Enchants.values()) {
 						if (ce.getRarity().equals(Rarities.UNCOMMON)) {
@@ -228,7 +237,7 @@ public class RewardPlayer extends BukkitRunnable {
 						}
 					}
 					Enchants u = uncommon.get(EnchantDrop.getRandomNumberFrom(0, uncommon.size() - 1));
-					p.getInventory().addItem(MainUtil.bookGive(u.getName(), false));
+					p.getInventory().addItem(MainUtility.bookGive(u.getName(), false));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				}
 			} else if (inv.getName().equalsIgnoreCase(Rarities.HYDRO.getLabel())) {
@@ -252,7 +261,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(Souls.RARE.getItem());
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.BOOK)) {
-					p.getInventory().addItem(MainUtil.bookGive(i.getItemMeta().getDisplayName(), true));
+					p.getInventory().addItem(MainUtility.bookGive(i.getItemMeta().getDisplayName(), true));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.INK_SACK)) {
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "kit orca " + p.getName());
