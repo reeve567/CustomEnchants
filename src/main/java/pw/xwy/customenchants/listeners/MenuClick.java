@@ -47,7 +47,7 @@ public class MenuClick implements Listener {
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Sword Enchantments"))
 							e.getWhoClicked().openInventory(SwordMenu.get());
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Bow Enchantments"))
-							e.getWhoClicked().openInventory(BowMenu.get());
+							e.getWhoClicked().openInventory(BowMenu.get().getInventory());
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Pickaxe Enchantments"))
 							e.getWhoClicked().openInventory(PickMenu.get());
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Axe Enchantments"))
