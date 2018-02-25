@@ -13,18 +13,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="Maven: Factions:Factions:2.13.1">
+      <library name="Maven: Factions:Factions:BETA">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/Factions.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: MassiveCore:MassiveCore:2.13.1">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/MassiveCore.jar!/" />
+          <root url="jar://R:/repo/pw/xwy/factions/XFactions-Core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

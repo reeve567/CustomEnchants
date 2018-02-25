@@ -48,16 +48,9 @@
         <dependency>
             <groupId>Factions</groupId>
             <artifactId>Factions</artifactId>
-            <version>2.13.1</version>
+            <version>BETA</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/Factions.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>MassiveCore</groupId>
-            <artifactId>MassiveCore</artifactId>
-            <version>2.13.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/MassiveCore.jar</systemPath>
+            <systemPath>R:/repo/pw/xwy/factions/XFactions-Core.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>net.milkbowl.vault</groupId>

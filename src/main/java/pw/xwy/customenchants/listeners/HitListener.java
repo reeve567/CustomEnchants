@@ -11,8 +11,6 @@ package pw.xwy.customenchants.listeners;
 // made by reeve
 // on 12:21 PM
 
-import com.massivecraft.factions.entity.Faction;
-import com.massivecraft.factions.entity.MPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
@@ -26,6 +24,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
+import pw.xwy.Factions.objects.faction.XFaction;
+import pw.xwy.Factions.utility.managers.PlayerManager;
 import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.enums.Messages;
 
@@ -320,8 +320,8 @@ public class HitListener implements Listener {
 						if (other != player && other.getLocation().getWorld() == player.getLocation().getWorld()) {
 							if (other.getLocation().distanceSquared(player.getLocation()) <= maxDist) {
 								
-								Faction fac1 = MPlayer.get(other).getFaction();
-								Faction fac2 = MPlayer.get(player).getFaction();
+								XFaction fac1 = PlayerManager.getPlayer(other).getFaction();
+								XFaction fac2 = PlayerManager.getPlayer(player).getFaction();
 								
 								if (fac1 == fac2) {
 									bonus += 0.05;

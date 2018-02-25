@@ -185,7 +185,7 @@ public class Main extends JavaPlugin {
 					p.sendMessage(Messages.mainPre.get() + ChatColor.GRAY + "Current version: " + ChatColor.GOLD + getDescription().getVersion());
 					p.sendMessage("");
 					p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "«" + ChatColor.STRIKETHROUGH + "------------------------------" + ChatColor.GRAY + "" + ChatColor.BOLD + "»");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.GOLD + "customenchants" + ChatColor.GRAY + " has been loaded with " + ce + " enchants.");
+					p.sendMessage(Messages.mainPre.get() + ChatColor.GOLD + "CustomEnchants" + ChatColor.GRAY + " has been loaded with " + ce + " enchants.");
 					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + sword + " sword");
 					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + bow + " bow");
 					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + axe + " axe");
