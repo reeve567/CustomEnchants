@@ -52,7 +52,7 @@ public class RareCrate extends BukkitRunnable {
 		}
 		if (moves >= rot) {
 			if (rot == 3) {
-				RareSC.remRunningInventory(p);
+				RareSC.get().remRunningInventory(p);
 			}
 			cancel();
 		}

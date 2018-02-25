@@ -52,7 +52,7 @@ public class HydroCrate extends BukkitRunnable {
 		}
 		if (moves >= rot) {
 			if (rot == 3) {
-				HydroSC.remRunningInventory(p);
+				HydroSC.get().remRunningInventory(p);
 			}
 			cancel();
 		}

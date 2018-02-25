@@ -52,7 +52,7 @@ public class MysticalCrate extends BukkitRunnable {
 		}
 		if (moves >= rot) {
 			if (rot == 3) {
-				MysticalSC.remRunningInventory(p);
+				MysticalSC.get().remRunningInventory(p);
 			}
 			cancel();
 		}

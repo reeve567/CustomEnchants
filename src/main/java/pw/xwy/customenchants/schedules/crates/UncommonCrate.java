@@ -52,7 +52,7 @@ public class UncommonCrate extends BukkitRunnable {
 		}
 		if (moves >= rot) {
 			if (rot == 3) {
-				UncommonSC.remRunningInventory(p);
+				UncommonSC.get().remRunningInventory(p);
 			}
 			cancel();
 		}

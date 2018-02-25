@@ -54,7 +54,7 @@ public class CommonCrate extends BukkitRunnable {
 		}
 		if (moves >= rot) {
 			if (rot == 3) {
-				CommonSC.remRunningInventory(p);
+				CommonSC.get().remRunningInventory(p);
 			}
 			cancel();
 		}

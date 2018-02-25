@@ -33,12 +33,12 @@ public class CrateOpen {
 	public void openCrate(final Player p, final Inventory inv, Rarities type, int runs) {
 		
 		if (type.equals(Rarities.COMMON)) {
-			final ArrayList<Prize> prizes = CommonSC.getPrizes();
+			final ArrayList<Prize> prizes = CommonSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
 			int ra = EnchantDrop.getRandomNumberFrom(9, 12);
 			
-			CommonSC.setRunningInventory(p, inv);
+			CommonSC.get().setRunningInventory(p, inv);
 			
 			new CommonCrate(prizes, inv, p, runs, 10, false).runTaskTimer(main, 0, 7);
 			new CommonCrate(prizes, inv, p, runs + 10, r, false).runTaskTimer(main, 70L, 4L);
@@ -47,12 +47,12 @@ public class CrateOpen {
 			
 			new RewardPlayer(inv, p, Souls.COMMON).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
 		} else if (type.equals(Rarities.UNCOMMON)) {
-			final ArrayList<Prize> prizes = UncommonSC.getPrizes();
+			final ArrayList<Prize> prizes = UncommonSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
 			int ra = EnchantDrop.getRandomNumberFrom(9, 12);
 			
-			UncommonSC.setRunningInventory(p, inv);
+			UncommonSC.get().setRunningInventory(p, inv);
 			
 			new UncommonCrate(prizes, inv, p, runs, 10, false).runTaskTimer(main, 0, 7);
 			new UncommonCrate(prizes, inv, p, runs + 10, r, false).runTaskTimer(main, 70L, 4L);
@@ -61,12 +61,12 @@ public class CrateOpen {
 			
 			new RewardPlayer(inv, p, Souls.UNCOMMON).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
 		} else if (type.equals(Rarities.RARE)) {
-			final ArrayList<Prize> prizes = RareSC.getPrizes();
+			final ArrayList<Prize> prizes = RareSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
 			int ra = EnchantDrop.getRandomNumberFrom(9, 12);
 			
-			RareSC.setRunningInventory(p, inv);
+			RareSC.get().setRunningInventory(p, inv);
 			
 			new RareCrate(prizes, inv, p, runs, 10, false).runTaskTimer(main, 0, 7);
 			new RareCrate(prizes, inv, p, runs + 10, r, false).runTaskTimer(main, 70L, 4L);
@@ -75,12 +75,12 @@ public class CrateOpen {
 			
 			new RewardPlayer(inv, p, Souls.MYSTICAL).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
 		} else if (type.equals(Rarities.MYSTICAL)) {
-			final ArrayList<Prize> prizes = MysticalSC.getPrizes();
+			final ArrayList<Prize> prizes = MysticalSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
 			int ra = EnchantDrop.getRandomNumberFrom(9, 12);
 			
-			MysticalSC.setRunningInventory(p, inv);
+			MysticalSC.get().setRunningInventory(p, inv);
 			
 			new MysticalCrate(prizes, inv, p, runs, 10, false).runTaskTimer(main, 0, 7);
 			new MysticalCrate(prizes, inv, p, runs + 10, r, false).runTaskTimer(main, 70L, 4L);
@@ -89,12 +89,12 @@ public class CrateOpen {
 			
 			new RewardPlayer(inv, p, Souls.MYSTICAL).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
 		} else if (type.equals(Rarities.HYDRO)) {
-			final ArrayList<Prize> prizes = HydroSC.getPrizes();
+			final ArrayList<Prize> prizes = HydroSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
 			int ra = EnchantDrop.getRandomNumberFrom(9, 12);
 			
-			HydroSC.setRunningInventory(p, inv);
+			HydroSC.get().setRunningInventory(p, inv);
 			
 			new HydroCrate(prizes, inv, p, runs, 10, false).runTaskTimer(main, 0, 7);
 			new HydroCrate(prizes, inv, p, runs + 10, r, false).runTaskTimer(main, 70L, 4L);
@@ -104,6 +104,5 @@ public class CrateOpen {
 			new RewardPlayer(inv, p, Souls.HYDRO).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
 		}
 	}
-	
 	
 }

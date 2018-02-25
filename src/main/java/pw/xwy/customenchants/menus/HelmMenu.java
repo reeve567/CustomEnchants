@@ -20,8 +20,8 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-import static pw.xwy.customenchants.menus.MenuUtility.getItem;
-import static pw.xwy.customenchants.menus.MenuUtility.setItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.getItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class HelmMenu {
 	
@@ -29,7 +29,6 @@ public class HelmMenu {
 	
 	static {
 		List<String> desc = new ArrayList<String>();
-		
 		
 		for (int i = 0; i < 45; i++) {
 			desc.clear();

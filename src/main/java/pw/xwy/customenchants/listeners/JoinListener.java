@@ -32,7 +32,7 @@ public class JoinListener implements Listener {
 	
 	@EventHandler
 	public void onJoin(final PlayerJoinEvent e) {
-		if (CommonSC.isRunningInventory(e.getPlayer())) {
+		if (CommonSC.get().isRunningInventory(e.getPlayer())) {
 			Bukkit.getScheduler().runTaskLater(main, new Runnable() {
 				@Override
 				public void run() {
