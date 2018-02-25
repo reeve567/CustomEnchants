@@ -1,7 +1,7 @@
 main: pw.xwy.customenchants.Main
 name: CustomEnchants
 author: Xwy
-version: 0.4.6.6
+version: 0.4.7
 depend: [WorldGuard,Vault]
 commands:
   ce:

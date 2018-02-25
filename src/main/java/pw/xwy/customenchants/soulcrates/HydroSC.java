@@ -14,23 +14,15 @@ package pw.xwy.customenchants.soulcrates;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.Enchants;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-public class HydroSC {
+public class HydroSC extends Crate {
 	
-	private static ArrayList<Prize> prizes = new ArrayList<Prize>();
-	private static HashMap<Player, Inventory> inventories = new HashMap<Player, Inventory>();
-	private static Inventory baseInventory = Bukkit.createInventory(null, 27, Rarities.HYDRO.getLabel());
-	
-	static {
+	HydroSC() {
+		super(Bukkit.createInventory(null, 27, Rarities.HYDRO.getLabel()));
 		for (Enchants ces : Enchants.values()) {
 			if (ces.getRarity().equals(Rarities.HYDRO)) {
 				prizes.add(new Prize(ces.getName(), new ItemStack(Material.BOOK)));
@@ -46,31 +38,6 @@ public class HydroSC {
 		for (int i = 0; i < 27; i++) {
 			baseInventory.setItem(i, new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 7));
 		}
-	}
-	
-	
-	public static ArrayList<Prize> getPrizes() {
-		return prizes;
-	}
-	
-	public static Inventory getRunningInventory(Player p) {
-		return inventories.get(p);
-	}
-	
-	public static boolean isRunningInventory(Player p) {
-		return inventories.containsKey(p);
-	}
-	
-	public static void setRunningInventory(Player p, Inventory inv) {
-		inventories.put(p, inv);
-	}
-	
-	public static void remRunningInventory(Player p) {
-		inventories.remove(p);
-	}
-	
-	public static Inventory getBaseInventory() {
-		return baseInventory;
 	}
 	
 }

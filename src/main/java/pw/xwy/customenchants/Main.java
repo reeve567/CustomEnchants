@@ -35,11 +35,74 @@ import java.util.logging.Logger;
 public class Main extends JavaPlugin {
 	
 	private static final Logger log = Logger.getLogger("Minecraft");
+	private static Main main;
 	private static Economy econ = null;
+	public static int ceCount;
 	private CommandHandler commandHandler;
 	
 	public static Economy getEcononomy() {
 		return econ;
+	}
+	
+	public static Main getMain() {
+		return main;
+	}
+	
+	private void registerGlow() {
+		try {
+			Field f = Enchantment.class.getDeclaredField("acceptingNew");
+			f.setAccessible(true);
+			f.set(null, true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			Glow glow = new Glow(70);
+			Enchantment.registerEnchantment(glow);
+		} catch (IllegalArgumentException e) {
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private boolean setupEconomy() {
+		if (getServer().getPluginManager().getPlugin("Vault") == null) {
+			System.out.println(1);
+			return false;
+		}
+		RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+		if (rsp == null) {
+			System.out.println(2);
+			return false;
+		}
+		econ = rsp.getProvider();
+		System.out.println(3);
+		return econ != null;
+	}
+	
+	@Override
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		
+		commandHandler.command(sender, command, label, args);
+		return true;
+	}
+	
+	public void onDisable() {
+		
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + getDescription().getName() + " Disabled.");
+		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + getDescription().getName() + " made by Xwy.");
+		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Current Version: " + ChatColor.GRAY + getDescription().getVersion());
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage("");
+		Bukkit.getConsoleSender().sendMessage("");
+		
 	}
 	
 	@Override
@@ -56,6 +119,7 @@ public class Main extends JavaPlugin {
 		ListenerHandler listnerHandler = new ListenerHandler(this);
 		commandHandler = new CommandHandler();
 		commandHandler.Init();
+		main = this;
 		listnerHandler.Init();
 		registerGlow();
 		new WaterBreathing(this);
@@ -111,13 +175,12 @@ public class Main extends JavaPlugin {
 			}
 		}
 		
-		
 		if (Bukkit.getOnlinePlayers().size() > 0) {
 			for (Player p : Bukkit.getOnlinePlayers()) {
 				if (p.hasPermission("Xwy.ce.notify")) {
 					p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "«" + ChatColor.STRIKETHROUGH + "------------------------------" + ChatColor.GRAY + "" + ChatColor.BOLD + "»");
 					p.sendMessage("");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.GOLD + "customenchants " + ChatColor.GRAY + "has been loaded.");
+					p.sendMessage(Messages.mainPre.get() + ChatColor.GOLD + "CustomEnchants " + ChatColor.GRAY + "has been loaded.");
 					p.sendMessage(Messages.mainPre.get() + ChatColor.GRAY + "This plugin was made by " + ChatColor.GOLD + "Xwy" + ChatColor.GRAY + ", if you got it from someone else, notify the source in case they are not aware this is a premium plugin.");
 					p.sendMessage(Messages.mainPre.get() + ChatColor.GRAY + "Current version: " + ChatColor.GOLD + getDescription().getVersion());
 					p.sendMessage("");
@@ -131,12 +194,11 @@ public class Main extends JavaPlugin {
 					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + chest + " chestplate");
 					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + leggings + " legging");
 					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + boots + " boot");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + (sword + bow + axe + pick + helm + chest + leggings + boots) + " total");
+					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + (ceCount = sword + bow + axe + pick + helm + chest + leggings + boots) + " total");
 					p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "«" + ChatColor.STRIKETHROUGH + "------------------------------" + ChatColor.GRAY + "" + ChatColor.BOLD + "»");
 				}
 			}
 		}
-		
 		
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
@@ -152,62 +214,5 @@ public class Main extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
 		
-	}
-	
-	public void onDisable() {
-		
-		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
-		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "CustomEnchants Disabled.");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "CustomEnchants made by Xwy.");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Current Version: " + ChatColor.GRAY + getDescription().getVersion());
-		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
-		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage("");
-		
-	}
-	
-	private void registerGlow() {
-		try {
-			Field f = Enchantment.class.getDeclaredField("acceptingNew");
-			f.setAccessible(true);
-			f.set(null, true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			Glow glow = new Glow(70);
-			Enchantment.registerEnchantment(glow);
-		} catch (IllegalArgumentException e) {
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	private boolean setupEconomy() {
-		if (getServer().getPluginManager().getPlugin("Vault") == null) {
-			System.out.println(1);
-			return false;
-		}
-		RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-		if (rsp == null) {
-			System.out.println(2);
-			return false;
-		}
-		econ = rsp.getProvider();
-		System.out.println(3);
-		return econ != null;
-	}
-	
-	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		
-		commandHandler.command(sender, command, label, args);
-		return true;
 	}
 }

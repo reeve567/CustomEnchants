@@ -14,7 +14,7 @@ import pw.xwy.customenchants.Main;
 
 public enum ChangeLog {
 	LINE1("&7Current Version: &d" + Main.getMain().getDescription().getVersion()),
-	LINE2("&7Enchants Enabled: &d" + Main.getMain().ceCount),
+	LINE2("&7Enchants Enabled: &d" + Main.ceCount),
 	LINE3("&7Latest Update: &7Redid menu system inner workings, and added a disable enchants feature");
 	
 	private String changes;

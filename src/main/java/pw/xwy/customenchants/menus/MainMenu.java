@@ -7,7 +7,7 @@
 //                                                                             /
 ////////////////////////////////////////////////////////////////////////////////
 
-package pw.xwy.customenchants.menu;
+package pw.xwy.customenchants.menus;
 // made by reeve
 // on 1:07 PM
 
@@ -17,6 +17,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.utilities.MainUtility;
+import pw.xwy.customenchants.utilities.MenuUtility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class MainMenu {
 		
 		for (int i = 0; i < 54; i++) {
 			desc.clear();
-			ItemStack topPane = Utils.getItem(" ", Material.STAINED_GLASS_PANE, desc);
+			ItemStack topPane = MenuUtility.getItem(" ", Material.STAINED_GLASS_PANE, desc);
 			topPane.setDurability((short) 7);
 			MainMenu.setItem(i, topPane);
 		}

@@ -7,7 +7,7 @@
 //                                                                             /
 ////////////////////////////////////////////////////////////////////////////////
 
-package pw.xwy.customenchants.menu;
+package pw.xwy.customenchants.menus;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,8 +18,8 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-import static pw.xwy.customenchants.menus.Utils.getItem;
-import static pw.xwy.customenchants.menus.Utils.setItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.getItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class SwordMenu {
 	
@@ -28,14 +28,12 @@ public class SwordMenu {
 	static {
 		List<String> desc = new ArrayList<String>();
 		
-		
 		for (int i = 0; i < 45; i++) {
 			desc.clear();
 			ItemStack topPane = getItem(" ", Material.STAINED_GLASS_PANE, desc);
 			topPane.setDurability((short) 7);
 			SwordMenu.setItem(i, topPane);
 		}
-		
 		
 		desc.clear();
 		setItem(ChatColor.DARK_BLUE + "Hydro", Material.EMERALD, desc, 0, SwordMenu);
@@ -74,7 +72,6 @@ public class SwordMenu {
 		desc.add(ChatColor.AQUA + "has a chance of keeping it on respawn");
 		setItem("Soulbound", Material.GOLDEN_APPLE, 1, desc, 6, SwordMenu);
 		
-		
 		desc.clear();
 		setItem(ChatColor.DARK_PURPLE + "Mystical", Material.DIAMOND, desc, 9, SwordMenu);
 		
@@ -94,7 +91,6 @@ public class SwordMenu {
 		desc.add(ChatColor.AQUA + "this enchant reduces damage by 50%");
 		setItem("Guardian's Block", Material.GOLD_SWORD, desc, 12, SwordMenu);
 		
-		
 		desc.clear();
 		setItem(ChatColor.BLUE + "Rare", Material.GOLD_INGOT, desc, 18, SwordMenu);
 		
@@ -107,7 +103,6 @@ public class SwordMenu {
 		desc.add(ChatColor.AQUA + "When you hit someone with this,");
 		desc.add(ChatColor.AQUA + "it has a chance of stealing their EXP.");
 		setItem("EXPThief", Material.EXP_BOTTLE, desc, 20, SwordMenu);
-		
 		
 		desc.clear();
 		desc.add(ChatColor.AQUA + "This enchantment has a chance to give");
@@ -122,7 +117,6 @@ public class SwordMenu {
 		desc.add(ChatColor.AQUA + "Killing mobs with this enchantment");
 		desc.add(ChatColor.AQUA + "yields a higher amount of XP.");
 		setItem("MobSlayer III", Material.SPIDER_EYE, desc, 23, SwordMenu);
-		
 		
 		desc.clear();
 		setItem(ChatColor.DARK_GREEN + "Uncommon", Material.IRON_INGOT, desc, 27, SwordMenu);

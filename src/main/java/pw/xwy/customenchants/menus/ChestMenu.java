@@ -7,7 +7,7 @@
 //                                                                             /
 ////////////////////////////////////////////////////////////////////////////////
 
-package pw.xwy.customenchants.menu;
+package pw.xwy.customenchants.menus;
 // made by reeve
 // on 7:17 PM
 
@@ -20,8 +20,8 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-import static pw.xwy.customenchants.menus.Utils.getItem;
-import static pw.xwy.customenchants.menus.Utils.setItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.getItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class ChestMenu {
 	
@@ -29,7 +29,6 @@ public class ChestMenu {
 	
 	static {
 		List<String> desc = new ArrayList<String>();
-		
 		
 		for (int i = 0; i < 45; i++) {
 			desc.clear();

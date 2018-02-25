@@ -7,7 +7,7 @@
 //                                                                             /
 ////////////////////////////////////////////////////////////////////////////////
 
-package pw.xwy.customenchants.menu;
+package pw.xwy.customenchants.menus;
 // made by reeve
 // on 6:53 PM
 
@@ -20,8 +20,8 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-import static pw.xwy.customenchants.menus.Utils.getItem;
-import static pw.xwy.customenchants.menus.Utils.setItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.getItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class LeggingsMenu {
 	
@@ -30,14 +30,12 @@ public class LeggingsMenu {
 	static {
 		List<String> desc = new ArrayList<String>();
 		
-		
 		for (int i = 0; i < 45; i++) {
 			desc.clear();
 			ItemStack topPane = getItem(" ", Material.STAINED_GLASS_PANE, desc);
 			topPane.setDurability((short) 7);
 			LeggingsMenu.setItem(i, topPane);
 		}
-		
 		
 		desc.clear();
 		setItem(ChatColor.DARK_BLUE + "Hydro", Material.EMERALD, desc, 0, LeggingsMenu);
@@ -98,7 +96,6 @@ public class LeggingsMenu {
 		
 		desc.clear();
 		setItem(ChatColor.GREEN + "Common", Material.COAL, desc, 36, LeggingsMenu);
-		
 		
 		desc.clear();
 		desc.add(ChatColor.AQUA + "This enchant will set an attacker on fire if they hit the wearer.");

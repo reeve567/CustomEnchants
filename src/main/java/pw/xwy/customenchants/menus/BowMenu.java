@@ -7,7 +7,7 @@
 //                                                                             /
 ////////////////////////////////////////////////////////////////////////////////
 
-package pw.xwy.customenchants.menu;
+package pw.xwy.customenchants.menus;
 // made by reeve
 // on 1:20 PM
 
@@ -20,8 +20,8 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-import static pw.xwy.customenchants.menus.Utils.getItem;
-import static pw.xwy.customenchants.menus.Utils.setItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.getItem;
+import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class BowMenu {
 	
@@ -30,14 +30,12 @@ public class BowMenu {
 	static {
 		List<String> desc = new ArrayList<String>();
 		
-		
 		for (int i = 0; i < 45; i++) {
 			desc.clear();
 			ItemStack topPane = getItem(" ", Material.STAINED_GLASS_PANE, desc);
 			topPane.setDurability((short) 7);
 			BowMenu.setItem(i, topPane);
 		}
-		
 		
 		desc.clear();
 		setItem(ChatColor.DARK_BLUE + "Hydro", Material.EMERALD, desc, 0, BowMenu);
@@ -63,7 +61,6 @@ public class BowMenu {
 		desc.add(ChatColor.AQUA + "Dying with this enchant on an item");
 		desc.add(ChatColor.AQUA + "has a chance of keeping it on respawn");
 		setItem("Soulbound", Material.GOLDEN_APPLE, 1, desc, 4, BowMenu);
-		
 		
 		desc.clear();
 		setItem(ChatColor.DARK_PURPLE + "Mystical", Material.DIAMOND, desc, 9, BowMenu);
@@ -106,7 +103,6 @@ public class BowMenu {
 		desc.add(ChatColor.AQUA + "This enchant allows your arrows to cook the");
 		desc.add(ChatColor.AQUA + "meat of animals that it kills.");
 		setItem("Furnace", Material.GRILLED_PORK, desc, 31, BowMenu);
-		
 		
 		desc.clear();
 		setItem(ChatColor.BLUE + "Back", Material.NETHER_STAR, desc, 44, BowMenu);

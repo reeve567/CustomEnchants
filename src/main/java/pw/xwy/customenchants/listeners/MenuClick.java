@@ -17,6 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.menus.*;
 
 public class MenuClick implements Listener {
 	
