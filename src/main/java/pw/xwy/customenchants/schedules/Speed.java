@@ -43,17 +43,14 @@ public class Speed implements Runnable {
 	@Override
 	public void run() {
 		
-		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
-			@Override
-			public void run() {
-				
-				if (Bukkit.getOnlinePlayers().size() > 0) {
-					for (Player p : Bukkit.getOnlinePlayers()) {
-						if (ItemCheck(p.getInventory().getBoots()) == 1) {
-							p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 40, 0));
-						} else if (ItemCheck(p.getInventory().getBoots()) == 2) {
-							p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 40, 1));
-						}
+		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, () -> {
+			
+			if (Bukkit.getOnlinePlayers().size() > 0) {
+				for (Player p : Bukkit.getOnlinePlayers()) {
+					if (ItemCheck(p.getInventory().getBoots()) == 1) {
+						p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 40, 0));
+					} else if (ItemCheck(p.getInventory().getBoots()) == 2) {
+						p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 40, 1));
 					}
 				}
 			}

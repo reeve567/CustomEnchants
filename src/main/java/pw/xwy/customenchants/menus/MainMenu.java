@@ -12,19 +12,19 @@ package pw.xwy.customenchants.menus;
 // on 1:07 PM
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.utilities.MainUtility;
 import pw.xwy.customenchants.utilities.MenuUtility;
+import pw.xwy.customenchants.utilities.Resources;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainMenu {
 	
-	private static Inventory MainMenu = Bukkit.createInventory(null, 54, ChatColor.RED + "" + ChatColor.BOLD + "Custom Enchants");
+	private static Inventory MainMenu = Bukkit.createInventory(null, 54, Resources.getMenu("MenuTitle"));
 	
 	static {
 		
@@ -37,17 +37,16 @@ public class MainMenu {
 			MainMenu.setItem(i, topPane);
 		}
 		
-		
 		desc.clear();
-		ItemStack Helm = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Helmet Enchantments", Material.DIAMOND_HELMET, desc, true);
-		ItemStack Chest = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Chestplate Enchantments", Material.DIAMOND_CHESTPLATE, desc, true);
-		ItemStack Leggings = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Leggings Enchantments", Material.DIAMOND_LEGGINGS, desc, true);
-		ItemStack Boots = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Boots Enchantments", Material.DIAMOND_BOOTS, desc, true);
+		ItemStack Helm = MainUtility.getItem(Resources.getMenu("Helmet"), Material.DIAMOND_HELMET, desc, true);
+		ItemStack Chest = MainUtility.getItem(Resources.getMenu("Chestplate"), Material.DIAMOND_CHESTPLATE, desc, true);
+		ItemStack Leggings = MainUtility.getItem(Resources.getMenu("Leggings"), Material.DIAMOND_LEGGINGS, desc, true);
+		ItemStack Boots = MainUtility.getItem(Resources.getMenu("Boots"), Material.DIAMOND_BOOTS, desc, true);
 		
-		ItemStack Bow = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Bow Enchantments", Material.BOW, desc, true);
-		ItemStack Pick = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Pickaxe Enchantments", Material.DIAMOND_PICKAXE, desc, true);
-		ItemStack Sword = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Sword Enchantments", Material.DIAMOND_SWORD, desc, true);
-		ItemStack Axe = MainUtility.getItem(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Axe Enchantments", Material.DIAMOND_AXE, desc, true);
+		ItemStack Bow = MainUtility.getItem(Resources.getMenu("Bow"), Material.BOW, desc, true);
+		ItemStack Pick = MainUtility.getItem(Resources.getMenu("Pickaxe"), Material.DIAMOND_PICKAXE, desc, true);
+		ItemStack Sword = MainUtility.getItem(Resources.getMenu("Sword"), Material.DIAMOND_SWORD, desc, true);
+		ItemStack Axe = MainUtility.getItem(Resources.getMenu("Axe"), Material.DIAMOND_AXE, desc, true);
 		
 		MainMenu.setItem(13, Helm);
 		MainMenu.setItem(20, Pick);
@@ -58,13 +57,11 @@ public class MainMenu {
 		MainMenu.setItem(33, Bow);
 		MainMenu.setItem(40, Boots);
 		
-		
 	}
 	
 	public static Inventory get() {
 		
 		return MainMenu;
 	}
-	
 	
 }

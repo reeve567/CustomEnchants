@@ -39,17 +39,14 @@ public class HeartCheck implements Runnable {
 	@Override
 	public void run() {
 		
-		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, new Runnable() {
-			@Override
-			public void run() {
-				
-				if (Bukkit.getOnlinePlayers().size() > 0) {
-					for (Player p : Bukkit.getOnlinePlayers()) {
-						if (ItemCheck(p.getInventory().getHelmet())) {
-							p.setMaxHealth(28);
-						} else {
-							p.setMaxHealth(20);
-						}
+		Bukkit.getScheduler().scheduleSyncRepeatingTask(main, () -> {
+			
+			if (Bukkit.getOnlinePlayers().size() > 0) {
+				for (Player p : Bukkit.getOnlinePlayers()) {
+					if (ItemCheck(p.getInventory().getHelmet())) {
+						p.setMaxHealth(28);
+					} else {
+						p.setMaxHealth(20);
 					}
 				}
 			}

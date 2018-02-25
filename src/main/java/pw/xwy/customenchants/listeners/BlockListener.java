@@ -21,12 +21,16 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+import pw.xwy.Factions.objects.faction.XFaction;
+import pw.xwy.Factions.objects.faction.XPlayer;
+import pw.xwy.Factions.utility.managers.ClaimManager;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.ItemSets;
 import pw.xwy.customenchants.utilities.FortuneCalc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class BlockListener implements Listener {
 	
@@ -61,40 +65,13 @@ public class BlockListener implements Listener {
 		return true;
 	}
 	
-	ItemStack smelting(Material type, int amount) {
-		
-		if (type.equals(Material.GOLD_ORE)) {
-			return new ItemStack(Material.GOLD_INGOT, amount);
-		} else if (type.equals(Material.IRON_ORE)) {
-			return new ItemStack(Material.IRON_INGOT, amount);
-		} else if (type.equals(Material.COBBLESTONE)) {
-			return new ItemStack(Material.STONE);
-		} else if (type.equals(Material.STONE)) {
-			return new ItemStack(Material.STONE);
+	private boolean factionBreak(Location loc, Player p) {
+		XPlayer player = XPlayer.getXPlayer(p);
+		XFaction faction = player.getFaction();
+		if (faction != null && faction.claim.isInClaim(loc.getChunk()) && player.permCheck("break")) {
+			return true;
 		}
-		return new ItemStack(Material.AIR);
-	}
-	
-	List<ItemStack> getDrop(Block b, boolean smelt, boolean fortune, int lvl, byte data, ItemStack it) {
-		
-		Material type = b.getType();
-		List<ItemStack> drops = new ArrayList<ItemStack>();
-		if (shouldAdd(b.getType(), it)) {
-			if (smelt) {
-				if (type.equals(Material.GOLD_ORE) || type.equals(Material.IRON_ORE) || type.equals(Material.COBBLESTONE) || type.equals(Material.STONE)) {
-					drops.add(smelting(type, getAmount(fortune, lvl, b.getType(), true)));
-				} else {
-					for (ItemStack j : b.getDrops()) {
-						drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), true), data));
-					}
-				}
-			} else {
-				for (ItemStack j : b.getDrops()) {
-					drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), false), data));
-				}
-			}
-		}
-		return drops;
+		return ClaimManager.getChunk(loc.getChunk()) == null;
 	}
 	
 	private int getAmount(boolean check, int forLevel, Material type, boolean smelt) {
@@ -123,6 +100,28 @@ public class BlockListener implements Listener {
 		return 1;
 	}
 	
+	List<ItemStack> getDrop(Block b, boolean smelt, boolean fortune, int lvl, byte data, ItemStack it) {
+		
+		Material type = b.getType();
+		List<ItemStack> drops = new ArrayList<ItemStack>();
+		if (shouldAdd(b.getType(), it)) {
+			if (smelt) {
+				if (type.equals(Material.GOLD_ORE) || type.equals(Material.IRON_ORE) || type.equals(Material.COBBLESTONE) || type.equals(Material.STONE)) {
+					drops.add(smelting(type, getAmount(fortune, lvl, b.getType(), true)));
+				} else {
+					for (ItemStack j : b.getDrops()) {
+						drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), true), data));
+					}
+				}
+			} else {
+				for (ItemStack j : b.getDrops()) {
+					drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), false), data));
+				}
+			}
+		}
+		return drops;
+	}
+	
 	private boolean hasWood(int x, int y, int z, World world) {
 		
 		Location loc = new Location(world, x, y, z);
@@ -137,6 +136,34 @@ public class BlockListener implements Listener {
 		return false;
 	}
 	
+	ItemStack smelting(Material type, int amount) {
+		
+		if (type.equals(Material.GOLD_ORE)) {
+			return new ItemStack(Material.GOLD_INGOT, amount);
+		} else if (type.equals(Material.IRON_ORE)) {
+			return new ItemStack(Material.IRON_INGOT, amount);
+		} else if (type.equals(Material.COBBLESTONE)) {
+			return new ItemStack(Material.STONE);
+		} else if (type.equals(Material.STONE)) {
+			return new ItemStack(Material.STONE);
+		}
+		return new ItemStack(Material.AIR);
+	}
+	
+	private boolean wgBreak(Location loc, Player p) {
+		
+		try {
+			Plugin plugin = Bukkit.getPluginManager().getPlugin("WorldGuard");
+			if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
+				return true;
+			}
+			WorldGuardPlugin pl = (WorldGuardPlugin) plugin;
+			return pl.canBuild(p, p.getWorld().getBlockAt((int) loc.getX(), (int) loc.getY(), (int) loc.getZ()));
+		} catch (Exception ignored) {
+		}
+		return true;
+	}
+	
 	@EventHandler
 	public void onBreak(BlockBreakEvent e) {
 		
@@ -148,11 +175,9 @@ public class BlockListener implements Listener {
 			
 			Player player = e.getPlayer();
 			
-			//MPlayer fp = MPlayer.get(player);
-			
 			if (!(wgBreak(e.getBlock().getLocation(), e.getPlayer()))) return;
 			
-			//if (fp.isInEnemyTerritory()) return;
+			if (!factionBreak(e.getBlock().getLocation(), player)) return;
 			
 			if (player.getGameMode() == GameMode.CREATIVE) return;
 			
@@ -164,7 +189,7 @@ public class BlockListener implements Listener {
 				ItemStack i = player.getItemInHand();
 				
 				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(CEnchant.LUMBERJACK.getName()) && e.getBlock().getType().equals(Material.LOG)) {
-					List<ItemStack> drops = new ArrayList<ItemStack>();
+					List<ItemStack> drops = new ArrayList<>();
 					
 					int y = 0;
 					Location loc = e.getBlock().getLocation();
@@ -173,12 +198,12 @@ public class BlockListener implements Listener {
 							for (int z = -2; z <= 2; z++) {
 								if (loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getType().equals(Material.LOG)) {
 									Block b = loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z);
-									//if (wgBreak(b.getLocation(), player) && !fp.isInEnemyTerritory()) {
-									for (ItemStack it : loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getDrops()) {
-										drops.add(it);
+									if (wgBreak(b.getLocation(), player) && factionBreak(b.getLocation(), player)) {
+										for (ItemStack it : loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getDrops()) {
+											drops.add(it);
+										}
+										loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).setType(Material.AIR);
 									}
-									loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).setType(Material.AIR);
-									//}
 								}
 							}
 						}
@@ -190,7 +215,6 @@ public class BlockListener implements Listener {
 					}
 					return;
 				}
-				
 				
 				boolean hasMag = false;
 				boolean hasExp = false;
@@ -213,7 +237,6 @@ public class BlockListener implements Listener {
 				if (i.getEnchantments().containsKey(Enchantment.SILK_TOUCH)) {
 					hasSilk = true;
 				}
-				
 				
 				if (hasExp) {
 					List<ItemStack> drops = new ArrayList<ItemStack>();
@@ -272,20 +295,6 @@ public class BlockListener implements Listener {
 				e.getBlock().setType(Material.AIR);
 			}
 		}
-	}
-	
-	private boolean wgBreak(Location loc, Player p) {
-		
-		try {
-			Plugin plugin = Bukkit.getPluginManager().getPlugin("WorldGuard");
-			if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
-				return true;
-			}
-			WorldGuardPlugin pl = (WorldGuardPlugin) plugin;
-			return pl.canBuild(p, p.getWorld().getBlockAt((int) loc.getX(), (int) loc.getY(), (int) loc.getZ()));
-		} catch (Exception ignored) {
-		}
-		return true;
 	}
 	
 }

@@ -23,10 +23,7 @@ import pw.xwy.customenchants.commands.CommandHandler;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.listeners.ListenerHandler;
-import pw.xwy.customenchants.menus.AxeMenu;
-import pw.xwy.customenchants.menus.BootsMenu;
-import pw.xwy.customenchants.menus.BowMenu;
-import pw.xwy.customenchants.menus.SwordMenu;
+import pw.xwy.customenchants.menus.*;
 import pw.xwy.customenchants.schedules.*;
 import pw.xwy.customenchants.soulcrates.*;
 import pw.xwy.customenchants.utilities.ConfigCheck;
@@ -52,6 +49,13 @@ public class CustomEnchants extends JavaPlugin {
 		return econ;
 	}
 	
+	private void disableEnchants() {
+		final CEnchant[] toDisable = {};
+		for (CEnchant ce : toDisable) {
+			ce.disable();
+		}
+	}
+	
 	private void loadCrates() {
 		new HydroSC();
 		new MysticalSC();
@@ -64,6 +68,11 @@ public class CustomEnchants extends JavaPlugin {
 		new AxeMenu();
 		new BootsMenu();
 		new BowMenu();
+		new ChestMenu();
+		new HelmMenu();
+		new LeggingsMenu();
+		new PickMenu();
+		new SwordMenu();
 	}
 	
 	private void registerGlow() {
@@ -93,6 +102,16 @@ public class CustomEnchants extends JavaPlugin {
 		}
 		econ = rsp.getProvider();
 		return econ != null;
+	}
+	
+	private void startTasks() {
+		if (CEnchant.SCUBADIVER.isEnabled()) new WaterBreathing(this);
+		if (CEnchant.GLOWING.isEnabled()) new NightVision(this);
+		if (CEnchant.HEARTBOOST.isEnabled()) new HeartCheck(this);
+		if (CEnchant.VALOR.isEnabled()) new ValorCheck(this);
+		if (CEnchant.FLASH.isEnabled()) new FlashCheck(this);
+		if (CEnchant.MOONGRAVITY.isEnabled()) new JumpBoost(this);
+		if (CEnchant.WINDSSPEEDI.isEnabled() || CEnchant.WINDSSPEEDII.isEnabled()) new Speed(this);
 	}
 	
 	@Override
@@ -130,7 +149,6 @@ public class CustomEnchants extends JavaPlugin {
 		}
 		
 		new MessagesFunctions(this);
-		new SwordMenu();
 		ListenerHandler listnerHandler = new ListenerHandler(this);
 		commandHandler = new CommandHandler();
 		commandHandler.Init();
@@ -138,14 +156,9 @@ public class CustomEnchants extends JavaPlugin {
 		listnerHandler.Init();
 		registerGlow();
 		loadCrates();
+		disableEnchants();
+		startTasks();
 		loadMenus();
-		new WaterBreathing(this);
-		new NightVision(this);
-		new HeartCheck(this);
-		new ValorCheck(this);
-		new FlashCheck(this);
-		new JumpBoost(this);
-		new Speed(this);
 		ConfigCheck configCheck = new ConfigCheck(this);
 		if (configCheck.Init()) {
 			System.out.println("setup completed");
@@ -162,32 +175,16 @@ public class CustomEnchants extends JavaPlugin {
 		int boots = 0;
 		
 		for (CEnchant c : CEnchant.values()) {
-			if (c.getAmount() > 0) {
+			if (c.isEnabled() && c.getAmount() > 0) {
 				ce += c.getAmount();
-				if (c.checkSets(Material.DIAMOND_SWORD)) {
-					sword++;
-				}
-				if (c.checkSets(Material.DIAMOND_AXE)) {
-					axe++;
-				}
-				if (c.checkSets(Material.DIAMOND_PICKAXE)) {
-					pick++;
-				}
-				if (c.checkSets(Material.BOW)) {
-					bow++;
-				}
-				if (c.checkSets(Material.DIAMOND_HELMET)) {
-					helm++;
-				}
-				if (c.checkSets(Material.DIAMOND_CHESTPLATE)) {
-					chest++;
-				}
-				if (c.checkSets(Material.DIAMOND_LEGGINGS)) {
-					leggings++;
-				}
-				if (c.checkSets(Material.DIAMOND_BOOTS)) {
-					boots++;
-				}
+				if (c.checkSets(Material.DIAMOND_SWORD)) sword++;
+				if (c.checkSets(Material.DIAMOND_AXE)) axe++;
+				if (c.checkSets(Material.DIAMOND_PICKAXE)) pick++;
+				if (c.checkSets(Material.BOW)) bow++;
+				if (c.checkSets(Material.DIAMOND_HELMET)) helm++;
+				if (c.checkSets(Material.DIAMOND_CHESTPLATE)) chest++;
+				if (c.checkSets(Material.DIAMOND_LEGGINGS)) leggings++;
+				if (c.checkSets(Material.DIAMOND_BOOTS)) boots++;
 			}
 		}
 		

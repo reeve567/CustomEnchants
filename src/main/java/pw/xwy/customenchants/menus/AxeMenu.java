@@ -12,14 +12,16 @@ package pw.xwy.customenchants.menus;
 // on 7:43 PM
 
 import pw.xwy.customenchants.enums.ItemSets;
-import pw.xwy.customenchants.enums.MenuItem;
-import pw.xwy.customenchants.enums.Rarities;
-
-import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class AxeMenu extends Menu {
+	private static Menu menu;
+	
 	public AxeMenu() {
 		super(ItemSets.AXE);
-		
+		menu = this;
+	}
+	
+	public static Menu get() {
+		return menu;
 	}
 }

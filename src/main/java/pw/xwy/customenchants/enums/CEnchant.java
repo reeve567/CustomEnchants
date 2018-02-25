@@ -94,6 +94,7 @@ public enum CEnchant {
 	private final String label;
 	private final String loreLbl;
 	private final Rarities rarity;
+	private boolean enabled = true;
 	private final int amount;
 	private final List<ItemSets> sets = new ArrayList<>();
 	
@@ -120,7 +121,7 @@ public enum CEnchant {
 	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets... a) {
 		
 		this.name = inGameName;
-		this.label = ChatColor.stripColor(inGameName);
+		this.label = inGameName.substring(2);
 		this.loreLbl = loreLbl;
 		this.rarity = rarity;
 		amount = a.length;
@@ -139,6 +140,10 @@ public enum CEnchant {
 			}
 		}
 		return false;
+	}
+	
+	public boolean containsSet(ItemSets set) {
+		return (sets.contains(set));
 	}
 	
 	public int getAmount() {
@@ -165,4 +170,11 @@ public enum CEnchant {
 		return rarity;
 	}
 	
+	public void disable() {
+		enabled = false;
+	}
+	
+	public boolean isEnabled() {
+		return enabled;
+	}
 }

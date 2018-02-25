@@ -14,12 +14,15 @@ import org.bukkit.inventory.Inventory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public abstract class Crate {
 	
 	protected static ArrayList<Prize> prizes = new ArrayList<>();
 	private static Crate crate;
 	private HashMap<Player, Inventory> inventories = new HashMap<>();
+	ResourceBundle bundle = ResourceBundle.getBundle("main", Locale.getDefault());
 	Inventory baseInventory;
 	
 	Crate(Inventory inv) {

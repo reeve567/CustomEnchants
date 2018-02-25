@@ -10,13 +10,13 @@
 package pw.xwy.customenchants.menus;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.ItemSets;
 import pw.xwy.customenchants.enums.MenuItem;
 import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.utilities.Resources;
 
 import java.util.ArrayList;
 
@@ -25,11 +25,9 @@ import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class Menu {
 	
-	private static Menu menu;
-	protected Inventory inventory = Bukkit.createInventory(null, 45, ChatColor.RED + "" + ChatColor.BOLD + "Custom Enchants");
+	protected Inventory inventory = Bukkit.createInventory(null, 45, Resources.getMenu("MenuTitle"));
 	
 	Menu(ItemSets type) {
-		menu = this;
 		for (int i = 0; i < 45; i++) {
 			ItemStack topPane = getItem(" ", Material.STAINED_GLASS_PANE, new ArrayList<>());
 			topPane.setDurability((short) 7);
@@ -40,14 +38,14 @@ public class Menu {
 		setItem(Rarities.RARE.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 18, inventory);
 		setItem(Rarities.UNCOMMON.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 27, inventory);
 		setItem(Rarities.COMMON.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 36, inventory);
-		setItem(ChatColor.BLUE + "Back", Material.BOOKSHELF, new ArrayList<>(), 44, inventory);
+		setItem(Resources.getMenu("BackButton"), Material.BARRIER, new ArrayList<>(), 44, inventory);
 		int nextHydro = 1;
 		int nextMystical = 10;
 		int nextRare = 19;
 		int nextUncommon = 28;
 		int nextCommon = 37;
 		for (MenuItem mi : MenuItem.values()) {
-			if (mi.getSets().contains(type)) {
+			if (mi.getCustomEnchant().isEnabled() && mi.getCustomEnchant().containsSet(type)) {
 				if (mi.getCustomEnchant().getRarity().equals(Rarities.HYDRO)) {
 					setItem(mi.getCustomEnchant().getName(), mi.getType(), mi.getDurability(), mi.getDesc(), nextHydro++, inventory);
 				} else if (mi.getCustomEnchant().getRarity().equals(Rarities.MYSTICAL)) {
@@ -61,10 +59,6 @@ public class Menu {
 				}
 			}
 		}
-	}
-	
-	public static Menu get() {
-		return menu;
 	}
 	
 	public Inventory getInventory() {

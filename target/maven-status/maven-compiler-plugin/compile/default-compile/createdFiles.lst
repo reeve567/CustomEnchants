@@ -7,7 +7,6 @@ pw\xwy\customenchants\utilities\MainUtility.class
 pw\xwy\customenchants\schedules\NightVision$1.class
 pw\xwy\customenchants\schedules\NightVision.class
 pw\xwy\customenchants\menus\HelmMenu.class
-pw\xwy\customenchants\schedules\WaterBreathing$1.class
 pw\xwy\customenchants\enums\MenuItem.class
 pw\xwy\customenchants\utilities\ConfigCheck.class
 pw\xwy\customenchants\listeners\FeedListener.class
@@ -25,12 +24,12 @@ pw\xwy\customenchants\enums\Messages.class
 pw\xwy\customenchants\listeners\BowListener$1.class
 pw\xwy\customenchants\listeners\HitListener$1.class
 pw\xwy\customenchants\utilities\SpecialBlockResolver.class
-pw\xwy\customenchants\schedules\Speed$1.class
 pw\xwy\customenchants\schedules\HeartCheck.class
 pw\xwy\customenchants\menus\Menu.class
+pw\xwy\customenchants\soulcrates\UncommonSC.class
 pw\xwy\customenchants\CustomEnchants.class
+pw\xwy\customenchants\listeners\MenuClick.class
 pw\xwy\customenchants\listeners\ListenerHandler.class
-pw\xwy\customenchants\schedules\HeartCheck$1.class
 pw\xwy\customenchants\utilities\MessagesFunctions.class
 pw\xwy\customenchants\utilities\Glow.class
 pw\xwy\customenchants\schedules\crates\HydroCrate.class
@@ -39,9 +38,9 @@ pw\xwy\customenchants\schedules\crates\RareCrate.class
 pw\xwy\customenchants\schedules\Speed.class
 pw\xwy\customenchants\menus\AxeMenu.class
 pw\xwy\customenchants\menus\SwordMenu.class
-pw\xwy\customenchants\schedules\JumpBoost$1.class
-pw\xwy\customenchants\schedules\ValorCheck$1.class
+pw\xwy\customenchants\utilities\Resources.class
 pw\xwy\customenchants\enums\ChangeLog.class
+pw\xwy\customenchants\schedules\ValorCheck$1.class
 pw\xwy\customenchants\listeners\HitListener.class
 pw\xwy\customenchants\soulcrates\RareSC.class
 pw\xwy\customenchants\listeners\GorixClick.class

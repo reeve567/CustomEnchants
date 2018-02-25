@@ -25,16 +25,16 @@ public class MainUtility {
 	
 	public static ItemStack bookGive(String n, boolean perfect) {
 		
-		List<String> desc = new ArrayList<String>();
+		List<String> desc = new ArrayList<>();
 		if (perfect) {
 			desc.add("");
-			desc.add(ChatColor.GREEN + "Success: " + EnchantDrop.getRandomNumberFrom(50, 100) + "%");
-			desc.add(ChatColor.RED + "Destroy: " + EnchantDrop.getRandomNumberFrom(0, 100) + "%");
+			desc.add(Resources.getMenu("SuccessLore").replaceAll("<number>", "" + EnchantDrop.getRandomNumberFrom(50, 100)));
+			desc.add(Resources.getMenu("DestroyLore").replaceAll("<number>", "" + EnchantDrop.getRandomNumberFrom(0, 100)));
 			desc.add("");
 		} else {
 			desc.add("");
-			desc.add(ChatColor.GREEN + "Success: " + EnchantDrop.getRandomNumberFrom(1, 100) + "%");
-			desc.add(ChatColor.RED + "Destroy: " + EnchantDrop.getRandomNumberFrom(0, 100) + "%");
+			desc.add(Resources.getMenu("SuccessLore").replaceAll("<number>", "" + EnchantDrop.getRandomNumberFrom(1, 100)));
+			desc.add(Resources.getMenu("DestroyLore").replaceAll("<number>", "" + EnchantDrop.getRandomNumberFrom(0, 100)));
 			desc.add("");
 		}
 		
@@ -43,8 +43,8 @@ public class MainUtility {
 				if (n.equalsIgnoreCase("Xwy")) {
 					desc.clear();
 					desc.add("");
-					desc.add(ChatColor.GREEN + "Success: " + 100 + "%");
-					desc.add(ChatColor.RED + "Destroy: " + 1 + "%");
+					desc.add(Resources.getMenu("SuccessLore").replaceAll("<number>", "100"));
+					desc.add(Resources.getMenu("DestroyLore").replaceAll("<number>", "0"));
 					desc.add("");
 					desc.add(CEnchant.XWY.getRarity().getLabel());
 					desc.add("");

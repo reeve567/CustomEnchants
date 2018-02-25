@@ -14,8 +14,15 @@ package pw.xwy.customenchants.menus;
 import pw.xwy.customenchants.enums.ItemSets;
 
 public class BootsMenu extends Menu {
+	private static Menu menu;
+	
 	public BootsMenu() {
 		super(ItemSets.BOOTS);
+		menu = this;
+	}
+	
+	public static Menu get() {
+		return menu;
 	}
 	
 }

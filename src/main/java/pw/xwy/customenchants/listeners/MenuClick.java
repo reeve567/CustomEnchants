@@ -18,6 +18,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.menus.*;
+import pw.xwy.customenchants.utilities.Resources;
 
 public class MenuClick implements Listener {
 	
@@ -26,7 +27,7 @@ public class MenuClick implements Listener {
 		
 		ItemStack clicked = e.getCurrentItem();
 		
-		if (e.getInventory().getName().equalsIgnoreCase(ChatColor.RED + "" + ChatColor.BOLD + "Custom Enchants") ||
+		if (e.getInventory().getName().equalsIgnoreCase(Resources.getMenu("MenuTitle")) ||
 				e.getInventory().getName().equalsIgnoreCase(Rarities.HYDRO.getLabel()) ||
 				e.getInventory().getName().equalsIgnoreCase(Rarities.MYSTICAL.getLabel()) ||
 				e.getInventory().getName().equalsIgnoreCase(Rarities.RARE.getLabel()) ||
@@ -36,21 +37,21 @@ public class MenuClick implements Listener {
 			if (clicked != null) {
 				if (clicked.hasItemMeta()) {
 					if (clicked.getItemMeta().hasDisplayName()) {
-						if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Helmet Enchantments"))
-							e.getWhoClicked().openInventory(HelmMenu.get());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Chestplate Enchantments"))
-							e.getWhoClicked().openInventory(ChestMenu.get());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Leggings Enchantments"))
-							e.getWhoClicked().openInventory(LeggingsMenu.get());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Boots Enchantments"))
+						if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Helmet")))
+							e.getWhoClicked().openInventory(HelmMenu.get().getInventory());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Chestplate")))
+							e.getWhoClicked().openInventory(ChestMenu.get().getInventory());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Leggings")))
+							e.getWhoClicked().openInventory(LeggingsMenu.get().getInventory());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Boots")))
 							e.getWhoClicked().openInventory(BootsMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Sword Enchantments"))
-							e.getWhoClicked().openInventory(SwordMenu.get());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Bow Enchantments"))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Sword")))
+							e.getWhoClicked().openInventory(SwordMenu.get().getInventory());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Bow")))
 							e.getWhoClicked().openInventory(BowMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Pickaxe Enchantments"))
-							e.getWhoClicked().openInventory(PickMenu.get());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Axe Enchantments"))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Pickaxe")))
+							e.getWhoClicked().openInventory(PickMenu.get().getInventory());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Axe")))
 							e.getWhoClicked().openInventory(AxeMenu.get().getInventory());
 						else if (e.getSlot() == 44)
 							e.getWhoClicked().openInventory(MainMenu.get());
