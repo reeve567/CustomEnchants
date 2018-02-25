@@ -17,7 +17,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.enums.CEnchant;
 
 public class Speed implements Runnable {
 	
@@ -31,9 +31,9 @@ public class Speed implements Runnable {
 	
 	int ItemCheck(ItemStack i) {
 		
-		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(Enchants.WINDSSPEEDI.getName())) {
+		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.WINDSSPEEDI.getName())) {
 			return 1;
-		} else if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(Enchants.WINDSSPEEDII.getName())) {
+		} else if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.WINDSSPEEDII.getName())) {
 			return 2;
 		}
 		return 0;

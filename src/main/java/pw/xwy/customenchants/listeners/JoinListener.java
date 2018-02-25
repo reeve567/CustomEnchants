@@ -33,12 +33,7 @@ public class JoinListener implements Listener {
 	@EventHandler
 	public void onJoin(final PlayerJoinEvent e) {
 		if (CommonSC.get().isRunningInventory(e.getPlayer())) {
-			Bukkit.getScheduler().runTaskLater(main, new Runnable() {
-				@Override
-				public void run() {
-					crateOpen.openCrate(e.getPlayer(), GorixClick.openCommon(), Rarities.COMMON, GorixClick.r + GorixClick.j);
-				}
-			}, 1);
+			Bukkit.getScheduler().runTaskLater(main, () -> crateOpen.openCrate(e.getPlayer(), GorixClick.openCommon(), Rarities.COMMON, GorixClick.r + GorixClick.j), 1);
 		}
 	}
 	

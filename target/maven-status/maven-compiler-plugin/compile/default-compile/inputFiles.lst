@@ -16,7 +16,7 @@ R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customencha
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\menus\MainMenu.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\soulcrates\HydroSC.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\soulcrates\RareSC.java
-R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\Main.java
+R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\CustomEnchants.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\menus\AxeMenu.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\soulcrates\Prize.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\menus\BowMenu.java
@@ -31,6 +31,7 @@ R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customencha
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\menus\ChestMenu.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\utilities\MainUtility.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\listeners\ExplosionListener.java
+R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\menus\Menu.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\schedules\Speed.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\utilities\CratesUtility.java
 R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\java\pw\xwy\customenchants\enums\Enchants.java

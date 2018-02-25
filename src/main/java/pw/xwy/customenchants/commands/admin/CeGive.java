@@ -15,7 +15,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.enums.Souls;
 
@@ -36,7 +36,7 @@ public class CeGive {
 				if (target != null) {
 					boolean found = false;
 					
-					for (Enchants e : Enchants.values()) {
+					for (CEnchant e : CEnchant.values()) {
 						if (cmdCheck(e.getLabel(), args[1])) {
 							found = true;
 							target.getInventory().addItem(bookGive(args[1], false));
@@ -61,7 +61,7 @@ public class CeGive {
 			} else if (args.length == 2) {
 				if (sender instanceof Player) {
 					boolean found = false;
-					for (Enchants e : Enchants.values()) {
+					for (CEnchant e : CEnchant.values()) {
 						if (cmdCheck(e.getLabel(), args[1])) {
 							found = true;
 							((Player) sender).getInventory().addItem(bookGive(args[1], false));

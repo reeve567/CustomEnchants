@@ -43,7 +43,7 @@ public class MenuClick implements Listener {
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Leggings Enchantments"))
 							e.getWhoClicked().openInventory(LeggingsMenu.get());
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Boots Enchantments"))
-							e.getWhoClicked().openInventory(BootsMenu.get());
+							e.getWhoClicked().openInventory(BootsMenu.get().getInventory());
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Sword Enchantments"))
 							e.getWhoClicked().openInventory(SwordMenu.get());
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Bow Enchantments"))
@@ -51,7 +51,7 @@ public class MenuClick implements Listener {
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Pickaxe Enchantments"))
 							e.getWhoClicked().openInventory(PickMenu.get());
 						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.DARK_PURPLE + "" + ChatColor.BOLD + "Axe Enchantments"))
-							e.getWhoClicked().openInventory(AxeMenu.get());
+							e.getWhoClicked().openInventory(AxeMenu.get().getInventory());
 						else if (e.getSlot() == 44)
 							e.getWhoClicked().openInventory(MainMenu.get());
 					}

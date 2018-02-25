@@ -19,7 +19,7 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.enums.CEnchant;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +39,7 @@ public class DeathListener implements Listener {
 			if (k.getItemInHand().hasItemMeta()) {
 				if (k.getItemInHand().getItemMeta().hasLore()) {
 					for (String s : k.getItemInHand().getItemMeta().getLore()) {
-						if (s.equalsIgnoreCase(Enchants.DECAPITATE.getName())) {
+						if (s.equalsIgnoreCase(CEnchant.DECAPITATE.getName())) {
 							ItemStack head = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
 							SkullMeta meta = (SkullMeta) head.getItemMeta();
 							meta.setOwner(p.getName());
@@ -57,7 +57,7 @@ public class DeathListener implements Listener {
 		while (iter.hasNext()) {
 			ItemStack i = iter.next();
 			if (i.hasItemMeta() && i.getItemMeta().hasLore()) {
-				if (i.getItemMeta().getLore().contains(Enchants.SOULBOUND.getName())) {
+				if (i.getItemMeta().getLore().contains(CEnchant.SOULBOUND.getName())) {
 					int r = EnchantDrop.getRandomNumberFrom(1, 100);
 					if (r <= 10) {
 						keeps.add(i);
@@ -77,14 +77,14 @@ public class DeathListener implements Listener {
 			ItemStack i = p.getItemInHand();
 			
 			if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore()) {
-				if (i.getItemMeta().getLore().contains(Enchants.MOBSLAYERI.getName())) {
+				if (i.getItemMeta().getLore().contains(CEnchant.MOBSLAYERI.getName())) {
 					e.setDroppedExp(e.getDroppedExp() * 2);
-				} else if (i.getItemMeta().getLore().contains(Enchants.MOBSLAYERII.getName())) {
+				} else if (i.getItemMeta().getLore().contains(CEnchant.MOBSLAYERII.getName())) {
 					e.setDroppedExp(e.getDroppedExp() * 3);
-				} else if (i.getItemMeta().getLore().contains(Enchants.MOBSLAYERIII.getName())) {
+				} else if (i.getItemMeta().getLore().contains(CEnchant.MOBSLAYERIII.getName())) {
 					e.setDroppedExp(e.getDroppedExp() * 4);
 				}
-				if (i.getItemMeta().getLore().contains(Enchants.ANIMALCOOKER.getName())) {
+				if (i.getItemMeta().getLore().contains(CEnchant.ANIMALCOOKER.getName())) {
 					changeDrops(e);
 				} else if (BowListener.furnaceList.contains(p.getName())) {
 					changeDrops(e);

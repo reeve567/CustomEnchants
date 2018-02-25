@@ -15,15 +15,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 
 public class MysticalSC extends Crate {
 	
-	MysticalSC() {
+	public MysticalSC() {
 		super(Bukkit.createInventory(null, 27, Rarities.MYSTICAL.getLabel()));
-		for (Enchants ces : Enchants.values()) {
+		for (CEnchant ces : CEnchant.values()) {
 			if (ces.getRarity().equals(Rarities.MYSTICAL)) {
 				prizes.add(new Prize(ces.getName(), new ItemStack(Material.BOOK)));
 			}

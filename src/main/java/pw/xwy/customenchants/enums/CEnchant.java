@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public enum Enchants {
+public enum CEnchant {
 	THOR("&cThor", "Axe", Rarities.COMMON, ItemSets.AXE),
 	STORMCALLER("&cStormCaller", "Sword", Rarities.COMMON, ItemSets.SWORD),
 	REKT("&cRekt", "Axe", Rarities.RARE, ItemSets.AXE),
@@ -97,7 +97,7 @@ public enum Enchants {
 	private final int amount;
 	private final List<ItemSets> sets = new ArrayList<>();
 	
-	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets... a) {
+	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets... a) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -107,7 +107,7 @@ public enum Enchants {
 		sets.addAll(Arrays.asList(a));
 	}
 	
-	Enchants(String inGameName, String commandLabel, String loreLbl, Rarities rarity, int am, ItemSets... a) {
+	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, int am, ItemSets... a) {
 		
 		this.name = inGameName;
 		this.label = commandLabel;
@@ -117,7 +117,7 @@ public enum Enchants {
 		sets.addAll(Arrays.asList(a));
 	}
 	
-	Enchants(String inGameName, String loreLbl, Rarities rarity, ItemSets... a) {
+	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets... a) {
 		
 		this.name = inGameName;
 		this.label = ChatColor.stripColor(inGameName);

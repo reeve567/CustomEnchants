@@ -28,7 +28,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.utilities.MessagesFunctions;
 
@@ -139,12 +139,12 @@ public class BowListener implements Listener {
 					}
 				} else if (e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
 					if (e.getItem() != null && e.getItem().hasItemMeta() && e.getItem().getItemMeta().hasLore() && e.getItem().getItemMeta().getLore()
-							.contains(Enchants.RIFLE
+							.contains(CEnchant.RIFLE
 									.getName())) {
 						
 						if (e.getPlayer().getItemInHand().getItemMeta().getLore().contains(ChatColor.GRAY + "Mode: Rifle") ||
 								(e.getPlayer().getInventory().getBoots() != null && e.getPlayer().getInventory().getBoots().hasItemMeta() && e.getPlayer
-										().getInventory().getBoots().getItemMeta().hasLore() && e.getPlayer().getInventory().getBoots().getItemMeta().getLore().contains(Enchants.XWY.getName()))) {
+										().getInventory().getBoots().getItemMeta().hasLore() && e.getPlayer().getInventory().getBoots().getItemMeta().getLore().contains(CEnchant.XWY.getName()))) {
 							if (e.getPlayer().getItemInHand().getItemMeta().getLore().contains(ChatColor.GRAY + "Mode: Rifle")) {
 								if (e.getPlayer().getInventory().contains(Material.ARROW)) {
 									
@@ -194,7 +194,7 @@ public class BowListener implements Listener {
 		if (e.getEntity() instanceof Player) {
 			if (e.getBow().hasItemMeta()) {
 				if (e.getBow().getItemMeta().hasLore()) {
-					if (e.getBow().getItemMeta().getLore().contains(Enchants.SHOTGUN.getName())) {
+					if (e.getBow().getItemMeta().getLore().contains(CEnchant.SHOTGUN.getName())) {
 						ItemStack i = e.getBow();
 						if (i.getItemMeta().getLore().contains(ChatColor.GRAY + "Mode: Default")) {
 							if (((Player) e.getEntity()).getInventory().contains(Material.ARROW, 4)) {
@@ -236,10 +236,10 @@ public class BowListener implements Listener {
 						for (String s : i.getItemMeta().getLore()) {
 							if (s.equalsIgnoreCase(ChatColor.GRAY + "Mode: Grappling")) {
 								for (String k : i.getItemMeta().getLore()) {
-									if (k.equalsIgnoreCase(Enchants.GRAPPLINGBOW.getName())) {
+									if (k.equalsIgnoreCase(CEnchant.GRAPPLINGBOW.getName())) {
 										
 										ItemStack boots = p.getInventory().getBoots();
-										if (boots != null && boots.getItemMeta().getLore().contains(Enchants.XWY.getName())) {
+										if (boots != null && boots.getItemMeta().getLore().contains(CEnchant.XWY.getName())) {
 											fired.add(p.getName());
 										} else {
 											if (!cantShoot.contains(p.getName())) {
@@ -260,28 +260,28 @@ public class BowListener implements Listener {
 										}
 									}
 								}
-							} else if (s.equalsIgnoreCase(Enchants.FROZENARROW.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.FROZENARROW.getName())) {
 								if (!freezerlist.contains(p.getName())) {
 									freezerlist.add(p.getName());
 								}
-							} else if (s.equalsIgnoreCase(Enchants.VOLTAGE.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.VOLTAGE.getName())) {
 								if (!smiteList.contains(p.getName())) {
 									smiteList.add(p.getName());
 									HitListener.summoner = p;
 								}
-							} else if (s.equalsIgnoreCase(Enchants.POISONOUSARROW.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.POISONOUSARROW.getName())) {
 								if (!poisonList.contains(p.getName())) {
 									poisonList.add(p.getName());
 								}
-							} else if (s.equalsIgnoreCase(Enchants.FURNACE.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.FURNACE.getName())) {
 								if (!furnaceList.contains(p.getName())) {
 									furnaceList.add(p.getName());
 								}
-							} else if (s.equalsIgnoreCase(Enchants.EXPLOSIVEARROW.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.EXPLOSIVEARROW.getName())) {
 								if (!explosiveList.contains(p.getName())) {
 									explosiveList.add(p.getName());
 								}
-							} else if (s.equalsIgnoreCase(Enchants.RPG.getName())) {
+							} else if (s.equalsIgnoreCase(CEnchant.RPG.getName())) {
 								if (!rpgList.contains(p.getName())) {
 									rpgList.add(p.getName());
 								}

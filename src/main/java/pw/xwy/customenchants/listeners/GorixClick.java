@@ -18,7 +18,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.customenchants.Main;
+import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
@@ -30,7 +30,7 @@ public class GorixClick implements Listener {
 	static int r;
 	static int j;
 	private JavaPlugin main;
-	private Economy econ = Main.getEcononomy();
+	private Economy econ = CustomEnchants.getEcononomy();
 	
 	GorixClick(JavaPlugin main) {
 		this.main = main;

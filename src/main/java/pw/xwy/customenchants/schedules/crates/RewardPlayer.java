@@ -19,12 +19,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.CustomEnchants;
+import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 import pw.xwy.customenchants.listeners.EnchantDrop;
-import pw.xwy.customenchants.Main;
 import pw.xwy.customenchants.utilities.MainUtility;
 
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class RewardPlayer extends BukkitRunnable {
 	private Economy econ;
 	
 	public RewardPlayer(Inventory inv, Player p, Souls soul) {
-		econ = Main.getEcononomy();
+		econ = CustomEnchants.getEcononomy();
 		this.inv = inv;
 		this.p = p;
 		this.soul = soul;
@@ -222,21 +222,21 @@ public class RewardPlayer extends BukkitRunnable {
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "kit kraken " + p.getName());
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				} else if (i.getType().equals(Material.NETHER_STAR)) {
-					ArrayList<Enchants> common = new ArrayList<>();
-					for (Enchants ce : Enchants.values()) {
+					ArrayList<CEnchant> common = new ArrayList<>();
+					for (CEnchant ce : CEnchant.values()) {
 						if (ce.getRarity().equals(Rarities.COMMON)) {
 							common.add(ce);
 						}
 					}
-					Enchants c = common.get(EnchantDrop.getRandomNumberFrom(0, common.size() - 1));
+					CEnchant c = common.get(EnchantDrop.getRandomNumberFrom(0, common.size() - 1));
 					p.getInventory().addItem(MainUtility.bookGive(c.getName(), false));
-					ArrayList<Enchants> uncommon = new ArrayList<>();
-					for (Enchants ce : Enchants.values()) {
+					ArrayList<CEnchant> uncommon = new ArrayList<>();
+					for (CEnchant ce : CEnchant.values()) {
 						if (ce.getRarity().equals(Rarities.UNCOMMON)) {
 							uncommon.add(ce);
 						}
 					}
-					Enchants u = uncommon.get(EnchantDrop.getRandomNumberFrom(0, uncommon.size() - 1));
+					CEnchant u = uncommon.get(EnchantDrop.getRandomNumberFrom(0, uncommon.size() - 1));
 					p.getInventory().addItem(MainUtility.bookGive(u.getName(), false));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				}

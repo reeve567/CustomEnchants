@@ -13,14 +13,15 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public enum MenuItems {
+public enum MenuItem {
 	DEMONSWEAKNESSI("Has a chance to give the opponent weakness for 2 seconds.", Material.EYE_OF_ENDER, ItemSets.SWORD, ItemSets.AXE),
 	DEMONSWEAKNESSII("Has a chance to give the opponent weakness for 4 seconds.", Material.EYE_OF_ENDER, ItemSets.SWORD, ItemSets.AXE),
-	SMOKESCREENI("Has a chance to give the opponent blindness for 2 seconds.", Material.COAL, ItemSets.SWORD, ItemSets.AXE),
-	SMOKESCREENII("Has a chance to give the opponent blindness for 4 seconds.", Material.COAL, ItemSets.SWORD, ItemSets.AXE),
-	SMOKESCREENIII("Has a chance to give the opponent blindness for 5 seconds.", Material.COAL, ItemSets.SWORD, ItemSets.AXE),
+	SMOKESCREENI("Has a chance to give the opponent blindness for 2 seconds.", Material.COAL,1, ItemSets.SWORD, ItemSets.AXE),
+	SMOKESCREENII("Has a chance to give the opponent blindness for 4 seconds.", Material.COAL,1, ItemSets.SWORD, ItemSets.AXE),
+	SMOKESCREENIII("Has a chance to give the opponent blindness for 5 seconds.", Material.COAL,1, ItemSets.SWORD, ItemSets.AXE),
 	CURSED("Has a chance to give the opponent Mining Fatigue for 8 seconds.", Material.WOOD_PICKAXE, ItemSets.AXE),
 	SOULBOUND("Dying with this enchant on an item++has a chance of keeping it on respawn.", Material.GOLDEN_APPLE, 1, ItemSets.HELM, ItemSets.CHEST, ItemSets.LEGGINGS, ItemSets.BOOTS, ItemSets.SWORD, ItemSets.BOW, ItemSets.PICK, ItemSets.AXE),
 	REKT("Has a chance to deal double damage.", Material.DIAMOND_PICKAXE, ItemSets.AXE),
@@ -62,7 +63,7 @@ public enum MenuItems {
 	FURNACE("This enchant allows your arrows to cook the++meat of animals that it kills.", Material.GRILLED_PORK, ItemSets.BOW),
 	MOONGRAVITY("This enchant gives the wearer JumpBoost I infinitely.", Material.GOLDEN_CARROT, ItemSets.BOOTS),
 	SUPERSPEED("When you hit to one and a half hearts or below, you get a speed boost for 3 seconds.", Material.GOLD_BOOTS, ItemSets.BOOTS),
-	LEADERSHIP("When faction members are near you, your damage is increased.", Material.GOLD_HELMET, ItemSets.BOOTS),
+	LEADERSHIP("When faction members are near you, your damage is increased.", Material.CHAINMAIL_HELMET, ItemSets.BOOTS),
 	WINDSSPEEDI("This enchant gives the wearer Speed I infinitely.", Material.SUGAR, ItemSets.BOOTS),
 	WINDSSPEEDII("This enchant gives the wearer Speed II infinitely.", Material.SUGAR, ItemSets.BOOTS),
 	HARDENED("This enchant increases the amount of blocks you++can mine without repairing.", Material.WOOD_PICKAXE, ItemSets.PICK),
@@ -87,91 +88,44 @@ public enum MenuItems {
 	PARALYZE("Hitting a mob has a chance to slow++it's movement speed.", Material.ROTTEN_FLESH, ItemSets.SWORD),
 	ANIMALCOOKER("Killing mobs will cook their meat automatically.", Material.COOKED_BEEF, ItemSets.SWORD);
 	
-	private Enchants customEnchant;
-	private ArrayList<String> desc = new ArrayList<>();
-	private Material type;
+	private final CEnchant customEnchant;
+	private final ArrayList<String> desc;
+	private final Material type;
+	private final List<ItemSets> sets = new ArrayList<>();
 	private byte durability = 0;
-	private List<ItemSets> sets = new ArrayList<>();
+	
+	MenuItem(String desc, Material type, ItemSets... a) {
+		customEnchant = CEnchant.valueOf(toString());
+		this.desc = conv(desc);
+		this.type = type;
+		sets.addAll(Arrays.asList(a));
+	}
+	
+	MenuItem(String desc, Material type, int dur, ItemSets... a) {
+		customEnchant = CEnchant.valueOf(toString());
+		durability = (byte) dur;
+		this.desc = conv(desc);
+		this.type = type;
+		sets.addAll(Arrays.asList(a));
+	}
 	
 	private ArrayList<String> conv(String desc) {
 		ArrayList<String> de = new ArrayList<>();
 		while (desc.contains("++")) {
 			
-			de.add(ChatColor.AQUA + desc.substring(0,desc.indexOf("++")));
-			desc = desc.replace(desc.substring(0,desc.indexOf("++") + 2),"");
+			de.add(ChatColor.AQUA + desc.substring(0, desc.indexOf("++")));
+			desc = desc.replace(desc.substring(0, desc.indexOf("++") + 2), "");
 		}
 		de.add(ChatColor.AQUA + desc);
 		return de;
 	}
 	
-	MenuItems(String desc, Material type, ItemSets a) {
-		customEnchant = Enchants.valueOf(toString());
-		this.desc = conv(desc);
-		this.type = type;
-		sets.add(a);
-	}
-	
-	MenuItems(String desc, Material type, ItemSets a, ItemSets b) {
-		customEnchant = Enchants.valueOf(toString());
-		this.desc = conv(desc);
-		this.type = type;
-		sets.add(a);
-		sets.add(b);
-	}
-	
-	MenuItems(String desc, Material type, int dur, ItemSets a) {
-		customEnchant = Enchants.valueOf(toString());
-		durability = (byte) dur;
-		this.desc = conv(desc);
-		this.type = type;
-		sets.add(a);
-	}
-	
-	MenuItems(String desc, Material type, int dur, ItemSets a, ItemSets b) {
-		customEnchant = Enchants.valueOf(toString());
-		durability = (byte) dur;
-		this.desc = conv(desc);
-		this.type = type;
-		sets.add(a);
-		sets.add(b);
-	}
-	
-	MenuItems(String desc, Material type, ItemSets a, ItemSets b, ItemSets c, ItemSets d) {
-		customEnchant = Enchants.valueOf(toString());
-		this.desc = conv(desc);
-		this.type = type;
-		sets.add(a);
-		sets.add(b);
-		sets.add(c);
-		sets.add(d);
-	}
-	
-	MenuItems(String desc, Material type, int dur, ItemSets a, ItemSets b, ItemSets c, ItemSets d, ItemSets e, ItemSets f, ItemSets g, ItemSets h) {
-		customEnchant = Enchants.valueOf(toString());
-		durability = (byte) dur;
-		this.desc = conv(desc);
-		this.type = type;
-		sets.add(a);
-		sets.add(b);
-		sets.add(d);
-		sets.add(d);
-		sets.add(e);
-		sets.add(f);
-		sets.add(g);
-		sets.add(h);
-		
-	}
-	
-	public Enchants getCustomEnchant() {
+	public CEnchant getCustomEnchant() {
 		return customEnchant;
 	}
 	
 	public ArrayList<String> getDesc() {
 		return desc;
-	}
-	
-	public Material getType() {
-		return type;
 	}
 	
 	public byte getDurability() {
@@ -180,5 +134,9 @@ public enum MenuItems {
 	
 	public List<ItemSets> getSets() {
 		return sets;
+	}
+	
+	public Material getType() {
+		return type;
 	}
 }

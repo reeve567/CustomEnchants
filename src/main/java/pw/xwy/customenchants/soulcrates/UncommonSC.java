@@ -15,15 +15,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Rarities;
 import pw.xwy.customenchants.enums.Souls;
 
 public class UncommonSC extends Crate {
 	
-	UncommonSC() {
+	public UncommonSC() {
 		super(Bukkit.createInventory(null, 27, Rarities.UNCOMMON.getLabel()));
-		for (Enchants ces : Enchants.values()) {
+		for (CEnchant ces : CEnchant.values()) {
 			if (ces.getRarity().equals(Rarities.UNCOMMON)) {
 				prizes.add(new Prize(ces.getName(), new ItemStack(Material.BOOK)));
 			}

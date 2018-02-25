@@ -20,11 +20,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import pw.xwy.customenchants.commands.CommandHandler;
-import pw.xwy.customenchants.enums.Enchants;
+import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
 import pw.xwy.customenchants.listeners.ListenerHandler;
+import pw.xwy.customenchants.menus.AxeMenu;
+import pw.xwy.customenchants.menus.BootsMenu;
+import pw.xwy.customenchants.menus.BowMenu;
 import pw.xwy.customenchants.menus.SwordMenu;
 import pw.xwy.customenchants.schedules.*;
+import pw.xwy.customenchants.soulcrates.*;
 import pw.xwy.customenchants.utilities.ConfigCheck;
 import pw.xwy.customenchants.utilities.Glow;
 import pw.xwy.customenchants.utilities.MessagesFunctions;
@@ -32,20 +36,34 @@ import pw.xwy.customenchants.utilities.MessagesFunctions;
 import java.lang.reflect.Field;
 import java.util.logging.Logger;
 
-public class Main extends JavaPlugin {
+public class CustomEnchants extends JavaPlugin {
 	
 	private static final Logger log = Logger.getLogger("Minecraft");
-	private static Main main;
-	private static Economy econ = null;
 	public static int ceCount;
+	private static CustomEnchants customEnchants;
+	private static Economy econ = null;
 	private CommandHandler commandHandler;
+	
+	public static CustomEnchants getCustomEnchants() {
+		return customEnchants;
+	}
 	
 	public static Economy getEcononomy() {
 		return econ;
 	}
 	
-	public static Main getMain() {
-		return main;
+	private void loadCrates() {
+		new HydroSC();
+		new MysticalSC();
+		new RareSC();
+		new UncommonSC();
+		new CommonSC();
+	}
+	
+	private void loadMenus() {
+		new AxeMenu();
+		new BootsMenu();
+		new BowMenu();
 	}
 	
 	private void registerGlow() {
@@ -59,7 +77,7 @@ public class Main extends JavaPlugin {
 		try {
 			Glow glow = new Glow(70);
 			Enchantment.registerEnchantment(glow);
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException ignored) {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -67,16 +85,13 @@ public class Main extends JavaPlugin {
 	
 	private boolean setupEconomy() {
 		if (getServer().getPluginManager().getPlugin("Vault") == null) {
-			System.out.println(1);
 			return false;
 		}
 		RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
 		if (rsp == null) {
-			System.out.println(2);
 			return false;
 		}
 		econ = rsp.getProvider();
-		System.out.println(3);
 		return econ != null;
 	}
 	
@@ -119,9 +134,11 @@ public class Main extends JavaPlugin {
 		ListenerHandler listnerHandler = new ListenerHandler(this);
 		commandHandler = new CommandHandler();
 		commandHandler.Init();
-		main = this;
+		customEnchants = this;
 		listnerHandler.Init();
 		registerGlow();
+		loadCrates();
+		loadMenus();
 		new WaterBreathing(this);
 		new NightVision(this);
 		new HeartCheck(this);
@@ -133,7 +150,6 @@ public class Main extends JavaPlugin {
 		if (configCheck.Init()) {
 			System.out.println("setup completed");
 		}
-		
 		int ce = 0;
 		
 		int sword = 0;
@@ -145,7 +161,7 @@ public class Main extends JavaPlugin {
 		int leggings = 0;
 		int boots = 0;
 		
-		for (Enchants c : Enchants.values()) {
+		for (CEnchant c : CEnchant.values()) {
 			if (c.getAmount() > 0) {
 				ce += c.getAmount();
 				if (c.checkSets(Material.DIAMOND_SWORD)) {
@@ -213,6 +229,5 @@ public class Main extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
-		
 	}
 }
