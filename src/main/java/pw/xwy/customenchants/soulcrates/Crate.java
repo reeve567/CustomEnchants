@@ -21,9 +21,9 @@ public abstract class Crate {
 	
 	protected static ArrayList<Prize> prizes = new ArrayList<>();
 	private static Crate crate;
-	private HashMap<Player, Inventory> inventories = new HashMap<>();
 	ResourceBundle bundle = ResourceBundle.getBundle("main", Locale.getDefault());
 	Inventory baseInventory;
+	private HashMap<Player, Inventory> inventories = new HashMap<>();
 	
 	Crate(Inventory inv) {
 		crate = this;

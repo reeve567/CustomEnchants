@@ -29,17 +29,6 @@ public class Speed implements Runnable {
 		run();
 	}
 	
-	int ItemCheck(ItemStack i) {
-		
-		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.WINDSSPEEDI.getName())) {
-			return 1;
-		} else if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.WINDSSPEEDII.getName())) {
-			return 2;
-		}
-		return 0;
-	}
-	
-	
 	@Override
 	public void run() {
 		
@@ -55,6 +44,16 @@ public class Speed implements Runnable {
 				}
 			}
 		}, 20L, 0);
+	}
+	
+	int ItemCheck(ItemStack i) {
+		
+		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.WINDSSPEEDI.getName())) {
+			return 1;
+		} else if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.WINDSSPEEDII.getName())) {
+			return 2;
+		}
+		return 0;
 	}
 	
 }

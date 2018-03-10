@@ -31,33 +31,6 @@ public class SpecialBlockResolver {
 		return checkForMaterial(l, Material.BED_BLOCK);
 	}
 	
-	public static Location getDoor(Location l) {
-		Location returnV = checkForMaterial(l, Material.IRON_DOOR_BLOCK);
-		if (returnV == null)
-			returnV = checkForMaterial(l, Material.WOODEN_DOOR);
-		return returnV;
-	}
-	
-	public static Location getPiston(Location l) {
-		Location returnV = checkForMaterial(l, Material.PISTON_BASE);
-		if (returnV == null) {
-			returnV = checkForMaterial(l, Material.PISTON_EXTENSION);
-			if (returnV == null) {
-				returnV = checkForMaterial(l, Material.PISTON_MOVING_PIECE);
-				if (returnV == null) {
-					returnV = checkForMaterial(l, Material.PISTON_STICKY_BASE);
-					return returnV;
-				} else {
-					return returnV;
-				}
-			} else {
-				return returnV;
-			}
-		} else {
-			return returnV;
-		}
-	}
-	
 	private static Location checkForMaterial(Location l, Material mat) {
 		Location returnV = null;
 		List<Location> locs = new ArrayList<Location>();
@@ -93,5 +66,32 @@ public class SpecialBlockResolver {
 			}
 		}
 		return returnV;
+	}
+	
+	public static Location getDoor(Location l) {
+		Location returnV = checkForMaterial(l, Material.IRON_DOOR_BLOCK);
+		if (returnV == null)
+			returnV = checkForMaterial(l, Material.WOODEN_DOOR);
+		return returnV;
+	}
+	
+	public static Location getPiston(Location l) {
+		Location returnV = checkForMaterial(l, Material.PISTON_BASE);
+		if (returnV == null) {
+			returnV = checkForMaterial(l, Material.PISTON_EXTENSION);
+			if (returnV == null) {
+				returnV = checkForMaterial(l, Material.PISTON_MOVING_PIECE);
+				if (returnV == null) {
+					returnV = checkForMaterial(l, Material.PISTON_STICKY_BASE);
+					return returnV;
+				} else {
+					return returnV;
+				}
+			} else {
+				return returnV;
+			}
+		} else {
+			return returnV;
+		}
 	}
 }

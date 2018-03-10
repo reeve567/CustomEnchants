@@ -11,7 +11,6 @@ package pw.xwy.customenchants.listeners;
 // made by reeve
 // on 8:59 PM
 
-import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;

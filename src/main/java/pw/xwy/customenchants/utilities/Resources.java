@@ -18,7 +18,7 @@ public class Resources {
 	
 	public static String getMenu(String s) {
 		ResourceBundle bundle = ResourceBundle.getBundle("menu", Locale.getDefault());
-		return ChatColor.translateAlternateColorCodes('&',bundle.getString(s));
+		return ChatColor.translateAlternateColorCodes('&', bundle.getString(s));
 	}
 	
 }

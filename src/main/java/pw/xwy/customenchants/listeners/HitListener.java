@@ -40,37 +40,6 @@ public class HitListener implements Listener {
 		this.main = main;
 	}
 	
-	private boolean armorCheck(ItemStack a, String ench) {
-		
-		if (a != null) {
-			if (a.hasItemMeta()) {
-				if (a.getItemMeta().hasLore()) {
-					for (String s : a.getItemMeta().getLore()) {
-						if (s.equalsIgnoreCase(ench)) return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
-	
-	private void moltenFunc(Entity damager, Entity person) {
-		
-		if (damager instanceof Arrow) {
-			Arrow arrow = (Arrow) damager;
-			if (arrow.getShooter() instanceof Skeleton) {
-				Skeleton sk = (Skeleton) arrow.getShooter();
-				sk.setFireTicks(100);
-				
-			} else if (arrow.getShooter() instanceof Player) {
-				Player pl = (Player) arrow.getShooter();
-				pl.setFireTicks(100);
-			} else
-				person.sendMessage(String.valueOf(((Arrow) damager).getShooter()));
-		} else
-			damager.setFireTicks(100);
-	}
-	
 	@EventHandler
 	public void EnvHit(EntityDamageEvent e) {
 		
@@ -152,6 +121,20 @@ public class HitListener implements Listener {
 					e.setCancelled(true);
 			}
 		}
+	}
+	
+	private boolean armorCheck(ItemStack a, String ench) {
+		
+		if (a != null) {
+			if (a.hasItemMeta()) {
+				if (a.getItemMeta().hasLore()) {
+					for (String s : a.getItemMeta().getLore()) {
+						if (s.equalsIgnoreCase(ench)) return true;
+					}
+				}
+			}
+		}
+		return false;
 	}
 	
 	@EventHandler
@@ -500,6 +483,23 @@ public class HitListener implements Listener {
 				}
 			}
 		}
+	}
+	
+	private void moltenFunc(Entity damager, Entity person) {
+		
+		if (damager instanceof Arrow) {
+			Arrow arrow = (Arrow) damager;
+			if (arrow.getShooter() instanceof Skeleton) {
+				Skeleton sk = (Skeleton) arrow.getShooter();
+				sk.setFireTicks(100);
+				
+			} else if (arrow.getShooter() instanceof Player) {
+				Player pl = (Player) arrow.getShooter();
+				pl.setFireTicks(100);
+			} else
+				person.sendMessage(String.valueOf(((Arrow) damager).getShooter()));
+		} else
+			damager.setFireTicks(100);
 	}
 	
 	@EventHandler

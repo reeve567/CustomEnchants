@@ -2,81 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2a76ea9-f55e-41cb-ae5e-22d629ae7ec5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Enums/ItemSets.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Enums/Rarities.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Listeners/EnchantDrop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Listeners/ListenerHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/FlashCheck$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/FlashCheck.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/JumpBoost.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/NightVision$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/NightVision.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/ValorCheck$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/ValorCheck.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/Schedules/crates/MysticalCrate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/SoulCrates/Prize.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/menus/ChestMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/menus/HelmMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/utilities/FortuneCalc.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/utilities/Glow.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/utilities/MainUtility.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/utilities/MenuUtility.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/utilities/MessagesFunctions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/CustomEnchants/utilities/SpecialBlockResolver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/CustomEnchants.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/commands/CommandHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/commands/admin/CeGive.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/commands/player/CeMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/enums/CEnchant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/enums/ChangeLog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/enums/Gorix.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/enums/MenuItem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/enums/Messages.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/enums/Souls.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/ArmorListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/BlockListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/BowListener$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/BowListener$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/BowListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/DeathListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/ExplosionListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/FeedListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/GorixClick.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/HitListener$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/HitListener$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/HitListener$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/HitListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/JoinListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/MenuClick.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/RespawnListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/listeners/SprintListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/AxeMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/BootsMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/BowMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/LeggingsMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/MainMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/Menu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/PickMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/menus/SwordMenu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/HeartCheck.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/Speed.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/WaterBreathing.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/crates/CommonCrate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/crates/HydroCrate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/crates/RareCrate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/crates/RewardPlayer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/schedules/crates/UncommonCrate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/soulcrates/CommonSC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/soulcrates/Crate.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/soulcrates/CrateOpen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/soulcrates/HydroSC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/soulcrates/MysticalSC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/soulcrates/RareSC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/soulcrates/UncommonSC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/utilities/ConfigCheck.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/utilities/CratesUtility.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/pw/xwy/customenchants/utilities/Resources.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CustomEnchants.iml" afterPath="$PROJECT_DIR$/CustomEnchants.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/CustomEnchants.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/CustomEnchants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BowListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BowListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/EnchantDrop.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/EnchantDrop.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/GorixClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/GorixClick.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ListenerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ListenerHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/SwordMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/SwordMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/FlashCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/FlashCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HeartCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HeartCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/JumpBoost.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/JumpBoost.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/NightVision.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/NightVision.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/Speed.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/Speed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/ValorCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/ValorCheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/WaterBreathing.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/WaterBreathing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/Crate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/Crate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/UncommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/UncommonSC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MenuUtility.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MenuUtility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/Resources.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/Resources.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/SpecialBlockResolver.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/SpecialBlockResolver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -104,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="29" column="84" lean-forward="false" selection-start-line="29" selection-start-column="84" selection-end-line="29" selection-end-column="84" />
+              <caret line="28" column="84" lean-forward="false" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -124,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/menu.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+              <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -140,11 +89,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HitListener.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java">
+      <file leaf-file-name="BlockListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+            <state relative-caret-position="51">
+              <caret line="145" column="59" lean-forward="false" selection-start-line="145" selection-start-column="59" selection-end-line="145" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -237,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/crates/RareCrate.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/crates/UncommonCrate.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/crates/CommonCrate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/GorixClick.java" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
@@ -255,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/PickMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/test.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/test.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/strings.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/CommonPrizeNames.properties" />
@@ -282,6 +239,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/main.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java" />
         <option value="$PROJECT_DIR$/src/main/resources/menu.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -388,6 +347,25 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="customenchants" type="462c0819:PsiDirectoryNode" />
               <item name="menus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomEnchants" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomEnchants" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="customenchants" type="462c0819:PsiDirectoryNode" />
+              <item name="schedules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CustomEnchants" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomEnchants" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="customenchants" type="462c0819:PsiDirectoryNode" />
+              <item name="schedules" type="462c0819:PsiDirectoryNode" />
+              <item name="crates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CustomEnchants" type="b2602c69:ProjectViewProjectNode" />
@@ -656,7 +634,7 @@
       <workItem from="1519515093003" duration="15803000" />
       <workItem from="1519531881813" duration="5185000" />
       <workItem from="1519571598447" duration="95000" />
-      <workItem from="1520699449477" duration="107000" />
+      <workItem from="1520699449477" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="asdasd">
       <created>1519523384074</created>
@@ -669,14 +647,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398174000" />
+    <option name="totallyTimeSpent" value="398288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1216" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32910246" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910246" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -687,9 +666,10 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2614295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296636" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -705,7 +685,6 @@
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296636" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296636" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -823,17 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/BowMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="e#918#919#0" expanded="false" />
-            <element signature="e#936#937#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/BootsMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -850,8 +818,8 @@
         <state relative-caret-position="132">
           <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding>
-            <element signature="e#891#892#0" expanded="false" />
-            <element signature="e#909#910#0" expanded="false" />
+            <element signature="e#893#894#0" expanded="false" />
+            <element signature="e#911#912#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -909,14 +877,6 @@
     </entry>
     <entry file="jar://R:/repo/pw/xwy/factions/XFactions-Core.jar!/classes/pw/xwy/Factions/objects/faction/XPlayerFaction.class" />
     <entry file="jar://R:/repo/pw/xwy/factions/XFactions-Core.jar!/pw/xwy/Factions/objects/faction/XPlayer.class" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="74" column="35" lean-forward="false" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/AxeMenu.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -930,14 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6621">
-          <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1138,7 +1090,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="29" column="84" lean-forward="false" selection-start-line="29" selection-start-column="84" selection-end-line="29" selection-end-column="84" />
+          <caret line="28" column="84" lean-forward="false" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
           <folding />
         </state>
       </provider>
@@ -1154,7 +1106,23 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/menu.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/BowMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2193">
+          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1167,10 +1135,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="51">
+          <caret line="145" column="59" lean-forward="false" selection-start-line="145" selection-start-column="59" selection-end-line="145" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
           <folding />
         </state>
       </provider>

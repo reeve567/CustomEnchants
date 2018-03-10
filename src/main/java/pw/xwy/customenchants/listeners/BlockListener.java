@@ -30,139 +30,8 @@ import pw.xwy.customenchants.utilities.FortuneCalc;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class BlockListener implements Listener {
-	
-	private static boolean shouldAdd(Material mat, ItemStack is) {
-		
-		if (mat == Material.BEDROCK || mat == Material.COMMAND || mat == Material.ENDER_PORTAL || mat == Material.ENDER_PORTAL_FRAME || mat == Material.LAVA || mat == Material.STATIONARY_LAVA || mat == Material.WATER || mat == Material.STATIONARY_WATER) {
-			return false;
-		} else if (mat == Material.OBSIDIAN) {
-			return is.getType() == Material.DIAMOND_PICKAXE;
-		} else if (mat == Material.ENDER_CHEST || mat == Material.ANVIL || mat == Material.COAL_BLOCK
-				|| mat == Material.REDSTONE_BLOCK || mat == Material.ENCHANTMENT_TABLE ||
-				mat == Material.IRON_BARDING || mat == Material.IRON_DOOR_BLOCK || mat == Material.MOB_SPAWNER ||
-				mat == Material.DISPENSER || mat == Material.DROPPER || mat == Material.COAL_ORE ||
-				mat == Material.ENDER_STONE || mat == Material.HOPPER || mat == Material.QUARTZ_ORE ||
-				mat == Material.BRICK_STAIRS || mat == Material.BRICK || mat == Material.CAULDRON ||
-				mat == Material.COBBLESTONE || mat == Material.COBBLESTONE_STAIRS || mat == Material.COBBLE_WALL ||
-				mat == Material.MOSSY_COBBLESTONE || mat == Material.NETHER_BRICK || mat == Material.NETHER_BRICK_STAIRS
-				|| mat == Material.STONE_PLATE || (mat.getId() == 43 || mat.getId() == 44) || mat == Material.STONE ||
-				(mat.getId() == 94 || mat.getId() == 109) || (mat.getId() == 159 || mat.getId() == 172) ||
-				mat == Material.QUARTZ_BLOCK || mat == Material.SANDSTONE || mat == Material.SANDSTONE_STAIRS ||
-				mat == Material.NETHERRACK) {
-			return is.getType() == Material.WOOD_PICKAXE || is.getType() == Material.STONE_PICKAXE ||
-					is.getType() == Material.IRON_PICKAXE || is.getType() == Material.DIAMOND_PICKAXE;
-		} else if (mat == Material.IRON_BLOCK || mat == Material.IRON_ORE || mat == Material.LAPIS_BLOCK || mat ==
-				Material.LAPIS_ORE) {
-			return is.getType() == Material.STONE_PICKAXE || is.getType() == Material.IRON_PICKAXE || is.getType() ==
-					Material.DIAMOND_PICKAXE;
-		} else if (mat == Material.DIAMOND_ORE || mat == Material.EMERALD_ORE || mat == Material.GOLD_ORE || mat ==
-				Material.REDSTONE_ORE || mat == Material.GLOWING_REDSTONE_ORE) {
-			return is.getType() == Material.IRON_PICKAXE || is.getType() == Material.DIAMOND_PICKAXE;
-		}
-		return true;
-	}
-	
-	private boolean factionBreak(Location loc, Player p) {
-		XPlayer player = XPlayer.getXPlayer(p);
-		XFaction faction = player.getFaction();
-		if (faction != null && faction.claim.isInClaim(loc.getChunk()) && player.permCheck("break")) {
-			return true;
-		}
-		return ClaimManager.getChunk(loc.getChunk()) == null;
-	}
-	
-	private int getAmount(boolean check, int forLevel, Material type, boolean smelt) {
-		
-		if (check) {
-			if (smelt) {
-				if (type.equals(Material.IRON_ORE) || type.equals(Material.GOLD_ORE)) {
-					return FortuneCalc.numDroppedFromFortune(forLevel, type, 1);
-				}
-			}
-			if (type.equals(Material.EMERALD_ORE) ||
-					type.equals(Material.DIAMOND_ORE) ||
-					type.equals(Material.COAL_ORE) ||
-					type.equals(Material.REDSTONE_ORE) ||
-					type.equals(Material.LAPIS_ORE) ||
-					type.equals(Material.CARROT) ||
-					type.equals(Material.POTATO) ||
-					type.equals(Material.GLOWSTONE) ||
-					type.equals(Material.QUARTZ_ORE) ||
-					type.equals(Material.SEA_LANTERN) ||
-					type.equals(Material.MELON_BLOCK) ||
-					type.equals(Material.NETHER_WARTS)) {
-				return FortuneCalc.numDroppedFromFortune(forLevel, type, 1);
-			}
-		}
-		return 1;
-	}
-	
-	List<ItemStack> getDrop(Block b, boolean smelt, boolean fortune, int lvl, byte data, ItemStack it) {
-		
-		Material type = b.getType();
-		List<ItemStack> drops = new ArrayList<ItemStack>();
-		if (shouldAdd(b.getType(), it)) {
-			if (smelt) {
-				if (type.equals(Material.GOLD_ORE) || type.equals(Material.IRON_ORE) || type.equals(Material.COBBLESTONE) || type.equals(Material.STONE)) {
-					drops.add(smelting(type, getAmount(fortune, lvl, b.getType(), true)));
-				} else {
-					for (ItemStack j : b.getDrops()) {
-						drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), true), data));
-					}
-				}
-			} else {
-				for (ItemStack j : b.getDrops()) {
-					drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), false), data));
-				}
-			}
-		}
-		return drops;
-	}
-	
-	private boolean hasWood(int x, int y, int z, World world) {
-		
-		Location loc = new Location(world, x, y, z);
-		for (int xi = -2; xi <= 2; xi++) {
-			for (int zi = -2; zi <= 2; zi++) {
-				if (loc.getWorld().getBlockAt(new Location(world, loc.getBlockX() + xi, loc.getBlockY(), loc.getBlockZ() + zi)).getType().equals(Material.LOG)) {
-					return true;
-				}
-			}
-			
-		}
-		return false;
-	}
-	
-	ItemStack smelting(Material type, int amount) {
-		
-		if (type.equals(Material.GOLD_ORE)) {
-			return new ItemStack(Material.GOLD_INGOT, amount);
-		} else if (type.equals(Material.IRON_ORE)) {
-			return new ItemStack(Material.IRON_INGOT, amount);
-		} else if (type.equals(Material.COBBLESTONE)) {
-			return new ItemStack(Material.STONE);
-		} else if (type.equals(Material.STONE)) {
-			return new ItemStack(Material.STONE);
-		}
-		return new ItemStack(Material.AIR);
-	}
-	
-	private boolean wgBreak(Location loc, Player p) {
-		
-		try {
-			Plugin plugin = Bukkit.getPluginManager().getPlugin("WorldGuard");
-			if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
-				return true;
-			}
-			WorldGuardPlugin pl = (WorldGuardPlugin) plugin;
-			return pl.canBuild(p, p.getWorld().getBlockAt((int) loc.getX(), (int) loc.getY(), (int) loc.getZ()));
-		} catch (Exception ignored) {
-		}
-		return true;
-	}
 	
 	@EventHandler
 	public void onBreak(BlockBreakEvent e) {
@@ -295,6 +164,136 @@ public class BlockListener implements Listener {
 				e.getBlock().setType(Material.AIR);
 			}
 		}
+	}
+	
+	private boolean wgBreak(Location loc, Player p) {
+		
+		try {
+			Plugin plugin = Bukkit.getPluginManager().getPlugin("WorldGuard");
+			if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
+				return true;
+			}
+			WorldGuardPlugin pl = (WorldGuardPlugin) plugin;
+			return pl.canBuild(p, p.getWorld().getBlockAt((int) loc.getX(), (int) loc.getY(), (int) loc.getZ()));
+		} catch (Exception ignored) {
+		}
+		return true;
+	}
+	
+	private boolean factionBreak(Location loc, Player p) {
+		XPlayer player = XPlayer.getXPlayer(p);
+		XFaction faction = player.getFaction();
+		if (faction != null && faction.claim.isInClaim(loc.getChunk()) && player.permCheck("break")) {
+			return true;
+		}
+		return ClaimManager.getChunk(loc.getChunk()) == null;
+	}
+	
+	private static boolean shouldAdd(Material mat, ItemStack is) {
+		
+		if (mat == Material.BEDROCK || mat == Material.COMMAND || mat == Material.ENDER_PORTAL || mat == Material.ENDER_PORTAL_FRAME || mat == Material.LAVA || mat == Material.STATIONARY_LAVA || mat == Material.WATER || mat == Material.STATIONARY_WATER) {
+			return false;
+		} else if (mat == Material.OBSIDIAN) {
+			return is.getType() == Material.DIAMOND_PICKAXE;
+		} else if (mat == Material.ENDER_CHEST || mat == Material.ANVIL || mat == Material.COAL_BLOCK
+				|| mat == Material.REDSTONE_BLOCK || mat == Material.ENCHANTMENT_TABLE ||
+				mat == Material.IRON_BARDING || mat == Material.IRON_DOOR_BLOCK || mat == Material.MOB_SPAWNER ||
+				mat == Material.DISPENSER || mat == Material.DROPPER || mat == Material.COAL_ORE ||
+				mat == Material.ENDER_STONE || mat == Material.HOPPER || mat == Material.QUARTZ_ORE ||
+				mat == Material.BRICK_STAIRS || mat == Material.BRICK || mat == Material.CAULDRON ||
+				mat == Material.COBBLESTONE || mat == Material.COBBLESTONE_STAIRS || mat == Material.COBBLE_WALL ||
+				mat == Material.MOSSY_COBBLESTONE || mat == Material.NETHER_BRICK || mat == Material.NETHER_BRICK_STAIRS
+				|| mat == Material.STONE_PLATE || (mat.getId() == 43 || mat.getId() == 44) || mat == Material.STONE ||
+				(mat.getId() == 94 || mat.getId() == 109) || (mat.getId() == 159 || mat.getId() == 172) ||
+				mat == Material.QUARTZ_BLOCK || mat == Material.SANDSTONE || mat == Material.SANDSTONE_STAIRS ||
+				mat == Material.NETHERRACK) {
+			return is.getType() == Material.WOOD_PICKAXE || is.getType() == Material.STONE_PICKAXE ||
+					is.getType() == Material.IRON_PICKAXE || is.getType() == Material.DIAMOND_PICKAXE;
+		} else if (mat == Material.IRON_BLOCK || mat == Material.IRON_ORE || mat == Material.LAPIS_BLOCK || mat ==
+				Material.LAPIS_ORE) {
+			return is.getType() == Material.STONE_PICKAXE || is.getType() == Material.IRON_PICKAXE || is.getType() ==
+					Material.DIAMOND_PICKAXE;
+		} else if (mat == Material.DIAMOND_ORE || mat == Material.EMERALD_ORE || mat == Material.GOLD_ORE || mat ==
+				Material.REDSTONE_ORE || mat == Material.GLOWING_REDSTONE_ORE) {
+			return is.getType() == Material.IRON_PICKAXE || is.getType() == Material.DIAMOND_PICKAXE;
+		}
+		return true;
+	}
+	
+	private boolean hasWood(int x, int y, int z, World world) {
+		
+		Location loc = new Location(world, x, y, z);
+		for (int xi = -2; xi <= 2; xi++) {
+			for (int zi = -2; zi <= 2; zi++) {
+				if (loc.getWorld().getBlockAt(new Location(world, loc.getBlockX() + xi, loc.getBlockY(), loc.getBlockZ() + zi)).getType().equals(Material.LOG)) {
+					return true;
+				}
+			}
+			
+		}
+		return false;
+	}
+	
+	List<ItemStack> getDrop(Block b, boolean smelt, boolean fortune, int lvl, byte data, ItemStack it) {
+		
+		Material type = b.getType();
+		List<ItemStack> drops = new ArrayList<ItemStack>();
+		if (shouldAdd(b.getType(), it)) {
+			if (smelt) {
+				if (type.equals(Material.GOLD_ORE) || type.equals(Material.IRON_ORE) || type.equals(Material.COBBLESTONE) || type.equals(Material.STONE)) {
+					drops.add(smelting(type, getAmount(fortune, lvl, b.getType(), true)));
+				} else {
+					for (ItemStack j : b.getDrops()) {
+						drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), true), data));
+					}
+				}
+			} else {
+				for (ItemStack j : b.getDrops()) {
+					drops.add(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType(), false), data));
+				}
+			}
+		}
+		return drops;
+	}
+	
+	ItemStack smelting(Material type, int amount) {
+		
+		if (type.equals(Material.GOLD_ORE)) {
+			return new ItemStack(Material.GOLD_INGOT, amount);
+		} else if (type.equals(Material.IRON_ORE)) {
+			return new ItemStack(Material.IRON_INGOT, amount);
+		} else if (type.equals(Material.COBBLESTONE)) {
+			return new ItemStack(Material.STONE);
+		} else if (type.equals(Material.STONE)) {
+			return new ItemStack(Material.STONE);
+		}
+		return new ItemStack(Material.AIR);
+	}
+	
+	private int getAmount(boolean check, int forLevel, Material type, boolean smelt) {
+		
+		if (check) {
+			if (smelt) {
+				if (type.equals(Material.IRON_ORE) || type.equals(Material.GOLD_ORE)) {
+					return FortuneCalc.numDroppedFromFortune(forLevel, type, 1);
+				}
+			}
+			if (type.equals(Material.EMERALD_ORE) ||
+					type.equals(Material.DIAMOND_ORE) ||
+					type.equals(Material.COAL_ORE) ||
+					type.equals(Material.REDSTONE_ORE) ||
+					type.equals(Material.LAPIS_ORE) ||
+					type.equals(Material.CARROT) ||
+					type.equals(Material.POTATO) ||
+					type.equals(Material.GLOWSTONE) ||
+					type.equals(Material.QUARTZ_ORE) ||
+					type.equals(Material.SEA_LANTERN) ||
+					type.equals(Material.MELON_BLOCK) ||
+					type.equals(Material.NETHER_WARTS)) {
+				return FortuneCalc.numDroppedFromFortune(forLevel, type, 1);
+			}
+		}
+		return 1;
 	}
 	
 }

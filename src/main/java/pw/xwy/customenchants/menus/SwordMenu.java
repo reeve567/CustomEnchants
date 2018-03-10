@@ -18,6 +18,7 @@ public class SwordMenu extends Menu {
 		super(ItemSets.SWORD);
 		menu = this;
 	}
+	
 	public static Menu get() {
 		return menu;
 	}

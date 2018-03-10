@@ -12,7 +12,6 @@ package pw.xwy.customenchants.soulcrates;
 // on 7:44 PM
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.CEnchant;

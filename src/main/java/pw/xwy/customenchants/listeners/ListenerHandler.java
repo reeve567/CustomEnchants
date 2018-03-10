@@ -21,11 +21,6 @@ public class ListenerHandler {
 		this.main = main;
 	}
 	
-	
-	private void register(Listener Listener) {
-		main.getServer().getPluginManager().registerEvents(Listener, main);
-	}
-	
 	public void Init() {
 		
 		CrateOpen crateOpen = new CrateOpen(main);
@@ -57,6 +52,10 @@ public class ListenerHandler {
 		register(sprintListener);
 		register(gorixClick);
 		register(joinListener);
+	}
+	
+	private void register(Listener Listener) {
+		main.getServer().getPluginManager().registerEvents(Listener, main);
 	}
 	
 }

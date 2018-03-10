@@ -32,10 +32,52 @@ import java.util.Random;
 
 public class EnchantDrop implements Listener {
 	
-	public static int getRandomNumberFrom(int min, int max) {
+	@EventHandler
+	public void eDrop(InventoryClickEvent e) {
 		
-		Random r = new Random();
-		return r.nextInt((max + 1) - min) + min;
+		Player player = (Player) e.getWhoClicked();
+		Inventory inventory = e.getView().getBottomInventory();
+		ItemStack itemOnCursor = e.getCursor(); //Ench book
+		ItemStack itemInteractedWith = e.getCurrentItem(); //Item to be enchanted or repaired
+		
+		if (e.getAction().equals(InventoryAction.SWAP_WITH_CURSOR)) {
+			
+			if (inventory.getType().equals(InventoryType.PLAYER) ||
+					inventory.getType().equals(InventoryType.CRAFTING) ||
+					inventory.getType().equals(InventoryType.CREATIVE)) {
+				if (itemOnCursor.getType().equals(Material.BOOK)) {
+					
+					int ret = canEnchantWithBook(itemOnCursor, itemInteractedWith, player);
+					
+					if (ret == 1) {
+						successFail(e, itemInteractedWith, itemOnCursor, player, false, "");
+						if (itemInteractedWith.hasItemMeta() && itemInteractedWith.getItemMeta().hasLore()) {
+							if (itemInteractedWith.getItemMeta().getLore().contains(CEnchant.XWY.getName())) {
+								ItemMeta meta = itemInteractedWith.getItemMeta();
+								meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&3&l«&9&l&kk&3&l» &6&lXwy's Boots &3&l«&9&l&kf&3&l»"));
+								itemInteractedWith.setItemMeta(meta);
+							}
+						}
+					} else if (ret == 2) {
+						ItemMeta emeta = itemOnCursor.getItemMeta();
+						ItemMeta tmeta = itemInteractedWith.getItemMeta();
+						
+						String old = "";
+						
+						List<String> lore = tmeta.getLore();
+						if (lore.contains(emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 1))) {
+							old = emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 1);
+						} else if (lore.contains(emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 2))) {
+							old = emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 2);
+						}
+						
+						successFail(e, itemInteractedWith, itemOnCursor, player, true, old);
+					} else if (ret == 3) {
+						successFail(e, itemInteractedWith, itemOnCursor, player, false, "");
+					}
+				}
+			}
+		}
 	}
 	
 	private int canEnchantWithBook(ItemStack enchantmentBook, ItemStack itemToEnchant, Player player) {
@@ -111,101 +153,6 @@ public class EnchantDrop implements Listener {
 			return 1;
 		}
 		return 0;
-	}
-	
-	private void removeItemFromSlot(Player player, int slot) {
-		
-		player.getInventory().setItem(slot, new ItemStack(Material.AIR));
-	}
-	
-	@EventHandler
-	public void eDrop(InventoryClickEvent e) {
-		
-		Player player = (Player) e.getWhoClicked();
-		Inventory inventory = e.getView().getBottomInventory();
-		ItemStack itemOnCursor = e.getCursor(); //Ench book
-		ItemStack itemInteractedWith = e.getCurrentItem(); //Item to be enchanted or repaired
-		
-		if (e.getAction().equals(InventoryAction.SWAP_WITH_CURSOR)) {
-			
-			if (inventory.getType().equals(InventoryType.PLAYER) ||
-					inventory.getType().equals(InventoryType.CRAFTING) ||
-					inventory.getType().equals(InventoryType.CREATIVE)) {
-				if (itemOnCursor.getType().equals(Material.BOOK)) {
-					
-					int ret = canEnchantWithBook(itemOnCursor, itemInteractedWith, player);
-					
-					if (ret == 1) {
-						successFail(e, itemInteractedWith, itemOnCursor, player, false, "");
-						if (itemInteractedWith.hasItemMeta() && itemInteractedWith.getItemMeta().hasLore()) {
-							if (itemInteractedWith.getItemMeta().getLore().contains(CEnchant.XWY.getName())) {
-								ItemMeta meta = itemInteractedWith.getItemMeta();
-								meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&3&l«&9&l&kk&3&l» &6&lXwy's Boots &3&l«&9&l&kf&3&l»"));
-								itemInteractedWith.setItemMeta(meta);
-							}
-						}
-					} else if (ret == 2) {
-						ItemMeta emeta = itemOnCursor.getItemMeta();
-						ItemMeta tmeta = itemInteractedWith.getItemMeta();
-						
-						String old = "";
-						
-						List<String> lore = tmeta.getLore();
-						if (lore.contains(emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 1))) {
-							old = emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 1);
-						} else if (lore.contains(emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 2))) {
-							old = emeta.getDisplayName().substring(0, emeta.getDisplayName().length() - 2);
-						}
-						
-						successFail(e, itemInteractedWith, itemOnCursor, player, true, old);
-					} else if (ret == 3) {
-						successFail(e, itemInteractedWith, itemOnCursor, player, false, "");
-					}
-				}
-			}
-		}
-	}
-	
-	private boolean enchant(ItemStack itemOnCursor, ItemStack iTW) {
-		
-		if (!itemOnCursor.getType().equals(Material.AIR)) {
-			if (itemOnCursor.hasItemMeta()) {
-				if (itemOnCursor.getItemMeta().hasDisplayName()) {
-					if (iTW.getItemMeta().hasLore()) {
-						List<String> lore = iTW.getItemMeta().getLore();
-						ItemMeta meta = iTW.getItemMeta();
-						lore.add(itemOnCursor.getItemMeta().getDisplayName());
-						meta.setLore(lore);
-						iTW.setItemMeta(meta);
-						return true;
-					} else {
-						List<String> lore = new ArrayList<String>();
-						ItemMeta meta = iTW.getItemMeta();
-						lore.add(itemOnCursor.getItemMeta().getDisplayName());
-						meta.setLore(lore);
-						iTW.setItemMeta(meta);
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
-	
-	private boolean checkCan(String name, Material type, Player player) {
-		
-		if (name != null) {
-			
-			for (CEnchant e : CEnchant.values()) {
-				if (e.getName().equalsIgnoreCase(name)) {
-					if (e.checkSets(type)) {
-						return true;
-					}
-				}
-			}
-			
-		}
-		return false;
 	}
 	
 	private void successFail(InventoryClickEvent e, ItemStack itemInteractedWith, ItemStack itemOnCursor, Player player, boolean removeOld, String old) {
@@ -320,5 +267,58 @@ public class EnchantDrop implements Listener {
 			}
 		}
 		
+	}
+	
+	private boolean checkCan(String name, Material type, Player player) {
+		
+		if (name != null) {
+			
+			for (CEnchant e : CEnchant.values()) {
+				if (e.getName().equalsIgnoreCase(name)) {
+					if (e.checkSets(type)) {
+						return true;
+					}
+				}
+			}
+			
+		}
+		return false;
+	}
+	
+	public static int getRandomNumberFrom(int min, int max) {
+		
+		Random r = new Random();
+		return r.nextInt((max + 1) - min) + min;
+	}
+	
+	private boolean enchant(ItemStack itemOnCursor, ItemStack iTW) {
+		
+		if (!itemOnCursor.getType().equals(Material.AIR)) {
+			if (itemOnCursor.hasItemMeta()) {
+				if (itemOnCursor.getItemMeta().hasDisplayName()) {
+					if (iTW.getItemMeta().hasLore()) {
+						List<String> lore = iTW.getItemMeta().getLore();
+						ItemMeta meta = iTW.getItemMeta();
+						lore.add(itemOnCursor.getItemMeta().getDisplayName());
+						meta.setLore(lore);
+						iTW.setItemMeta(meta);
+						return true;
+					} else {
+						List<String> lore = new ArrayList<String>();
+						ItemMeta meta = iTW.getItemMeta();
+						lore.add(itemOnCursor.getItemMeta().getDisplayName());
+						meta.setLore(lore);
+						iTW.setItemMeta(meta);
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	
+	private void removeItemFromSlot(Player player, int slot) {
+		
+		player.getInventory().setItem(slot, new ItemStack(Material.AIR));
 	}
 }

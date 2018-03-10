@@ -22,6 +22,12 @@ import java.util.List;
 public class MenuUtility {
 	
 	
+	public static void setItem(String name, Material etype, List<String> desc, int slot, Inventory inv) {
+		
+		ItemStack i = getItem(ChatColor.GRAY + name, etype, desc);
+		inv.setItem(slot, i);
+	}
+	
 	public static ItemStack getItem(String name, Material etype, List<String> desc) {
 		
 		ItemStack item = new ItemStack(etype, 1);
@@ -33,6 +39,12 @@ public class MenuUtility {
 		return item;
 	}
 	
+	public static void setItem(String name, Material etype, int durability, List<String> desc, int slot, Inventory inv) {
+		
+		ItemStack i = getItem(ChatColor.GRAY + name, etype, durability, desc);
+		inv.setItem(slot, i);
+	}
+	
 	public static ItemStack getItem(String name, Material etype, int durability, List<String> desc) {
 		
 		ItemStack item = new ItemStack(etype, 1, (short) durability);
@@ -42,18 +54,6 @@ public class MenuUtility {
 		item.setItemMeta(itemMeta);
 		
 		return item;
-	}
-	
-	public static void setItem(String name, Material etype, List<String> desc, int slot, Inventory inv) {
-		
-		ItemStack i = getItem(ChatColor.GRAY + name, etype, desc);
-		inv.setItem(slot, i);
-	}
-	
-	public static void setItem(String name, Material etype, int durability, List<String> desc, int slot, Inventory inv) {
-		
-		ItemStack i = getItem(ChatColor.GRAY + name, etype, durability, desc);
-		inv.setItem(slot, i);
 	}
 	
 	

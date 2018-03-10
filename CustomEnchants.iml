@@ -15,7 +15,7 @@
     <orderEntry type="module-library">
       <library name="Maven: Factions:Factions:BETA">
         <CLASSES>
-          <root url="jar://R:/repo/pw/xwy/factions/XFactions-Core.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/XFactions-Core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

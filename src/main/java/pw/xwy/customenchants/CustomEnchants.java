@@ -49,71 +49,6 @@ public class CustomEnchants extends JavaPlugin {
 		return econ;
 	}
 	
-	private void disableEnchants() {
-		final CEnchant[] toDisable = {};
-		for (CEnchant ce : toDisable) {
-			ce.disable();
-		}
-	}
-	
-	private void loadCrates() {
-		new HydroSC();
-		new MysticalSC();
-		new RareSC();
-		new UncommonSC();
-		new CommonSC();
-	}
-	
-	private void loadMenus() {
-		new AxeMenu();
-		new BootsMenu();
-		new BowMenu();
-		new ChestMenu();
-		new HelmMenu();
-		new LeggingsMenu();
-		new PickMenu();
-		new SwordMenu();
-	}
-	
-	private void registerGlow() {
-		try {
-			Field f = Enchantment.class.getDeclaredField("acceptingNew");
-			f.setAccessible(true);
-			f.set(null, true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			Glow glow = new Glow(70);
-			Enchantment.registerEnchantment(glow);
-		} catch (IllegalArgumentException ignored) {
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	private boolean setupEconomy() {
-		if (getServer().getPluginManager().getPlugin("Vault") == null) {
-			return false;
-		}
-		RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-		if (rsp == null) {
-			return false;
-		}
-		econ = rsp.getProvider();
-		return econ != null;
-	}
-	
-	private void startTasks() {
-		if (CEnchant.SCUBADIVER.isEnabled()) new WaterBreathing(this);
-		if (CEnchant.GLOWING.isEnabled()) new NightVision(this);
-		if (CEnchant.HEARTBOOST.isEnabled()) new HeartCheck(this);
-		if (CEnchant.VALOR.isEnabled()) new ValorCheck(this);
-		if (CEnchant.FLASH.isEnabled()) new FlashCheck(this);
-		if (CEnchant.MOONGRAVITY.isEnabled()) new JumpBoost(this);
-		if (CEnchant.WINDSSPEEDI.isEnabled() || CEnchant.WINDSSPEEDII.isEnabled()) new Speed(this);
-	}
-	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		
@@ -226,5 +161,70 @@ public class CustomEnchants extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
+	}
+	
+	private boolean setupEconomy() {
+		if (getServer().getPluginManager().getPlugin("Vault") == null) {
+			return false;
+		}
+		RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+		if (rsp == null) {
+			return false;
+		}
+		econ = rsp.getProvider();
+		return econ != null;
+	}
+	
+	private void registerGlow() {
+		try {
+			Field f = Enchantment.class.getDeclaredField("acceptingNew");
+			f.setAccessible(true);
+			f.set(null, true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			Glow glow = new Glow(70);
+			Enchantment.registerEnchantment(glow);
+		} catch (IllegalArgumentException ignored) {
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void loadCrates() {
+		new HydroSC();
+		new MysticalSC();
+		new RareSC();
+		new UncommonSC();
+		new CommonSC();
+	}
+	
+	private void disableEnchants() {
+		final CEnchant[] toDisable = {};
+		for (CEnchant ce : toDisable) {
+			ce.disable();
+		}
+	}
+	
+	private void startTasks() {
+		if (CEnchant.SCUBADIVER.isEnabled()) new WaterBreathing(this);
+		if (CEnchant.GLOWING.isEnabled()) new NightVision(this);
+		if (CEnchant.HEARTBOOST.isEnabled()) new HeartCheck(this);
+		if (CEnchant.VALOR.isEnabled()) new ValorCheck(this);
+		if (CEnchant.FLASH.isEnabled()) new FlashCheck(this);
+		if (CEnchant.MOONGRAVITY.isEnabled()) new JumpBoost(this);
+		if (CEnchant.WINDSSPEEDI.isEnabled() || CEnchant.WINDSSPEEDII.isEnabled()) new Speed(this);
+	}
+	
+	private void loadMenus() {
+		new AxeMenu();
+		new BootsMenu();
+		new BowMenu();
+		new ChestMenu();
+		new HelmMenu();
+		new LeggingsMenu();
+		new PickMenu();
+		new SwordMenu();
 	}
 }

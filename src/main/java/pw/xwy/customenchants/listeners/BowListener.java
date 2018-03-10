@@ -58,35 +58,6 @@ public class BowListener implements Listener {
 		return cantShoot.contains(player);
 	}
 	
-	private String nextMode(boolean hasGrappling, boolean hasRifle, boolean hasShotgun, String currentMode, Player p) {
-		
-		if (currentMode.equalsIgnoreCase("Default")) {
-			if (hasGrappling) {
-				p.sendMessage(MessagesFunctions.modeChanged("Grappling"));
-				return "Grappling";
-			} else if (hasRifle) {
-				p.sendMessage(MessagesFunctions.modeChanged("Rifle"));
-				return "Rifle";
-			} else {
-				p.sendMessage(MessagesFunctions.modeChanged("Default"));
-				return "Default";
-			}
-		} else if (currentMode.equalsIgnoreCase("Grappling")) {
-			if (hasRifle) {
-				p.sendMessage(MessagesFunctions.modeChanged("Rifle"));
-				return "Rifle";
-			} else {
-				p.sendMessage(MessagesFunctions.modeChanged("Default"));
-				return "Default";
-			}
-		} else if (currentMode.equalsIgnoreCase("Rifle")) {
-			p.sendMessage(MessagesFunctions.modeChanged("Default"));
-			return "Default";
-		} else {
-			return "sad";
-		}
-	}
-	
 	@EventHandler
 	public void click(final PlayerInteractEvent e) {
 		
@@ -188,6 +159,35 @@ public class BowListener implements Listener {
 		}
 	}
 	
+	private String nextMode(boolean hasGrappling, boolean hasRifle, boolean hasShotgun, String currentMode, Player p) {
+		
+		if (currentMode.equalsIgnoreCase("Default")) {
+			if (hasGrappling) {
+				p.sendMessage(MessagesFunctions.modeChanged("Grappling"));
+				return "Grappling";
+			} else if (hasRifle) {
+				p.sendMessage(MessagesFunctions.modeChanged("Rifle"));
+				return "Rifle";
+			} else {
+				p.sendMessage(MessagesFunctions.modeChanged("Default"));
+				return "Default";
+			}
+		} else if (currentMode.equalsIgnoreCase("Grappling")) {
+			if (hasRifle) {
+				p.sendMessage(MessagesFunctions.modeChanged("Rifle"));
+				return "Rifle";
+			} else {
+				p.sendMessage(MessagesFunctions.modeChanged("Default"));
+				return "Default";
+			}
+		} else if (currentMode.equalsIgnoreCase("Rifle")) {
+			p.sendMessage(MessagesFunctions.modeChanged("Default"));
+			return "Default";
+		} else {
+			return "sad";
+		}
+	}
+	
 	@EventHandler
 	public void shoot(EntityShootBowEvent e) {
 		
@@ -222,6 +222,12 @@ public class BowListener implements Listener {
 				}
 			}
 		}
+	}
+	
+	private float Vec() {
+		
+		float spread = (float) .2;
+		return -spread + (float) (Math.random() * ((spread + spread)));
 	}
 	
 	@EventHandler
@@ -345,13 +351,6 @@ public class BowListener implements Listener {
 				
 			}
 		}
-	}
-	
-	
-	private float Vec() {
-		
-		float spread = (float) .2;
-		return -spread + (float) (Math.random() * ((spread + spread)));
 	}
 	
 }

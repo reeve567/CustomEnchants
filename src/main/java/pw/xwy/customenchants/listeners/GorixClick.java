@@ -36,116 +36,6 @@ public class GorixClick implements Listener {
 		this.main = main;
 	}
 	
-	static Inventory openCommon() {
-		Inventory inv = CommonSC.get().getBaseInventory();
-		r = EnchantDrop.getRandomNumberFrom(0, CommonSC.get().getPrizes().size() - 1);
-		j = 0;
-		
-		int i = 9;
-		
-		while (i < 18) {
-			if (r + j < CommonSC.get().getPrizes().size() + 1) {
-				CratesUtility.putPrize(inv, i, r + j, CommonSC.get().getPrizes());
-				j++;
-			} else {
-				j = 0;
-				r = 1;
-				CratesUtility.putPrize(inv, i, 1, CommonSC.get().getPrizes());
-			}
-			i++;
-		}
-		
-		return inv;
-	}
-	
-	static Inventory openHydro() {
-		Inventory inv = HydroSC.get().getBaseInventory();
-		r = EnchantDrop.getRandomNumberFrom(0, HydroSC.get().getPrizes().size() - 1);
-		j = 0;
-		
-		int i = 9;
-		
-		while (i < 18) {
-			if (r + j < HydroSC.get().getPrizes().size() + 1) {
-				CratesUtility.putPrize(inv, i, r + j, HydroSC.get().getPrizes());
-				j++;
-			} else {
-				j = 0;
-				r = 1;
-				CratesUtility.putPrize(inv, i, 1, HydroSC.get().getPrizes());
-			}
-			i++;
-		}
-		
-		return inv;
-	}
-	
-	static Inventory openMystical() {
-		Inventory inv = MysticalSC.get().getBaseInventory();
-		r = EnchantDrop.getRandomNumberFrom(0, MysticalSC.get().getPrizes().size() - 1);
-		j = 0;
-		
-		int i = 9;
-		
-		while (i < 18) {
-			if (r + j < MysticalSC.get().getPrizes().size() + 1) {
-				CratesUtility.putPrize(inv, i, r + j, MysticalSC.get().getPrizes());
-				j++;
-			} else {
-				j = 0;
-				r = 1;
-				CratesUtility.putPrize(inv, i, 1, MysticalSC.get().getPrizes());
-			}
-			i++;
-		}
-		
-		return inv;
-	}
-	
-	static Inventory openRare() {
-		Inventory inv = RareSC.get().getBaseInventory();
-		r = EnchantDrop.getRandomNumberFrom(0, RareSC.get().getPrizes().size() - 1);
-		j = 0;
-		
-		int i = 9;
-		
-		while (i < 18) {
-			if (r + j < RareSC.get().getPrizes().size() + 1) {
-				CratesUtility.putPrize(inv, i, r + j, RareSC.get().getPrizes());
-				j++;
-			} else {
-				j = 0;
-				r = 1;
-				CratesUtility.putPrize(inv, i, 1, RareSC.get().getPrizes());
-			}
-			i++;
-		}
-		
-		return inv;
-	}
-	
-	static Inventory openUncommon() {
-		Inventory inv = UncommonSC.get().getBaseInventory();
-		r = EnchantDrop.getRandomNumberFrom(0, UncommonSC.get().getPrizes().size() - 1);
-		j = 0;
-		
-		int i = 9;
-		
-		while (i < 18) {
-			if (r + j < UncommonSC.get().getPrizes().size() + 1) {
-				CratesUtility.putPrize(inv, i, r + j, UncommonSC.get().getPrizes());
-				j++;
-			} else {
-				j = 0;
-				r = 1;
-				CratesUtility.putPrize(inv, i, 1, UncommonSC.get().getPrizes());
-			}
-			i++;
-		}
-		
-		return inv;
-	}
-	
 	@EventHandler
 	public void onClick(NPCRightClickEvent e) {
 		
@@ -257,5 +147,115 @@ public class GorixClick implements Listener {
 				e.getClicker().sendMessage(Messages.noSoul.get());
 			}
 		}
+	}
+	
+	static Inventory openCommon() {
+		Inventory inv = CommonSC.get().getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, CommonSC.get().getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < CommonSC.get().getPrizes().size() + 1) {
+				CratesUtility.putPrize(inv, i, r + j, CommonSC.get().getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtility.putPrize(inv, i, 1, CommonSC.get().getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
+	static Inventory openUncommon() {
+		Inventory inv = UncommonSC.get().getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, UncommonSC.get().getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < UncommonSC.get().getPrizes().size() + 1) {
+				CratesUtility.putPrize(inv, i, r + j, UncommonSC.get().getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtility.putPrize(inv, i, 1, UncommonSC.get().getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
+	static Inventory openRare() {
+		Inventory inv = RareSC.get().getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, RareSC.get().getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < RareSC.get().getPrizes().size() + 1) {
+				CratesUtility.putPrize(inv, i, r + j, RareSC.get().getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtility.putPrize(inv, i, 1, RareSC.get().getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
+	static Inventory openMystical() {
+		Inventory inv = MysticalSC.get().getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, MysticalSC.get().getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < MysticalSC.get().getPrizes().size() + 1) {
+				CratesUtility.putPrize(inv, i, r + j, MysticalSC.get().getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtility.putPrize(inv, i, 1, MysticalSC.get().getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
+	}
+	
+	static Inventory openHydro() {
+		Inventory inv = HydroSC.get().getBaseInventory();
+		r = EnchantDrop.getRandomNumberFrom(0, HydroSC.get().getPrizes().size() - 1);
+		j = 0;
+		
+		int i = 9;
+		
+		while (i < 18) {
+			if (r + j < HydroSC.get().getPrizes().size() + 1) {
+				CratesUtility.putPrize(inv, i, r + j, HydroSC.get().getPrizes());
+				j++;
+			} else {
+				j = 0;
+				r = 1;
+				CratesUtility.putPrize(inv, i, 1, HydroSC.get().getPrizes());
+			}
+			i++;
+		}
+		
+		return inv;
 	}
 }

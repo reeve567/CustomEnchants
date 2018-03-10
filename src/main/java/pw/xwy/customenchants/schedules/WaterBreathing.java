@@ -28,14 +28,6 @@ public class WaterBreathing implements Runnable {
 		run();
 	}
 	
-	boolean ItemCheck(ItemStack i) {
-		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.SCUBADIVER.getName())) {
-			return true;
-		}
-		return false;
-	}
-	
-	
 	@Override
 	public void run() {
 		
@@ -48,5 +40,12 @@ public class WaterBreathing implements Runnable {
 				}
 			}
 		}, 20L, 0);
+	}
+	
+	boolean ItemCheck(ItemStack i) {
+		if (i != null && i.hasItemMeta() && i.getItemMeta().hasLore() && i.getItemMeta().getLore().contains(CEnchant.SCUBADIVER.getName())) {
+			return true;
+		}
+		return false;
 	}
 }
