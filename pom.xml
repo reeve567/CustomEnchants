@@ -15,7 +15,7 @@
 
     <groupId>pw.xwy.CustomEnchants</groupId>
     <artifactId>CustomEnchants</artifactId>
-    <version>0.1</version>
+    <version>RELEASE</version>
     <build>
         <plugins>
             <plugin>
