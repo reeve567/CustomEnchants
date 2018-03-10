@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2a76ea9-f55e-41cb-ae5e-22d629ae7ec5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sk89q_worldguard_6_1_1_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sk89q_worldguard_6_1_1_SNAPSHOT.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/craftbukkit-1.8.8.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
@@ -68,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlockListener.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlockListener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2074">
@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="67" column="28" lean-forward="false" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+            <state relative-caret-position="664">
+              <caret line="82" column="64" lean-forward="false" selection-start-line="82" selection-start-column="64" selection-end-line="82" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -220,8 +220,8 @@
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java" />
         <option value="$PROJECT_DIR$/src/main/resources/menu.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -399,6 +399,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="pw.xwy.customenchants.enums" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Development\Code\Java\HydroMC\CustomEnchants\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="R:\Development\Code\Java\HydroMC\CustomEnchants\src\main\resources" />
@@ -615,7 +618,7 @@
       <workItem from="1519515093003" duration="15803000" />
       <workItem from="1519531881813" duration="5185000" />
       <workItem from="1519571598447" duration="95000" />
-      <workItem from="1520699449477" duration="323000" />
+      <workItem from="1520699449477" duration="475000" />
     </task>
     <task id="LOCAL-00001" summary="asdasd">
       <created>1519523384074</created>
@@ -628,7 +631,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398390000" />
+    <option name="totallyTimeSpent" value="398542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1216" extended-state="6" />
@@ -1116,14 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="67" column="28" lean-forward="false" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2074">
@@ -1131,6 +1126,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="82" column="64" lean-forward="false" selection-start-line="82" selection-start-column="64" selection-end-line="82" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
