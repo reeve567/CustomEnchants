@@ -50,7 +50,7 @@
             <artifactId>Factions</artifactId>
             <version>BETA</version>
             <scope>system</scope>
-            <systemPath>R:/repo/pw/xwy/factions/XFactions-Core.jar</systemPath>
+            <systemPath>${pom.basedir}/lib/XFactions-Core.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
