@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2a76ea9-f55e-41cb-ae5e-22d629ae7ec5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sk89q_worldguard_6_1_1_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sk89q_worldguard_6_1_1_SNAPSHOT.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CustomEnchants.iml" afterPath="$PROJECT_DIR$/CustomEnchants.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/CustomEnchants.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/CustomEnchants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BowListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BowListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/EnchantDrop.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/EnchantDrop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/GorixClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/GorixClick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ListenerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/ListenerHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/MenuClick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/SwordMenu.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/SwordMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/FlashCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/FlashCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HeartCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/HeartCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/JumpBoost.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/JumpBoost.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/NightVision.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/NightVision.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/Speed.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/Speed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/ValorCheck.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/ValorCheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/WaterBreathing.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/schedules/WaterBreathing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/Crate.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/Crate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/UncommonSC.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/soulcrates/UncommonSC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MenuUtility.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/MenuUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/Resources.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/Resources.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/SpecialBlockResolver.java" afterPath="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/utilities/SpecialBlockResolver.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -89,21 +68,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlockListener.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlockListener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="145" column="59" lean-forward="false" selection-start-line="145" selection-start-column="59" selection-end-line="145" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="2074">
+              <caret line="172" column="57" lean-forward="false" selection-start-line="172" selection-start-column="57" selection-end-line="172" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+            <state relative-caret-position="409">
+              <caret line="67" column="28" lean-forward="false" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -211,7 +192,6 @@
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/HelmMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/enums/MenuItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/menus/PickMenu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/test.java" />
         <option value="$PROJECT_DIR$/src/main/resources/test.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/strings.properties" />
@@ -241,6 +221,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/menu.properties" />
         <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/HitListener.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java" />
       </list>
     </option>
   </component>
@@ -634,7 +615,7 @@
       <workItem from="1519515093003" duration="15803000" />
       <workItem from="1519531881813" duration="5185000" />
       <workItem from="1519571598447" duration="95000" />
-      <workItem from="1520699449477" duration="221000" />
+      <workItem from="1520699449477" duration="323000" />
     </task>
     <task id="LOCAL-00001" summary="asdasd">
       <created>1519523384074</created>
@@ -647,7 +628,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398288000" />
+    <option name="totallyTimeSpent" value="398390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1216" extended-state="6" />
@@ -1135,19 +1116,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="145" column="59" lean-forward="false" selection-start-line="145" selection-start-column="59" selection-end-line="145" selection-end-column="59" />
+        <state relative-caret-position="409">
+          <caret line="67" column="28" lean-forward="false" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pw/xwy/customenchants/listeners/BlockListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="2074">
+          <caret line="172" column="57" lean-forward="false" selection-start-line="172" selection-start-column="57" selection-end-line="172" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
