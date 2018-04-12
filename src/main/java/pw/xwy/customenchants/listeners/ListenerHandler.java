@@ -22,9 +22,7 @@ public class ListenerHandler {
 	}
 	
 	public void Init() {
-		
 		CrateOpen crateOpen = new CrateOpen(main);
-		
 		HitListener hitListener = new HitListener(main);
 		EnchantDrop enchantDrop = new EnchantDrop();
 		MenuClick menuClick = new MenuClick();
@@ -33,12 +31,11 @@ public class ListenerHandler {
 		DeathListener deathListener = new DeathListener();
 		BowListener bowListener = new BowListener(main);
 		ArmorListener armorListener = new ArmorListener();
-		BlockListener blockListener = new BlockListener();
+		//BlockListener blockListener = new BlockListener();
 		RespawnListener respawnListener = new RespawnListener();
 		SprintListener sprintListener = new SprintListener();
 		GorixClick gorixClick = new GorixClick(main);
 		JoinListener joinListener = new JoinListener(crateOpen, main);
-		
 		register(hitListener);
 		register(enchantDrop);
 		register(menuClick);
@@ -47,7 +44,7 @@ public class ListenerHandler {
 		register(deathListener);
 		register(bowListener);
 		register(armorListener);
-		register(blockListener);
+		//register(blockListener);
 		register(respawnListener);
 		register(sprintListener);
 		register(gorixClick);

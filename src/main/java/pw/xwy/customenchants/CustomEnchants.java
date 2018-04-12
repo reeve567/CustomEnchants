@@ -17,8 +17,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import pw.xwy.factions.XFactionsCore;
 import pw.xwy.customenchants.commands.CommandHandler;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
@@ -39,6 +41,7 @@ public class CustomEnchants extends JavaPlugin {
 	public static int ceCount;
 	private static CustomEnchants customEnchants;
 	private static Economy econ = null;
+	public static boolean useFactions;
 	private CommandHandler commandHandler;
 	
 	public static CustomEnchants getCustomEnchants() {
@@ -82,6 +85,8 @@ public class CustomEnchants extends JavaPlugin {
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
+		
+		useFactions = useFactions();
 		
 		new MessagesFunctions(this);
 		ListenerHandler listnerHandler = new ListenerHandler(this);
@@ -226,5 +231,17 @@ public class CustomEnchants extends JavaPlugin {
 		new LeggingsMenu();
 		new PickMenu();
 		new SwordMenu();
+	}
+	
+	private boolean useFactions() {
+		try {
+			Plugin plugin = Bukkit.getPluginManager().getPlugin("XFactions-Core");
+			if (plugin == null || !(plugin instanceof XFactionsCore)) {
+				return false;
+			}
+			return true;
+		} catch (Exception ignored) {
+		}
+		return false;
 	}
 }

@@ -21,9 +21,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
-import pw.xwy.Factions.objects.faction.XFaction;
-import pw.xwy.Factions.objects.faction.XPlayer;
-import pw.xwy.Factions.utility.managers.ClaimManager;
+import pw.xwy.factions.XFactionsCore;
+import pw.xwy.factions.objects.faction.XFaction;
+import pw.xwy.factions.objects.faction.XPlayer;
+import pw.xwy.factions.utility.managers.ClaimManager;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.ItemSets;
 import pw.xwy.customenchants.utilities.FortuneCalc;
@@ -181,12 +182,21 @@ public class BlockListener implements Listener {
 	}
 	
 	private boolean factionBreak(Location loc, Player p) {
-		XPlayer player = XPlayer.getXPlayer(p);
-		XFaction faction = player.getFaction();
-		if (faction != null && faction.claim.isInClaim(loc.getChunk()) && player.permCheck("break")) {
-			return true;
+		try {
+			Plugin plugin = Bukkit.getPluginManager().getPlugin("XFactions-Core");
+			if (plugin == null || !(plugin instanceof XFactionsCore)) {
+				return true;
+			}
+			XPlayer player = XPlayer.getXPlayer(p);
+			XFaction faction = player.getFaction();
+			if (faction != null && faction.claim.isInClaim(loc.getChunk()) && player.permCheck("break")) {
+				return true;
+			}
+			return ClaimManager.getChunk(loc.getChunk()) == null;
+		} catch (Exception ignored) {
+		
 		}
-		return ClaimManager.getChunk(loc.getChunk()) == null;
+		return true;
 	}
 	
 	private static boolean shouldAdd(Material mat, ItemStack is) {

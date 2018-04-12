@@ -24,8 +24,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
-import pw.xwy.Factions.objects.faction.XFaction;
-import pw.xwy.Factions.utility.managers.PlayerManager;
+import pw.xwy.factions.objects.faction.XFaction;
+import pw.xwy.factions.utility.managers.PlayerManager;
+import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
 
@@ -203,32 +204,23 @@ public class HitListener implements Listener {
 					}
 				}
 				if (armorCheck(legs, CEnchant.ANTIKNOCKBACKI.getName())) {
-					Bukkit.getScheduler().runTaskLater(main, new Runnable() {
-						@Override
-						public void run() {
-							
-							Vector kb = e.getDamager().getLocation().toVector().subtract(e.getEntity().getLocation().toVector()).multiply(-0.75);
-							e.getEntity().setVelocity(kb);
-						}
+					Bukkit.getScheduler().runTaskLater(main, () -> {
+						
+						Vector kb = e.getDamager().getLocation().toVector().subtract(e.getEntity().getLocation().toVector()).multiply(-0.75);
+						e.getEntity().setVelocity(kb);
 					}, 1);
 				} else if (armorCheck(legs, CEnchant.ANTIKNOCKBACKII.getName())) {
-					Bukkit.getScheduler().runTaskLater(main, new Runnable() {
-						@Override
-						public void run() {
-							
-							Vector kb = e.getDamager().getLocation().toVector().subtract(e.getEntity().getLocation().toVector()).multiply(-0.5);
-							e.getEntity().setVelocity(kb);
-						}
+					Bukkit.getScheduler().runTaskLater(main, () -> {
+						
+						Vector kb = e.getDamager().getLocation().toVector().subtract(e.getEntity().getLocation().toVector()).multiply(-0.5);
+						e.getEntity().setVelocity(kb);
 					}, 1);
 				} else if (armorCheck(legs, CEnchant.ANTIKNOCKBACKIII.getName())) {
 					
-					Bukkit.getScheduler().runTaskLater(main, new Runnable() {
-						@Override
-						public void run() {
-							
-							Vector kb = e.getDamager().getLocation().toVector().subtract(e.getEntity().getLocation().toVector()).multiply(-0.25);
-							e.getEntity().setVelocity(kb);
-						}
+					Bukkit.getScheduler().runTaskLater(main, () -> {
+						
+						Vector kb = e.getDamager().getLocation().toVector().subtract(e.getEntity().getLocation().toVector()).multiply(-0.25);
+						e.getEntity().setVelocity(kb);
 					}, 1);
 				}
 				
@@ -293,28 +285,24 @@ public class HitListener implements Listener {
 			
 			if (e.getDamager() instanceof Player) {
 				Player player = (Player) e.getDamager();
-				
-				if (armorCheck(player.getInventory().getBoots(), CEnchant.LEADERSHIP.getName())) {
-					double bonus = 0;
-					
-					for (Player other : Bukkit.getOnlinePlayers()) {
-						double maxDist = 20;
-						
-						if (other != player && other.getLocation().getWorld() == player.getLocation().getWorld()) {
-							if (other.getLocation().distanceSquared(player.getLocation()) <= maxDist) {
-								
-								XFaction fac1 = PlayerManager.getPlayer(other).getFaction();
-								XFaction fac2 = PlayerManager.getPlayer(player).getFaction();
-								
-								if (fac1 == fac2) {
-									bonus += 0.05;
+				if (CustomEnchants.useFactions) {
+					if (armorCheck(player.getInventory().getBoots(), CEnchant.LEADERSHIP.getName())) {
+						double bonus = 0;
+						for (Player other : Bukkit.getOnlinePlayers()) {
+							double maxDist = 20;
+							if (other != player && other.getLocation().getWorld() == player.getLocation().getWorld()) {
+								if (other.getLocation().distanceSquared(player.getLocation()) <= maxDist) {
+									XFaction fac1 = PlayerManager.getPlayer(other).getFaction();
+									XFaction fac2 = PlayerManager.getPlayer(player).getFaction();
+									if (fac1 == fac2) {
+										bonus += 0.05;
+									}
 								}
 							}
 						}
+						e.setDamage(e.getDamage() + bonus);
 					}
-					e.setDamage(e.getDamage() + bonus);
 				}
-				
 				if (player.getItemInHand().hasItemMeta()) {
 					if (player.getItemInHand().getItemMeta().hasLore()) {
 						for (String s : player.getItemInHand().getItemMeta().getLore()) {

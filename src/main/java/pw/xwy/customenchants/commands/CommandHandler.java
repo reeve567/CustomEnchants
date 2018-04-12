@@ -11,8 +11,6 @@ package pw.xwy.customenchants.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import pw.xwy.Factions.objects.faction.XPlayer;
 import pw.xwy.customenchants.commands.admin.CeGive;
 import pw.xwy.customenchants.commands.player.CeMenu;
 import pw.xwy.customenchants.enums.ChangeLog;
@@ -21,10 +19,6 @@ public class CommandHandler {
 	
 	private CeMenu ceMenu;
 	private CeGive ceGive;
-	
-	private boolean argCheck(String sent) {
-		return "give".equalsIgnoreCase(sent);
-	}
 	
 	public void Init() {
 		ceMenu = new CeMenu();
@@ -37,10 +31,13 @@ public class CommandHandler {
 				if (argCheck(args[0])) {
 					ceGive.run(sender, args);
 				} else if (args[0].equalsIgnoreCase("version")) {
-					XPlayer player = XPlayer.getXPlayer((Player) sender);
-					player.sendMessages(ChangeLog.getStrings());
+					sender.sendMessage(ChangeLog.getStrings().toArray(new String[0]));
 				}
 			} else ceMenu.run(sender);
 		}
+	}
+	
+	private boolean argCheck(String sent) {
+		return "give".equalsIgnoreCase(sent);
 	}
 }
