@@ -21,10 +21,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
-import pw.xwy.factions.XFactionsCore;
-import pw.xwy.factions.objects.faction.XFaction;
-import pw.xwy.factions.objects.faction.XPlayer;
-import pw.xwy.factions.utility.managers.ClaimManager;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.ItemSets;
 import pw.xwy.customenchants.utilities.FortuneCalc;
@@ -47,7 +43,7 @@ public class BlockListener implements Listener {
 			
 			if (!(wgBreak(e.getBlock().getLocation(), e.getPlayer()))) return;
 			
-			if (!factionBreak(e.getBlock().getLocation(), player)) return;
+			/*if (!factionBreak(e.getBlock().getLocation(), player)) return;*/
 			
 			if (player.getGameMode() == GameMode.CREATIVE) return;
 			
@@ -68,10 +64,8 @@ public class BlockListener implements Listener {
 							for (int z = -2; z <= 2; z++) {
 								if (loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getType().equals(Material.LOG)) {
 									Block b = loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z);
-									if (wgBreak(b.getLocation(), player) && factionBreak(b.getLocation(), player)) {
-										for (ItemStack it : loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getDrops()) {
-											drops.add(it);
-										}
+									if (wgBreak(b.getLocation(), player) /*&& factionBreak(b.getLocation(), player)*/) {
+										drops.addAll(loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).getDrops());
 										loc.getWorld().getBlockAt(loc.getBlockX() + x, loc.getBlockY() + y, loc.getBlockZ() + z).setType(Material.AIR);
 									}
 								}
@@ -171,7 +165,7 @@ public class BlockListener implements Listener {
 		
 		try {
 			Plugin plugin = Bukkit.getPluginManager().getPlugin("WorldGuard");
-			if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
+			if (!(plugin instanceof WorldGuardPlugin)) {
 				return true;
 			}
 			WorldGuardPlugin pl = (WorldGuardPlugin) plugin;
@@ -181,6 +175,7 @@ public class BlockListener implements Listener {
 		return true;
 	}
 	
+	/*
 	private boolean factionBreak(Location loc, Player p) {
 		try {
 			Plugin plugin = Bukkit.getPluginManager().getPlugin("XFactions-Core");
@@ -198,7 +193,7 @@ public class BlockListener implements Listener {
 		}
 		return true;
 	}
-	
+	*/
 	private static boolean shouldAdd(Material mat, ItemStack is) {
 		
 		if (mat == Material.BEDROCK || mat == Material.COMMAND || mat == Material.ENDER_PORTAL || mat == Material.ENDER_PORTAL_FRAME || mat == Material.LAVA || mat == Material.STATIONARY_LAVA || mat == Material.WATER || mat == Material.STATIONARY_WATER) {

@@ -17,6 +17,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuUtility {
@@ -33,14 +34,17 @@ public class MenuUtility {
 		ItemStack item = new ItemStack(etype, 1);
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setDisplayName(name);
-		itemMeta.setLore(desc);
+		List<String> conv = new ArrayList<>();
+		for (String s : desc) {
+			conv.add(ChatColor.translateAlternateColorCodes('&', s));
+		}
+		itemMeta.setLore(conv);
 		item.setItemMeta(itemMeta);
 		
 		return item;
 	}
 	
 	public static void setItem(String name, Material etype, int durability, List<String> desc, int slot, Inventory inv) {
-		
 		ItemStack i = getItem(ChatColor.GRAY + name, etype, durability, desc);
 		inv.setItem(slot, i);
 	}
@@ -50,7 +54,11 @@ public class MenuUtility {
 		ItemStack item = new ItemStack(etype, 1, (short) durability);
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setDisplayName(name);
-		itemMeta.setLore(desc);
+		List<String> conv = new ArrayList<>();
+		for (String s : desc) {
+			conv.add(ChatColor.translateAlternateColorCodes('&', s));
+		}
+		itemMeta.setLore(conv);
 		item.setItemMeta(itemMeta);
 		
 		return item;

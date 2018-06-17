@@ -11,13 +11,13 @@ package pw.xwy.customenchants.listeners;
 // made by reeve
 // on 8:59 PM
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.enums.Rarity;
 import pw.xwy.customenchants.menus.*;
-import pw.xwy.customenchants.utilities.Resources;
 
 public class MenuClick implements Listener {
 	
@@ -26,32 +26,35 @@ public class MenuClick implements Listener {
 		
 		ItemStack clicked = e.getCurrentItem();
 		
-		if (e.getInventory().getName().equalsIgnoreCase(Resources.getMenu("MenuTitle")) ||
-				e.getInventory().getName().equalsIgnoreCase(Rarities.HYDRO.getLabel()) ||
-				e.getInventory().getName().equalsIgnoreCase(Rarities.MYSTICAL.getLabel()) ||
-				e.getInventory().getName().equalsIgnoreCase(Rarities.RARE.getLabel()) ||
-				e.getInventory().getName().equalsIgnoreCase(Rarities.UNCOMMON.getLabel()) ||
-				e.getInventory().getName().equalsIgnoreCase(Rarities.COMMON.getLabel())) {
+		if (e.getInventory().getName().equalsIgnoreCase("§c§lCustom Enchants") ||
+				e.getInventory().getName().equalsIgnoreCase(Rarity.HYDRO.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarity.MYSTICAL.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarity.RARE.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarity.UNCOMMON.getLabel()) ||
+				e.getInventory().getName().equalsIgnoreCase(Rarity.COMMON.getLabel())) {
 			e.setCancelled(true);
 			if (clicked != null) {
 				if (clicked.hasItemMeta()) {
 					if (clicked.getItemMeta().hasDisplayName()) {
-						if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Helmet")))
+						if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Helmet Enchantments"))
 							e.getWhoClicked().openInventory(HelmMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Chestplate")))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Chestplate Enchantments"))
 							e.getWhoClicked().openInventory(ChestMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Leggings")))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Leggings Enchantments"))
 							e.getWhoClicked().openInventory(LeggingsMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Boots")))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Boots Enchantments"))
 							e.getWhoClicked().openInventory(BootsMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Sword")))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Sword Enchantments"))
 							e.getWhoClicked().openInventory(SwordMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Bow")))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Bow Enchantments"))
 							e.getWhoClicked().openInventory(BowMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Pickaxe")))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Pickaxe Enchantments"))
 							e.getWhoClicked().openInventory(PickMenu.get().getInventory());
-						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase(Resources.getMenu("Axe")))
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§5Axe Enchantments"))
 							e.getWhoClicked().openInventory(AxeMenu.get().getInventory());
+						else if (clicked.getItemMeta().getDisplayName().equalsIgnoreCase("§eEXP Conversion")) {
+							new ConversionMenu().openInventory((Player) e.getWhoClicked());
+						}
 						else if (e.getSlot() == 44)
 							e.getWhoClicked().openInventory(MainMenu.get());
 					}

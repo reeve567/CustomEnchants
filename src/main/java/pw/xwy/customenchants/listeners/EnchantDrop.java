@@ -25,6 +25,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
+import pw.xwy.customenchants.utilities.Glow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,6 @@ public class EnchantDrop implements Listener {
 		ItemStack itemInteractedWith = e.getCurrentItem(); //Item to be enchanted or repaired
 		
 		if (e.getAction().equals(InventoryAction.SWAP_WITH_CURSOR)) {
-			
 			if (inventory.getType().equals(InventoryType.PLAYER) ||
 					inventory.getType().equals(InventoryType.CRAFTING) ||
 					inventory.getType().equals(InventoryType.CREATIVE)) {
@@ -161,7 +161,7 @@ public class EnchantDrop implements Listener {
 		for (String string : lore) {
 			
 			if (string.contains(ChatColor.GREEN + "Success:")) {
-				string = string.substring(string.indexOf(" ") + 1, string.indexOf("%"));
+				string = string.substring(string.indexOf(" ") + 3, string.indexOf("%"));
 				Integer randomChance = Integer.parseInt(string);
 				Integer randomNumber = getRandomNumberFrom(1, 100);
 				if (randomNumber < randomChance) {
@@ -243,7 +243,7 @@ public class EnchantDrop implements Listener {
 				} else {
 					for (String s : lore) {
 						if (s.contains(ChatColor.RED + "Destroy:")) {
-							s = s.substring(s.indexOf(" ") + 1, s.indexOf("%"));
+							s = s.substring(s.indexOf(" ") + 3, s.indexOf("%"));
 							Integer randomChance1 = Integer.parseInt(s);
 							Integer randomNumber1 = getRandomNumberFrom(1, 100);
 							if (randomNumber1 < randomChance1) {
@@ -302,6 +302,7 @@ public class EnchantDrop implements Listener {
 						lore.add(itemOnCursor.getItemMeta().getDisplayName());
 						meta.setLore(lore);
 						iTW.setItemMeta(meta);
+						iTW.addUnsafeEnchantment(new Glow(999), 1);
 						return true;
 					} else {
 						List<String> lore = new ArrayList<String>();
@@ -309,6 +310,7 @@ public class EnchantDrop implements Listener {
 						lore.add(itemOnCursor.getItemMeta().getDisplayName());
 						meta.setLore(lore);
 						iTW.setItemMeta(meta);
+						iTW.addUnsafeEnchantment(new Glow(999), 1);
 						return true;
 					}
 				}

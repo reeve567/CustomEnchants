@@ -15,7 +15,7 @@ import org.bukkit.ChatColor;
 
 public enum Gorix {
 	GORIX(ChatColor.GREEN + "" + ChatColor.BOLD + "Rubix"),
-	COMMONCRATE(Rarities.COMMON.getLabel() + " Crate"),;
+	COMMONCRATE(Rarity.COMMON.getLabel() + " Crate"),;
 	
 	private final String value;
 	

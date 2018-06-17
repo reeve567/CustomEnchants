@@ -11,163 +11,141 @@ package pw.xwy.customenchants.enums;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public enum CEnchant {
-	THOR("&cThor", "Axe", Rarities.COMMON, ItemSets.AXE),
-	STORMCALLER("&cStormCaller", "Sword", Rarities.COMMON, ItemSets.SWORD),
-	REKT("&cRekt", "Axe", Rarities.RARE, ItemSets.AXE),
-	DECAPITATE("&dDecapitate", "Sword & Axe", Rarities.RARE, ItemSets.SWORD, ItemSets.AXE),
-	MOBSLAYERI("&cMobSlayer I", "MobSlayerI", "Sword", Rarities.COMMON, ItemSets.SWORD),
-	MOBSLAYERII("&cMobSlayer II", "MobSlayerII", "Sword", Rarities.UNCOMMON, 0, ItemSets.SWORD),
-	MOBSLAYERIII("&cMobSlayer III", "MobSlayerIII", "Sword", Rarities.RARE, 0, ItemSets.SWORD),
-	MOLTEN("&aMolten", "Armor", Rarities.COMMON, ItemSets.HELM, ItemSets.CHEST, ItemSets.LEGGINGS, ItemSets.BOOTS),
-	UNSTABLEI("&aUnstable I", "UnstableI", "Armor", Rarities.RARE, ItemSets.HELM, ItemSets.CHEST, ItemSets.LEGGINGS, ItemSets.BOOTS),
-	UNSTABLEII("&aUnstable II", "UnstableII", "Armor", Rarities.MYSTICAL, 0, ItemSets.HELM, ItemSets.CHEST, ItemSets.LEGGINGS, ItemSets.BOOTS),
-	SOULBOUND("&aSoulbound", "Tools & Armor", Rarities.HYDRO, ItemSets.HELM, ItemSets.CHEST, ItemSets.LEGGINGS, ItemSets.BOOTS, ItemSets.SWORD, ItemSets.BOW, ItemSets.PICK, ItemSets.AXE),
-	FROZENBLADE("&cFrozenBlade", "Sword", Rarities.RARE, ItemSets.SWORD),
-	EXPTHIEF("&cEXPThief", "Sword", Rarities.RARE, ItemSets.SWORD),
-	HOSTILEDAMAGE("&cHostileDamage", "Sword", Rarities.UNCOMMON, ItemSets.SWORD),
-	VAMPIRE("&cVampire", "Sword", Rarities.HYDRO, ItemSets.SWORD),
-	GRAPPLINGBOW("&aGrapplingBow", "Bow", Rarities.HYDRO, ItemSets.BOW),
-	CURSED("&cCursed", "Axe", Rarities.HYDRO, ItemSets.AXE),
-	DIZZY("&cDizzy", "Sword", Rarities.MYSTICAL, ItemSets.SWORD),
-	SMOKESCREENI("&cSmokeScreen I", "SmokeScreenI", "Sword & Axe", Rarities.MYSTICAL, ItemSets.SWORD, ItemSets.AXE),
-	SMOKESCREENII("&cSmokeScreen II", "SmokeScreenII", "Sword & Axe", Rarities.MYSTICAL, 0, ItemSets.SWORD, ItemSets.AXE),
-	SMOKESCREENIII("&cSmokeScreen III", "SmokeScreenIII", "Sword & Axe", Rarities.HYDRO, 0, ItemSets.SWORD, ItemSets.AXE),
-	POISONOUSARROW("&cPoisonousArrow", "Bow", Rarities.UNCOMMON, ItemSets.BOW),
-	ANIMALCOOKER("&cAnimalCooker", "Sword", Rarities.COMMON, ItemSets.SWORD),
-	FURNACE("&cFurnace", "Bow", Rarities.COMMON, ItemSets.BOW),
-	SCUBADIVER("&aScubaDiver", "Helmet", Rarities.COMMON, ItemSets.HELM),
-	GLOWING("&aGlowing", "Helmet", Rarities.COMMON, ItemSets.HELM),
-	HEARTBOOST("&aHeartBoost", "Helmet", Rarities.HYDRO, ItemSets.HELM),
-	VALOR("&cValor", "Armor", Rarities.HYDRO, ItemSets.HELM, ItemSets.CHEST, ItemSets.LEGGINGS, ItemSets.BOOTS),
-	FLASH("&aFlash", "Armor", Rarities.HYDRO, ItemSets.HELM, ItemSets.CHEST, ItemSets.LEGGINGS, ItemSets.BOOTS),
-	SMELTING("&aSmelting", "Pickaxe", Rarities.COMMON, ItemSets.PICK),
-	HARDENED("&aHardened", "Pickaxe", Rarities.COMMON, ItemSets.PICK),
-	FORTUNEV("&7Fortune V", "FortuneV", "Pickaxe", Rarities.MYSTICAL, ItemSets.PICK),
-	MAGNET("&aMagnet", "Pickaxe", Rarities.RARE, ItemSets.PICK),
-	EXPLOSIVEPICK("&aExplosivePick", "Pickaxe", Rarities.HYDRO, ItemSets.PICK),
-	DETONATE("&cDetonate", "Chestplate", Rarities.MYSTICAL, ItemSets.CHEST),
-	DEMONSWEAKNESSI("&cDemon's Weakness I", "DemonsWeaknessI", "Sword & Axe", Rarities.HYDRO, ItemSets.SWORD, ItemSets.AXE),
-	DEMONSWEAKNESSII("&cDemon's Weakness II", "DemonsWeaknessII", "Sword & Axe", Rarities.HYDRO, 0, ItemSets.SWORD, ItemSets.AXE),
-	PARALYZE("&cParalyze", "Sword", Rarities.COMMON, ItemSets.SWORD),
-	WITHERI("&cWither I", "WitherI", "Sword", Rarities.HYDRO, ItemSets.SWORD),
-	WITHERII("&cWither II", "WitherII", "Sword", Rarities.HYDRO, 0, ItemSets.SWORD),
-	BATTLEROAR("&cBattleRoar", "Chestplate", Rarities.UNCOMMON, ItemSets.CHEST),
-	BURNSHEILD("&aBurn-Shield", "Armor", Rarities.COMMON, ItemSets.BOOTS, ItemSets.LEGGINGS, ItemSets.CHEST, ItemSets.HELM),
-	MEDICINE("&aMedicine", "Helmet", Rarities.HYDRO, ItemSets.HELM),
-	GUARDIAN("&aGuardian", "Helmet", Rarities.HYDRO, ItemSets.HELM),
-	AUTOFEEDER("&aAutoFeeder", "Leggings", Rarities.MYSTICAL, ItemSets.LEGGINGS),
-	VOLTAGE("&cVoltage", "Bow", Rarities.UNCOMMON, ItemSets.BOW),
-	FROZENARROW("&cFrozenArrow", "Bow", Rarities.UNCOMMON, ItemSets.BOW),
-	SHOTGUN("&cShotgunBow", "Bow", Rarities.HYDRO, ItemSets.BOW),
-	EXPPROTECTOR("&aEXPProtector", "Boots", Rarities.RARE, ItemSets.LEGGINGS),
-	SELFHEALER("&aSelfHealer", "Boots", Rarities.HYDRO, ItemSets.LEGGINGS),
-	CHARGE("&cCharge", "Sword", Rarities.HYDRO, ItemSets.SWORD),
-	DEMONSBLADE("&cDemon's Blade", "DemonsBlade", "Sword", Rarities.RARE, ItemSets.SWORD),
-	GUARDIANSBLOCK("&cGuardian's Block", "GuardiansBlock", "Sword", Rarities.MYSTICAL, ItemSets.SWORD),
-	ARMORDESTRUCTOR("&cArmor Destructor", "ArmorDestructor", "Axe", Rarities.RARE, ItemSets.AXE),
-	RIFLE("&cRifleBow", "Bow", Rarities.HYDRO, ItemSets.BOW),
-	EXPLOSIVEARROW("&cExplosiveArrow", "Bow", Rarities.MYSTICAL, ItemSets.BOW),
-	RPG("&cRPG", "Bow", Rarities.MYSTICAL, ItemSets.BOW),
-	REINFORCED("&aReinforced", "Chestplate", Rarities.HYDRO, ItemSets.CHEST),
-	LEADERSHIP("&cLeadership", "Boots", Rarities.HYDRO, ItemSets.BOOTS),
-	MOONGRAVITY("&aMoonGravity", "Boots", Rarities.RARE, ItemSets.BOOTS),
-	WINDSSPEEDI("&aWind's Speed I", "WindsSpeedI", "Boots", Rarities.COMMON, ItemSets.BOOTS),
-	WINDSSPEEDII("&aWind's Speed II", "WindsSpeedII", "Boots", Rarities.RARE, 0, ItemSets.BOOTS),
-	SUPERSPEED("&aSuperSpeed", "Boots", Rarities.HYDRO, ItemSets.BOOTS),
-	STARVEDI("&cStarved I", "StarvedI", "Chestplate", Rarities.RARE, ItemSets.CHEST),
-	STARVEDII("&cStarved II", "StarvedII", "Chestplate", Rarities.RARE, 0, ItemSets.CHEST),
-	STARVEDIII("&cStarved III", "StarvedIII", "Chestplate", Rarities.MYSTICAL, 0, ItemSets.CHEST),
-	ANTIKNOCKBACKI("&cAntiKnockback I", "AntiKnockbackI", "Leggings", Rarities.UNCOMMON, ItemSets.LEGGINGS),
-	ANTIKNOCKBACKII("&cAntiKnockback II", "AntiKnockbackII", "Leggings", Rarities.RARE, 0, ItemSets.LEGGINGS),
-	ANTIKNOCKBACKIII("&cAntiKnockback III", "AntiKnockbackIII", "Leggings", Rarities.MYSTICAL, 0, ItemSets.LEGGINGS),
-	LUMBERJACK("&aLumberjack", "Axe", Rarities.RARE, ItemSets.AXE),
+	THOR("&cThor", "Axe", Rarity.COMMON, ItemSets.AXE),
+	STORMCALLER("&cStormCaller", "Sword", Rarity.COMMON, ItemSets.SWORD),
+	REKT("&cRekt", "Axe", Rarity.RARE, ItemSets.AXE),
+	DECAPITATE("&dDecapitate", "Sword & Axe", Rarity.RARE, ItemSets.SWORDAXE),
+	MOBSLAYERI("&cMobSlayer I", "MobSlayerI", "Sword", Rarity.COMMON, ItemSets.SWORD),
+	MOBSLAYERII("&cMobSlayer II", "MobSlayerII", "Sword", Rarity.UNCOMMON, 0, ItemSets.SWORD),
+	MOBSLAYERIII("&cMobSlayer III", "MobSlayerIII", "Sword", Rarity.RARE, 0, ItemSets.SWORD),
+	MOLTEN("&aMolten", "Armor", Rarity.COMMON, ItemSets.ARMOR),
+	UNSTABLEI("&aUnstable I", "UnstableI", "Armor", Rarity.RARE, ItemSets.ARMOR),
+	UNSTABLEII("&aUnstable II", "UnstableII", "Armor", Rarity.MYSTICAL, 0, ItemSets.ARMOR),
+	SOULBOUND("&aSoulbound", "Tools & Armor", Rarity.HYDRO, ItemSets.EVERYTHING),
+	FROZENBLADE("&cFrozenBlade", "Sword", Rarity.RARE, ItemSets.SWORD),
+	EXPTHIEF("&cEXPThief", "Sword", Rarity.RARE, ItemSets.SWORD),
+	HOSTILEDAMAGE("&cHostileDamage", "Sword", Rarity.UNCOMMON, ItemSets.SWORD),
+	VAMPIRE("&cVampire", "Sword", Rarity.HYDRO, ItemSets.SWORD),
+	GRAPPLINGBOW("&aGrapplingBow", "Bow", Rarity.HYDRO, ItemSets.BOW),
+	CURSED("&cCursed", "Axe", Rarity.HYDRO, ItemSets.AXE),
+	DIZZY("&cDizzy", "Sword", Rarity.MYSTICAL, ItemSets.SWORD),
+	SMOKESCREENI("&cSmokeScreen I", "SmokeScreenI", "Sword & Axe", Rarity.MYSTICAL, ItemSets.SWORDAXE),
+	SMOKESCREENII("&cSmokeScreen II", "SmokeScreenII", "Sword & Axe", Rarity.MYSTICAL, 0, ItemSets.SWORDAXE),
+	SMOKESCREENIII("&cSmokeScreen III", "SmokeScreenIII", "Sword & Axe", Rarity.HYDRO, 0, ItemSets.SWORDAXE),
+	POISONOUSARROW("&cPoisonousArrow", "Bow", Rarity.UNCOMMON, ItemSets.BOW),
+	ANIMALCOOKER("&cAnimalCooker", "Sword", Rarity.COMMON, ItemSets.SWORD),
+	FURNACE("&cFurnace", "Bow", Rarity.COMMON, ItemSets.BOW),
+	SCUBADIVER("&aScubaDiver", "Helmet", Rarity.COMMON, ItemSets.HELM),
+	GLOWING("&aGlowing", "Helmet", Rarity.COMMON, ItemSets.HELM),
+	HEARTBOOST("&aHeartBoost", "Helmet", Rarity.HYDRO, ItemSets.HELM),
+	VALOR("&cValor", "Armor", Rarity.HYDRO, ItemSets.ARMOR),
+	FLASH("&aFlash", "Armor", Rarity.HYDRO, ItemSets.ARMOR),
+	SMELTING("&aSmelting", "Pickaxe", Rarity.COMMON, ItemSets.PICK),
+	HARDENED("&aHardened", "Pickaxe", Rarity.COMMON, ItemSets.PICK),
+	FORTUNEV("&7Fortune V", "FortuneV", "Pickaxe", Rarity.MYSTICAL, ItemSets.PICK),
+	MAGNET("&aMagnet", "Pickaxe", Rarity.RARE, ItemSets.PICK),
+	EXPLOSIVEPICK("&aExplosivePick", "Pickaxe", Rarity.HYDRO, ItemSets.PICK),
+	DETONATE("&cDetonate", "Chestplate", Rarity.MYSTICAL, ItemSets.CHEST),
+	DEMONSWEAKNESSI("&cDemon's Weakness I", "DemonsWeaknessI", "Sword & Axe", Rarity.HYDRO, ItemSets.SWORDAXE),
+	DEMONSWEAKNESSII("&cDemon's Weakness II", "DemonsWeaknessII", "Sword & Axe", Rarity.HYDRO, 0, ItemSets.SWORDAXE),
+	PARALYZE("&cParalyze", "Sword", Rarity.COMMON, ItemSets.SWORD),
+	WITHERI("&cWither I", "WitherI", "Sword", Rarity.HYDRO, ItemSets.SWORD),
+	WITHERII("&cWither II", "WitherII", "Sword", Rarity.HYDRO, 0, ItemSets.SWORD),
+	BATTLEROAR("&cBattleRoar", "Chestplate", Rarity.UNCOMMON, ItemSets.CHEST),
+	BURNSHEILD("&aBurn-Shield", "Armor", Rarity.COMMON, ItemSets.ARMOR),
+	MEDICINE("&aMedicine", "Helmet", Rarity.HYDRO, ItemSets.HELM),
+	GUARDIAN("&aGuardian", "Helmet", Rarity.HYDRO, ItemSets.HELM),
+	AUTOFEEDER("&aAutoFeeder", "Leggings", Rarity.MYSTICAL, ItemSets.LEGGINGS),
+	VOLTAGE("&cVoltage", "Bow", Rarity.UNCOMMON, ItemSets.BOW),
+	FROZENARROW("&cFrozenArrow", "Bow", Rarity.UNCOMMON, ItemSets.BOW),
+	SHOTGUN("&cShotgunBow", "Bow", Rarity.HYDRO, ItemSets.BOW),
+	EXPPROTECTOR("&aEXPProtector", "Boots", Rarity.RARE, ItemSets.LEGGINGS),
+	SELFHEALER("&aSelfHealer", "Boots", Rarity.HYDRO, ItemSets.LEGGINGS),
+	CHARGE("&cCharge", "Sword", Rarity.HYDRO, ItemSets.SWORD),
+	//DEMONSBLADE("&cDemon's Blade", "DemonsBlade", "Sword", Rarity.RARE, ItemSets.SWORD),
+	GUARDIANSBLOCK("&cGuardian's Block", "GuardiansBlock", "Sword", Rarity.MYSTICAL, ItemSets.SWORD),
+	ARMORDESTRUCTOR("&cArmor Destructor", "ArmorDestructor", "Axe", Rarity.RARE, ItemSets.AXE),
+	RIFLE("&cRifleBow", "Bow", Rarity.HYDRO, ItemSets.BOW),
+	EXPLOSIVEARROW("&cExplosiveArrow", "Bow", Rarity.MYSTICAL, ItemSets.BOW),
+	RPG("&cRPG", "Bow", Rarity.MYSTICAL, ItemSets.BOW),
+	REINFORCED("&aReinforced", "Chestplate", Rarity.HYDRO, ItemSets.CHEST),
+	//LEADERSHIP("&cLeadership", "Boots", Rarity.HYDRO, ItemSets.BOOTS),
+	MOONGRAVITY("&aMoonGravity", "Boots", Rarity.RARE, ItemSets.BOOTS),
+	WINDSSPEEDI("&aWind's Speed I", "WindsSpeedI", "Boots", Rarity.COMMON, ItemSets.BOOTS),
+	WINDSSPEEDII("&aWind's Speed II", "WindsSpeedII", "Boots", Rarity.RARE, 0, ItemSets.BOOTS),
+	SUPERSPEED("&aSuperSpeed", "Boots", Rarity.HYDRO, ItemSets.BOOTS),
+	STARVEDI("&cStarved I", "StarvedI", "Chestplate", Rarity.RARE, ItemSets.CHEST),
+	STARVEDII("&cStarved II", "StarvedII", "Chestplate", Rarity.RARE, 0, ItemSets.CHEST),
+	STARVEDIII("&cStarved III", "StarvedIII", "Chestplate", Rarity.MYSTICAL, 0, ItemSets.CHEST),
+	ANTIKNOCKBACKI("&cAntiKnockback I", "AntiKnockbackI", "Leggings", Rarity.UNCOMMON, ItemSets.LEGGINGS),
+	ANTIKNOCKBACKII("&cAntiKnockback II", "AntiKnockbackII", "Leggings", Rarity.RARE, 0, ItemSets.LEGGINGS),
+	ANTIKNOCKBACKIII("&cAntiKnockback III", "AntiKnockbackIII", "Leggings", Rarity.MYSTICAL, 0, ItemSets.LEGGINGS),
+	LUMBERJACK("&aLumberjack", "Axe", Rarity.RARE, ItemSets.AXE),
+	MINERI("&cMiner I", "MinerI", "Pickaxe", Rarity.MYSTICAL, ItemSets.PICK),
+	MINERII("&cMiner II", "MinerII", "Pickaxe", Rarity.MYSTICAL, 0, ItemSets.PICK),
 	
-	XWY("&6God", "Xwy", "Boots", Rarities.ADMIN, 0, ItemSets.BOOTS),;
+	XWY("&6God", "Xwy", "Boots", Rarity.ADMIN, 0, ItemSets.BOOTS),;
 	
-	private final String name;
-	private final String label;
-	private final String loreLbl;
-	private final Rarities rarity;
+	public CustomEnchant customEnchant;
 	private boolean enabled = true;
-	private final int amount;
-	private final List<ItemSets> sets = new ArrayList<>();
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, ItemSets... a) {
-		
-		this.name = inGameName;
-		this.label = commandLabel;
-		this.loreLbl = loreLbl;
-		this.rarity = rarity;
-		amount = a.length;
-		sets.addAll(Arrays.asList(a));
+	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarity rarity, ItemSets a) {
+		customEnchant = new CustomEnchant(this, inGameName, commandLabel, rarity, a);
 	}
 	
-	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarities rarity, int am, ItemSets... a) {
-		
-		this.name = inGameName;
-		this.label = commandLabel;
-		this.loreLbl = loreLbl;
-		this.rarity = rarity;
-		amount = am;
-		sets.addAll(Arrays.asList(a));
+	CEnchant(String inGameName, String commandLabel, String loreLbl, Rarity rarity, int am, ItemSets a) {
+		customEnchant = new CustomEnchant(this, inGameName, commandLabel, rarity, a, am);
 	}
 	
-	CEnchant(String inGameName, String loreLbl, Rarities rarity, ItemSets... a) {
+	CEnchant(String inGameName, String loreLbl, Rarity rarity, ItemSets a) {
+		customEnchant = new CustomEnchant(this, inGameName, rarity, a);
+	}
+	
+	public boolean checkSets(Material m) {
+		return customEnchant.getSets().setContains(m);
+	}
+	
+	public boolean containsSet(ItemSets set) {
+		return customEnchant.getSets().getSets().contains(set);
+	}
+	
+	public int getAmount() {
+		return customEnchant.getAmount();
+	}
+	
+	public String getLabel() {
 		
-		this.name = inGameName;
-		this.label = inGameName.substring(2);
-		this.loreLbl = loreLbl;
-		this.rarity = rarity;
-		amount = a.length;
-		sets.addAll(Arrays.asList(a));
+		return customEnchant.getCommandLabel();
+	}
+	
+	public String getLoreLbl() {
+		
+		return conv(customEnchant.getLoreLabel());
 	}
 	
 	private String conv(String name) {
 		return ChatColor.translateAlternateColorCodes('&', name);
 	}
 	
-	public boolean checkSets(Material m) {
-		
-		for (ItemSets i : sets) {
-			if (i.setContains(m)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean containsSet(ItemSets set) {
-		return (sets.contains(set));
-	}
-	
-	public int getAmount() {
-		return amount;
-	}
-	
-	public String getLabel() {
-		
-		return label;
-	}
-	
-	public String getLoreLbl() {
-		
-		return conv(loreLbl);
-	}
-	
 	public String getName() {
 		
-		return conv(name);
+		return conv(customEnchant.getName());
 	}
 	
-	public Rarities getRarity() {
+	public Rarity getRarity() {
 		
-		return rarity;
+		return customEnchant.getRarity();
+	}
+	
+	public void getCustomStuff(FileConfiguration fc) {
+		customEnchant.setCustomStuff(fc);
 	}
 	
 	public void disable() {

@@ -11,17 +11,16 @@ package pw.xwy.customenchants.soulcrates;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import pw.xwy.customenchants.utilities.Resources;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 public abstract class Crate {
 	
 	protected static ArrayList<Prize> prizes = new ArrayList<>();
 	private static Crate crate;
-	ResourceBundle bundle = ResourceBundle.getBundle("main", Locale.getDefault());
+	Resources resources = new Resources();
 	Inventory baseInventory;
 	private HashMap<Player, Inventory> inventories = new HashMap<>();
 	

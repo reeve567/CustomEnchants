@@ -22,7 +22,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
-import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.enums.Rarity;
 import pw.xwy.customenchants.enums.Souls;
 import pw.xwy.customenchants.listeners.EnchantDrop;
 import pw.xwy.customenchants.utilities.MainUtility;
@@ -48,7 +48,7 @@ public class RewardPlayer extends BukkitRunnable {
 	public void run() {
 		ItemStack i = inv.getItem(13);
 		if (i != null && i.hasItemMeta() && i.getItemMeta().hasDisplayName()) {
-			if (inv.getName().equalsIgnoreCase(Rarities.COMMON.getLabel())) {
+			if (inv.getName().equalsIgnoreCase(Rarity.COMMON.getLabel())) {
 				
 				if (i.getType().equals(Material.DOUBLE_PLANT)) {
 					if (i.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "2500")) {
@@ -91,7 +91,7 @@ public class RewardPlayer extends BukkitRunnable {
 				}
 				
 				
-			} else if (inv.getName().equalsIgnoreCase(Rarities.UNCOMMON.getLabel())) {
+			} else if (inv.getName().equalsIgnoreCase(Rarity.UNCOMMON.getLabel())) {
 				if (i.getType().equals(Material.MOB_SPAWNER)) {
 					if (i.getItemMeta().getDisplayName().equals(ChatColor.GOLD + "Ocelot Spawner")) {
 						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "ss give " + p.getName() + " ocelot 1");
@@ -142,7 +142,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				}
 				
-			} else if (inv.getName().equalsIgnoreCase(Rarities.RARE.getLabel())) {
+			} else if (inv.getName().equalsIgnoreCase(Rarity.RARE.getLabel())) {
 				if (i.getType().equals(Material.DOUBLE_PLANT)) {
 					if (i
 							.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "15000")) {
@@ -188,7 +188,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(new ItemStack(Material.COAL, 32));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				}
-			} else if (inv.getName().equalsIgnoreCase(Rarities.MYSTICAL.getLabel())) {
+			} else if (inv.getName().equalsIgnoreCase(Rarity.MYSTICAL.getLabel())) {
 				if (i.getType().equals(Material.DOUBLE_PLANT)) {
 					if (i
 							.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "17500")) {
@@ -224,7 +224,7 @@ public class RewardPlayer extends BukkitRunnable {
 				} else if (i.getType().equals(Material.NETHER_STAR)) {
 					ArrayList<CEnchant> common = new ArrayList<>();
 					for (CEnchant ce : CEnchant.values()) {
-						if (ce.getRarity().equals(Rarities.COMMON)) {
+						if (ce.getRarity().equals(Rarity.COMMON)) {
 							common.add(ce);
 						}
 					}
@@ -232,7 +232,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(MainUtility.bookGive(c.getName(), false));
 					ArrayList<CEnchant> uncommon = new ArrayList<>();
 					for (CEnchant ce : CEnchant.values()) {
-						if (ce.getRarity().equals(Rarities.UNCOMMON)) {
+						if (ce.getRarity().equals(Rarity.UNCOMMON)) {
 							uncommon.add(ce);
 						}
 					}
@@ -240,7 +240,7 @@ public class RewardPlayer extends BukkitRunnable {
 					p.getInventory().addItem(MainUtility.bookGive(u.getName(), false));
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
 				}
-			} else if (inv.getName().equalsIgnoreCase(Rarities.HYDRO.getLabel())) {
+			} else if (inv.getName().equalsIgnoreCase(Rarity.HYDRO.getLabel())) {
 				if (i.getType().equals(Material.DOUBLE_PLANT)) {
 					if (i
 							.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "50000")) {
@@ -255,7 +255,7 @@ public class RewardPlayer extends BukkitRunnable {
 				} else if (i.equals(Souls.MYSTICAL.getItem())) {
 					p.getInventory().addItem(Souls.MYSTICAL.getItem());
 					p.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "You have won " + i.getItemMeta().getDisplayName());
-				} else if (i.getItemMeta().getDisplayName().equals(Rarities.COMMON.name() + ChatColor.GRAY + ", " + Rarities.UNCOMMON.name() + ChatColor.GRAY + " and " + Rarities.RARE.name() + ChatColor.GRAY + " Souls")) {
+				} else if (i.getItemMeta().getDisplayName().equals(Rarity.COMMON.name() + ChatColor.GRAY + ", " + Rarity.UNCOMMON.name() + ChatColor.GRAY + " and " + Rarity.RARE.name() + ChatColor.GRAY + " Souls")) {
 					p.getInventory().addItem(Souls.COMMON.getItem());
 					p.getInventory().addItem(Souls.UNCOMMON.getItem());
 					p.getInventory().addItem(Souls.RARE.getItem());

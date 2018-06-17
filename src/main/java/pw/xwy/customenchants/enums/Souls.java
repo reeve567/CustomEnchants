@@ -21,17 +21,17 @@ import pw.xwy.customenchants.utilities.Glow;
 import java.util.ArrayList;
 
 public enum Souls {
-	COMMON(Rarities.COMMON, "CommonKey"),
-	UNCOMMON(Rarities.UNCOMMON, "UncommonKey"),
-	RARE(Rarities.RARE, "RareKey"),
-	MYSTICAL(Rarities.MYSTICAL, "MysticalKey"),
-	HYDRO(Rarities.HYDRO, "HydroKey");
+	COMMON(Rarity.COMMON, "CommonKey"),
+	UNCOMMON(Rarity.UNCOMMON, "UncommonKey"),
+	RARE(Rarity.RARE, "RareKey"),
+	MYSTICAL(Rarity.MYSTICAL, "MysticalKey"),
+	HYDRO(Rarity.HYDRO, "HydroKey");
 	
 	private final String name;
 	private final String commandLabel;
 	private final ItemStack item;
 	
-	Souls(Rarities name, String commandLabel) {
+	Souls(Rarity name, String commandLabel) {
 		this.name = name.getLabel() + " Key";
 		this.commandLabel = commandLabel;
 		

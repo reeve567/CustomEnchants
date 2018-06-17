@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// File copyright last updated on: 6/6/18 9:22 AM                              /
+// File copyright last updated on: 6/17/18 12:12 PM                            /
 //                                                                             /
 // Copyright (c) 2018.                                                         /
 // All code here is made by Xwy (greys#0001) unless otherwise noted.           /
@@ -7,22 +7,16 @@
 //                                                                             /
 ////////////////////////////////////////////////////////////////////////////////
 
-package pw.xwy.customenchants.utilities;
+package pw.xwy.customenchants.commands.player;
 
-import java.util.HashMap;
+import org.bukkit.entity.Player;
+import pw.xwy.customenchants.menus.ConversionMenu;
 
-public class Resources {
+public class Conv {
 	
-	HashMap<String, String> strings = new HashMap<>();
-	
-	public Resources() {
-		strings.put("64Diamonds", "&764 Diamonds");
-		strings.put("32Diamonds", "&732 Diamonds");
-		strings.put("5000", "&a$&25000");
+	public static void run(Player player) {
+		new ConversionMenu().openInventory(player);
 	}
 	
-	public String getString(String string) {
-		return strings.get(string);
-	}
 	
 }

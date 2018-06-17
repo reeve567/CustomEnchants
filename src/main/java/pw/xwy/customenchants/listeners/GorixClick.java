@@ -20,7 +20,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.enums.Messages;
-import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.enums.Rarity;
 import pw.xwy.customenchants.enums.Souls;
 import pw.xwy.customenchants.soulcrates.*;
 import pw.xwy.customenchants.utilities.CratesUtility;
@@ -63,7 +63,7 @@ public class GorixClick implements Listener {
 							
 							Inventory inv = openCommon();
 							e.getClicker().openInventory(inv);
-							crateOpen.openCrate(e.getClicker(), inv, Rarities.COMMON, r + j);
+							crateOpen.openCrate(e.getClicker(), inv, Rarity.COMMON, r + j);
 							
 						} else if (s.getName().equals(Souls.UNCOMMON.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
@@ -81,7 +81,7 @@ public class GorixClick implements Listener {
 							
 							Inventory inv = openUncommon();
 							e.getClicker().openInventory(inv);
-							crateOpen.openCrate(e.getClicker(), inv, Rarities.UNCOMMON, r + j);
+							crateOpen.openCrate(e.getClicker(), inv, Rarity.UNCOMMON, r + j);
 							
 						} else if (s.getName().equals(Souls.RARE.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
@@ -99,7 +99,7 @@ public class GorixClick implements Listener {
 							
 							Inventory inv = openRare();
 							e.getClicker().openInventory(inv);
-							crateOpen.openCrate(e.getClicker(), inv, Rarities.RARE, r + j);
+							crateOpen.openCrate(e.getClicker(), inv, Rarity.RARE, r + j);
 							
 						} else if (s.getName().equals(Souls.MYSTICAL.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
@@ -117,7 +117,7 @@ public class GorixClick implements Listener {
 							
 							Inventory inv = openMystical();
 							e.getClicker().openInventory(inv);
-							crateOpen.openCrate(e.getClicker(), inv, Rarities.MYSTICAL, r + j);
+							crateOpen.openCrate(e.getClicker(), inv, Rarity.MYSTICAL, r + j);
 							
 						} else if (s.getName().equals(Souls.HYDRO.getName())) {
 							if (e.getClicker().getInventory().firstEmpty() == -1) {
@@ -135,7 +135,7 @@ public class GorixClick implements Listener {
 							
 							Inventory inv = openHydro();
 							e.getClicker().openInventory(inv);
-							crateOpen.openCrate(e.getClicker(), inv, Rarities.HYDRO, r + j);
+							crateOpen.openCrate(e.getClicker(), inv, Rarity.HYDRO, r + j);
 							
 						}
 						return;

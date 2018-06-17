@@ -16,22 +16,22 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.CEnchant;
-import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.enums.Rarity;
 import pw.xwy.customenchants.enums.Souls;
 
 public class HydroSC extends Crate {
 	
 	public HydroSC() {
-		super(Bukkit.createInventory(null, 27, Rarities.HYDRO.getLabel()));
+		super(Bukkit.createInventory(null, 27, Rarity.HYDRO.getLabel()));
 		for (CEnchant ces : CEnchant.values()) {
-			if (ces.getRarity().equals(Rarities.HYDRO)) {
+			if (ces.getRarity().equals(Rarity.HYDRO)) {
 				prizes.add(new Prize(ces.getName(), new ItemStack(Material.BOOK)));
 			}
 		}
 		prizes.add(new Prize(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "25000", new ItemStack(Material.DOUBLE_PLANT, 25)));
 		prizes.add(new Prize(ChatColor.GREEN + "$" + ChatColor.DARK_GREEN + "50000", new ItemStack(Material.DOUBLE_PLANT, 30)));
 		prizes.add(new Prize(Souls.MYSTICAL.getItem().getItemMeta().getDisplayName(), Souls.MYSTICAL.getItem()));
-		prizes.add(new Prize(Rarities.COMMON.name() + ChatColor.GRAY + ", " + Rarities.UNCOMMON.name() + ChatColor.GRAY + " and " + Rarities.RARE.name() + ChatColor.GRAY + " Souls", new ItemStack(Souls.MYSTICAL.getItem())));
+		prizes.add(new Prize(Rarity.COMMON.name() + ChatColor.GRAY + ", " + Rarity.UNCOMMON.name() + ChatColor.GRAY + " and " + Rarity.RARE.name() + ChatColor.GRAY + " Souls", new ItemStack(Souls.MYSTICAL.getItem())));
 		prizes.add(new Prize(ChatColor.BLUE + "Orca", new ItemStack(Material.INK_SACK, 1, (short) 4)));
 		prizes.add(new Prize(ChatColor.DARK_PURPLE + "Blaze Spawner", new ItemStack(Material.MOB_SPAWNER)));
 		

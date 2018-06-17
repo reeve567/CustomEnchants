@@ -16,7 +16,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.enums.Rarity;
 import pw.xwy.customenchants.soulcrates.CommonSC;
 import pw.xwy.customenchants.soulcrates.CrateOpen;
 
@@ -33,7 +33,7 @@ public class JoinListener implements Listener {
 	@EventHandler
 	public void onJoin(final PlayerJoinEvent e) {
 		if (CommonSC.get().isRunningInventory(e.getPlayer())) {
-			Bukkit.getScheduler().runTaskLater(main, () -> crateOpen.openCrate(e.getPlayer(), GorixClick.openCommon(), Rarities.COMMON, GorixClick.r + GorixClick.j), 1);
+			Bukkit.getScheduler().runTaskLater(main, () -> crateOpen.openCrate(e.getPlayer(), GorixClick.openCommon(), Rarity.COMMON, GorixClick.r + GorixClick.j), 1);
 		}
 	}
 	

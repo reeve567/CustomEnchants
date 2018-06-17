@@ -15,8 +15,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.ItemSets;
 import pw.xwy.customenchants.enums.MenuItem;
-import pw.xwy.customenchants.enums.Rarities;
-import pw.xwy.customenchants.utilities.Resources;
+import pw.xwy.customenchants.enums.Rarity;
 
 import java.util.ArrayList;
 
@@ -25,7 +24,7 @@ import static pw.xwy.customenchants.utilities.MenuUtility.setItem;
 
 public class Menu {
 	
-	protected Inventory inventory = Bukkit.createInventory(null, 45, Resources.getMenu("MenuTitle"));
+	protected Inventory inventory = Bukkit.createInventory(null, 45, "§c§lCustom Enchants");
 	
 	Menu(ItemSets type) {
 		for (int i = 0; i < 45; i++) {
@@ -33,12 +32,12 @@ public class Menu {
 			topPane.setDurability((short) 7);
 			inventory.setItem(i, topPane);
 		}
-		setItem(Rarities.HYDRO.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 0, inventory);
-		setItem(Rarities.MYSTICAL.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 9, inventory);
-		setItem(Rarities.RARE.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 18, inventory);
-		setItem(Rarities.UNCOMMON.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 27, inventory);
-		setItem(Rarities.COMMON.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 36, inventory);
-		setItem(Resources.getMenu("BackButton"), Material.BARRIER, new ArrayList<>(), 44, inventory);
+		setItem(Rarity.HYDRO.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 0, inventory);
+		setItem(Rarity.MYSTICAL.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 9, inventory);
+		setItem(Rarity.RARE.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 18, inventory);
+		setItem(Rarity.UNCOMMON.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 27, inventory);
+		setItem(Rarity.COMMON.getLabel(), Material.BOOKSHELF, new ArrayList<>(), 36, inventory);
+		setItem("§9Back", Material.BARRIER, new ArrayList<>(), 44, inventory);
 		int nextHydro = 1;
 		int nextMystical = 10;
 		int nextRare = 19;
@@ -46,15 +45,15 @@ public class Menu {
 		int nextCommon = 37;
 		for (MenuItem mi : MenuItem.values()) {
 			if (mi.getCustomEnchant().isEnabled() && mi.getCustomEnchant().containsSet(type)) {
-				if (mi.getCustomEnchant().getRarity().equals(Rarities.HYDRO)) {
+				if (mi.getCustomEnchant().getRarity().equals(Rarity.HYDRO)) {
 					setItem(mi.getCustomEnchant().getName(), mi.getType(), mi.getDurability(), mi.getDesc(), nextHydro++, inventory);
-				} else if (mi.getCustomEnchant().getRarity().equals(Rarities.MYSTICAL)) {
+				} else if (mi.getCustomEnchant().getRarity().equals(Rarity.MYSTICAL)) {
 					setItem(mi.getCustomEnchant().getName(), mi.getType(), mi.getDurability(), mi.getDesc(), nextMystical++, inventory);
-				} else if (mi.getCustomEnchant().getRarity().equals(Rarities.RARE)) {
+				} else if (mi.getCustomEnchant().getRarity().equals(Rarity.RARE)) {
 					setItem(mi.getCustomEnchant().getName(), mi.getType(), mi.getDurability(), mi.getDesc(), nextRare++, inventory);
-				} else if (mi.getCustomEnchant().getRarity().equals(Rarities.UNCOMMON)) {
+				} else if (mi.getCustomEnchant().getRarity().equals(Rarity.UNCOMMON)) {
 					setItem(mi.getCustomEnchant().getName(), mi.getType(), mi.getDurability(), mi.getDesc(), nextUncommon++, inventory);
-				} else if (mi.getCustomEnchant().getRarity().equals(Rarities.COMMON)) {
+				} else if (mi.getCustomEnchant().getRarity().equals(Rarity.COMMON)) {
 					setItem(mi.getCustomEnchant().getName(), mi.getType(), mi.getDurability(), mi.getDesc(), nextCommon++, inventory);
 				}
 			}

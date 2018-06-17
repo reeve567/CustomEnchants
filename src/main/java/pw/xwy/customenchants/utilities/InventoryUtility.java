@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// File copyright last updated on: 6/6/18 9:22 AM                              /
+// File copyright last updated on: 6/17/18 12:18 PM                            /
 //                                                                             /
 // Copyright (c) 2018.                                                         /
 // All code here is made by Xwy (greys#0001) unless otherwise noted.           /
@@ -9,20 +9,15 @@
 
 package pw.xwy.customenchants.utilities;
 
-import java.util.HashMap;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
-public class Resources {
+public class InventoryUtility {
 	
-	HashMap<String, String> strings = new HashMap<>();
-	
-	public Resources() {
-		strings.put("64Diamonds", "&764 Diamonds");
-		strings.put("32Diamonds", "&732 Diamonds");
-		strings.put("5000", "&a$&25000");
-	}
-	
-	public String getString(String string) {
-		return strings.get(string);
+	public static Inventory setBackground(Inventory inventory, ItemStack stack) {
+		for (int i = 0; i < inventory.getSize(); i++)
+			inventory.setItem(i, stack);
+		return inventory;
 	}
 	
 }

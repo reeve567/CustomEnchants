@@ -14,7 +14,7 @@ package pw.xwy.customenchants.soulcrates;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.enums.Rarity;
 import pw.xwy.customenchants.enums.Souls;
 import pw.xwy.customenchants.listeners.EnchantDrop;
 import pw.xwy.customenchants.schedules.crates.*;
@@ -30,9 +30,9 @@ public class CrateOpen {
 		this.main = main;
 	}
 	
-	public void openCrate(final Player p, final Inventory inv, Rarities type, int runs) {
+	public void openCrate(final Player p, final Inventory inv, Rarity type, int runs) {
 		
-		if (type.equals(Rarities.COMMON)) {
+		if (type.equals(Rarity.COMMON)) {
 			final ArrayList<Prize> prizes = CommonSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
@@ -46,7 +46,7 @@ public class CrateOpen {
 			new CommonCrate(prizes, inv, p, runs + 10 + ra + r, 3, true).runTaskTimer(main, 70 + (7 * ra) + (4 * r), 12);
 			
 			new RewardPlayer(inv, p, Souls.COMMON).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
-		} else if (type.equals(Rarities.UNCOMMON)) {
+		} else if (type.equals(Rarity.UNCOMMON)) {
 			final ArrayList<Prize> prizes = UncommonSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
@@ -60,7 +60,7 @@ public class CrateOpen {
 			new UncommonCrate(prizes, inv, p, runs + 10 + ra + r, 3, true).runTaskTimer(main, 70 + (7 * ra) + (4 * r), 12);
 			
 			new RewardPlayer(inv, p, Souls.UNCOMMON).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
-		} else if (type.equals(Rarities.RARE)) {
+		} else if (type.equals(Rarity.RARE)) {
 			final ArrayList<Prize> prizes = RareSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
@@ -74,7 +74,7 @@ public class CrateOpen {
 			new RareCrate(prizes, inv, p, runs + 10 + ra + r, 3, true).runTaskTimer(main, 70 + (7 * ra) + (4 * r), 12);
 			
 			new RewardPlayer(inv, p, Souls.MYSTICAL).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
-		} else if (type.equals(Rarities.MYSTICAL)) {
+		} else if (type.equals(Rarity.MYSTICAL)) {
 			final ArrayList<Prize> prizes = MysticalSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);
@@ -88,7 +88,7 @@ public class CrateOpen {
 			new MysticalCrate(prizes, inv, p, runs + 10 + ra + r, 3, true).runTaskTimer(main, 70 + (7 * ra) + (4 * r), 12);
 			
 			new RewardPlayer(inv, p, Souls.MYSTICAL).runTaskLater(main, 70 + (7 * ra) + (4 * r) + 36);
-		} else if (type.equals(Rarities.HYDRO)) {
+		} else if (type.equals(Rarity.HYDRO)) {
 			final ArrayList<Prize> prizes = HydroSC.get().getPrizes();
 			
 			int r = EnchantDrop.getRandomNumberFrom(30, 50);

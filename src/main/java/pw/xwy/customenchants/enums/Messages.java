@@ -12,7 +12,7 @@ package pw.xwy.customenchants.enums;
 import org.bukkit.ChatColor;
 
 public enum Messages {
-	prefix(ChatColor.DARK_RED + "" + ChatColor.BOLD + "Rubix " + ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "»» "),
+	prefix("§6§lSystem " + ChatColor.DARK_GRAY + "" + ChatColor.BOLD + "»» "),
 	senderIsConsole(prefix.get() + ChatColor.RED + "You must be a player to do this!"),
 	itemBroke(prefix.get() + ChatColor.GRAY + "Whoops, looks like your item broke.  Better luck next time!"),
 	itemSuccess(prefix.get() + ChatColor.GRAY + ChatColor.GRAY + "Binding the enchantment to this item was successful!"),
@@ -23,6 +23,7 @@ public enum Messages {
 	frozen(prefix.get() + ChatColor.GRAY + "Your target was hit with a chill."),
 	smited(prefix.get() + ChatColor.GRAY + "Your target was smitten"),
 	fifsecCooldown(Messages.prefix.get() + ChatColor.GRAY + "You can only shoot this every 15 seconds!"),
+	fullInventory(prefix.get() + ChatColor.RED + "Your inventory is full!"),
 	noAmmo(Messages.prefix.get() + ChatColor.GRAY + "Not enough ammo."),
 	poisoned(Messages.prefix.get() + ChatColor.GRAY + "Your target was poisoned."),
 	noSoul(Messages.prefix.get() + ChatColor.GRAY + "This is not a key, bring me a key and I will grant you a reward."),

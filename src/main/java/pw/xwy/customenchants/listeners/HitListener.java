@@ -24,11 +24,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
-import pw.xwy.factions.objects.faction.XFaction;
-import pw.xwy.factions.utility.managers.PlayerManager;
 import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
+import pw.xwy.factions.objects.faction.XFaction;
+import pw.xwy.factions.utility.managers.PlayerManager;
 
 public class HitListener implements Listener {
 	
@@ -286,7 +286,7 @@ public class HitListener implements Listener {
 			if (e.getDamager() instanceof Player) {
 				Player player = (Player) e.getDamager();
 				if (CustomEnchants.useFactions) {
-					if (armorCheck(player.getInventory().getBoots(), CEnchant.LEADERSHIP.getName())) {
+					/*if (armorCheck(player.getInventory().getBoots(), CEnchant.LEADERSHIP.getName())) {
 						double bonus = 0;
 						for (Player other : Bukkit.getOnlinePlayers()) {
 							double maxDist = 20;
@@ -301,7 +301,7 @@ public class HitListener implements Listener {
 							}
 						}
 						e.setDamage(e.getDamage() + bonus);
-					}
+					}*/
 				}
 				if (player.getItemInHand().hasItemMeta()) {
 					if (player.getItemInHand().getItemMeta().hasLore()) {
@@ -398,13 +398,13 @@ public class HitListener implements Listener {
 							} else if (s.equalsIgnoreCase(CEnchant.CHARGE.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 85) {
-									if (SprintListener.sprinting.contains(e.getEntity())) {
+									if (SprintListener.sprinting.contains(player)) {
 										e.setDamage(e.getDamage() * 1.2);
 									}
 								}
-							} else if (s.equalsIgnoreCase(CEnchant.DEMONSBLADE.getName())) {
+							} /*else if (s.equalsIgnoreCase(CEnchant.DEMONSBLADE.getName())) {
 								e.setDamage(e.getDamage() * 1.05);
-							} else if (s.equalsIgnoreCase(CEnchant.WITHERI.getName())) {
+							}*/ else if (s.equalsIgnoreCase(CEnchant.WITHERI.getName())) {
 								int r = EnchantDrop.getRandomNumberFrom(1, 100);
 								if (r > 85) {
 									if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
@@ -465,6 +465,8 @@ public class HitListener implements Listener {
 										}
 									}
 								}
+							} else if (s.equalsIgnoreCase(CEnchant.MINERI.getName())) {
+							
 							}
 						}
 					}

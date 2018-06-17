@@ -1,14 +1,17 @@
-pw\xwy\customenchants\enums\Rarities.class
 pw\xwy\customenchants\soulcrates\Crate.class
+pw\xwy\customenchants\enums\CustomEnchant$1.class
 pw\xwy\customenchants\listeners\BowListener$2.class
 pw\xwy\customenchants\schedules\WaterBreathing.class
 pw\xwy\customenchants\soulcrates\Prize.class
+pw\xwy\customenchants\enums\CustomEnchant.class
 pw\xwy\customenchants\utilities\MainUtility.class
 pw\xwy\customenchants\schedules\NightVision$1.class
 pw\xwy\customenchants\schedules\NightVision.class
 pw\xwy\customenchants\menus\HelmMenu.class
 pw\xwy\customenchants\enums\MenuItem.class
 pw\xwy\customenchants\utilities\ConfigCheck.class
+pw\xwy\customenchants\listeners\NPCClick.class
+pw\xwy\customenchants\commands\player\Conv.class
 pw\xwy\customenchants\listeners\FeedListener.class
 pw\xwy\customenchants\schedules\crates\CommonCrate.class
 pw\xwy\customenchants\schedules\JumpBoost.class
@@ -19,6 +22,7 @@ pw\xwy\customenchants\listeners\SprintListener.class
 pw\xwy\customenchants\soulcrates\CrateOpen.class
 pw\xwy\customenchants\menus\PickMenu.class
 pw\xwy\customenchants\schedules\FlashCheck.class
+pw\xwy\customenchants\enums\Rarity.class
 pw\xwy\customenchants\enums\ItemSets.class
 pw\xwy\customenchants\enums\Messages.class
 pw\xwy\customenchants\listeners\BowListener$1.class
@@ -48,9 +52,11 @@ pw\xwy\customenchants\soulcrates\MysticalSC.class
 pw\xwy\customenchants\schedules\ValorCheck.class
 pw\xwy\customenchants\menus\LeggingsMenu.class
 pw\xwy\customenchants\utilities\FortuneCalc.class
+pw\xwy\customenchants\utilities\InventoryUtility.class
 pw\xwy\customenchants\menus\BootsMenu.class
 pw\xwy\customenchants\listeners\DeathListener.class
 pw\xwy\customenchants\enums\Gorix.class
+pw\xwy\customenchants\menus\ConversionMenu.class
 pw\xwy\customenchants\schedules\crates\UncommonCrate.class
 pw\xwy\customenchants\menus\BowMenu.class
 pw\xwy\customenchants\schedules\crates\RewardPlayer.class
@@ -65,6 +71,7 @@ pw\xwy\customenchants\listeners\EnchantDrop.class
 pw\xwy\customenchants\menus\MainMenu.class
 pw\xwy\customenchants\commands\CommandHandler.class
 pw\xwy\customenchants\listeners\ArmorListener.class
+pw\xwy\customenchants\utilities\CustomItem.class
 pw\xwy\customenchants\utilities\CratesUtility.class
 pw\xwy\customenchants\listeners\ExplosionListener.class
 pw\xwy\customenchants\menus\ChestMenu.class

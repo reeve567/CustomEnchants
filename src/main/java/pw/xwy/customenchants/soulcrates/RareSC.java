@@ -16,20 +16,20 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.enums.CEnchant;
-import pw.xwy.customenchants.enums.Rarities;
+import pw.xwy.customenchants.enums.Rarity;
 import pw.xwy.customenchants.enums.Souls;
 
 public class RareSC extends Crate {
 	
 	public RareSC() {
-		super(Bukkit.createInventory(null, 27, Rarities.RARE.getLabel()));
+		super(Bukkit.createInventory(null, 27, Rarity.RARE.getLabel()));
 		for (CEnchant ces : CEnchant.values()) {
-			if (ces.getRarity().equals(Rarities.RARE)) {
+			if (ces.getRarity().equals(Rarity.RARE)) {
 				prizes.add(new Prize(ces.getName(), new ItemStack(Material.BOOK)));
 			}
 		}
-		prizes.add(new Prize(bundle.getString("10000"), new ItemStack(Material.DOUBLE_PLANT, 10)));
-		prizes.add(new Prize(bundle.getString("15000"), new ItemStack(Material.DOUBLE_PLANT, 15)));
+		prizes.add(new Prize(resources.getString("10000"), new ItemStack(Material.DOUBLE_PLANT, 10)));
+		prizes.add(new Prize(resources.getString("15000"), new ItemStack(Material.DOUBLE_PLANT, 15)));
 		prizes.add(new Prize(Souls.RARE.getItem().getItemMeta().getDisplayName(), Souls.RARE.getItem()));
 		prizes.add(new Prize(Souls.UNCOMMON.getItem().getItemMeta().getDisplayName(), Souls.UNCOMMON.getItem()));
 		prizes.add(new Prize(Souls.MYSTICAL.getItem().getItemMeta().getDisplayName(), Souls.MYSTICAL.getItem()));
@@ -38,7 +38,7 @@ public class RareSC extends Crate {
 		prizes.add(new Prize(ChatColor.GRAY + "5 Hoppers", new ItemStack(Material.HOPPER, 5)));
 		prizes.add(new Prize(ChatColor.RED + "64 TNT and 5 dispensers and 5 redstone repeaters", new ItemStack(Material.TNT, 64)));
 		prizes.add(new Prize(ChatColor.GOLD + "Mineral Package", new ItemStack(Material.EMERALD, 32)));
-		prizes.add(new Prize(bundle.getString("Kraken"), new ItemStack(Material.INK_SACK, 1, (short) 4)));
+		prizes.add(new Prize(resources.getString("Kraken"), new ItemStack(Material.INK_SACK, 1, (short) 4)));
 		
 		for (int i = 0; i < 27; i++) {
 			baseInventory.setItem(i, new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 7));

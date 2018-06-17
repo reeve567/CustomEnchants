@@ -15,12 +15,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.factions.XFactionsCore;
 import pw.xwy.customenchants.commands.CommandHandler;
 import pw.xwy.customenchants.enums.CEnchant;
 import pw.xwy.customenchants.enums.Messages;
@@ -31,7 +32,10 @@ import pw.xwy.customenchants.soulcrates.*;
 import pw.xwy.customenchants.utilities.ConfigCheck;
 import pw.xwy.customenchants.utilities.Glow;
 import pw.xwy.customenchants.utilities.MessagesFunctions;
+import pw.xwy.factions.XFactionsCore;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.logging.Logger;
 
@@ -39,9 +43,9 @@ public class CustomEnchants extends JavaPlugin {
 	
 	private static final Logger log = Logger.getLogger("Minecraft");
 	public static int ceCount;
+	public static boolean useFactions;
 	private static CustomEnchants customEnchants;
 	private static Economy econ = null;
-	public static boolean useFactions;
 	private CommandHandler commandHandler;
 	
 	public static CustomEnchants getCustomEnchants() {
@@ -66,9 +70,9 @@ public class CustomEnchants extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
 		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + getDescription().getName() + " Disabled.");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + getDescription().getName() + " made by Xwy.");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Current Version: " + ChatColor.GRAY + getDescription().getVersion());
+		Bukkit.getConsoleSender().sendMessage("§c" + getDescription().getName() + " Disabled.");
+		Bukkit.getConsoleSender().sendMessage("§c" + getDescription().getName() + " made by Xwy.");
+		Bukkit.getConsoleSender().sendMessage("§cCurrent Version: " + ChatColor.GRAY + getDescription().getVersion());
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
 		Bukkit.getConsoleSender().sendMessage("");
@@ -99,8 +103,25 @@ public class CustomEnchants extends JavaPlugin {
 		disableEnchants();
 		startTasks();
 		loadMenus();
+		YamlConfiguration config = new YamlConfiguration();
+		File f = new File(getDataFolder(), "custom-enchants.yml");
+		boolean newF = false;
 		ConfigCheck configCheck = new ConfigCheck(this);
 		if (configCheck.Init()) {
+			getDataFolder().mkdirs();
+			if (!f.exists()) {
+				try {
+					f.createNewFile();
+					newF = true;
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			try {
+				config.load(f);
+			} catch (IOException | InvalidConfigurationException e) {
+				e.printStackTrace();
+			}
 			System.out.println("setup completed");
 		}
 		int ce = 0;
@@ -115,6 +136,12 @@ public class CustomEnchants extends JavaPlugin {
 		int boots = 0;
 		
 		for (CEnchant c : CEnchant.values()) {
+			if (newF) {
+				c.customEnchant.saveDefault(config);
+			} else {
+				c.getCustomStuff(config);
+			}
+			
 			if (c.isEnabled() && c.getAmount() > 0) {
 				ce += c.getAmount();
 				if (c.checkSets(Material.DIAMOND_SWORD)) sword++;
@@ -127,27 +154,32 @@ public class CustomEnchants extends JavaPlugin {
 				if (c.checkSets(Material.DIAMOND_BOOTS)) boots++;
 			}
 		}
+		try {
+			config.save(f);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		if (Bukkit.getOnlinePlayers().size() > 0) {
 			for (Player p : Bukkit.getOnlinePlayers()) {
 				if (p.hasPermission("Xwy.ce.notify")) {
 					p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "«" + ChatColor.STRIKETHROUGH + "------------------------------" + ChatColor.GRAY + "" + ChatColor.BOLD + "»");
 					p.sendMessage("");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.GOLD + "CustomEnchants " + ChatColor.GRAY + "has been loaded.");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.GRAY + "This plugin was made by " + ChatColor.GOLD + "Xwy" + ChatColor.GRAY + ", if you got it from someone else, notify the source in case they are not aware this is a premium plugin.");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.GRAY + "Current version: " + ChatColor.GOLD + getDescription().getVersion());
+					p.sendMessage(Messages.mainPre.get() + "§6CustomEnchants " + ChatColor.GRAY + "has been loaded.");
+					p.sendMessage(Messages.mainPre.get() + ChatColor.GRAY + "This plugin was made by §6Xwy" + ChatColor.GRAY + ", if you got it from someone else, notify the source in case they are not aware this is a premium plugin.");
+					p.sendMessage(Messages.mainPre.get() + ChatColor.GRAY + "Current version: §6" + getDescription().getVersion());
 					p.sendMessage("");
 					p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "«" + ChatColor.STRIKETHROUGH + "------------------------------" + ChatColor.GRAY + "" + ChatColor.BOLD + "»");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.GOLD + "CustomEnchants" + ChatColor.GRAY + " has been loaded with " + ce + " enchants.");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + sword + " sword");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + bow + " bow");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + axe + " axe");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + pick + " pickaxe");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + helm + " helmet");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + chest + " chestplate");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + leggings + " legging");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + boots + " boot");
-					p.sendMessage(Messages.mainPre.get() + ChatColor.RED + "" + (ceCount = sword + bow + axe + pick + helm + chest + leggings + boots) + " total");
+					p.sendMessage(Messages.mainPre.get() + "§6CustomEnchants" + ChatColor.GRAY + " has been loaded with " + ce + " enchants.");
+					p.sendMessage(Messages.mainPre.get() + "§c" + sword + " sword");
+					p.sendMessage(Messages.mainPre.get() + "§c" + bow + " bow");
+					p.sendMessage(Messages.mainPre.get() + "§c" + axe + " axe");
+					p.sendMessage(Messages.mainPre.get() + "§c" + pick + " pickaxe");
+					p.sendMessage(Messages.mainPre.get() + "§c" + helm + " helmet");
+					p.sendMessage(Messages.mainPre.get() + "§c" + chest + " chestplate");
+					p.sendMessage(Messages.mainPre.get() + "§c" + leggings + " legging");
+					p.sendMessage(Messages.mainPre.get() + "§c" + boots + " boot");
+					p.sendMessage(Messages.mainPre.get() + "§c" + (ceCount = sword + bow + axe + pick + helm + chest + leggings + boots) + " total");
 					p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "«" + ChatColor.STRIKETHROUGH + "------------------------------" + ChatColor.GRAY + "" + ChatColor.BOLD + "»");
 				}
 			}
@@ -158,14 +190,16 @@ public class CustomEnchants extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
 		Bukkit.getConsoleSender().sendMessage("");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + getDescription().getName() + " Enabled.");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + getDescription().getName() + " made by Xwy.");
-		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Current Version: " + ChatColor.GRAY + getDescription().getVersion());
+		Bukkit.getConsoleSender().sendMessage("§c" + getDescription().getName() + " Enabled.");
+		Bukkit.getConsoleSender().sendMessage("§c" + getDescription().getName() + " made by Xwy.");
+		Bukkit.getConsoleSender().sendMessage("§cCurrent Version: " + ChatColor.GRAY + getDescription().getVersion());
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GRAY + "<-------------------------------------->");
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
+		
+		Bukkit.getPluginManager().registerEvents(new ConversionMenu(),this);
 	}
 	
 	private boolean setupEconomy() {
@@ -178,6 +212,18 @@ public class CustomEnchants extends JavaPlugin {
 		}
 		econ = rsp.getProvider();
 		return econ != null;
+	}
+	
+	private boolean useFactions() {
+		try {
+			Plugin plugin = Bukkit.getPluginManager().getPlugin("XFactions-Core");
+			if (plugin == null || !(plugin instanceof XFactionsCore)) {
+				return false;
+			}
+			return true;
+		} catch (Exception ignored) {
+		}
+		return false;
 	}
 	
 	private void registerGlow() {
@@ -231,17 +277,5 @@ public class CustomEnchants extends JavaPlugin {
 		new LeggingsMenu();
 		new PickMenu();
 		new SwordMenu();
-	}
-	
-	private boolean useFactions() {
-		try {
-			Plugin plugin = Bukkit.getPluginManager().getPlugin("XFactions-Core");
-			if (plugin == null || !(plugin instanceof XFactionsCore)) {
-				return false;
-			}
-			return true;
-		} catch (Exception ignored) {
-		}
-		return false;
 	}
 }

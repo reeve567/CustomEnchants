@@ -11,8 +11,10 @@ package pw.xwy.customenchants.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import pw.xwy.customenchants.commands.admin.CeGive;
 import pw.xwy.customenchants.commands.player.CeMenu;
+import pw.xwy.customenchants.commands.player.Conv;
 import pw.xwy.customenchants.enums.ChangeLog;
 
 public class CommandHandler {
@@ -34,6 +36,9 @@ public class CommandHandler {
 					sender.sendMessage(ChangeLog.getStrings().toArray(new String[0]));
 				}
 			} else ceMenu.run(sender);
+		}
+		else if (command.getLabel().equalsIgnoreCase("conv")) {
+			Conv.run((Player) sender);
 		}
 	}
 	

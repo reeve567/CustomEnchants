@@ -11,17 +11,17 @@ package pw.xwy.customenchants.enums;
 
 import org.bukkit.ChatColor;
 
-public enum Rarities {
+public enum Rarity {
 	COMMON(ChatColor.GREEN + "Common"),
 	UNCOMMON(ChatColor.DARK_GREEN + "Uncommon"),
 	RARE(ChatColor.BLUE + "Rare"),
 	MYSTICAL(ChatColor.DARK_PURPLE + "Mystical"),
-	HYDRO(ChatColor.DARK_BLUE + "Hydro"),
+	HYDRO(ChatColor.GOLD + "Hermes"),
 	ADMIN(ChatColor.AQUA + "Admin");
 	
 	private final String label;
 	
-	Rarities(String label) {
+	Rarity(String label) {
 		this.label = label;
 	}
 	

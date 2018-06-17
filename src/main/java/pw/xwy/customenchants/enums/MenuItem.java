@@ -9,22 +9,21 @@
 
 package pw.xwy.customenchants.enums;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
 import java.util.ArrayList;
 
 public enum MenuItem {
-	DEMONSWEAKNESSI("Has a chance to give the opponent weakness for 2 seconds.", Material.EYE_OF_ENDER),
-	DEMONSWEAKNESSII("Has a chance to give the opponent weakness for 4 seconds.", Material.EYE_OF_ENDER),
-	SMOKESCREENI("Has a chance to give the opponent blindness for 2 seconds.", Material.COAL, 1),
-	SMOKESCREENII("Has a chance to give the opponent blindness for 4 seconds.", Material.COAL, 1),
-	SMOKESCREENIII("Has a chance to give the opponent blindness for 5 seconds.", Material.COAL, 1),
-	CURSED("Has a chance to give the opponent Mining Fatigue for 8 seconds.", Material.WOOD_PICKAXE),
+	DEMONSWEAKNESSI("Has a chance to give the opponent++weakness for 2 seconds.", Material.EYE_OF_ENDER),
+	DEMONSWEAKNESSII("Has a chance to give the opponent++weakness for 4 seconds.", Material.EYE_OF_ENDER),
+	SMOKESCREENI("Has a chance to give the opponent++blindness for 2 seconds.", Material.COAL, 1),
+	SMOKESCREENII("Has a chance to give the opponent++blindness for 4 seconds.", Material.COAL, 1),
+	SMOKESCREENIII("Has a chance to give the opponent++blindness for 5 seconds.", Material.COAL, 1),
+	CURSED("Has a chance to give the opponent++Mining Fatigue for 8 seconds.", Material.WOOD_PICKAXE),
 	SOULBOUND("Dying with this enchant on an item++has a chance of keeping it on respawn.", Material.GOLDEN_APPLE, 1),
 	REKT("Has a chance to deal double damage.", Material.DIAMOND_PICKAXE),
 	DECAPITATE("This enchant ensures you salvage++an enemy player's head.", Material.SKULL_ITEM, 3),
-	LUMBERJACK("Mining the bottom log in a tree will drop all the wood.", Material.LOG),
+	LUMBERJACK("Mining the bottom log in a tree++will drop all the wood.", Material.LOG),
 	ARMORDESTRUCTOR("Damages the opponents armor more than normal.", Material.LEATHER_CHESTPLATE),
 	THOR("Has a chance to smite the opponent when you hit them.", Material.GOLD_AXE),
 	SELFHEALER("This enchant will give you 4++seconds of regeneration when you get below 3 hearts.", Material.RED_MUSHROOM),
@@ -61,13 +60,15 @@ public enum MenuItem {
 	FURNACE("This enchant allows your arrows to cook the++meat of animals that it kills.", Material.GRILLED_PORK),
 	MOONGRAVITY("This enchant gives the wearer JumpBoost I infinitely.", Material.GOLDEN_CARROT),
 	SUPERSPEED("When you hit to one and a half hearts or below, you get a speed boost for 3 seconds.", Material.GOLD_BOOTS),
-	LEADERSHIP("When faction members are near you, your damage is increased.", Material.CHAINMAIL_HELMET),
+	//LEADERSHIP("When faction members are near you, your damage is increased.", Material.CHAINMAIL_HELMET),
 	WINDSSPEEDI("This enchant gives the wearer Speed I infinitely.", Material.SUGAR),
 	WINDSSPEEDII("This enchant gives the wearer Speed II infinitely.", Material.SUGAR),
 	HARDENED("This enchant increases the amount of blocks you++can mine without repairing.", Material.WOOD_PICKAXE),
 	MAGNET("Mined blocks go straight to your inventory.", Material.HOPPER),
 	SMELTING("When you destroy a block with this, you++get the molten products of that block.", Material.GOLD_INGOT),
 	FORTUNEV("This enchant brings great fortune to many.", Material.DIAMOND_PICKAXE),
+	MINERI("This doubles the attack damage of a pickaxe", Material.GOLD_PICKAXE),
+	MINERII("This triples the attack damage of a pickaxe", Material.DIAMOND_AXE),
 	EXPLOSIVEPICK("This enchant allows your pickaxe to++mine in a 5x5x5 area.", Material.FIREBALL),
 	VAMPIRE("Hitting an enemy with this enchant++on your sword will heal you for half++the damage you do.", Material.PUMPKIN),
 	WITHERI("Hitting an enemy with this enchant++has a chance to wither the opponent++for 2 seconds.", Material.SKULL_ITEM, 1),
@@ -77,7 +78,7 @@ public enum MenuItem {
 	GUARDIANSBLOCK("Taking damage while blocking with++this enchant reduces damage by 50%", Material.GOLD_SWORD),
 	EXPTHIEF("When you hit someone with this,++it has a chance of stealing their EXP.", Material.EXP_BOTTLE),
 	FROZENBLADE("This enchantment has a chance to give++the opponent slowness for 5 seconds.", Material.ICE),
-	DEMONSBLADE("This enchant increases your damage++during combos.", Material.REDSTONE),
+	//DEMONSBLADE("This enchant increases your damage++during combos.", Material.REDSTONE),
 	MOBSLAYERI("Killing mobs with this enchantment++yields a higher amount of XP.", Material.SPIDER_EYE),
 	MOBSLAYERII("Killing mobs with this enchantment++yields a higher amount of XP.", Material.SPIDER_EYE),
 	MOBSLAYERIII("Killing mobs with this enchantment++yields a higher amount of XP.", Material.SPIDER_EYE),
@@ -95,6 +96,22 @@ public enum MenuItem {
 		customEnchant = CEnchant.valueOf(toString());
 		this.desc = conv(desc);
 		this.type = type;
+		customEnchant.customEnchant.setDescription(getDesc());
+	}
+	
+	private ArrayList<String> conv(String desc) {
+		ArrayList<String> de = new ArrayList<>();
+		while (desc.contains("++")) {
+			
+			de.add("&b" + desc.substring(0, desc.indexOf("++")));
+			desc = desc.replace(desc.substring(0, desc.indexOf("++") + 2), "");
+		}
+		de.add("&b" + desc);
+		return de;
+	}
+	
+	public ArrayList<String> getDesc() {
+		return desc;
 	}
 	
 	MenuItem(String desc, Material type, int dur) {
@@ -102,25 +119,11 @@ public enum MenuItem {
 		durability = (byte) dur;
 		this.desc = conv(desc);
 		this.type = type;
-	}
-	
-	private ArrayList<String> conv(String desc) {
-		ArrayList<String> de = new ArrayList<>();
-		while (desc.contains("++")) {
-			
-			de.add(ChatColor.AQUA + desc.substring(0, desc.indexOf("++")));
-			desc = desc.replace(desc.substring(0, desc.indexOf("++") + 2), "");
-		}
-		de.add(ChatColor.AQUA + desc);
-		return de;
+		customEnchant.customEnchant.setDescription(getDesc());
 	}
 	
 	public CEnchant getCustomEnchant() {
 		return customEnchant;
-	}
-	
-	public ArrayList<String> getDesc() {
-		return desc;
 	}
 	
 	public byte getDurability() {
