@@ -13,6 +13,7 @@ package pw.xwy.customenchants.utilities;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import pw.xwy.customenchants.enums.CEnchant;
@@ -81,7 +82,7 @@ public class MainUtility {
 		ItemStack item = new ItemStack(mat, 1);
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setDisplayName(name);
-		itemMeta.addEnchant(new Glow(999), 1, true);
+		itemMeta.addEnchant(Enchantment.getByName("Glow"), 1, true);
 		itemMeta.setLore(desc);
 		item.setItemMeta(itemMeta);
 		

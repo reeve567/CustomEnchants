@@ -50,10 +50,8 @@ public class BlockListener implements Listener {
 			if (!shouldAdd(e.getBlock().getType(), player.getItemInHand())) return;
 			
 			e.setCancelled(true);
-			
 			if (player.getItemInHand() != null && player.getItemInHand().hasItemMeta() && player.getItemInHand().getItemMeta().hasLore()) {
 				ItemStack i = player.getItemInHand();
-				
 				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(CEnchant.LUMBERJACK.getName()) && e.getBlock().getType().equals(Material.LOG)) {
 					List<ItemStack> drops = new ArrayList<>();
 					
@@ -79,7 +77,6 @@ public class BlockListener implements Listener {
 					}
 					return;
 				}
-				
 				boolean hasMag = false;
 				boolean hasExp = false;
 				boolean hasSm = false;
@@ -101,9 +98,8 @@ public class BlockListener implements Listener {
 				if (i.getEnchantments().containsKey(Enchantment.SILK_TOUCH)) {
 					hasSilk = true;
 				}
-				
 				if (hasExp) {
-					List<ItemStack> drops = new ArrayList<ItemStack>();
+					List<ItemStack> drops = new ArrayList<>();
 					Location mainLoc = e.getBlock().getLocation();
 					for (int x = -1; x <= 1; x++) {
 						for (int y = -1; y <= 1; y++) {

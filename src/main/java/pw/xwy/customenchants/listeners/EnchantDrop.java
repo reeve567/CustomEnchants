@@ -302,7 +302,7 @@ public class EnchantDrop implements Listener {
 						lore.add(itemOnCursor.getItemMeta().getDisplayName());
 						meta.setLore(lore);
 						iTW.setItemMeta(meta);
-						iTW.addUnsafeEnchantment(new Glow(999), 1);
+						iTW.addUnsafeEnchantment(Enchantment.getByName("Glow"), 1);
 						return true;
 					} else {
 						List<String> lore = new ArrayList<String>();
@@ -310,7 +310,7 @@ public class EnchantDrop implements Listener {
 						lore.add(itemOnCursor.getItemMeta().getDisplayName());
 						meta.setLore(lore);
 						iTW.setItemMeta(meta);
-						iTW.addUnsafeEnchantment(new Glow(999), 1);
+						iTW.addUnsafeEnchantment(Enchantment.getByName("Glow"), 1);
 						return true;
 					}
 				}

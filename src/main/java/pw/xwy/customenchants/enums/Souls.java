@@ -14,6 +14,7 @@ package pw.xwy.customenchants.enums;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import pw.xwy.customenchants.utilities.Glow;
@@ -41,7 +42,7 @@ public enum Souls {
 		ArrayList<String> lores = new ArrayList<>();
 		lores.add(ChatColor.GRAY + "Redeem this from Rubix for a prize.");
 		im.setLore(lores);
-		im.addEnchant(new Glow(999), 1, true);
+		im.addEnchant(Enchantment.getByName("Glow"), 1, true);
 		it.setItemMeta(im);
 		this.item = it;
 	}

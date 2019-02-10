@@ -23,15 +23,17 @@ public class NPCClick implements Listener {
 		onClick(e);
 	}
 	
+	private void onClick(NPCClickEvent e) {
+		if (e.getNPC().getName().contains("CE Menu") || e.getNPC().getName().contains("CustomEnchants")) {
+			if (e.getClicker() != null) {
+				e.getClicker().openInventory(MainMenu.get());
+			}
+		}
+	}
+	
 	@EventHandler
 	public void onLeftClick(NPCLeftClickEvent e) {
 		onClick(e);
-	}
-	
-	private void onClick(NPCClickEvent e) {
-		if (e.getNPC().getName().contains("CE Menu") || e.getNPC().getName().contains("CustomEnchants")) {
-			e.getClicker().openInventory(MainMenu.get());
-		}
 	}
 	
 }

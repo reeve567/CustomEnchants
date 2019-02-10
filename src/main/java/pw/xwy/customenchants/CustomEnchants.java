@@ -83,7 +83,7 @@ public class CustomEnchants extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		
+		registerGlow();
 		if (!setupEconomy()) {
 			log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
 			getServer().getPluginManager().disablePlugin(this);
@@ -98,9 +98,7 @@ public class CustomEnchants extends JavaPlugin {
 		commandHandler.Init();
 		customEnchants = this;
 		listnerHandler.Init();
-		registerGlow();
 		loadCrates();
-		disableEnchants();
 		startTasks();
 		loadMenus();
 		YamlConfiguration config = new YamlConfiguration();
@@ -199,7 +197,7 @@ public class CustomEnchants extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage("");
 		Bukkit.getConsoleSender().sendMessage("");
 		
-		Bukkit.getPluginManager().registerEvents(new ConversionMenu(),this);
+		Bukkit.getPluginManager().registerEvents(new ConversionMenu(), this);
 	}
 	
 	private boolean setupEconomy() {
@@ -217,7 +215,7 @@ public class CustomEnchants extends JavaPlugin {
 	private boolean useFactions() {
 		try {
 			Plugin plugin = Bukkit.getPluginManager().getPlugin("XFactions-Core");
-			if (plugin == null || !(plugin instanceof XFactionsCore)) {
+			if (!(plugin instanceof XFactionsCore)) {
 				return false;
 			}
 			return true;
@@ -235,9 +233,8 @@ public class CustomEnchants extends JavaPlugin {
 			e.printStackTrace();
 		}
 		try {
-			Glow glow = new Glow(70);
+			Glow glow = new Glow(999);
 			Enchantment.registerEnchantment(glow);
-		} catch (IllegalArgumentException ignored) {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -249,13 +246,6 @@ public class CustomEnchants extends JavaPlugin {
 		new RareSC();
 		new UncommonSC();
 		new CommonSC();
-	}
-	
-	private void disableEnchants() {
-		final CEnchant[] toDisable = {};
-		for (CEnchant ce : toDisable) {
-			ce.disable();
-		}
 	}
 	
 	private void startTasks() {

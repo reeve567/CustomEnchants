@@ -69,7 +69,7 @@ public enum MenuItem {
 	FORTUNEV("This enchant brings great fortune to many.", Material.DIAMOND_PICKAXE),
 	MINERI("This doubles the attack damage of a pickaxe", Material.GOLD_PICKAXE),
 	MINERII("This triples the attack damage of a pickaxe", Material.DIAMOND_AXE),
-	EXPLOSIVEPICK("This enchant allows your pickaxe to++mine in a 5x5x5 area.", Material.FIREBALL),
+	EXPLOSIVEPICK("This enchant allows your pickaxe to++mine in a 3x3x3 area.", Material.FIREBALL),
 	VAMPIRE("Hitting an enemy with this enchant++on your sword will heal you for half++the damage you do.", Material.PUMPKIN),
 	WITHERI("Hitting an enemy with this enchant++has a chance to wither the opponent++for 2 seconds.", Material.SKULL_ITEM, 1),
 	WITHERII("Hitting an enemy with this enchant++has a chance to wither the opponent++for 4 seconds.", Material.SKULL_ITEM, 1),

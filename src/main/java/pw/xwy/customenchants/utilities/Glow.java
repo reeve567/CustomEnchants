@@ -26,25 +26,25 @@ public class Glow extends Enchantment {
 	@Override
 	public String getName() {
 		
-		return null;
+		return "Glow";
 	}
 	
 	@Override
 	public int getMaxLevel() {
 		
-		return 0;
+		return 1;
 	}
 	
 	@Override
 	public int getStartLevel() {
 		
-		return 0;
+		return 1;
 	}
 	
 	@Override
 	public EnchantmentTarget getItemTarget() {
 		
-		return null;
+		return EnchantmentTarget.ALL;
 	}
 	
 	@Override
@@ -56,7 +56,7 @@ public class Glow extends Enchantment {
 	@Override
 	public boolean canEnchantItem(ItemStack itemStack) {
 		
-		return false;
+		return true;
 	}
 	
 	
