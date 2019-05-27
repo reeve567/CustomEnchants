@@ -12,6 +12,12 @@ public class ExperienceManager {
 		this.player = player;
 	}
 	
+	private float round(float d, int decimalPlace) {
+		BigDecimal bd = new BigDecimal(Float.toString(d));
+		bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_DOWN);
+		return bd.floatValue();
+	}
+	
 	public int getTotalExperience() {
 		int experience;
 		int level = player.getLevel();
@@ -88,11 +94,5 @@ public class ExperienceManager {
 			player.setLevel(level);
 			player.setExp(experience);
 		}
-	}
-	
-	private float round(float d, int decimalPlace) {
-		BigDecimal bd = new BigDecimal(Float.toString(d));
-		bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_DOWN);
-		return bd.floatValue();
 	}
 }

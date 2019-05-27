@@ -1,12 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-// File copyright last updated on: 6/17/18 12:18 PM                            /
-//                                                                             /
-// Copyright (c) 2018.                                                         /
-// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
-//                                                                             /
-//                                                                             /
-////////////////////////////////////////////////////////////////////////////////
-
 package pw.xwy.customenchants.utilities;
 
 import org.bukkit.inventory.Inventory;

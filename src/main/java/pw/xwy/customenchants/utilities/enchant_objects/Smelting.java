@@ -4,7 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.obj.CustomEnchant;
-import pw.xwy.customenchants.FortuneCalc;
+import pw.xwy.customenchants.utilities.FortuneCalc;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 import pw.xwy.customenchants.utilities.item.CustomItem;

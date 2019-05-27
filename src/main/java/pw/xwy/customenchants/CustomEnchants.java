@@ -15,6 +15,7 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import pw.xwy.customenchants.obj.Config;
 import pw.xwy.customenchants.obj.CustomEnchant;
 import pw.xwy.customenchants.utilities.enums.Messages;
 import pw.xwy.customenchants.utilities.gui.ConversionMenu;

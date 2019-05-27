@@ -13,9 +13,11 @@ import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.*;
 import pw.xwy.customenchants.obj.CustomBlockEnchant;
 import pw.xwy.customenchants.obj.CustomMineEnchant;
+import pw.xwy.customenchants.utilities.ExperienceManager;
 import pw.xwy.customenchants.utilities.enchant_objects.Smelting;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.item.CustomItem;
+import pw.xwy.customenchants.utilities.FortuneCalc;
 
 import java.util.ArrayList;
 import java.util.List;
