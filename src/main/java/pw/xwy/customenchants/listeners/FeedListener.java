@@ -16,12 +16,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.enums.CEnchant;
+import pw.xwy.customenchants.RealName;
+import pw.xwy.customenchants.utilities.enchant_objects.Autofeeder;
 
 import java.util.List;
 
 public class FeedListener implements Listener {
-	
+
 	@EventHandler
 	public void onFoodChange(FoodLevelChangeEvent e) {
 		if (e.getEntity() instanceof Player) {
@@ -31,13 +32,13 @@ public class FeedListener implements Listener {
 				if (legs.hasItemMeta()) {
 					if (legs.getItemMeta().hasLore()) {
 						List<String> lore = legs.getItemMeta().getLore();
-						if (lore.contains(CEnchant.AUTOFEEDER.getName())) {
-							e.setFoodLevel(20);
+						if (lore.contains(RealName.AUTOFEEDER.getEnchant().getName())) {
+							((Autofeeder) RealName.AUTOFEEDER.getEnchant()).event(e);
 						}
 					}
 				}
 			}
 		}
 	}
-	
+
 }

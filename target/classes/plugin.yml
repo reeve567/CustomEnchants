@@ -1,9 +1,0 @@
-main: pw.xwy.customenchants.CustomEnchants
-name: CustomEnchants
-author: Xwy
-version: 0.7
-depend: [Vault,Citizens]
-softdepend: [WorldGuard,XFactions-Core]
-commands:
-  ce:
-  conv:

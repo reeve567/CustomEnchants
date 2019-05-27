@@ -13,7 +13,6 @@ import org.bukkit.Material;
 
 import java.util.Random;
 
-
 public class FortuneCalc {
 	
 	/**
@@ -27,7 +26,7 @@ public class FortuneCalc {
 	
 	public static int numDroppedFromFortune(int fortuneLevel, Material typeOfBlock, int returnValue) {
 		if (!(fortuneLevel > 3)) {
-			if (typeOfBlock == Material.REDSTONE || typeOfBlock == Material.REDSTONE_ORE || typeOfBlock == Material.REDSTONE_BLOCK || typeOfBlock == Material.CARROT || typeOfBlock == Material.MELON || typeOfBlock == Material.MELON_BLOCK || typeOfBlock == Material.NETHER_WARTS || typeOfBlock == Material.POTATO || typeOfBlock == Material.SEEDS || typeOfBlock == Material.LONG_GRASS) {
+			if (typeOfBlock == Material.REDSTONE || typeOfBlock == Material.GOLD_BLOCK || typeOfBlock == Material.IRON_BLOCK || typeOfBlock == Material.DIAMOND_BLOCK || typeOfBlock == Material.EMERALD_BLOCK || typeOfBlock == Material.REDSTONE_ORE || typeOfBlock == Material.REDSTONE_BLOCK || typeOfBlock == Material.CARROT || typeOfBlock == Material.MELON || typeOfBlock == Material.MELON_BLOCK || typeOfBlock == Material.NETHER_WARTS || typeOfBlock == Material.POTATO || typeOfBlock == Material.SEEDS || typeOfBlock == Material.LONG_GRASS) {
 				
 				if (typeOfBlock == Material.REDSTONE) {
 					for (int i = 0; i < fortuneLevel; i++) {
@@ -86,7 +85,7 @@ public class FortuneCalc {
 			if (j < 0)
 				j = 0;
 			
-			return j;
+			return j + 1;
 		}
 	}
 	
