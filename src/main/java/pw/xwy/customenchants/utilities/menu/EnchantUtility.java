@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.listeners.EnchantDrop;
-import pw.xwy.customenchants.obj.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomEnchant;
 
 import java.util.ArrayList;
 import java.util.List;

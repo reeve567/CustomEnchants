@@ -13,7 +13,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.obj.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomEnchant;
 import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;

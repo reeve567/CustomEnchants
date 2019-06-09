@@ -19,7 +19,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.CustomEnchants;
-import pw.xwy.customenchants.obj.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomEnchant;
 import pw.xwy.customenchants.utilities.ExperienceManager;
 import pw.xwy.customenchants.utilities.InventoryUtility;
 import pw.xwy.customenchants.utilities.enums.Messages;

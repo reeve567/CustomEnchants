@@ -1,12 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////
-// File copyright last updated on: 2/24/18 6:47 PM                             /
-//                                                                             /
-// Copyright (c) 2018.                                                         /
-// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
-//                                                                             /
-//                                                                             /
-////////////////////////////////////////////////////////////////////////////////
-
 package pw.xwy.customenchants;
 
 import org.bukkit.Bukkit;
@@ -15,13 +6,13 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.customenchants.obj.Config;
-import pw.xwy.customenchants.obj.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.Config;
+import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.utilities.EnchantCheck;
 import pw.xwy.customenchants.utilities.enums.Messages;
 import pw.xwy.customenchants.utilities.gui.ConversionMenu;
 import pw.xwy.customenchants.utilities.item.Glow;
 import pw.xwy.customenchants.utilities.menu.*;
-import pw.xwy.customenchants.utilities.tasks.*;
 
 import java.lang.reflect.Field;
 
@@ -66,13 +57,7 @@ public class CustomEnchants extends JavaPlugin {
 	}
 	
 	private void startTasks() {
-		new WaterBreathingCheck(this);
-		new NightVisionCheck(this);
-		new HeartCheck(this);
-		new ValorCheck(this);
-		new FlashCheck(this);
-		new JumpBoostCheck(this);
-		new SpeedCheck(this);
+		new EnchantCheck(this);
 	}
 	
 	public void onEnable() {

@@ -17,8 +17,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.obj.CustomBowDeathEnchant;
-import pw.xwy.customenchants.obj.CustomDeathEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomBowDeathEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomDeathEnchant;
 import pw.xwy.customenchants.RealName;
 
 import java.util.HashMap;

@@ -1,7 +1,7 @@
 package pw.xwy.customenchants;
 
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.obj.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomEnchant;
 
 public enum RealName {
 

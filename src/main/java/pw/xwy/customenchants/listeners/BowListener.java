@@ -28,11 +28,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.util.Vector;
 import pw.xwy.customenchants.*;
-import pw.xwy.customenchants.obj.CustomBowBlockEnchant;
-import pw.xwy.customenchants.obj.CustomBowDeathEnchant;
-import pw.xwy.customenchants.obj.CustomBowEnchant;
-import pw.xwy.customenchants.obj.CustomBowShootEnchant;
-import pw.xwy.customenchants.utilities.enchant_objects.Rifle;
+import pw.xwy.customenchants.enchant_objects.CustomBowBlockEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomBowDeathEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomBowEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomBowShootEnchant;
+import pw.xwy.customenchants.enchant_objects.obj.Rifle;
 import pw.xwy.customenchants.utilities.menu.MessagesFunctions;
 
 import java.util.ArrayList;

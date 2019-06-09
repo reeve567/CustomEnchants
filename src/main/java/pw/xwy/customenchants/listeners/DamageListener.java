@@ -11,12 +11,12 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.*;
-import pw.xwy.customenchants.obj.CustomBowEnchant;
-import pw.xwy.customenchants.obj.CustomDamageEnchant;
-import pw.xwy.customenchants.obj.CustomEnchant;
-import pw.xwy.customenchants.obj.CustomEnviromentalDamageEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomBowEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomDamageEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.CustomEnviromentalDamageEnchant;
 
-import static pw.xwy.customenchants.utilities.enchant_objects.StormCaller.summoner;
+import static pw.xwy.customenchants.enchant_objects.obj.StormCaller.summoner;
 
 public class DamageListener implements Listener {
 	

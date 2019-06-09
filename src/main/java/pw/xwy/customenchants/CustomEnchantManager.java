@@ -1,8 +1,8 @@
 package pw.xwy.customenchants;
 
 import org.bukkit.Material;
-import pw.xwy.customenchants.obj.*;
-import pw.xwy.customenchants.utilities.enchant_objects.*;
+import pw.xwy.customenchants.enchant_objects.*;
+import pw.xwy.customenchants.enchant_objects.obj.*;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
@@ -22,6 +22,7 @@ public class CustomEnchantManager {
 	private List<CustomDeathEnchant> deathEnchants = new ArrayList<>();
 	private List<CustomBlockEnchant> blockEnchants = new ArrayList<>();
 	private List<CustomTaskEnchant> taskEnchants = new ArrayList<>();
+	private List<CustomMineEnchant> mineEnchants = new ArrayList<>();
 	
 	public CustomEnchantManager() {
 		System.out.println("Custom Enchant Manager started, lists should be good.");
@@ -115,6 +116,13 @@ public class CustomEnchantManager {
 		return instance;
 	}
 	
+	public static void main(String[] args) {
+		CustomEnchantManager manager = new CustomEnchantManager();
+		for (CustomTaskEnchant enchant : manager.getTaskEnchants()) {
+			System.out.println(enchant.getCommandLabel());
+		}
+	}
+	
 	private void init(CustomEnchant... enchants) {
 		for (CustomEnchant ce : enchants) {
 			if (ce instanceof CustomDamageEnchant) {
@@ -125,6 +133,8 @@ public class CustomEnchantManager {
 				blockEnchants.add((CustomBlockEnchant) ce);
 			} else if (ce instanceof CustomTaskEnchant) {
 				taskEnchants.add((CustomTaskEnchant) ce);
+			} else if (ce instanceof CustomMineEnchant) {
+				mineEnchants.add((CustomMineEnchant) ce);
 			}
 			
 			List<CustomEnchant> add = enchantsByRarity.get(ce.getRarity());
@@ -163,6 +173,10 @@ public class CustomEnchantManager {
 	
 	public HashMap<String, CustomEnchant> getEnchantsByRealName() {
 		return enchantsByRealName;
+	}
+	
+	public List<CustomMineEnchant> getMineEnchants() {
+		return mineEnchants;
 	}
 	
 	public CustomEnchant getRandomEnchant(Rarity rarity) {

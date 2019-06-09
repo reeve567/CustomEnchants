@@ -17,7 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.RealName;
-import pw.xwy.customenchants.utilities.enchant_objects.Autofeeder;
+import pw.xwy.customenchants.enchant_objects.obj.Autofeeder;
 
 import java.util.List;
 
