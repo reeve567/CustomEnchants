@@ -16,8 +16,8 @@ import pw.xwy.customenchants.enchant_objects.CustomMineEnchant;
 import pw.xwy.customenchants.utilities.ExperienceManager;
 import pw.xwy.customenchants.enchant_objects.obj.Smelting;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
-import pw.xwy.customenchants.utilities.item.CustomItem;
 import pw.xwy.customenchants.utilities.FortuneCalc;
+import pw.xwy.utils.CustomItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +40,7 @@ public class BlockListener implements Listener {
 				if (b.getType() == Material.LAPIS_ORE) data = 4;
 				
 				for (ItemStack j : b.getDrops()) {
-					drops.add(new CustomItem(new ItemStack(j.getType(), getAmount(fortune, lvl, b.getType()), data)).setDurability((int) data));
+					drops.add(new CustomItem(j.getType()).setCustomAmount(getAmount(fortune, lvl, b.getType())));
 				}
 			}
 		}
@@ -49,30 +49,30 @@ public class BlockListener implements Listener {
 	
 	private boolean shouldAdd(Material mat, ItemStack is) {
 		
-		if (mat == Material.BEDROCK || mat == Material.COMMAND || mat == Material.ENDER_PORTAL || mat == Material.ENDER_PORTAL_FRAME || mat == Material.LAVA || mat == Material.STATIONARY_LAVA || mat == Material.WATER || mat == Material.STATIONARY_WATER) {
+		if (mat == Material.BEDROCK || mat == Material.COMMAND_BLOCK || mat == Material.END_PORTAL || mat == Material.END_PORTAL_FRAME || mat == Material.LAVA || mat == Material.WATER) {
 			return false;
 		} else if (mat == Material.OBSIDIAN) {
 			return (is != null) && is.getType() == Material.DIAMOND_PICKAXE;
 		} else if (mat == Material.ENDER_CHEST || mat == Material.ANVIL || mat == Material.COAL_BLOCK
-				|| mat == Material.REDSTONE_BLOCK || mat == Material.ENCHANTMENT_TABLE ||
-				mat == Material.IRON_BARDING || mat == Material.IRON_DOOR_BLOCK || mat == Material.MOB_SPAWNER ||
+				|| mat == Material.REDSTONE_BLOCK || mat == Material.ENCHANTING_TABLE ||
+				mat == Material.IRON_BARS || mat == Material.IRON_DOOR || mat == Material.SPAWNER ||
 				mat == Material.DISPENSER || mat == Material.DROPPER || mat == Material.COAL_ORE ||
-				mat == Material.ENDER_STONE || mat == Material.HOPPER || mat == Material.QUARTZ_ORE ||
+				mat == Material.END_STONE || mat == Material.HOPPER || mat == Material.NETHER_QUARTZ_ORE ||
 				mat == Material.BRICK_STAIRS || mat == Material.BRICK || mat == Material.CAULDRON ||
-				mat == Material.COBBLESTONE || mat == Material.COBBLESTONE_STAIRS || mat == Material.COBBLE_WALL ||
+				mat == Material.COBBLESTONE || mat == Material.COBBLESTONE_STAIRS || mat == Material.COBBLESTONE_WALL ||
 				mat == Material.MOSSY_COBBLESTONE || mat == Material.NETHER_BRICK || mat == Material.NETHER_BRICK_STAIRS
-				|| mat == Material.STONE_PLATE || (mat.getId() == 43 || mat.getId() == 44) || mat == Material.STONE ||
+				|| mat == Material.STONE_PRESSURE_PLATE || (mat.getId() == 43 || mat.getId() == 44) || mat == Material.STONE ||
 				(mat.getId() == 94 || mat.getId() == 109) || (mat.getId() == 159 || mat.getId() == 172) ||
 				mat == Material.QUARTZ_BLOCK || mat == Material.SANDSTONE || mat == Material.SANDSTONE_STAIRS ||
 				mat == Material.NETHERRACK) {
-			return (is != null) && (is.getType() == Material.WOOD_PICKAXE || is.getType() == Material.STONE_PICKAXE ||
+			return (is != null) && (is.getType() == Material.WOODEN_PICKAXE || is.getType() == Material.STONE_PICKAXE ||
 					is.getType() == Material.IRON_PICKAXE || is.getType() == Material.DIAMOND_PICKAXE);
 		} else if (mat == Material.IRON_BLOCK || mat == Material.IRON_ORE || mat == Material.LAPIS_BLOCK || mat ==
 				Material.LAPIS_ORE) {
 			return (is != null) && (is.getType() == Material.STONE_PICKAXE || is.getType() == Material.IRON_PICKAXE || is.getType() ==
 					Material.DIAMOND_PICKAXE);
 		} else if (mat == Material.DIAMOND_ORE || mat == Material.EMERALD_ORE || mat == Material.GOLD_ORE || mat ==
-				Material.REDSTONE_ORE || mat == Material.GLOWING_REDSTONE_ORE) {
+				Material.REDSTONE_ORE) {
 			return (is != null) && (is.getType() == Material.IRON_PICKAXE || is.getType() == Material.DIAMOND_PICKAXE);
 		}
 		return true;
@@ -96,7 +96,7 @@ public class BlockListener implements Listener {
 			e.setCancelled(true);
 			if (player.getItemInHand() != null && player.getItemInHand().hasItemMeta() && player.getItemInHand().getItemMeta().hasLore()) {
 				ItemStack i = player.getItemInHand();
-				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(RealName.LUMBERJACK.getEnchant().getName()) && e.getBlock().getType().equals(Material.LOG)) {
+				if (ItemSets.AXE.setContains(i.getType()) && i.getItemMeta().getLore().contains(RealName.LUMBERJACK.getEnchant().getName()) && e.getBlock().getType().equals(Material.LEGACY_LOG)) {
 					((CustomBlockEnchant) RealName.LUMBERJACK.getEnchant()).event(e);
 				}
 			} else {
@@ -134,7 +134,7 @@ public class BlockListener implements Listener {
 				case LAPIS_ORE:
 					xp = random.nextInt(4) + 2;
 					break;
-				case QUARTZ_ORE:
+				case NETHER_QUARTZ_ORE:
 					xp = random.nextInt(4) + 2;
 					break;
 				case REDSTONE_ORE:
@@ -148,9 +148,6 @@ public class BlockListener implements Listener {
 		e.getBlock().setType(Material.AIR);
 		
 		for (ItemStack i : drops) {
-			if (i.getType() == Material.INK_SACK) {
-				e.getPlayer().getInventory().addItem(new CustomItem(i).setCusomType(Material.AIR).setDurability((int) i.getDurability()));
-			}
 			e.getPlayer().getInventory().addItem(i);
 		}
 		
@@ -168,7 +165,7 @@ public class BlockListener implements Listener {
 				((CustomMineEnchant) RealName.EXPLOSIVEPICKIII.getEnchant()).event(e);
 			}
 		} else {
-			e.getBlock().getLocation().getWorld().playEffect(e.getBlock().getLocation(), Effect.STEP_SOUND, e.getBlock().getTypeId());
+			e.getBlock().getLocation().getWorld().playEffect(e.getBlock().getLocation(), Effect.STEP_SOUND, e.getBlock());
 		}
 		e.getPlayer().updateInventory();
 		

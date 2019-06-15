@@ -12,12 +12,12 @@ import pw.xwy.customenchants.listeners.DamageListener;
 import pw.xwy.customenchants.listeners.EnchantDrop;
 
 public class RPG extends CustomBowEnchant {
-	public RPG(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public RPG(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
-	public RPG(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public RPG(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem, durability);
 	}
 	
 	@Override

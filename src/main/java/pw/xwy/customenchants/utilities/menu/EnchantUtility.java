@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.listeners.EnchantDrop;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class EnchantUtility {
 			desc.add("");
 		}
 		
-		CustomEnchant customEnchant = CustomEnchants.manager.getEnchantsByLabel().get(n);
+		ACustomEnchant customEnchant = CustomEnchants.manager.getEnchantsByLabel().get(n);
 		
 		if (customEnchant != null) {
 			desc.add(customEnchant.getRarity().getLabel());

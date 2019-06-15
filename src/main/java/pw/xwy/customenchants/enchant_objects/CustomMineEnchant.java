@@ -5,13 +5,13 @@ import pw.xwy.customenchants.BlockMinedEvent;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
-public abstract class CustomMineEnchant extends CustomEnchant {
-	public CustomMineEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+public abstract class CustomMineEnchant extends ACustomEnchant {
+	public CustomMineEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
-	public CustomMineEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public CustomMineEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
 	public abstract void event(BlockMinedEvent e);

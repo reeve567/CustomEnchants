@@ -7,7 +7,7 @@ import org.bukkit.entity.Arrow;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 import pw.xwy.customenchants.CustomEnchants;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Messages;
@@ -15,13 +15,13 @@ import pw.xwy.customenchants.utilities.enums.Rarity;
 
 import static pw.xwy.customenchants.listeners.BowListener.cantFire;
 
-public class Rifle extends CustomEnchant {
-	public Rifle(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+public class Rifle extends ACustomEnchant {
+	public Rifle(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
-	public Rifle(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public Rifle(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
 	public void launch(PlayerInteractEvent e) {

@@ -19,8 +19,8 @@ public class Soulbound extends CustomDeathEnchant {
 
 	public HashMap<Player, List<ItemStack>> keptItems = new HashMap<>();
 
-	public Soulbound(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
-		super(name, sets, rarity, description, displayItem, durability);
+	public Soulbound(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
 	@Override

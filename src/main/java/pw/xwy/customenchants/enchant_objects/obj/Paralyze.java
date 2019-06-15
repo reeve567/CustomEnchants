@@ -11,12 +11,12 @@ import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
 public class Paralyze extends CustomDamageEnchant {
-	public Paralyze(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public Paralyze(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
-	public Paralyze(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public Paralyze(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem, durability);
 	}
 
 	@Override

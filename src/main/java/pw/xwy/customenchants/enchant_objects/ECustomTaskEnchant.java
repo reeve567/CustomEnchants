@@ -108,11 +108,11 @@ public enum ECustomTaskEnchant implements ICustomTaskEnchant {
 			return ItemCheck(player.getInventory().getBoots());
 		}
 	};
-	private CustomEnchantUtility customEnchantUtility;
+	private ACustomEnchant2 customEnchantUtility;
 	private int tickWait;
 	
 	ECustomTaskEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int tickWait) {
-		customEnchantUtility = new CustomEnchantUtility(name, sets, rarity, description, displayItem);
+		customEnchantUtility = new ACustomEnchant2(name, sets, rarity, description, displayItem);
 		this.tickWait = tickWait;
 	}
 	

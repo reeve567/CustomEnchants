@@ -1,7 +1,7 @@
 package pw.xwy.customenchants;
 
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 
 public enum RealName {
 
@@ -79,7 +79,7 @@ public enum RealName {
 		return false;
 	}
 
-	public CustomEnchant getEnchant() {
+	public ACustomEnchant getEnchant() {
 		return CustomEnchantManager.getInstance().getEnchantsByRealName().get(this.toString());
 	}
 

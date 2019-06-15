@@ -8,12 +8,12 @@ import pw.xwy.customenchants.utilities.enums.Rarity;
 
 public class Medicine extends CustomEnviromentalDamageEnchant {
 	
-	public Medicine(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public Medicine(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
-	public Medicine(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public Medicine(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem, durability);
 	}
 	
 	@Override

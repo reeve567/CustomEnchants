@@ -8,12 +8,12 @@ import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
 public class AnimalCooker extends CustomDeathEnchant {
-	public AnimalCooker(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public AnimalCooker(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
-	public AnimalCooker(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public AnimalCooker(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem, durability);
 	}
 
 	@Override
@@ -24,11 +24,11 @@ public class AnimalCooker extends CustomDeathEnchant {
 	private void changeDrops(EntityDeathEvent e) {
 
 		for (ItemStack it : e.getDrops()) {
-			if (it.getType().equals(Material.RAW_BEEF)) {
+			if (it.getType().equals(Material.BEEF)) {
 				it.setType(Material.COOKED_BEEF);
-			} else if (it.getType().equals(Material.PORK)) {
-				it.setType(Material.GRILLED_PORK);
-			} else if (it.getType().equals(Material.RAW_CHICKEN)) {
+			} else if (it.getType().equals(Material.PORKCHOP)) {
+				it.setType(Material.COOKED_PORKCHOP);
+			} else if (it.getType().equals(Material.CHICKEN)) {
 				it.setType(Material.COOKED_CHICKEN);
 			}
 		}

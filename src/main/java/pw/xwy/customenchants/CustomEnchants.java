@@ -6,36 +6,23 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.customenchants.obj.Config;
-import pw.xwy.customenchants.obj.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
+import pw.xwy.customenchants.enchant_objects.Config;
 import pw.xwy.customenchants.utilities.enums.Messages;
 import pw.xwy.customenchants.utilities.gui.ConversionMenu;
-import pw.xwy.customenchants.utilities.item.Glow;
-import pw.xwy.customenchants.utilities.menu.*;
-import pw.xwy.customenchants.utilities.tasks.*;
+import pw.xwy.customenchants.utilities.gui.MainMenu;
 
 import java.lang.reflect.Field;
 
 public class CustomEnchants extends JavaPlugin {
-	
+
 	public static CustomEnchantManager manager;
 	public static CustomEnchants instance;
-	
+
 	public CustomEnchants() {
 		instance = this;
 	}
-	
-	private void loadMenus() {
-		new AxeMenu();
-		new BootsMenu();
-		new BowMenu();
-		new ChestMenu();
-		new HelmMenu();
-		new LeggingsMenu();
-		new PickMenu();
-		new SwordMenu();
-	}
-	
+
 	private void registerGlow() {
 		try {
 			Field f = Enchantment.class.getDeclaredField("acceptingNew");
@@ -44,31 +31,12 @@ public class CustomEnchants extends JavaPlugin {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		try {
-			if (Enchantment.isAcceptingRegistrations())
-				if (Enchantment.getByName("Glow") != null) {
-					Glow glow = new Glow(99);
-					Enchantment.registerEnchantment(glow);
-				}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
-	
-	private void startTasks() {
-		new WaterBreathingCheck(this);
-		new NightVisionCheck(this);
-		new HeartCheck(this);
-		new ValorCheck(this);
-		new FlashCheck(this);
-		new JumpBoostCheck(this);
-		new SpeedCheck(this);
-	}
-	
+
 	@Override
 	public void onEnable() {
 		registerGlow();
-		
+
 		Config config = new Config(getDataFolder(), "custom-enchants");
 		int sword = 0;
 		int axe = 0;
@@ -78,22 +46,22 @@ public class CustomEnchants extends JavaPlugin {
 		int chest = 0;
 		int leggings = 0;
 		int boots = 0;
-		
+
 		boolean newf = false;
 		if (config.getInt("ver") != 1) {
 			newf = true;
 			config.set("ver", 1);
 			config.saveConfig();
 		}
-		
+
 		manager = new CustomEnchantManager();
-		
-		for (CustomEnchant c : manager.getEnchantsByRealName().values()) {
+
+		for (ACustomEnchant c : manager.getEnchantsByRealName().values()) {
 			if (newf)
 				c.saveDefault(config);
 			else
 				c.setCustomStuff(config);
-			
+
 			if (c.isEnabled()) {
 				if (c.checkSets(Material.DIAMOND_SWORD)) sword++;
 				if (c.checkSets(Material.DIAMOND_AXE)) axe++;
@@ -106,11 +74,11 @@ public class CustomEnchants extends JavaPlugin {
 			}
 		}
 		config.saveConfig();
-		
+
 		if (!Bukkit.getOnlinePlayers().isEmpty()) {
 			for (Player p : Bukkit.getOnlinePlayers()) {
 				if (p.hasPermission("Xwy.menu.notify")) {
-					p.sendMessage( "§7§l«§m------------------------------§7§l»");
+					p.sendMessage("§7§l«§m------------------------------§7§l»");
 					int ceCount = sword + bow + axe + pick + helm + chest + leggings + boots;
 					p.sendMessage(Messages.mainPre.get() + "§6CustomEnchants" + ChatColor.GRAY + " have been loaded with " + ceCount + " enchants.");
 					p.sendMessage(Messages.mainPre.get() + "§c" + sword + " sword");
@@ -126,10 +94,15 @@ public class CustomEnchants extends JavaPlugin {
 				}
 			}
 		}
-		startTasks();
 		loadMenus();
-		Bukkit.getPluginManager().registerEvents(new ConversionMenu(), this);
 		new CustomEnchantsCommand();
 	}
-	
+
+	private void loadMenus() {
+		MainMenu mainMenu = new MainMenu(this);
+		ConversionMenu conversionMenu = new ConversionMenu(this);
+		mainMenu.setItems();
+		conversionMenu.setItems();
+	}
+
 }

@@ -13,12 +13,12 @@ import pw.xwy.customenchants.utilities.enums.Messages;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
 public class Shotgun extends CustomBowShootEnchant {
-	public Shotgun(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public Shotgun(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
-	public Shotgun(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public Shotgun(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem, durability);
 	}
 	
 	private float Vec() {

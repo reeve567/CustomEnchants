@@ -14,12 +14,12 @@ import pw.xwy.customenchants.utilities.enums.Rarity;
 import pw.xwy.customenchants.listeners.EnchantDrop;
 
 public class Voltage extends CustomBowEnchant {
-	public Voltage(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public Voltage(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
-	public Voltage(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public Voltage(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem, durability);
 	}
 	
 	@Override

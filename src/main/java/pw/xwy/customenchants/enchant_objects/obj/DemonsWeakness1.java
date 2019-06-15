@@ -7,19 +7,19 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import pw.xwy.customenchants.listeners.EnchantDrop;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
-public class DemonsWeakness1 extends CustomEnchant {
+public class DemonsWeakness1 extends ACustomEnchant {
 
 
-	public DemonsWeakness1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public DemonsWeakness1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
-	public DemonsWeakness1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public DemonsWeakness1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
 	@EventHandler

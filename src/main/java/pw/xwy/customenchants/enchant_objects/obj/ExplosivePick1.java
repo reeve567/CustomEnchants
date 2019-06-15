@@ -9,8 +9,8 @@ import pw.xwy.customenchants.utilities.enums.Rarity;
 
 public class ExplosivePick1 extends CustomMineEnchant {
 	
-	public ExplosivePick1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+	public ExplosivePick1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 	
 	@Override

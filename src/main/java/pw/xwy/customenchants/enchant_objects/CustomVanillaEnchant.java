@@ -6,13 +6,13 @@ import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
-public abstract class CustomVanillaEnchant extends CustomEnchant {
-	public CustomVanillaEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, disable);
+public abstract class CustomVanillaEnchant extends ACustomEnchant {
+	public CustomVanillaEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
-	public CustomVanillaEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability, boolean... disable) {
-		super(name, sets, rarity, description, displayItem, durability, disable);
+	public CustomVanillaEnchant(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
 	public abstract void apply(ItemStack itemInteractedWith, Player player);

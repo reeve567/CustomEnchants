@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import pw.xwy.customenchants.*;
 import pw.xwy.customenchants.enchant_objects.CustomBowEnchant;
 import pw.xwy.customenchants.enchant_objects.CustomDamageEnchant;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 import pw.xwy.customenchants.enchant_objects.CustomEnviromentalDamageEnchant;
 
 import static pw.xwy.customenchants.enchant_objects.obj.StormCaller.summoner;
@@ -134,7 +134,7 @@ public class DamageListener implements Listener {
 				if (player.getItemInHand().hasItemMeta() && player.getItemInHand().getItemMeta().hasLore()) {
 					for (String s : player.getItemInHand().getItemMeta().getLore()) {
 						if (CustomEnchantManager.getInstance().getEnchantsByLore().containsKey(s)) {
-							CustomEnchant enchant = CustomEnchantManager.getInstance().getEnchantsByLore().get(s);
+							ACustomEnchant enchant = CustomEnchantManager.getInstance().getEnchantsByLore().get(s);
 							if (enchant instanceof CustomDamageEnchant) {
 								CustomDamageEnchant damageEnchant = (CustomDamageEnchant) enchant;
 								

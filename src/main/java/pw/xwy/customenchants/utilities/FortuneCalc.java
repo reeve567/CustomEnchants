@@ -17,7 +17,7 @@ public class FortuneCalc {
 	
 	public static int numDroppedFromFortune(int fortuneLevel, Material typeOfBlock, int returnValue) {
 		if (!(fortuneLevel > 3)) {
-			if (typeOfBlock == Material.REDSTONE || typeOfBlock == Material.GOLD_BLOCK || typeOfBlock == Material.IRON_BLOCK || typeOfBlock == Material.DIAMOND_BLOCK || typeOfBlock == Material.EMERALD_BLOCK || typeOfBlock == Material.REDSTONE_ORE || typeOfBlock == Material.REDSTONE_BLOCK || typeOfBlock == Material.CARROT || typeOfBlock == Material.MELON || typeOfBlock == Material.MELON_BLOCK || typeOfBlock == Material.NETHER_WARTS || typeOfBlock == Material.POTATO || typeOfBlock == Material.SEEDS || typeOfBlock == Material.LONG_GRASS) {
+			if (typeOfBlock == Material.REDSTONE || typeOfBlock == Material.GOLD_BLOCK || typeOfBlock == Material.IRON_BLOCK || typeOfBlock == Material.DIAMOND_BLOCK || typeOfBlock == Material.EMERALD_BLOCK || typeOfBlock == Material.REDSTONE_ORE || typeOfBlock == Material.REDSTONE_BLOCK || typeOfBlock == Material.CARROT || typeOfBlock == Material.MELON || typeOfBlock == Material.NETHER_WART || typeOfBlock == Material.POTATO || typeOfBlock == Material.WHEAT_SEEDS || typeOfBlock == Material.TALL_GRASS) {
 				
 				if (typeOfBlock == Material.REDSTONE) {
 					for (int i = 0; i < fortuneLevel; i++) {
@@ -25,13 +25,13 @@ public class FortuneCalc {
 						if (returnValue == 4)
 							break;
 					}
-				} else if (typeOfBlock == Material.MELON || typeOfBlock == Material.MELON_BLOCK) {
+				} else if (typeOfBlock == Material.MELON) {
 					for (int i = 0; i < fortuneLevel; i++) {
 						returnValue++;
 						if (returnValue == 9)
 							break;
 					}
-				} else if (typeOfBlock == Material.LONG_GRASS) {
+				} else if (typeOfBlock == Material.TALL_GRASS) {
 					for (int i = 0; i < fortuneLevel; i++)
 						returnValue = returnValue + 2;
 				} else {

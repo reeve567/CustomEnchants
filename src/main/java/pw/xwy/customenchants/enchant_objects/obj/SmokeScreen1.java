@@ -7,14 +7,14 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import pw.xwy.customenchants.listeners.EnchantDrop;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
-public class SmokeScreen1 extends CustomEnchant {
+public class SmokeScreen1 extends ACustomEnchant {
 
-	public SmokeScreen1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem, int durability) {
-		super(name, sets, rarity, description, displayItem, durability);
+	public SmokeScreen1(String name, ItemSets sets, Rarity rarity, String description, Material displayItem) {
+		super(name, sets, rarity, description, displayItem);
 	}
 
 	@EventHandler
