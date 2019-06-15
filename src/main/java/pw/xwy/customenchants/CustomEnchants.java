@@ -6,19 +6,18 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import pw.xwy.customenchants.enchant_objects.Config;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
-import pw.xwy.customenchants.utilities.EnchantCheck;
+import pw.xwy.customenchants.obj.Config;
+import pw.xwy.customenchants.obj.CustomEnchant;
 import pw.xwy.customenchants.utilities.enums.Messages;
 import pw.xwy.customenchants.utilities.gui.ConversionMenu;
 import pw.xwy.customenchants.utilities.item.Glow;
 import pw.xwy.customenchants.utilities.menu.*;
+import pw.xwy.customenchants.utilities.tasks.*;
 
 import java.lang.reflect.Field;
 
 public class CustomEnchants extends JavaPlugin {
 	
-	public static int ceCount;
 	public static CustomEnchantManager manager;
 	public static CustomEnchants instance;
 	
@@ -57,13 +56,19 @@ public class CustomEnchants extends JavaPlugin {
 	}
 	
 	private void startTasks() {
-		new EnchantCheck(this);
+		new WaterBreathingCheck(this);
+		new NightVisionCheck(this);
+		new HeartCheck(this);
+		new ValorCheck(this);
+		new FlashCheck(this);
+		new JumpBoostCheck(this);
+		new SpeedCheck(this);
 	}
 	
+	@Override
 	public void onEnable() {
 		registerGlow();
 		
-		new MessagesFunctions();
 		Config config = new Config(getDataFolder(), "custom-enchants");
 		int sword = 0;
 		int axe = 0;
@@ -102,11 +107,12 @@ public class CustomEnchants extends JavaPlugin {
 		}
 		config.saveConfig();
 		
-		if (Bukkit.getOnlinePlayers().size() > 0) {
+		if (!Bukkit.getOnlinePlayers().isEmpty()) {
 			for (Player p : Bukkit.getOnlinePlayers()) {
 				if (p.hasPermission("Xwy.menu.notify")) {
-					p.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "«" + ChatColor.STRIKETHROUGH + "------------------------------" + ChatColor.GRAY + "" + ChatColor.BOLD + "»");
-					p.sendMessage(Messages.mainPre.get() + "§6CustomEnchants" + ChatColor.GRAY + " have been loaded with " + (ceCount = sword + bow + axe + pick + helm + chest + leggings + boots) + " enchants.");
+					p.sendMessage( "§7§l«§m------------------------------§7§l»");
+					int ceCount = sword + bow + axe + pick + helm + chest + leggings + boots;
+					p.sendMessage(Messages.mainPre.get() + "§6CustomEnchants" + ChatColor.GRAY + " have been loaded with " + ceCount + " enchants.");
 					p.sendMessage(Messages.mainPre.get() + "§c" + sword + " sword");
 					p.sendMessage(Messages.mainPre.get() + "§c" + bow + " bow");
 					p.sendMessage(Messages.mainPre.get() + "§c" + axe + " axe");

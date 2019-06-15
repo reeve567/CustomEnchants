@@ -1,0 +1,10 @@
+{
+  "strings": {
+    "start-up": {
+      "bar": "§7§l«§m------------------------------§7§l»"
+    },
+    "main-prefix": "§7§l»  ",
+    "prefix": "§6§lSystem §8§l»» ",
+    "sender-is-console": "{prefix}§cYou must be a player to do this!"
+  }
+}

@@ -19,7 +19,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
+import pw.xwy.customenchants.obj.CustomEnchant;
 import pw.xwy.customenchants.utilities.enums.Messages;
 import pw.xwy.customenchants.utilities.enums.Souls;
 import pw.xwy.customenchants.utilities.gui.ConversionMenu;
@@ -35,13 +35,17 @@ import static pw.xwy.customenchants.utilities.menu.EnchantUtility.cmdCheck;
 
 public class CustomEnchantsCommand implements CommandExecutor {
 	
-	public CustomEnchantsCommand() {
+	CustomEnchantsCommand() {
 		Bukkit.getServer().getPluginCommand("ce").setExecutor(this);
 		Bukkit.getServer().getPluginCommand("conv").setExecutor(this);
 	}
 	
 	private boolean argCheck(String sent) {
 		return "give".equalsIgnoreCase(sent);
+	}
+	
+	private void sortStrings(List<String> strings) {
+		strings.sort(Collator.getInstance());
 	}
 	
 	@Override
@@ -95,8 +99,9 @@ public class CustomEnchantsCommand implements CommandExecutor {
 											sender.sendMessage(Messages.prefix.get() + ChatColor.GRAY + "Unknown enchantment/soul: " + args[1]);
 										}
 									}
-								} else
+								} else {
 									sender.sendMessage(ChatColor.RED + "Player " + ChatColor.AQUA + args[2] + " not found.");
+								}
 							}
 						} else if (args.length == 2) {
 							if (sender instanceof Player) {
@@ -228,9 +233,5 @@ public class CustomEnchantsCommand implements CommandExecutor {
 			new ConversionMenu().openInventory((Player) sender);
 		}
 		return true;
-	}
-	
-	public void sortStrings(List<String> strings) {
-		strings.sort(Collator.getInstance());
 	}
 }

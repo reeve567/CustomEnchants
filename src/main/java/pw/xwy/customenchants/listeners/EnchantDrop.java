@@ -1,15 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-// File copyright last updated on: 2/24/18 6:47 PM                             /
-//                                                                             /
-// Copyright (c) 2018.                                                         /
-// All code here is made by Xwy (greys#0001) unless otherwise noted.           /
-//                                                                             /
-//                                                                             /
-////////////////////////////////////////////////////////////////////////////////
-
 package pw.xwy.customenchants.listeners;
-// made by reeve
-// on 12:52 PM
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -22,9 +11,11 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import pw.xwy.customenchants.*;
-import pw.xwy.customenchants.enchant_objects.CustomEnchant;
-import pw.xwy.customenchants.enchant_objects.CustomVanillaEnchant;
+import pw.xwy.customenchants.CustomEnchantManager;
+import pw.xwy.customenchants.CustomEnchants;
+import pw.xwy.customenchants.RealName;
+import pw.xwy.customenchants.obj.CustomEnchant;
+import pw.xwy.customenchants.obj.CustomVanillaEnchant;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Messages;
 import pw.xwy.customenchants.utilities.item.CustomItem;
@@ -36,19 +27,21 @@ import java.util.Random;
 
 public class EnchantDrop implements Listener {
 	
-	private final int CANT_ENCHANT = 0;
-	private final int HAS_LOWER = 2;
-	private final int HAS_HIGHER = 6;
-	private final int HAS_SAME = 1;
-	private final int CAN_ENCHANT = 10;
-	private final int ADMIN_ENCHANT = 5;
+	private static final int CANT_ENCHANT = 0;
+	private static final int HAS_LOWER = 2;
+	private static final int HAS_HIGHER = 6;
+	private static final int HAS_SAME = 1;
+	private static final int CAN_ENCHANT = 10;
+	private static final int ADMIN_ENCHANT = 5;
+	private static Random random;
 	
 	//TODO: make this manageable
 	
 	public static int getRandomNumberFrom(int min, int max) {
-		
-		Random r = new Random();
-		return r.nextInt((max + 1) - min) + min;
+		if (random == null) {
+			random = new Random();
+		}
+		return random.nextInt((max + 1) - min) + min;
 	}
 	
 	private int canEnchant(ItemStack book, ItemStack item) {
@@ -136,26 +129,36 @@ public class EnchantDrop implements Listener {
 		return false;
 	}
 	
-	private boolean enchant(ItemStack itemOnCursor, ItemStack iTW) {
+	private void dropAndSetDefault(ItemStack itemInteractedWith, ItemStack itemOnCursor, Player player) {
+		if (enchant(itemOnCursor, itemInteractedWith)) {
+			player.setItemOnCursor(null);
+			player.sendMessage(Messages.itemSuccess.get());
+		}
+		List<String> l = itemInteractedWith.getItemMeta().getLore();
+		ItemMeta m = itemInteractedWith.getItemMeta();
+		l.add(ChatColor.GRAY + "Mode: Default");
+		m.setLore(l);
+		itemInteractedWith.setItemMeta(m);
+	}
+	
+	private boolean enchant(ItemStack itemOnCursor, ItemStack itemInteractedWith) {
 		
 		if (!itemOnCursor.getType().equals(Material.AIR)) {
-			if (itemOnCursor.hasItemMeta()) {
-				if (itemOnCursor.getItemMeta().hasDisplayName()) {
-					if (iTW.getItemMeta().hasLore()) {
-						List<String> lore = iTW.getItemMeta().getLore();
-						ItemMeta meta = iTW.getItemMeta();
-						lore.add(itemOnCursor.getItemMeta().getDisplayName());
-						meta.setLore(lore);
-						iTW.setItemMeta(meta);
-						return true;
-					} else {
-						List<String> lore = new ArrayList<>();
-						ItemMeta meta = iTW.getItemMeta();
-						lore.add(itemOnCursor.getItemMeta().getDisplayName());
-						meta.setLore(lore);
-						iTW.setItemMeta(meta);
-						return true;
-					}
+			if (itemOnCursor.hasItemMeta() && itemOnCursor.getItemMeta().hasDisplayName()) {
+				if (itemInteractedWith.getItemMeta().hasLore()) {
+					List<String> lore = itemInteractedWith.getItemMeta().getLore();
+					ItemMeta meta = itemInteractedWith.getItemMeta();
+					lore.add(itemOnCursor.getItemMeta().getDisplayName());
+					meta.setLore(lore);
+					itemInteractedWith.setItemMeta(meta);
+					return true;
+				} else {
+					List<String> lore = new ArrayList<>();
+					ItemMeta meta = itemInteractedWith.getItemMeta();
+					lore.add(itemOnCursor.getItemMeta().getDisplayName());
+					meta.setLore(lore);
+					itemInteractedWith.setItemMeta(meta);
+					return true;
 				}
 			}
 		}
@@ -163,7 +166,6 @@ public class EnchantDrop implements Listener {
 	}
 	
 	private void removeItemFromSlot(Player player, int slot) {
-		
 		player.getInventory().setItem(slot, new ItemStack(Material.AIR));
 	}
 	
@@ -172,13 +174,11 @@ public class EnchantDrop implements Listener {
 		for (String string : lore) {
 			
 			if (string.contains(ChatColor.GREEN + "Success:")) {
-				string = string.substring(string.indexOf(" ") + 3, string.indexOf("%"));
+				string = string.substring(string.indexOf(' ') + 3, string.indexOf('%'));
 				Integer randomChance = Integer.parseInt(string);
 				Integer randomNumber = getRandomNumberFrom(1, 100);
 				if (randomNumber < randomChance) {
 					e.setCancelled(true);
-					
-					//bow check
 					
 					if (itemInteractedWith.getType().equals(Material.BOW)) {
 						if (itemInteractedWith.hasItemMeta()) {
@@ -192,15 +192,7 @@ public class EnchantDrop implements Listener {
 								}
 							}
 							if (!found) {
-								if (enchant(itemOnCursor, itemInteractedWith)) {
-									player.setItemOnCursor(null);
-									player.sendMessage(Messages.itemSuccess.get());
-								}
-								List<String> l = itemInteractedWith.getItemMeta().getLore();
-								ItemMeta m = itemInteractedWith.getItemMeta();
-								l.add(ChatColor.GRAY + "Mode: Default");
-								m.setLore(l);
-								itemInteractedWith.setItemMeta(m);
+								dropAndSetDefault(itemInteractedWith, itemOnCursor, player);
 							} else {
 								List<String> l = itemInteractedWith.getItemMeta().getLore();
 								ItemMeta m = itemInteractedWith.getItemMeta();
@@ -222,15 +214,7 @@ public class EnchantDrop implements Listener {
 								}
 							}
 						} else {
-							if (enchant(itemOnCursor, itemInteractedWith)) {
-								player.setItemOnCursor(null);
-								player.sendMessage(Messages.itemSuccess.get());
-							}
-							List<String> l = itemInteractedWith.getItemMeta().getLore();
-							ItemMeta m = itemInteractedWith.getItemMeta();
-							l.add(ChatColor.GRAY + "Mode: Default");
-							m.setLore(l);
-							itemInteractedWith.setItemMeta(m);
+							dropAndSetDefault(itemInteractedWith, itemOnCursor, player);
 						}
 					} else {
 						ItemMeta meta = itemInteractedWith.getItemMeta();
@@ -261,7 +245,7 @@ public class EnchantDrop implements Listener {
 				} else {
 					for (String s : lore) {
 						if (s.contains(ChatColor.RED + "Destroy:")) {
-							s = s.substring(s.indexOf(" ") + 3, s.indexOf("%"));
+							s = s.substring(s.indexOf(' ') + 3, s.indexOf('%'));
 							Integer randomChance1 = Integer.parseInt(s);
 							Integer randomNumber1 = getRandomNumberFrom(1, 100);
 							if (randomNumber1 < randomChance1) {
@@ -296,34 +280,11 @@ public class EnchantDrop implements Listener {
 		
 	}
 	
-	/*
-	@EventHandler
-	public void onDrop(InventoryClickEvent e) {
-		Player player = (Player) e.getWhoClicked();
-		ItemStack cursor = e.getCursor();
-		ItemStack slot = e.getCurrentItem();
-
-		if (e.getAction() != InventoryAction.SWAP_WITH_CURSOR) {
-			return;
-		}
-
-		if (cursor == null) {
-			return;
-		}
-
-		if (cursor.getType() == Material.BOOK) {
-
-
-		}
-
-	}
-	*/
 	@EventHandler
 	public void eDrop(InventoryClickEvent e) {
-		
 		Player player = (Player) e.getWhoClicked();
 		Inventory inventory = e.getView().getBottomInventory();
-		ItemStack itemOnCursor = e.getCursor(); //Ench book
+		ItemStack itemOnCursor = e.getCursor(); //Enchant book
 		ItemStack itemInteractedWith = e.getCurrentItem(); //Item to be enchanted or repaired
 		
 		if (e.getAction().equals(InventoryAction.SWAP_WITH_CURSOR)) {
@@ -365,7 +326,6 @@ public class EnchantDrop implements Listener {
 					
 					if (itemOnCursor.hasItemMeta() && itemOnCursor.getItemMeta().hasDisplayName() && itemOnCursor.getItemMeta().getDisplayName().equalsIgnoreCase(scroll.getItemMeta().getDisplayName())) {
 						if (ItemSets.EVERYTHING.setContains(itemInteractedWith.getType())) {
-							
 							if (itemOnCursor.getAmount() != 1) {
 								player.setItemOnCursor(new CustomItem(itemOnCursor).setCustomAmount(itemOnCursor.getAmount() - 1));
 							} else {
@@ -386,10 +346,8 @@ public class EnchantDrop implements Listener {
 							}
 						}
 					}
-					
 				}
 			}
 		}
 	}
-	
 }
