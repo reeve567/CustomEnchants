@@ -10,24 +10,25 @@ import org.bukkit.event.entity.EntityCombustEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.ItemStack;
-import pw.xwy.customenchants.*;
+import pw.xwy.customenchants.CustomEnchantManager;
+import pw.xwy.customenchants.RealName;
+import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 import pw.xwy.customenchants.enchant_objects.CustomBowEnchant;
 import pw.xwy.customenchants.enchant_objects.CustomDamageEnchant;
-import pw.xwy.customenchants.enchant_objects.ACustomEnchant;
 import pw.xwy.customenchants.enchant_objects.CustomEnviromentalDamageEnchant;
 
 import static pw.xwy.customenchants.enchant_objects.obj.StormCaller.summoner;
 
 public class DamageListener implements Listener {
-	
+
 	public static boolean playerMadeExplosion = false;
 	private Player explodee = null;
-	
+
 	private boolean armorCheck(ItemStack a, String ench) {
-		
+
 		if (a != null) {
-			if (a.hasItemMeta()) {
-				if (a.getItemMeta().hasLore()) {
+			if (a.getItemMeta() != null) {
+				if (a.getItemMeta().getLore() != null) {
 					for (String s : a.getItemMeta().getLore()) {
 						if (s.equalsIgnoreCase(ench)) return true;
 					}
@@ -36,21 +37,21 @@ public class DamageListener implements Listener {
 		}
 		return false;
 	}
-	
+
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void EnvHit(EntityDamageEvent e) {
-		
+
 		//TODO: Get rid of all the extra code, dim it down to looping lists with conditions for molten and the like
 		//UPDATE: Might not be possible with all the different damage causes
-		
+
 		if (e.getEntity() instanceof Player) {
 			Player player = (Player) e.getEntity();
 			ItemStack boots = player.getInventory().getBoots();
-			if (boots != null && boots.hasItemMeta() && boots.getItemMeta().hasLore() && boots.getItemMeta().getLore().contains(RealName.XWY.getEnchant().getName())) {
+			if (boots != null && boots.getItemMeta() != null && boots.getItemMeta().getLore() != null && boots.getItemMeta().getLore().contains(RealName.XWY.getEnchant().getName())) {
 				((CustomEnviromentalDamageEnchant) RealName.XWY.getEnchant()).event(e);
 			}
 		}
-		
+
 		//Lightning, should stay probably
 		if (e.getCause().equals(EntityDamageEvent.DamageCause.LIGHTNING)) {
 			if (e.getEntity() instanceof Player) {
@@ -90,7 +91,7 @@ public class DamageListener implements Listener {
 						}
 					}
 				}
-				
+
 			}
 		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.WITHER)) {
 			if (e.getEntity() instanceof Player) {
@@ -103,7 +104,7 @@ public class DamageListener implements Listener {
 						}
 					}
 				}
-				
+
 			}
 		} else if (e.getCause().equals(EntityDamageEvent.DamageCause.FIRE) ||
 				e.getCause().equals(EntityDamageEvent.DamageCause.LAVA) ||
@@ -122,31 +123,31 @@ public class DamageListener implements Listener {
 			}
 		}
 	}
-	
+
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void Hit(final EntityDamageByEntityEvent e) {
-		
+
 		if (!e.isCancelled()) {
 			//TODO: Sort out which enchants need player damager and which don't
-			
+
 			if (e.getDamager() instanceof Player) {
 				Player player = (Player) e.getDamager();
-				if (player.getItemInHand().hasItemMeta() && player.getItemInHand().getItemMeta().hasLore()) {
-					for (String s : player.getItemInHand().getItemMeta().getLore()) {
+				if (player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null) {
+					for (String s : player.getInventory().getItemInMainHand().getItemMeta().getLore()) {
 						if (CustomEnchantManager.getInstance().getEnchantsByLore().containsKey(s)) {
 							ACustomEnchant enchant = CustomEnchantManager.getInstance().getEnchantsByLore().get(s);
 							if (enchant instanceof CustomDamageEnchant) {
 								CustomDamageEnchant damageEnchant = (CustomDamageEnchant) enchant;
-								
+
 								damageEnchant.event(e);
 							}
 						}
 					}
 				}
 			}
-			
+
 			if (e.getEntity() instanceof Player) {
-				
+
 				//TODO: Run enchants like Molten, Antiknockback here
 
 				/*if (armorCheck(chest, CEnchant.DETONATE.getName())) {
@@ -158,28 +159,28 @@ public class DamageListener implements Listener {
 					}
 				}*/
 			}
-			
+
 			((CustomBowEnchant) RealName.FROZENARROW.getEnchant()).event(e);
 			((CustomBowEnchant) RealName.VOLTAGE.getEnchant()).event(e);
 			((CustomBowEnchant) RealName.RPG.getEnchant()).event(e);
 			((CustomBowEnchant) RealName.EXTRADAMAGEARROW.getEnchant()).event(e);
 			((CustomBowEnchant) RealName.POISONOUSARROW.getEnchant()).event(e);
-			
+
 		}
 	}
-	
+
 	@EventHandler
 	public void lightStrikeFire(BlockIgniteEvent e) {
-		
+
 		if (e.getCause().equals(BlockIgniteEvent.IgniteCause.LIGHTNING)) {
 			e.setCancelled(true);
 		}
-		
+
 	}
-	
+
 	@EventHandler
 	public void onFire(EntityCombustEvent e) {
-		
+
 		if (e.getEntity() instanceof Player) {
 			Player player = (Player) e.getEntity();
 			ItemStack legs = player.getInventory().getLeggings();
@@ -195,5 +196,5 @@ public class DamageListener implements Listener {
 			}
 		}
 	}
-	
+
 }

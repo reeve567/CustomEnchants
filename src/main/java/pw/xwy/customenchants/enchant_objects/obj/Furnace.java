@@ -26,11 +26,11 @@ public class Furnace extends CustomBowDeathEnchant {
 	private void changeDrops(EntityDeathEvent e) {
 		
 		for (ItemStack it : e.getDrops()) {
-			if (it.getType().equals(Material.RAW_BEEF)) {
+			if (it.getType().equals(Material.BEEF)) {
 				it.setType(Material.COOKED_BEEF);
-			} else if (it.getType().equals(Material.PORK)) {
-				it.setType(Material.GRILLED_PORK);
-			} else if (it.getType().equals(Material.RAW_CHICKEN)) {
+			} else if (it.getType().equals(Material.PORKCHOP)) {
+				it.setType(Material.COOKED_PORKCHOP);
+			} else if (it.getType().equals(Material.CHICKEN)) {
 				it.setType(Material.COOKED_CHICKEN);
 			}
 		}

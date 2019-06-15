@@ -6,14 +6,16 @@ import pw.xwy.customenchants.BlockMinedEvent;
 import pw.xwy.customenchants.utilities.enums.ItemSets;
 import pw.xwy.customenchants.utilities.enums.Rarity;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class CustomMineEnchantLoader {
+class CustomMineEnchantLoader {
 	private List<ACustomMineEnchant> customMineEnchantList = new ArrayList<>();
 
-	public CustomMineEnchantLoader() {
+	CustomMineEnchantLoader() {
 		customMineEnchantList.addAll(Arrays.asList(
-				new ACustomMineEnchant("Explosive Pick I", ItemSets.PICK, Rarity.HYDRO, "This enchant allows your pickaxe to++mine in a 3x3x3 area.", Material.FIREBALL) {
+				new ACustomMineEnchant("Explosive Pick I", ItemSets.PICK, Rarity.HYDRO, "This enchant allows your pickaxe to++mine in a 3x3x3 area.", Material.FIRE_CHARGE) {
 					@Override
 					public void event(BlockMinedEvent e) {
 						for (int i = -1; i <= 1; i++) {
@@ -29,7 +31,7 @@ public class CustomMineEnchantLoader {
 						}
 					}
 				},
-				new ACustomMineEnchant("Explosive Pick II", ItemSets.PICK, Rarity.HYDRO, "This enchant allows your pickaxe to++mine in a 5x5x5 area.", Material.FIREBALL) {
+				new ACustomMineEnchant("Explosive Pick II", ItemSets.PICK, Rarity.HYDRO, "This enchant allows your pickaxe to++mine in a 5x5x5 area.", Material.FIRE_CHARGE) {
 					@Override
 					public void event(BlockMinedEvent e) {
 						for (int i = -2; i <= 2; i++) {
@@ -45,7 +47,7 @@ public class CustomMineEnchantLoader {
 						}
 					}
 				},
-				new ACustomMineEnchant("Explosive Pick III", ItemSets.PICK, Rarity.HYDRO, "This enchant allows your pickaxe to++mine in a 7x7x7 area.", Material.FIREBALL) {
+				new ACustomMineEnchant("Explosive Pick III", ItemSets.PICK, Rarity.HYDRO, "This enchant allows your pickaxe to++mine in a 7x7x7 area.", Material.FIRE_CHARGE) {
 					@Override
 					public void event(BlockMinedEvent e) {
 						for (int i = -3; i <= 3; i++) {
@@ -61,7 +63,7 @@ public class CustomMineEnchantLoader {
 						}
 					}
 				}
-				));
+		));
 	}
 
 	public List<ACustomMineEnchant> getCustomMineEnchantList() {

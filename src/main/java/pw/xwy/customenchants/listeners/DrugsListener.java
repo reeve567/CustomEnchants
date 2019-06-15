@@ -31,7 +31,7 @@ public class DrugsListener implements Listener {
 					e.setItemInHand(new ItemStack(Material.AIR));
 				e.getPlayer().sendMessage(prefix + "You snorted cocaine");
 			}
-			if (e.getItemInHand().getType() == Material.SULPHUR && e.isSneaking()) {
+			if (e.getItemInHand().getType() == Material.GUNPOWDER && e.isSneaking()) {
 
 				if (e.hasPotionEffect(PotionEffectType.INCREASE_DAMAGE))
 					e.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
